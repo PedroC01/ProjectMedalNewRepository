@@ -24,7 +24,7 @@ public class CenterPoint : MonoBehaviour
     void Update()
     {
         this.transform.position = getCenterPoint();
-        this.transform.LookAt(CFocusPoints[0].transform.position, Vector3.up);
+        //this.transform.LookAt(CFocusPoints[0].transform.position, Vector3.up);
 
     }
     void LateUpdate()

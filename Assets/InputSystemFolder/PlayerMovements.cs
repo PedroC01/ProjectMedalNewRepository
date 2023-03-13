@@ -71,6 +71,7 @@ public class PlayerMovements : MonoBehaviour
     public void OnJump()
     {
         this.jumped = true;
+        StartCoroutine(Jump(this.jumped));
     }
     public void OnEast()
     {
@@ -157,6 +158,7 @@ public class PlayerMovements : MonoBehaviour
         else
         {
             m_Animator1.SetFloat("Moving",0);//criar animator para o segundo jogador para o player 2 poder se mover
+            this.rb.velocity = Vector3.zero;
         }
 
         dist = Vector3.Distance(Enemy.transform.position, this.transform.position);
@@ -177,15 +179,12 @@ public class PlayerMovements : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (jumped == true && isGrounded == true)
-        {
-            rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
-            this.jumped = false;
-            isGrounded = false;
-        }
+        
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
         {
-            this.rb.AddForce(transform.forward * playerSpeed, ForceMode.Force);
+
+            this.rb.velocity = this.rb.transform.forward*playerSpeed;
+            //this.rb.AddForce(transform.forward * playerSpeed, ForceMode.Force);
         }
 
 
@@ -194,7 +193,17 @@ public class PlayerMovements : MonoBehaviour
 
 
 
-
+    IEnumerator Jump(bool jumped_)
+    {
+        if (jumped == true && isGrounded == true)
+        {
+            this.rb.velocity = this.rb.transform.up * jumpForce;
+          //  rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
+            this.jumped = false;
+            isGrounded = false;
+        }
+        yield return null;
+    }
 
 
 

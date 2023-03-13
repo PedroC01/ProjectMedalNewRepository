@@ -39,7 +39,7 @@ public class Shooter : MonoBehaviour
         
     }
 
-    public virtual void East()
+    public void East()
     {
         Shooted = true;
         if (PM.closeRange == false)
@@ -58,7 +58,7 @@ public class Shooter : MonoBehaviour
        
        
     }
-    public virtual void West()
+    public void West()
     {
         shootFullAuto = true;
         if (PM.closeRange == false)
