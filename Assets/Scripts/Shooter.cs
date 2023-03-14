@@ -41,22 +41,24 @@ public class Shooter : MonoBehaviour
 
     public void East()
     {
-        Shooted = true;
+        this.Shooted = true;
         if (PM.closeRange == false)
         {
             if (Shooted == true && TimerForRechargeEast <= 0)
             {
                 StartCoroutine(Fire());
+              return;
             }
+           
         }
         if (PM.closeRange == true)
         {
            // MeleeEast = true;
             m_Animator.SetTrigger("MeleeEast");
-          
+            return;
         }
-       
-       
+        this.Shooted = false;
+
     }
     public void West()
     {
@@ -66,14 +68,15 @@ public class Shooter : MonoBehaviour
             if (shootFullAuto == true && TimerForRechargeEast <= 0)
             {
                 StartCoroutine(FireFullAuto());
+                return;
             }
         }
         if (PM.closeRange == true)
         {
             m_Animator.SetTrigger("MeleeWest");
-           
+           return ;
         }
-       
+        shootFullAuto = false;
     }
 
 
@@ -103,6 +106,10 @@ public class Shooter : MonoBehaviour
 
     }
 
+
+
+
+
         private IEnumerator Fire()
     {
         if (LO.Locked == true)
@@ -111,39 +118,44 @@ public class Shooter : MonoBehaviour
             lookat = LO.lockOnTarget;
         }
 
-        Shooted = false;
         TimerForRechargeEast = rechargeTimeEast;
 
         GameObject newBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSeconds(0.1f);
     }
+
+
+
+
     private IEnumerator FireFullAuto()
     {
-         
-        if (LO.Locked == true)
+     while(shootFullAuto == true)
         {
-            this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
-            lookat = LO.lockOnTarget;
+            if (LO.Locked == true)
+            {
+                this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
+                lookat = LO.lockOnTarget;
+            }
+            if (magSize > 1)
+            {
+                GameObject newBullet = Instantiate(bulletPrefab, FullAutoFirePoint1.position, FullAutoFirePoint1.rotation);
+                Mathf.Clamp(magSize--, 0, magSizeRecharge);
+            }
+            if (magSize > 0)
+            {
+                GameObject newBullet2 = Instantiate(bulletPrefab, FullAutoFirePoint2.position, FullAutoFirePoint2.rotation);
+                Mathf.Clamp(magSize--, 0, magSizeRecharge);
+            }
+            if (magSize <= 0)
+            {
+                shootFullAuto = false;
+                TimerForRechargeWest = rechargeTimeWest;
+               
+               
+            }
+   
         }
-        if (magSize > 1)
-        {
-            GameObject newBullet = Instantiate(bulletPrefab, FullAutoFirePoint1.position, FullAutoFirePoint1.rotation);
-            Mathf.Clamp(magSize--, 0, magSizeRecharge);
-        }
-        if (magSize > 0)
-        {
-            GameObject newBullet2 = Instantiate(bulletPrefab, FullAutoFirePoint2.position, FullAutoFirePoint2.rotation);
-            Mathf.Clamp(magSize--, 0, magSizeRecharge);
-        }
-        if (magSize <= 0)
-        {
-            shootFullAuto = false;
-            TimerForRechargeWest = rechargeTimeWest;   
-        }
-        shootFullAuto = false;
-
-
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSeconds(0.1f);
     }
    
 }

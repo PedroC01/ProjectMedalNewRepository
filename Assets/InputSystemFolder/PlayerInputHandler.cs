@@ -38,7 +38,7 @@ public class PlayerInputHandler : MonoBehaviour
         if(pMovement!=null)
         pMovement.OnMove(context.ReadValue<Vector2>());
     }
-    public void OnJump(CallbackContext context)
+    public void OnJump(CallbackContext context)//por algum motivo o call back context dá erro aqui
     {
         pMovement.OnJump();
     }

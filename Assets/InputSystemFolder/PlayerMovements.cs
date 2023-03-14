@@ -18,8 +18,8 @@ public class PlayerMovements : MonoBehaviour
     public float jumpForce = 1.0f;
     private Rigidbody rb;
     private Vector3 horizontalInput = Vector2.zero;
-
-    public bool jumped = false;
+    public float gravityMultiplier;
+    public bool jumped;
     public int playerIndex;
     private Vector3 move;
     public Camera camera1;
@@ -51,7 +51,8 @@ public class PlayerMovements : MonoBehaviour
         this.RL = GetComponentInChildren<RocketLaucher>();
         this.Enemy = FindObjectOfType<Player2>().gameObject;
         m_Animator1 = GetComponentInChildren<Animator>();
-    }
+        jumped = false;
+}
 
 
 
@@ -70,8 +71,12 @@ public class PlayerMovements : MonoBehaviour
     }
     public void OnJump()
     {
-        this.jumped = true;
-        StartCoroutine(Jump(this.jumped));
+        if (isGrounded == true){ 
+            this.jumped = true;
+        }
+
+        // StartCoroutine(Jump(this.jumped));
+
     }
     public void OnEast()
     {
@@ -130,12 +135,13 @@ public class PlayerMovements : MonoBehaviour
 
     void Update()
     {
-        
-        if (isGrounded==false)
+        if (isGrounded == false)
         {
-            move.y = 0;
+            // move.y = 0;
+            this.rb.velocity = new Vector3(this.rb.velocity.x, Physics.gravity.y*gravityMultiplier, this.rb.velocity.z);
             jumped = false;
         }
+
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
         {
             Vector3 forward = Camera.main.transform.forward;
@@ -161,6 +167,8 @@ public class PlayerMovements : MonoBehaviour
             this.rb.velocity = Vector3.zero;
         }
 
+
+
         dist = Vector3.Distance(Enemy.transform.position, this.transform.position);
         if (dist <= distClose)
         {
@@ -173,37 +181,52 @@ public class PlayerMovements : MonoBehaviour
             On.Invoke();
         }
 
+       
+
+       
+
+
+
         var dir = new Vector3(Mathf.Cos(Time.time * playerSpeed) * size, Mathf.Sin(Time.time * playerSpeed) * size);
     }
 
 
     private void FixedUpdate()
     {
-        
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
         {
 
-            this.rb.velocity = this.rb.transform.forward*playerSpeed;
+            this.rb.velocity = this.rb.transform.forward * playerSpeed;
             //this.rb.AddForce(transform.forward * playerSpeed, ForceMode.Force);
         }
 
+        if (jumped == true)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Acceleration);
+            isGrounded = false;
+            jumped = false;
+        }
+
 
     }
 
 
 
 
-    IEnumerator Jump(bool jumped_)
+  /*  IEnumerator Jump(bool jumped_)
     {
-        if (jumped == true && isGrounded == true)
+        if (jumped_ == true && isGrounded == true)
         {
-            this.rb.velocity = this.rb.transform.up * jumpForce;
-          //  rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
-            this.jumped = false;
+            
+           // jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics.gravity.y));
+            //this.rb.velocity = this.rb.transform.up * jumpForce;
+           // rb.AddForce(Vector3.up*jumpForce, ForceMode.Impulse);
             isGrounded = false;
+           yield return new WaitForSeconds(1);
+      
         }
         yield return null;
-    }
+    }*/
 
 
 
