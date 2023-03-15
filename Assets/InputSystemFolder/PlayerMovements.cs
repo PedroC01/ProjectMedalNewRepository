@@ -38,7 +38,8 @@ public class PlayerMovements : MonoBehaviour
     public UnityEvent On;
     [SerializeField]
     public UnityEvent Off;
-
+    public float airTime;
+    private float airTimeb;
     public Animator m_Animator1;
 
     public bool closeRange=false;
@@ -137,11 +138,22 @@ public class PlayerMovements : MonoBehaviour
     {
         if (isGrounded == false)
         {
+            
+            if (airTimeb > 0)
+            {
+                airTimeb -= Time.deltaTime; ;
+            }
+            if(airTimeb <= 0)
+            {
+                jumped = false;
+               airTimeb = airTime;
+            }
+            
             // move.y = 0;
-            this.rb.velocity = new Vector3(this.rb.velocity.x, Physics.gravity.y*gravityMultiplier, this.rb.velocity.z);
-            jumped = false;
+            float minegravitySpeed = Physics.gravity.y* gravityMultiplier;
+            this.rb.velocity = new Vector3 (move.x,minegravitySpeed,move.y);
         }
-
+        
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
         {
             Vector3 forward = Camera.main.transform.forward;
@@ -151,12 +163,12 @@ public class PlayerMovements : MonoBehaviour
             forward = forward.normalized;
             right = right.normalized;
             move = horizontalInput.x * right + horizontalInput.y * forward;
-
             move *= playerSpeed;
             m_Animator1.SetFloat("Moving", playerSpeed);
             if (move != Vector3.zero)
             {
                 transform.forward = move;
+             
             }
 
 
@@ -166,6 +178,11 @@ public class PlayerMovements : MonoBehaviour
             m_Animator1.SetFloat("Moving",0);//criar animator para o segundo jogador para o player 2 poder se mover
             this.rb.velocity = Vector3.zero;
         }
+
+        this.rb.velocity = this.rb.transform.up * Physics.gravity.y;
+
+
+
 
 
 
@@ -181,11 +198,7 @@ public class PlayerMovements : MonoBehaviour
             On.Invoke();
         }
 
-       
-
-       
-
-
+        
 
         var dir = new Vector3(Mathf.Cos(Time.time * playerSpeed) * size, Mathf.Sin(Time.time * playerSpeed) * size);
     }
@@ -196,15 +209,16 @@ public class PlayerMovements : MonoBehaviour
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
         {
 
-            this.rb.velocity = this.rb.transform.forward * playerSpeed;
+            this.rb.velocity = this.rb.transform.forward * playerSpeed+this.rb.transform.up*Physics.gravity.y;
             //this.rb.AddForce(transform.forward * playerSpeed, ForceMode.Force);
         }
 
         if (jumped == true)
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Acceleration);
+            this.rb.velocity = new Vector3(move.x, jumpForce, move.y);
+          //  rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false;
-            jumped = false;
+
         }
 
 
@@ -215,7 +229,7 @@ public class PlayerMovements : MonoBehaviour
 
   /*  IEnumerator Jump(bool jumped_)
     {
-        if (jumped_ == true && isGrounded == true)
+        if (jumped_ == true)
         {
             
            // jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics.gravity.y));
@@ -240,7 +254,7 @@ public class PlayerMovements : MonoBehaviour
         if (collision.collider.CompareTag("Floor") && isGrounded == false)
         {
             isGrounded = true;
-
+            
         }
     }
 

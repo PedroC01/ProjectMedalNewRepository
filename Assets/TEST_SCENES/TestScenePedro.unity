@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 788.05566, g: 594.0132, b: 478.70926, a: 1}
+  m_IndirectSpecularColor: {r: 786.3462, g: 592.1228, b: 476.97632, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10642,22 +10642,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!54 &1276912111
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7882376021292752717}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
 --- !u!64 &1276912112
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -10672,22 +10656,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!54 &1276912113
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6566940249276217668}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
 --- !u!1 &1278266607
 GameObject:
   m_ObjectHideFlags: 0
@@ -11185,7 +11153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314757488}
   m_LocalRotation: {x: 0, y: 0.0016983615, z: 0, w: 0.99999857}
-  m_LocalPosition: {x: 0.7256769, y: 1.3263758, z: 2.2100666}
+  m_LocalPosition: {x: 0.72884786, y: 2.5375984, z: 2.2101629}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14377,8 +14345,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823688464}
-  m_LocalRotation: {x: 0.17337123, y: -0.11975626, z: 0.021244155, w: 0.9773175}
-  m_LocalPosition: {x: 9.338308, y: 11.732478, z: -23.532267}
+  m_LocalRotation: {x: 0.09585189, y: -0.12809364, z: 0.012439219, w: 0.9870409}
+  m_LocalPosition: {x: 9.88735, y: 8.455858, z: -24.399471}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17055,7 +17023,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064982940}
-  m_LocalRotation: {x: 0.17337123, y: -0.11975626, z: 0.021244155, w: 0.9773175}
+  m_LocalRotation: {x: 0.09585189, y: -0.12809364, z: 0.012439219, w: 0.9870409}
   m_LocalPosition: {x: 4.052145, y: 3.8000002, z: -3.7047036}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -26285,8 +26253,8 @@ MonoBehaviour:
   size: 10
   playerVelocity: {x: 0, y: 0, z: 0}
   playerSpeed: 10
-  jumpForce: 14.7
-  gravityMultiplier: 1.25
+  jumpForce: 2.53
+  gravityMultiplier: 1
   jumped: 0
   playerIndex: 0
   camera1: {fileID: 0}
@@ -26333,6 +26301,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  airTime: 1
   m_Animator1: {fileID: 1461064236}
   closeRange: 0
 --- !u!136 &7862484790357110736
@@ -26397,7 +26366,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7862484790357110737}
   m_LocalRotation: {x: -0, y: -0.8525838, z: -0, w: -0.5225906}
-  m_LocalPosition: {x: -3.7956007, y: 1.12, z: 2.167669}
+  m_LocalPosition: {x: -3.7956007, y: 2.898, z: 2.167669}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27201,7 +27170,7 @@ GameObject:
   m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!64 &8674432681259628772
 MeshCollider:
@@ -27328,6 +27297,7 @@ MonoBehaviour:
   Off:
     m_PersistentCalls:
       m_Calls: []
+  airTime: 0
   m_Animator1: {fileID: 0}
   closeRange: 0
 --- !u!1 &8825045837598793447
