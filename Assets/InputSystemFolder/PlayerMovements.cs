@@ -5,44 +5,63 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
+using Unity.Mathematics;
 
 public class PlayerMovements : MonoBehaviour
 {
     [SerializeField] private float size = 10;
     [SerializeField]
     private Vector3 playerVelocity;
-   
-    [SerializeField]
-    private float playerSpeed = 2.0f;
-    [SerializeField]
-    public float jumpForce = 1.0f;
-    private Rigidbody rb;
-    private Vector3 horizontalInput = Vector2.zero;
-    public float gravityMultiplier;
-    public bool jumped;
-    public int playerIndex;
     private Vector3 move;
     public Camera camera1;
+    [SerializeField]
+    private float playerSpeed = 2.0f;
+
+
+    //jump---------------------------------------------------------
+    public float groundDistance = 0.4f;
+    float countTime;
+   [SerializeField]
+    public float jumpForce = 1.0f;
+    public float initialJumpVelocity;
+    public float maxJumpHeight=1.0f;
+    public float maxJumpTime=0.5f;
+    public float gravityMultiplier;
+    public float gravity = -9.8f;
+    public float groundGravity = -2;
+    public bool jumped;
     public bool isGrounded;
     public Transform groundCheck;
-    public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public Vector3 up;
+    private Rigidbody rb;
+    private Vector3 horizontalInput = Vector2.zero;
+   
+    public int playerIndex;
+   
+
     public Shooter shooter;
     public LockOn LO;
     public RocketLaucher RL;
     public GameObject Enemy;
+    public Animator m_Animator1;
     public bool block;
     public float dist;
     public float distClose;
+    public bool closeRange = false;
+
+    //Unity Events------------------------------
     [SerializeField]
     public UnityEvent On;
     [SerializeField]
     public UnityEvent Off;
-    public float airTime;
-    private float airTimeb;
-    public Animator m_Animator1;
 
-    public bool closeRange=false;
+
+    private void Awake()
+    {
+        setupJump();
+    }
+
     void Start()
     {
        this.rb=GetComponent<Rigidbody>();
@@ -53,9 +72,19 @@ public class PlayerMovements : MonoBehaviour
         this.Enemy = FindObjectOfType<Player2>().gameObject;
         m_Animator1 = GetComponentInChildren<Animator>();
         jumped = false;
-}
+     
+    }
 
 
+
+    void setupJump()
+    {
+        float timeToApexJump = maxJumpTime / 2;
+        gravity = (-2 * maxJumpHeight) / Mathf.Pow(timeToApexJump, 2);
+        initialJumpVelocity = (2 * maxJumpHeight) / timeToApexJump;
+    }
+
+    
 
     public int GetPlayerIndex()
     {
@@ -64,7 +93,7 @@ public class PlayerMovements : MonoBehaviour
 
 
 
-
+    //input functions----------------------------------------------
 
     public void OnMove(Vector2 direction)
     {
@@ -72,9 +101,11 @@ public class PlayerMovements : MonoBehaviour
     }
     public void OnJump()
     {
-        if (isGrounded == true){ 
+        if (isGrounded == true&&jumped==false){ 
             this.jumped = true;
+            countTime = maxJumpTime;
         }
+       
 
         // StartCoroutine(Jump(this.jumped));
 
@@ -86,6 +117,10 @@ public class PlayerMovements : MonoBehaviour
     public void OnWest()
     {
         shooter.West();
+    }
+    public void northButton()
+    {
+        RL.North();
     }
     public void L1()
     {
@@ -119,12 +154,9 @@ public class PlayerMovements : MonoBehaviour
     {
         LO.DPadDown();
     }
-    public void northButton()
-    {
-        RL.North();
-    }
+   
 
-
+    //------------------------------------------------------------------------------------------------------------------
 
     private void OnDrawGizmos()
     {
@@ -134,25 +166,47 @@ public class PlayerMovements : MonoBehaviour
 
 
 
-    void Update()
+
+
+    void HandleJump()
     {
-        if (isGrounded == false)
+      
+        if (jumped == true)
         {
             
-            if (airTimeb > 0)
-            {
-                airTimeb -= Time.deltaTime; ;
-            }
-            if(airTimeb <= 0)
+            up = transform.up*initialJumpVelocity*0.5f;
+            up.x = 0;
+            up.z = 0;
+            this.rb.velocity= this.rb.transform.forward * playerSpeed+up;
+            isGrounded = false;
+            
+            countTime -= Time.deltaTime;
+            if (countTime <= maxJumpTime / 2)
             {
                 jumped = false;
-               airTimeb = airTime;
+                countTime = maxJumpTime;
             }
-            
-            // move.y = 0;
-            float minegravitySpeed = Physics.gravity.y* gravityMultiplier;
-            this.rb.velocity = new Vector3 (move.x,minegravitySpeed,move.y);
         }
+      
+        
+    }
+    void handleGravity()
+    {
+        if (isGrounded==true)
+        {
+           
+            this.rb.velocity = new Vector3(0, groundGravity, 0)*Time.deltaTime;
+        }
+        else
+        {
+           
+            this.rb.velocity = new Vector3(0, gravity, 0)*Time.deltaTime;
+        }
+    }
+
+    void Update()
+    {
+        
         
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
         {
@@ -176,13 +230,22 @@ public class PlayerMovements : MonoBehaviour
         else
         {
             m_Animator1.SetFloat("Moving",0);//criar animator para o segundo jogador para o player 2 poder se mover
-            this.rb.velocity = Vector3.zero;
+            if(horizontalInput.x == 0 && horizontalInput.y == 0 && isGrounded == true)
+            {
+                rb.velocity = new Vector3(0, Physics.gravity.y, 0)*Time.deltaTime;
+            }
+          
         }
 
-        this.rb.velocity = this.rb.transform.up * Physics.gravity.y;
 
+        var dir = new Vector3(Mathf.Cos(Time.time * playerSpeed) * size, Mathf.Sin(Time.time * playerSpeed) * size);
 
-
+       /* if (isGrounded == false)
+        {
+            handleGravity();
+        }*/
+      
+        
 
 
 
@@ -198,9 +261,8 @@ public class PlayerMovements : MonoBehaviour
             On.Invoke();
         }
 
-        
+        HandleJump();
 
-        var dir = new Vector3(Mathf.Cos(Time.time * playerSpeed) * size, Mathf.Sin(Time.time * playerSpeed) * size);
     }
 
 
@@ -209,17 +271,11 @@ public class PlayerMovements : MonoBehaviour
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
         {
 
-            this.rb.velocity = this.rb.transform.forward * playerSpeed+this.rb.transform.up*Physics.gravity.y;
+            this.rb.velocity = this.rb.transform.forward * playerSpeed;
             //this.rb.AddForce(transform.forward * playerSpeed, ForceMode.Force);
         }
 
-        if (jumped == true)
-        {
-            this.rb.velocity = new Vector3(move.x, jumpForce, move.y);
-          //  rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
-
-        }
+       
 
 
     }
@@ -254,11 +310,13 @@ public class PlayerMovements : MonoBehaviour
         if (collision.collider.CompareTag("Floor") && isGrounded == false)
         {
             isGrounded = true;
-            
+            jumped = false;
+
         }
     }
+   
 
 
-    
+
 
 }

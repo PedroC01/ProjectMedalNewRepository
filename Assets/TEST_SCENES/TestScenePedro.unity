@@ -14345,7 +14345,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823688464}
-  m_LocalRotation: {x: 0.09585189, y: -0.12809364, z: 0.012439219, w: 0.9870409}
+  m_LocalRotation: {x: 0.09585177, y: -0.1281027, z: 0.012440097, w: 0.98703974}
   m_LocalPosition: {x: 9.88735, y: 8.455858, z: -24.399471}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17023,7 +17023,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064982940}
-  m_LocalRotation: {x: 0.09585189, y: -0.12809364, z: 0.012439219, w: 0.9870409}
+  m_LocalRotation: {x: 0.09585177, y: -0.1281027, z: 0.012440097, w: 0.98703974}
   m_LocalPosition: {x: 4.052145, y: 3.8000002, z: -3.7047036}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -26252,25 +26252,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 10
   playerVelocity: {x: 0, y: 0, z: 0}
-  playerSpeed: 10
-  jumpForce: 2.53
-  gravityMultiplier: 1
-  jumped: 0
-  playerIndex: 0
   camera1: {fileID: 0}
+  playerSpeed: 10
+  groundDistance: 0.4
+  jumpForce: 5.38
+  initialJumpVelocity: 0
+  maxJumpHeight: 1
+  maxJumpTime: 0.5
+  gravityMultiplier: 1
+  gravity: -9.81
+  groundGravity: -9.81
+  jumped: 0
   isGrounded: 0
   groundCheck: {fileID: 951836839}
-  groundDistance: 0.4
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  up: {x: 0, y: 0, z: 0}
+  playerIndex: 0
   shooter: {fileID: 0}
   LO: {fileID: 0}
   RL: {fileID: 0}
   Enemy: {fileID: 0}
+  m_Animator1: {fileID: 1461064236}
   block: 0
   dist: 0
   distClose: 2.03
+  closeRange: 0
   On:
     m_PersistentCalls:
       m_Calls:
@@ -26301,9 +26309,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  airTime: 1
-  m_Animator1: {fileID: 1461064236}
-  closeRange: 0
 --- !u!136 &7862484790357110736
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -26350,7 +26355,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7862484790357110737}
   serializedVersion: 2
-  m_Mass: 10.56
+  m_Mass: 342.6
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -27272,34 +27277,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 10
   playerVelocity: {x: 0, y: 0, z: 0}
-  playerSpeed: 10
-  jumpForce: 100
-  gravityMultiplier: 0
-  jumped: 0
-  playerIndex: 1
   camera1: {fileID: 0}
+  playerSpeed: 10
+  groundDistance: 0.41
+  jumpForce: 100
+  initialJumpVelocity: 0
+  maxJumpHeight: 0
+  maxJumpTime: 0.5
+  gravityMultiplier: 0
+  gravity: -9.81
+  groundGravity: -9.81
+  jumped: 0
   isGrounded: 0
   groundCheck: {fileID: 1369178175}
-  groundDistance: 0.41
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  up: {x: 0, y: 0, z: 0}
+  playerIndex: 1
   shooter: {fileID: 0}
   LO: {fileID: 0}
   RL: {fileID: 0}
   Enemy: {fileID: 0}
+  m_Animator1: {fileID: 0}
   block: 0
   dist: 0
   distClose: 0
+  closeRange: 0
   On:
     m_PersistentCalls:
       m_Calls: []
   Off:
     m_PersistentCalls:
       m_Calls: []
-  airTime: 0
-  m_Animator1: {fileID: 0}
-  closeRange: 0
 --- !u!1 &8825045837598793447
 GameObject:
   m_ObjectHideFlags: 0
