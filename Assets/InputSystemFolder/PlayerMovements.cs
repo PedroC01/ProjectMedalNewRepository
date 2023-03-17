@@ -177,7 +177,7 @@ public class PlayerMovements : MonoBehaviour
             up = transform.up*initialJumpVelocity*0.5f;
             up.x = 0;
             up.z = 0;
-            this.rb.velocity= this.rb.transform.forward * playerSpeed+up;
+            this.rb.velocity=up;
             isGrounded = false;
             
             countTime -= Time.deltaTime;
@@ -195,12 +195,12 @@ public class PlayerMovements : MonoBehaviour
         if (isGrounded==true)
         {
            
-            this.rb.velocity = new Vector3(0, groundGravity, 0)*Time.deltaTime;
+            this.rb.velocity += new Vector3(0, groundGravity, 0)*Time.deltaTime;
         }
         else
         {
            
-            this.rb.velocity = new Vector3(0, gravity, 0)*Time.deltaTime;
+            this.rb.velocity += new Vector3(0, gravity, 0)*Time.deltaTime;
         }
     }
 
@@ -232,7 +232,7 @@ public class PlayerMovements : MonoBehaviour
             m_Animator1.SetFloat("Moving",0);//criar animator para o segundo jogador para o player 2 poder se mover
             if(horizontalInput.x == 0 && horizontalInput.y == 0 && isGrounded == true)
             {
-                rb.velocity = new Vector3(0, Physics.gravity.y, 0)*Time.deltaTime;
+                rb.velocity = new Vector3(0, Physics.gravity.y, 0);
             }
           
         }
@@ -240,13 +240,13 @@ public class PlayerMovements : MonoBehaviour
 
         var dir = new Vector3(Mathf.Cos(Time.time * playerSpeed) * size, Mathf.Sin(Time.time * playerSpeed) * size);
 
-       /* if (isGrounded == false)
-        {
-            handleGravity();
-        }*/
-      
-        
+        /* if (isGrounded == false)
+         {
+             handleGravity();
+         }*/
 
+
+        handleGravity();
 
 
         dist = Vector3.Distance(Enemy.transform.position, this.transform.position);
@@ -270,8 +270,9 @@ public class PlayerMovements : MonoBehaviour
     {
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
         {
-
+            float oldy = this.rb.velocity.y;
             this.rb.velocity = this.rb.transform.forward * playerSpeed;
+            this.rb.velocity = new Vector3(this.rb.velocity.x, oldy, this.rb.velocity.z);
             //this.rb.AddForce(transform.forward * playerSpeed, ForceMode.Force);
         }
 
