@@ -21,11 +21,12 @@ public class PlayerMovements : MonoBehaviour
     //jump---------------------------------------------------------
     public float groundDistance = 0.4f;
     float countTime;
-   [SerializeField]
+    public float jumpExtraForce;
+    [SerializeField]
     public float jumpForce = 1.0f;
     public float initialJumpVelocity;
-    public float maxJumpHeight=1.0f;
-    public float maxJumpTime=0.5f;
+    public float maxJumpHeight = 1.0f;
+    public float maxJumpTime = 0.5f;
     public float gravityMultiplier;
     public float gravity = -9.8f;
     public float groundGravity = -2;
@@ -36,9 +37,9 @@ public class PlayerMovements : MonoBehaviour
     public Vector3 up;
     private Rigidbody rb;
     private Vector3 horizontalInput = Vector2.zero;
-   
+
     public int playerIndex;
-   
+
 
     public Shooter shooter;
     public LockOn LO;
@@ -64,15 +65,15 @@ public class PlayerMovements : MonoBehaviour
 
     void Start()
     {
-       this.rb=GetComponent<Rigidbody>();
-       this.camera1=FindObjectOfType<Camera>();
-        this.shooter=GetComponentInChildren<Shooter>();
-        this.LO=GetComponent<LockOn>();
+        this.rb = GetComponent<Rigidbody>();
+        this.camera1 = FindObjectOfType<Camera>();
+        this.shooter = GetComponentInChildren<Shooter>();
+        this.LO = GetComponent<LockOn>();
         this.RL = GetComponentInChildren<RocketLaucher>();
         this.Enemy = FindObjectOfType<Player2>().gameObject;
         m_Animator1 = GetComponentInChildren<Animator>();
         jumped = false;
-     
+
     }
 
 
@@ -84,7 +85,7 @@ public class PlayerMovements : MonoBehaviour
         initialJumpVelocity = (2 * maxJumpHeight) / timeToApexJump;
     }
 
-    
+
 
     public int GetPlayerIndex()
     {
@@ -101,11 +102,12 @@ public class PlayerMovements : MonoBehaviour
     }
     public void OnJump()
     {
-        if (isGrounded == true&&jumped==false){ 
+        if (isGrounded == true && jumped == false)
+        {
             this.jumped = true;
             countTime = maxJumpTime;
         }
-       
+
 
         // StartCoroutine(Jump(this.jumped));
 
@@ -128,15 +130,15 @@ public class PlayerMovements : MonoBehaviour
     }
     public void L2()
     {
-       
+
     }
     public void R1(bool Hold)
     {
         Debug.Log("Reduce Damage");
         block = Hold;
-        
-      m_Animator1.SetBool("Blocking", block);
-        
+
+        m_Animator1.SetBool("Blocking", block);
+
     }
     public void DPaddUp()
     {
@@ -154,14 +156,14 @@ public class PlayerMovements : MonoBehaviour
     {
         LO.DPadDown();
     }
-   
+
 
     //------------------------------------------------------------------------------------------------------------------
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawSphere(groundCheck.position, groundDistance);
-       // Gizmos.DrawSphere(this.transform.position,distClose);
+        // Gizmos.DrawSphere(this.transform.position,distClose);
     }
 
 
@@ -170,16 +172,16 @@ public class PlayerMovements : MonoBehaviour
 
     void HandleJump()
     {
-      
+
         if (jumped == true)
         {
-            
-            up = transform.up*initialJumpVelocity*0.5f;
+
+            up = transform.up * (jumpExtraForce + initialJumpVelocity) * 0.5f;
             up.x = 0;
             up.z = 0;
-            this.rb.velocity=up;
+            this.rb.velocity = up;
             isGrounded = false;
-            
+
             countTime -= Time.deltaTime;
             if (countTime <= maxJumpTime / 2)
             {
@@ -187,27 +189,32 @@ public class PlayerMovements : MonoBehaviour
                 countTime = maxJumpTime;
             }
         }
-      
-        
+
+
     }
     void handleGravity()
     {
-        if (isGrounded==true)
+        if (isGrounded == true)
         {
-           
-            this.rb.velocity += new Vector3(0, groundGravity, 0)*Time.deltaTime;
+
+            this.rb.velocity += new Vector3(0, groundGravity, 0) * Time.deltaTime;
         }
         else
         {
-           
-            this.rb.velocity += new Vector3(0, gravity, 0)*Time.deltaTime;
+            this.rb.velocity += new Vector3(0, gravity, 0) * Time.deltaTime;
         }
+       
+
+       
+
+
     }
+
 
     void Update()
     {
-        
-        
+
+
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
         {
             Vector3 forward = Camera.main.transform.forward;
@@ -222,19 +229,19 @@ public class PlayerMovements : MonoBehaviour
             if (move != Vector3.zero)
             {
                 transform.forward = move;
-             
+
             }
 
 
         }
         else
         {
-            m_Animator1.SetFloat("Moving",0);//criar animator para o segundo jogador para o player 2 poder se mover
-            if(horizontalInput.x == 0 && horizontalInput.y == 0 && isGrounded == true)
+            m_Animator1.SetFloat("Moving", 0);//criar animator para o segundo jogador para o player 2 poder se mover
+            if (horizontalInput.x == 0 && horizontalInput.y == 0 && isGrounded == true)
             {
-                rb.velocity = new Vector3(0, Physics.gravity.y, 0);
+                rb.velocity = new Vector3(0, groundGravity, 0);
             }
-          
+
         }
 
 
@@ -274,9 +281,10 @@ public class PlayerMovements : MonoBehaviour
             this.rb.velocity = this.rb.transform.forward * playerSpeed;
             this.rb.velocity = new Vector3(this.rb.velocity.x, oldy, this.rb.velocity.z);
             //this.rb.AddForce(transform.forward * playerSpeed, ForceMode.Force);
+
         }
 
-       
+
 
 
     }
@@ -284,20 +292,20 @@ public class PlayerMovements : MonoBehaviour
 
 
 
-  /*  IEnumerator Jump(bool jumped_)
-    {
-        if (jumped_ == true)
-        {
-            
-           // jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics.gravity.y));
-            //this.rb.velocity = this.rb.transform.up * jumpForce;
-           // rb.AddForce(Vector3.up*jumpForce, ForceMode.Impulse);
-            isGrounded = false;
-           yield return new WaitForSeconds(1);
-      
-        }
-        yield return null;
-    }*/
+    /*  IEnumerator Jump(bool jumped_)
+      {
+          if (jumped_ == true)
+          {
+
+             // jumpForce = Mathf.Sqrt(jumpHeight * -2 * (Physics.gravity.y));
+              //this.rb.velocity = this.rb.transform.up * jumpForce;
+             // rb.AddForce(Vector3.up*jumpForce, ForceMode.Impulse);
+              isGrounded = false;
+             yield return new WaitForSeconds(1);
+
+          }
+          yield return null;
+      }*/
 
 
 
@@ -314,8 +322,18 @@ public class PlayerMovements : MonoBehaviour
             jumped = false;
 
         }
+       
     }
-   
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.collider.CompareTag("Floor") && isGrounded == false)
+        {
+            isGrounded = true;
+         
+
+        }
+
+    }
 
 
 
