@@ -30,13 +30,16 @@ public class Shooter : MonoBehaviour
     public Animator m_Animator;
     public bool plAreClose;
     public bool Attacked;
+    public float mineBulletSpeed;
     // Start is called before the first frame update
     void Start()
     {
         LO=FindObjectOfType<LockOn>();
         magSizeRecharge = magSize;
         PM = GetComponentInParent<PlayerMovements>();
-        
+        this.bulletPrefab.GetComponent<Bullet>().bulletSpeed=mineBulletSpeed;
+
+
     }
 
     public void East()
@@ -119,8 +122,8 @@ public class Shooter : MonoBehaviour
         }
 
         TimerForRechargeEast = rechargeTimeEast;
-
         GameObject newBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        
         yield return new WaitForSeconds(0.1f);
     }
 

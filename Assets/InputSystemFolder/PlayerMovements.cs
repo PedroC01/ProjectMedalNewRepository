@@ -37,7 +37,7 @@ public class PlayerMovements : MonoBehaviour
     public Vector3 up;
     private Rigidbody rb;
     private Vector3 horizontalInput = Vector2.zero;
-
+    public bool count;
     public int playerIndex;
 
 
@@ -181,13 +181,8 @@ public class PlayerMovements : MonoBehaviour
             up.z = 0;
             this.rb.velocity = up;
             isGrounded = false;
-
-            countTime -= Time.deltaTime;
-            if (countTime <= maxJumpTime / 2)
-            {
-                jumped = false;
-                countTime = maxJumpTime;
-            }
+            count = true;
+           
         }
 
 
@@ -252,8 +247,7 @@ public class PlayerMovements : MonoBehaviour
              handleGravity();
          }*/
 
-
-        handleGravity();
+        HandleJump();
 
 
         dist = Vector3.Distance(Enemy.transform.position, this.transform.position);
@@ -267,9 +261,17 @@ public class PlayerMovements : MonoBehaviour
             closeRange = false;
             On.Invoke();
         }
-
-        HandleJump();
-
+        if (count == true)
+        {
+            countTime -= Time.deltaTime;
+            if (countTime <= maxJumpTime / 2)
+            {
+                jumped = false;
+                countTime = maxJumpTime;
+                count = false;
+            }
+        }
+       
     }
 
 
@@ -286,6 +288,8 @@ public class PlayerMovements : MonoBehaviour
 
 
 
+       
+        handleGravity();
 
     }
 
