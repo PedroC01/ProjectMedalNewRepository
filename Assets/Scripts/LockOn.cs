@@ -7,6 +7,9 @@ using UnityEngine.InputSystem;
 
 public class LockOn : MonoBehaviour
 {
+
+
+  
     [SerializeField]
     private GameObject[] medaparts;
     private Transform[] medapartsLock;
@@ -24,18 +27,18 @@ public class LockOn : MonoBehaviour
         if (this.gameObject.GetComponent<Player1>()==true)
         {
             medaparts = GameObject.FindGameObjectsWithTag("Player2Parts");
-            Enemy = FindObjectOfType<Player2>().gameObject;
+            this.Enemy = FindObjectOfType<Player2>().gameObject;
 
         }
-
+        
 
 
         //quando criar as peças direitas para o player 1 descomentar a baixo--------------------------------
-        //if (this.gameObject.GetComponent<Player2>()==true)
-        //{
-        //    medaparts = GameObject.FindGameObjectsWithTag("Player1Parts");
-        //    Enemy = FindObjectOfType<Player1>().gameObject;
-        //}
+        if (this.gameObject.GetComponent<Player2>() == true)
+        {
+            medaparts = GameObject.FindGameObjectsWithTag("Player1Parts");
+           this.Enemy = FindObjectOfType<Player1>().gameObject;
+        }
         //------------------------------
 
         medapartsLock = new Transform[medaparts.Length];

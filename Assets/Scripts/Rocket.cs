@@ -38,10 +38,14 @@ public class Rocket : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LO = FindObjectOfType<LockOn>();
+
+
+        
+
+        
         rb = GetComponent<Rigidbody>();
         //targetRb=target.GetComponent<Rigidbody>(); 
-         targetRb=LO.Enemy.GetComponent<Rigidbody>();
+        
        
 
     }
