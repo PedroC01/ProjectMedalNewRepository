@@ -12,15 +12,21 @@ public class MedaPartScript : MonoBehaviour
     public float Damage;
     public MedaHealthSlider healthSlider;
     public Animator animator_UI;
+    [Header("1=player_1,2 player_2, Filled Auto")]
     public int playerX;
     public int mdpart;
     void Start()
     {
-        healthSlider.SetEnergy();
+      //  healthSlider.SetEnergy();
         if (this.gameObject.GetComponentInParent<Player2>()==true)
         {
             animator_UI = GameObject.FindGameObjectWithTag("UIPlayer2").GetComponent<Animator>();
             playerX = 2;
+        }
+        if (this.gameObject.GetComponentInParent<Player1>() == true)
+        {
+            animator_UI = GameObject.FindGameObjectWithTag("UIPlayer1").GetComponent<Animator>();
+            playerX = 1;
         }
         mdpart = this.MedapartNumber;
         
@@ -29,7 +35,7 @@ public class MedaPartScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        
     }
 
 

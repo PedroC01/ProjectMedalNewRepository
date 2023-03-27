@@ -15,6 +15,7 @@ public class MedaHealthSlider : MonoBehaviour
     public Image fill;
     private float current;
     private float next;
+    public float sliderAnimationSpeed=1;
     void Start()
     {
         medaPartEnergy= medapart.GetComponent<MedaPartScript>().partEnergy;
@@ -28,11 +29,24 @@ public class MedaHealthSlider : MonoBehaviour
     void Update()
     {
         //  SetEnergy();
-
+        
         next = medapart.GetComponent<MedaPartScript>().partEnergy;
-        this.partEnergySlider.value = Mathf.Lerp(current, next, 0.5f);
-        current = next;
+        if (current != next)
+        {
+            current-=Time.deltaTime+sliderAnimationSpeed;
+            this.partEnergySlider.value = Mathf.Lerp(current, next, 1f);
+            if (current == next)
+            {
+                current = next;
+            }
+        }
+        
+        
         percentageValue = (this.partEnergySlider.value * 100) / maxEnergy;
+        if(65 <= percentageValue)
+        {
+            fill.color = gradient.Evaluate(1f);
+        }
         if (65 >= percentageValue && percentageValue >= 36)
         {
             fill.color = this.gradient.Evaluate(0.5f);
@@ -44,10 +58,10 @@ public class MedaHealthSlider : MonoBehaviour
     }
    
 
-    public void SetEnergy() {
+   /* public void SetEnergy() {
 
         next = medapart.GetComponent<MedaPartScript>().partEnergy;
-        this.partEnergySlider.value = Mathf.Lerp(current, next, 0.5f);
+        this.partEnergySlider.value = Mathf.Lerp(current--, next, 0.5f);
         current=next;
         percentageValue = (this.partEnergySlider.value * 100) / maxEnergy;
         if (65 >= percentageValue && percentageValue >= 36)
@@ -58,5 +72,5 @@ public class MedaHealthSlider : MonoBehaviour
         {
             fill.color=this.gradient.Evaluate(0f);
         }
-    }
+    }*/
 }

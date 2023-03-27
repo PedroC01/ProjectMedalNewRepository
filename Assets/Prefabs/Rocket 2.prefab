@@ -66,7 +66,8 @@ MonoBehaviour:
   rocketSpeed: 20
   target: {fileID: 0}
   targetRb: {fileID: 0}
-  autoDestructTimer: 0
+  autoDestructTimer: 5
+  canDestroy: 0
   _explosionPrefab: {fileID: 0}
   _speed: 40
   rotateSpeed: 360

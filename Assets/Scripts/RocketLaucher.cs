@@ -29,6 +29,7 @@ public class RocketLaucher : MonoBehaviour
         if (Shooted == true&&TimerForRecharge<=0)
         {
             StartCoroutine(Fire());
+          
         }
      
         
@@ -40,6 +41,10 @@ public class RocketLaucher : MonoBehaviour
         if (TimerForRecharge > 0)
         {
             Mathf.Clamp(TimerForRecharge -= Time.deltaTime, 0, TimerForRecharge);
+            if (TimerForRecharge <= 0)
+            {
+                Shooted = false;
+            }
         }
             
         
@@ -56,7 +61,6 @@ public class RocketLaucher : MonoBehaviour
         GameObject HeadPrefabBullet2 = Instantiate(rocketPrefab, firePointRocket2.position, firePointRocket2.rotation);
         HeadPrefabBullet.GetComponent<Rocket>().targetRb = this.LO.Enemy.GetComponent<Rigidbody>();
         HeadPrefabBullet2.GetComponent<Rocket>().targetRb = this.LO.Enemy.GetComponent<Rigidbody>();
-        Shooted = false;
         TimerForRecharge = rechargeTime;
         yield return new WaitForSecondsRealtime(1000);
     }

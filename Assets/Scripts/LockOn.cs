@@ -19,16 +19,18 @@ public class LockOn : MonoBehaviour
     public int getNewTarget;
     public bool Locked;
     private Vector3 horizontalInput = Vector2.zero;
-    public GameObject Target3D;
+    public GameObject Target3D1;
+    public GameObject Target3D2;
     public GameObject Enemy;
-    // Start is called before the first frame update
+    private int enemyReference;
+        // Start is called before the first frame update
     void Start()
     {
         if (this.gameObject.GetComponent<Player1>()==true)
         {
             medaparts = GameObject.FindGameObjectsWithTag("Player2Parts");
             this.Enemy = FindObjectOfType<Player2>().gameObject;
-
+            enemyReference = 2;
         }
         
 
@@ -38,6 +40,7 @@ public class LockOn : MonoBehaviour
         {
             medaparts = GameObject.FindGameObjectsWithTag("Player1Parts");
            this.Enemy = FindObjectOfType<Player1>().gameObject;
+            enemyReference = 1;
         }
         //------------------------------
 
@@ -113,7 +116,15 @@ public class LockOn : MonoBehaviour
     {
 
         targetDir = lockOnTarget.position;
-        Target3D.transform.position = targetDir;
+        if (this.enemyReference == 1)
+        {
+            Target3D1.transform.position = targetDir;
+        }
+        if (this.enemyReference == 2)
+        {
+            Target3D2.transform.position = targetDir;
+        }
+
     }
 
 

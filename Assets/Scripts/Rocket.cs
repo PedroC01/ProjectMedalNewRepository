@@ -12,9 +12,10 @@ public class Rocket : MonoBehaviour
    // public float leadTimePercentage;
     public GameObject target;
     public  Rigidbody targetRb;
-    public float autoDestructTimer;
+    public float autoDestructTimer=5;
     private LockOn LO;
-
+    private bool thisGotShooted;
+    public bool canDestroy;
     [Header("REFERENCES")]
    // [SerializeField] private Rigidbody _rb;
    // [SerializeField] private Target, _target;
@@ -45,8 +46,8 @@ public class Rocket : MonoBehaviour
         
         rb = GetComponent<Rigidbody>();
         //targetRb=target.GetComponent<Rigidbody>(); 
-        
        
+        thisGotShooted = true;
 
     }
 
@@ -78,11 +79,23 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        autoDestructTimer = math.clamp(0,10,autoDestructTimer-Time.deltaTime);
-        if(autoDestructTimer == 0)
+        if (thisGotShooted)
         {
-            Destroy(this.gameObject);
+            
+            this.autoDestructTimer = math.clamp(this.autoDestructTimer - Time.deltaTime, 0, 10);
+            if (this.autoDestructTimer <= 0)
+            {
+                canDestroy = true;
+                this.thisGotShooted = false;
+            }
+            else
+            {
+                canDestroy = false;
+                return;
+
+            }
         }
+        
     }
 
    
@@ -97,18 +110,33 @@ public class Rocket : MonoBehaviour
         AddDeviation(leadTimePercentage);
 
         RotateRocket();
+        if (canDestroy == true)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            return;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         
-        if (collision.collider.GetComponent<MedaPartScript>().playerX==2)
+        Destroy(this.gameObject);
+    }
+    void OnTriggerEnter(Collider other)
+    {
+
+        if (other.GetComponent<MedaPartScript>().playerX == 2)
         {
-            collision.collider.GetComponent<MedaPartScript>().Damage = -30;
+            other.GetComponent<MedaPartScript>().Damage = -30;
+            Destroy(this.gameObject);
         }
         //  this.bulletSpeed = 0;
         // this.rb.velocity = Vector3.zero;
-        Destroy(this.gameObject);
+        
+
     }
 
 }
