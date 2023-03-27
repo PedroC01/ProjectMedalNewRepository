@@ -179,10 +179,10 @@ MonoBehaviour:
     m_Value: -9.8
   maximumHeight:
     m_OverrideState: 1
-    m_Value: 66.43
+    m_Value: 36.2
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 89.6
+    m_Value: 57.21
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
@@ -254,7 +254,7 @@ MonoBehaviour:
   active: 1
   skyType:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 1
   cloudType:
     m_OverrideState: 0
     m_Value: 0
@@ -297,13 +297,13 @@ MonoBehaviour:
     m_Value: 0
   compensation:
     m_OverrideState: 1
-    m_Value: 0.08
+    m_Value: 1.68
   limitMin:
     m_OverrideState: 1
-    m_Value: -2.6211717
+    m_Value: 11.612271
   limitMax:
     m_OverrideState: 1
-    m_Value: 14.0305605
+    m_Value: 9.83
   curveMap:
     m_OverrideState: 0
     m_Value:
