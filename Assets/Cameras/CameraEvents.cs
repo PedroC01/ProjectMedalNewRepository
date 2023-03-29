@@ -27,8 +27,8 @@ public class CameraEvents : MonoBehaviour
     public CinemachineVirtualCamera closeCameraXZnegativos;
     public CinemachineVirtualCamera closeCameraXpositivoZnegativo;
     public CinemachineVirtualCamera closeCameraXnegativoZpositivo;
-    [SerializeField]
-    public Animator camerasAnimator;
+   // [SerializeField]
+   // public Animator camerasAnimator;
 
 
     // Start is called before the first frame update

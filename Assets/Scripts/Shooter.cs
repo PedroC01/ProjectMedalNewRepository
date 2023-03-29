@@ -86,6 +86,7 @@ public class Shooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        lookat = LO.lockOnTarget.transform;
         if (TimerForRechargeEast > 0)
         {
             Mathf.Clamp(TimerForRechargeEast -= Time.deltaTime, 0, TimerForRechargeEast);
@@ -118,7 +119,7 @@ public class Shooter : MonoBehaviour
         if (LO.Locked == true)
         {
             this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
-            lookat = LO.lockOnTarget;
+            lookat = LO.lockOnTarget.transform;
         }
 
         TimerForRechargeEast = rechargeTimeEast;
@@ -156,7 +157,7 @@ public class Shooter : MonoBehaviour
                
                
             }
-   
+            yield return new WaitForSeconds(0.1f);
         }
         yield return new WaitForSeconds(0.1f);
     }
