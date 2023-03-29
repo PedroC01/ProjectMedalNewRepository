@@ -19,7 +19,7 @@ public class Shooter : MonoBehaviour
     public Transform FullAutoFirePoint1;
     public Transform FullAutoFirePoint2;
     public Transform lookat;
-    private LockOn LO;
+    public LockOn LO;
     public float dealDamage;
     public bool shootFullAuto;
     public int magSize;
@@ -34,7 +34,7 @@ public class Shooter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LO=FindObjectOfType<LockOn>();
+        LO = GetComponentInParent<LockOn>();
         magSizeRecharge = magSize;
         PM = GetComponentInParent<PlayerMovements>();
         this.bulletPrefab.GetComponent<Bullet>().bulletSpeed=mineBulletSpeed;
@@ -135,20 +135,22 @@ public class Shooter : MonoBehaviour
     {
      while(shootFullAuto == true)
         {
-            if (LO.Locked == true)
-            {
+          //  if (LO.Locked == true)
+          //  {
                 this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
                 lookat = LO.lockOnTarget;
-            }
+          //  }
             if (magSize > 1)
             {
                 GameObject newBullet = Instantiate(bulletPrefab, FullAutoFirePoint1.position, FullAutoFirePoint1.rotation);
                 Mathf.Clamp(magSize--, 0, magSizeRecharge);
+                
             }
             if (magSize > 0)
             {
                 GameObject newBullet2 = Instantiate(bulletPrefab, FullAutoFirePoint2.position, FullAutoFirePoint2.rotation);
                 Mathf.Clamp(magSize--, 0, magSizeRecharge);
+
             }
             if (magSize <= 0)
             {
@@ -157,9 +159,9 @@ public class Shooter : MonoBehaviour
                
                
             }
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSecondsRealtime(1f);
         }
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSecondsRealtime(0.1f);
     }
    
 }
