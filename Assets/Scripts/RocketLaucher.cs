@@ -15,6 +15,8 @@ public class RocketLaucher : MonoBehaviour
     public Transform firePointRocket2;
     public Transform lookat;
     public LockOn LO;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,17 +26,16 @@ public class RocketLaucher : MonoBehaviour
 
     public void North()
     {
-       
+
         Shooted = true;
-        if (Shooted == true&&TimerForRecharge<=0)
+        if (Shooted == true && TimerForRecharge <= 0)
         {
             StartCoroutine(Fire());
-          
-        }
-     
+           
         
-    }
 
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -62,6 +63,6 @@ public class RocketLaucher : MonoBehaviour
         HeadPrefabBullet.GetComponent<Rocket>().targetRb = this.LO.Enemy.GetComponent<Rigidbody>();
         HeadPrefabBullet2.GetComponent<Rocket>().targetRb = this.LO.Enemy.GetComponent<Rigidbody>();
         TimerForRecharge = rechargeTime;
-        yield return new WaitForSecondsRealtime(1000);
+        yield return new WaitForSecondsRealtime(0.1f);
     }
 }
