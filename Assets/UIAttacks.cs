@@ -46,17 +46,18 @@ public class UIAttacks : MonoBehaviour
       
         if (timer>0)
             {
-                UiNorthAttack.SetBool("Shoot",true);
+                UiNorthAttack.Play("Left",1);
                 TimeActive.Invoke();
-            }
-          //  rechargeUi.transform.localScale = new Vector3(RL.TimerForRecharge, RL.TimerForRecharge, RL.TimerForRecharge);
+           // rechargeUi.transform.localScale = new Vector3(timer, timer, timer);
+        }
+           
 
-            if (RL.TimerForRecharge <= 0)
-            {
-                UiNorthAttack.SetBool("Shoot", false);
+        if (RL.TimerForRecharge <= 0)
+        {
+          UiNorthAttack.SetBool("ShootUp", false);
              
-                TimeZero.Invoke();
-            }
+          TimeZero.Invoke();
+        }
 
         timer = (int)RL.TimerForRecharge;
         currentTimeText.text = timer.ToString();

@@ -19,7 +19,9 @@ public class Rocket : MonoBehaviour
     [Header("REFERENCES")]
    // [SerializeField] private Rigidbody _rb;
    // [SerializeField] private Target, _target;
-    [SerializeField] private GameObject _explosionPrefab;
+    [SerializeField] 
+    private GameObject _explosionPrefab;
+    public float explosionRadious;
 
     [Header("MOVEMENT")]
     [SerializeField] private float _speed = 15;
@@ -35,7 +37,7 @@ public class Rocket : MonoBehaviour
     [SerializeField] private float deviationAmount = 50;
     [SerializeField] private float deviationSpeed = 2;
 
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -122,20 +124,34 @@ public class Rocket : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+        Instantiate(_explosionPrefab, this.transform.position, this.transform.rotation);
         Destroy(this.gameObject);
     }
     void OnTriggerEnter(Collider other)
     {
+        var othercolliders=Physics.OverlapSphere(this.transform.position, explosionRadious);
+        Instantiate(_explosionPrefab,this.transform.position,this.transform.rotation);
+        foreach(Collider coll in othercolliders)
+        {
+            if (coll.GetComponent<MedaPartScript>().playerX == 2 || coll.GetComponent<MedaPartScript>().playerX == 1)
+            {
+             //   coll.GetComponent<MedaPartScript>().Damage = -30;
+                Destroy(this.gameObject);
+            }
+            
+        }
+        Destroy(this.gameObject);
 
-        if (other.GetComponent<MedaPartScript>().playerX == 2)
+        if (other.GetComponent<MedaPartScript>().playerX == 2 || other.GetComponent<MedaPartScript>().playerX == 1)
         {
             other.GetComponent<MedaPartScript>().Damage = -30;
             Destroy(this.gameObject);
         }
-        //  this.bulletSpeed = 0;
-        // this.rb.velocity = Vector3.zero;
-        
+        if (other.CompareTag("Floor"))
+        {
+
+            Destroy(this.gameObject);
+        }
 
     }
 

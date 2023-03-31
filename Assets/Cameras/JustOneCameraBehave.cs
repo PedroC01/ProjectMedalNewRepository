@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Cinemachine;
 
 public class JustOneCameraBehave : MonoBehaviour
@@ -9,6 +10,8 @@ public class JustOneCameraBehave : MonoBehaviour
     public Transform player1;
     [SerializeField]
     public Transform player2;
+    
+
     public Transform lastFollowed;
     public int distToChange;
     private float distance;
@@ -17,12 +20,24 @@ public class JustOneCameraBehave : MonoBehaviour
     private float disToPlayer2;
     public int intDisToPlayer1;
     public int intDisToPlayer2;
+    public Camera cam;
     public Transform cameraTransform;
     public CinemachineVirtualCamera cinemachineTheCamera;
     public bool SwitchFollowTarget;
     public bool changed = false;
     public float counterToChange;
     private float counterReset;
+    [SerializeField]
+    public Transform groupTr;
+
+    [SerializeField]
+    public UnityEvent offCamera;
+    [SerializeField]
+    public UnityEvent onCamera;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +66,18 @@ public class JustOneCameraBehave : MonoBehaviour
         intDisToPlayer1 = (int)disToPlayer1;
         intDisToPlayer2 = (int)disToPlayer2;
 
+       
 
+        if (distance>26)
+        {
+     
+            cinemachineTheCamera.m_Lens.FieldOfView = 30;
+        }
+        if (distance<=26)
+        {
+            cinemachineTheCamera.m_Lens.FieldOfView = 20;
+        }
+       
 
         if (distance <= distToChange)
         {
@@ -59,16 +85,18 @@ public class JustOneCameraBehave : MonoBehaviour
             {
                 if (intDisToPlayer1 < intDisToPlayer2)
                 {
-                    cinemachineTheCamera.Follow = player1;
+                   cinemachineTheCamera.Follow = player1;
                     counterToChange = counterReset;
                     lastFollowed = cinemachineTheCamera.Follow;
+                    cinemachineTheCamera.Follow = groupTr;
                     changed = true;
                 }
                 if (intDisToPlayer1 > intDisToPlayer2)
                 {
-                    cinemachineTheCamera.Follow = player2;
+                   cinemachineTheCamera.Follow = player2;
                     counterToChange = counterReset;
                     lastFollowed = cinemachineTheCamera.Follow;
+                    cinemachineTheCamera.Follow = groupTr;
                     changed = true;
                 }
                 if (distance > distToChange)

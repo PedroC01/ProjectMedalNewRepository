@@ -56,18 +56,32 @@ public class MedaPartScript : MonoBehaviour
     //}
     void OnTriggerEnter(Collider other)
     {
-
-        if (other.CompareTag("Player1Bullet"))
+        if (playerX == 2)
         {
-           
-            this.partEnergy += this.Damage;
-            //  healthSlider.SetEnergy();
+            if (other.CompareTag("Player1Bullet"))
+            {
 
-            animator_UI.SetTrigger(this.mdpart.ToString());
-            Destroy(other.gameObject);  
+                this.partEnergy += this.Damage;
+                //  healthSlider.SetEnergy();
 
+                animator_UI.SetTrigger(this.mdpart.ToString());
+                Destroy(other.gameObject);
+
+            }
         }
-      
+        if (playerX == 1)
+        {
+            if (other.CompareTag("Player2Bullet"))
+            {
+
+                this.partEnergy += this.Damage;
+                //  healthSlider.SetEnergy();
+
+                animator_UI.SetTrigger(this.mdpart.ToString());
+                Destroy(other.gameObject);
+
+            }
+        }
     }
 
 }

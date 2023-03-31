@@ -43,12 +43,12 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<MedaPartScript>().playerX == 2)
+        if (other.GetComponent<MedaPartScript>().playerX == 2|| other.GetComponent<MedaPartScript>().playerX == 1)
         {
             other.GetComponent<MedaPartScript>().Damage = other.GetComponent<MedaPartScript>().Damage - 2;
             Destroy(this.gameObject);
         }
-        if (other.CompareTag("Floor") ||other.CompareTag("InvisiWalls"))
+        if (other.CompareTag("Floor"))
         {
             Destroy(this.gameObject);
         }

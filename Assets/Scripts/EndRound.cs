@@ -24,8 +24,13 @@ public class EndRound : MonoBehaviour
         while (battle)
         {
             currentTime=Mathf.Clamp(currentTime-Time.deltaTime,0,timeToEndRound);
+           
             currentTime = (int)currentTime;
             currentTimeText.text = currentTime.ToString();
+            if (currentTime <= 0)
+            {
+                Application.Quit();
+            }
             yield return new WaitForSecondsRealtime(1);
         }
     

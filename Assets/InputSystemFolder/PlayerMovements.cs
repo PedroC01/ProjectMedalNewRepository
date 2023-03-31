@@ -35,12 +35,13 @@ public class PlayerMovements : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundMask;
     public Vector3 up;
-    private Rigidbody rb;
+    public Rigidbody rb;
     private Vector3 horizontalInput = Vector2.zero;
     public bool count;
     public int playerIndex;
-
-
+    public float DamageReduction;
+    [SerializeField]
+    public Animator UiNorthAttack;
     public Shooter shooter;
     public LockOn LO;
     public RocketLaucher RL;
@@ -71,10 +72,25 @@ public class PlayerMovements : MonoBehaviour
         this.shooter = GetComponentInChildren<Shooter>();
         this.LO = GetComponent<LockOn>();
         this.RL = GetComponentInChildren<RocketLaucher>();
-        this.Enemy = FindObjectOfType<Player2>().gameObject;
+       
         m_Animator1 = GetComponentInChildren<Animator>();
         jumped = false;
+        if (this.gameObject.GetComponent<Player1>() == true)
+        {
+           
+            this.Enemy = FindObjectOfType<Player2>().gameObject;
+          
+        }
 
+
+
+      
+        if (this.gameObject.GetComponent<Player2>() == true)
+        {
+           
+            this.Enemy = FindObjectOfType<Player1>().gameObject;
+            
+        }
     }
 
 
@@ -178,6 +194,7 @@ public class PlayerMovements : MonoBehaviour
         {
 
             up = transform.up * (jumpExtraForce + initialJumpVelocity) * 0.5f;
+            UiNorthAttack.Play("Down", 4);
             up.x = 0;
             up.z = 0;
             this.rb.velocity = up;
@@ -209,7 +226,10 @@ public class PlayerMovements : MonoBehaviour
 
     void Update()
     {
+        if (block)
+        {
 
+        }
 
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
         {
