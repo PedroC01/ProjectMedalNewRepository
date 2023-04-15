@@ -46,8 +46,8 @@ public class UIAttacks : MonoBehaviour
       
         if (timer>0)
             {
-                UiNorthAttack.Play("Left",1);
-                TimeActive.Invoke();
+            UiNorthAttack.SetBool("ShootUp", true);
+            TimeActive.Invoke();
            // rechargeUi.transform.localScale = new Vector3(timer, timer, timer);
         }
            

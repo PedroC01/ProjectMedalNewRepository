@@ -131,7 +131,7 @@ public class Rocket : MonoBehaviour
     {
         var othercolliders=Physics.OverlapSphere(this.transform.position, explosionRadious);
         Instantiate(_explosionPrefab,this.transform.position,this.transform.rotation);
-        foreach(Collider coll in othercolliders)
+       /* foreach(Collider coll in othercolliders)
         {
             if (coll.GetComponent<MedaPartScript>().playerX == 2 || coll.GetComponent<MedaPartScript>().playerX == 1)
             {
@@ -139,7 +139,7 @@ public class Rocket : MonoBehaviour
                 Destroy(this.gameObject);
             }
             
-        }
+        }*/
         Destroy(this.gameObject);
 
         if (other.GetComponent<MedaPartScript>().playerX == 2 || other.GetComponent<MedaPartScript>().playerX == 1)

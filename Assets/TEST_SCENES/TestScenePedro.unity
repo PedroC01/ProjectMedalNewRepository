@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 258.2676, g: 267.9583, b: 242.68411, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8224,7 +8224,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885839505}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0141636515}
+  m_LocalPosition: {x: 0, y: 0, z: 0.01895415}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -8233,7 +8233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.015213013, y: 0.0041503906}
+  m_AnchoredPosition: {x: -0.016268095, y: 0.0028814333}
   m_SizeDelta: {x: 483, y: 483}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &885839507
@@ -11309,8 +11309,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113746959}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.38, y: 0.93, z: 11.13}
-  m_LocalScale: {x: 0.57535046, y: 0.57535046, z: 0.57535046}
+  m_LocalPosition: {x: 1.2909, y: 0.93, z: 11.13}
+  m_LocalScale: {x: 0.061723597, y: 0.061723597, z: 0.061723597}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -11740,8 +11740,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146949485}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 0.93, z: 11.13}
-  m_LocalScale: {x: 0.57535046, y: 0.57535046, z: 0.57535046}
+  m_LocalPosition: {x: 1.0291, y: 0.93, z: 11.13}
+  m_LocalScale: {x: 0.061723597, y: 0.061723597, z: 0.061723597}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -15010,7 +15010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa79f4c9a858734c9775274a87399c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  medapart: {fileID: 0}
+  medapart: {fileID: 477017177}
   medaPartEnergy: 0
   partEnergySlider: {fileID: 1338517903}
   percentageValue: 0
@@ -16973,6 +16973,7 @@ GameObject:
   - component: {fileID: 1522061737}
   - component: {fileID: 1522061739}
   - component: {fileID: 1522061738}
+  - component: {fileID: 1522061740}
   m_Layer: 5
   m_Name: Down
   m_TagString: Untagged
@@ -17040,6 +17041,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522061736}
   m_CullTransparentMesh: 1
+--- !u!95 &1522061740
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522061736}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dedcbcc67f0d55d48b4ae485fe5c3238, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1532118284
 GameObject:
   m_ObjectHideFlags: 0
@@ -19456,7 +19477,7 @@ Camera:
     height: 1
   near clip plane: 0.001
   far clip plane: 215.01
-  field of view: 30.000004
+  field of view: 20
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -19482,7 +19503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823688464}
   m_LocalRotation: {x: 0.0656124, y: 0.31757388, z: -0.022033088, w: 0.94570416}
-  m_LocalPosition: {x: -20.08178, y: -1.3245916, z: -40.832405}
+  m_LocalPosition: {x: -23.731285, y: -0.008257389, z: -45.48174}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24236,7 +24257,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 1314757490}
   m_Follow: {fileID: 1314757490}
   m_Lens:
-    FieldOfView: 30
+    FieldOfView: 20
     OrthographicSize: 10
     NearClipPlane: 0.001
     FarClipPlane: 215.01
@@ -52957,7 +52978,7 @@ MonoBehaviour:
   count: 0
   playerIndex: 0
   DamageReduction: 0
-  UiNorthAttack: {fileID: 1615359211}
+  UiNorthAttack: {fileID: 1522061740}
   shooter: {fileID: 0}
   LO: {fileID: 0}
   RL: {fileID: 0}

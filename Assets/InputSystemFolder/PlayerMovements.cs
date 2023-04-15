@@ -122,6 +122,7 @@ public class PlayerMovements : MonoBehaviour
         if (isGrounded == true && jumped == false)
         {
             this.jumped = true;
+            UiNorthAttack.SetTrigger("Jump");
             countTime = maxJumpTime;
         }
 
@@ -194,7 +195,6 @@ public class PlayerMovements : MonoBehaviour
         {
 
             up = transform.up * (jumpExtraForce + initialJumpVelocity) * 0.5f;
-            UiNorthAttack.Play("Down", 4);
             up.x = 0;
             up.z = 0;
             this.rb.velocity = up;
