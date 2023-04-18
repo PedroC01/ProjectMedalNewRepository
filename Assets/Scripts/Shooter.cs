@@ -72,6 +72,10 @@ public class Shooter : MonoBehaviour
         this.Shooted = false;
 
     }
+
+    /// <summary>
+    /// tenho de fazer a verificação do inicio, final, e se aind a estou a disparar e com essa inforamação chamar a couroutine do fullauto
+    /// </summary>
     public void West()
     {
         shootFullAuto = true;
