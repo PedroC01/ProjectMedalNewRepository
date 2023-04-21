@@ -48,7 +48,19 @@ public class PlayerInputHandler : MonoBehaviour
     }
     public void OnWest(CallbackContext context)
     {
-        pMovement.OnWest();
+   
+        if (context.started == true)
+        {
+            pMovement.OnWest();
+        }
+        if (context.performed == true)
+        {
+            pMovement.OnWest();
+        }
+        if (context.canceled == true)
+        {
+            pMovement.shooter.shootFullAuto = false;
+        }
     }
     public void L1(CallbackContext context)
     {

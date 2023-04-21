@@ -93,7 +93,7 @@ public class Shooter : MonoBehaviour
             m_Animator.SetTrigger("MeleeWest");
            return ;
         }
-        shootFullAuto = false;
+       // shootFullAuto = false;
         
     }
 
@@ -177,8 +177,7 @@ public class Shooter : MonoBehaviour
 
     private IEnumerator FireFullAuto()
     {
-     while(shootFullAuto == true)
-        {
+    
           //  if (LO.Locked == true)
           //  {
            // this.thisPlayer.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
@@ -187,14 +186,16 @@ public class Shooter : MonoBehaviour
             this.FullAutoFirePoint1.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             this.FullAutoFirePoint2.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             //  }
-            if (magSize > 1)
+            if (magSize > 0)
             {
                 GameObject newBullet = Instantiate(bulletPrefab, FullAutoFirePoint1.position, FullAutoFirePoint1.rotation);
                 Mathf.Clamp(magSize--, 0, magSizeRecharge);
                 
             }
+           yield return new WaitForSecondsRealtime(0.1f);
             if (magSize > 0)
             {
+              
                 GameObject newBullet2 = Instantiate(bulletPrefab, FullAutoFirePoint2.position, FullAutoFirePoint2.rotation);
                 Mathf.Clamp(magSize--, 0, magSizeRecharge);
 
@@ -207,8 +208,7 @@ public class Shooter : MonoBehaviour
                
             }
             
-            yield return new WaitForSecondsRealtime(1f);
-        }
+        
         yield return new WaitForSecondsRealtime(0.1f);
     }
    
