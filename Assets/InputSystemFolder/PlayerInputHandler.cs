@@ -61,6 +61,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             pMovement.shooter.shootFullAuto = false;
         }
+        ///criar release action----------------------------------------------------------------------------------------------------------------
     }
     public void L1(CallbackContext context)
     {
