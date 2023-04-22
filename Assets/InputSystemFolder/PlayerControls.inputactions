@@ -84,6 +84,15 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Hold",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "LeftArmAttackrelease",
+                    "type": "Button",
+                    "id": "85d9c637-adaa-4364-9417-daec07dad6ff",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
                     "initialStateCheck": false
                 },
                 {
@@ -378,6 +387,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Block",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2e588827-f1d2-4550-af36-52b13c25db21",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftArmAttackrelease",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d90c2f75-42f6-491e-803a-c35c572d63b9",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftArmAttackrelease",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

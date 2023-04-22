@@ -138,6 +138,10 @@ public class PlayerMovements : MonoBehaviour
     {
         shooter.West();
     }
+    public void OnWestRelease()
+    {
+        shooter.WestRelease();
+    }
     public void northButton()
     {
         RL.North();
