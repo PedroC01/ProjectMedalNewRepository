@@ -28,7 +28,7 @@ public class LockOn : MonoBehaviour
     {
         if (this.gameObject.GetComponent<Player1>()==true)
         {
-            medaparts = GameObject.FindGameObjectsWithTag("Player2Parts");
+           this.medaparts = GameObject.FindGameObjectsWithTag("Player2Parts");
             this.Enemy = FindObjectOfType<Player2>().gameObject;
             enemyReference = 2;
         }
@@ -38,24 +38,24 @@ public class LockOn : MonoBehaviour
         //quando criar as peças direitas para o player 1 descomentar a baixo--------------------------------
         if (this.gameObject.GetComponent<Player2>() == true)
         {
-            medaparts = GameObject.FindGameObjectsWithTag("Player1Parts");
+           this.medaparts = GameObject.FindGameObjectsWithTag("Player1Parts");
            this.Enemy = FindObjectOfType<Player1>().gameObject;
             enemyReference = 1;
         }
         //------------------------------
 
-        medapartsLock = new Transform[medaparts.Length];
+        this.medapartsLock = new Transform[this.medaparts.Length];
 
         //Organiazar as peças na ordem certa pq vai ser necessario para selecionar onde queremos o LockOn
-        for (int i=0; i < medaparts.Length-1; i++)
+        for (int i=0; i < this.medaparts.Length-1; i++)
         {
-            for(int j=i+1; j < medaparts.Length; j++)
+            for(int j=i+1; j < this.medaparts.Length; j++)
             {
-               if(medaparts[i].GetComponent<MedaPartScript>().MedapartNumber> medaparts[j].GetComponent<MedaPartScript>().MedapartNumber)
+               if(this.medaparts[i].GetComponent<MedaPartScript>().MedapartNumber > this.medaparts[j].GetComponent<MedaPartScript>().MedapartNumber)
                 {
-                    temp= medaparts[i];
-                    medaparts[i] = medaparts[j];
-                    medaparts[j]=temp;
+                    this.temp= this.medaparts[i];
+                    this.medaparts[i] = this.medaparts[j];
+                    this.medaparts[j]=this.temp;
                    
                 }
 
@@ -65,24 +65,24 @@ public class LockOn : MonoBehaviour
         //Agora guardar as transforms já na ordem certa ou guardar logo só a posição da target;
         for (int i = 0; i < medaparts.Length; i++)
         {
-            medapartsLock[i] = medaparts[i].GetComponent<Transform>();
+            this.medapartsLock[i] = medaparts[i].GetComponent<Transform>();
         }
 
-
+/*
         for (int i = 0; i < medapartsLock.Length; i++)
         {
             Debug.Log(i+"="+medapartsLock[i]);
-        }
+        }*/
 
        
-        lockOnTarget = medapartsLock[0];
+        lockOnTarget = medaparts[0].transform;
 
 
     }
 
     public void DPadUp()
     {
-            lockOnTarget = medapartsLock[1];
+        lockOnTarget = medaparts[1].transform;
       
     }
 

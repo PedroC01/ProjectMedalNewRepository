@@ -9,6 +9,7 @@ public class MedaPartScript : MonoBehaviour
     [Header("0=Body,1=Head,2=LeftArm,3=RightArm,4=legs")]
     public int MedapartNumber;
     public float partEnergy=20;
+    private float partEnergyInitial = 20;
     public float Damage;
     public MedaHealthSlider healthSlider;
     public Animator animator_UI;
@@ -56,7 +57,7 @@ public class MedaPartScript : MonoBehaviour
     //}
     void OnTriggerEnter(Collider other)
     {
-        if (playerX == 2)
+     /*   if (playerX == 2)
         {
             if (other.CompareTag("Player1Bullet"))
             {
@@ -81,7 +82,19 @@ public class MedaPartScript : MonoBehaviour
                 Destroy(other.gameObject);
 
             }
-        }
+        }*/
     }
+     public void ApplyDamage(int damage)
+    {
 
+
+        this.partEnergy = Mathf.Clamp(this.partEnergy -= damage, 0, partEnergyInitial);
+      
+
+
+
+
+       return;
+
+    }
 }

@@ -100,7 +100,11 @@ public class Rocket : MonoBehaviour
         
     }
 
-   
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, explosionRadious);
+    }
     void FixedUpdate()
     {
         rb.velocity = transform.forward * rocketSpeed;
@@ -122,31 +126,37 @@ public class Rocket : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+  /*  private void OnCollisionEnter(Collision collision)
     {
         Instantiate(_explosionPrefab, this.transform.position, this.transform.rotation);
+       
         Destroy(this.gameObject);
-    }
+    }*/
     void OnTriggerEnter(Collider other)
     {
-        var othercolliders=Physics.OverlapSphere(this.transform.position, explosionRadious);
+        
         Instantiate(_explosionPrefab,this.transform.position,this.transform.rotation);
-       /* foreach(Collider coll in othercolliders)
-        {
-            if (coll.GetComponent<MedaPartScript>().playerX == 2 || coll.GetComponent<MedaPartScript>().playerX == 1)
+        
+            Collider[] colliders = Physics.OverlapSphere(this.transform.position, explosionRadious);
+            foreach (Collider coll in colliders)
             {
-             //   coll.GetComponent<MedaPartScript>().Damage = -30;
-                Destroy(this.gameObject);
+            if (coll.GetComponent<MedaPartScript>())
+            {
+ 
+                    coll.GetComponent<MedaPartScript>().ApplyDamage(30);
+                
             }
-            
-        }*/
-        Destroy(this.gameObject);
-
-        if (other.GetComponent<MedaPartScript>().playerX == 2 || other.GetComponent<MedaPartScript>().playerX == 1)
-        {
-            other.GetComponent<MedaPartScript>().Damage = -30;
+              
+            }
+            Debug.Log("usou trigger");
+        
             Destroy(this.gameObject);
-        }
+
+     //   if (other.GetComponent<MedaPartScript>().playerX == 2 || other.GetComponent<MedaPartScript>().playerX == 1)
+       // {
+        //    other.GetComponent<MedaPartScript>().Damage = -30;
+         //   Destroy(this.gameObject);
+      //  }
         if (other.CompareTag("Floor"))
         {
 

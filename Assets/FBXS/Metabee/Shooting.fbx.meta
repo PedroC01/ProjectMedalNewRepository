@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 57146ef1a00eca640959a38fd8be652e
+guid: f1aa84456fae11f49bb25c598ac5ef5d
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
-      74: -9121621101649706817
-    second: Running
+      74: -5053827218218222298
+    second: Shooting
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -36,11 +36,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Running
-      takeName: Running
+      name: Shooting
+      takeName: Shooting
       internalID: 0
-      firstFrame: 1
-      lastFrame: 320
+      firstFrame: 170
+      lastFrame: 180
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -63,7 +63,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+      additiveReferencePoseFrame: 170
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -120,7 +120,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.0069999998
+    globalScale: 0.7
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

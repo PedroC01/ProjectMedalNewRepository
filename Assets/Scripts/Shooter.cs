@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using Unity.VisualScripting;
@@ -41,9 +41,9 @@ public class Shooter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LO = GetComponentInParent<LockOn>();
+        LO = GetComponent<LockOn>();
         magSizeRecharge = magSize;
-        PM = GetComponentInParent<PlayerMovements>();
+        PM = GetComponent<PlayerMovements>();
         this.bulletPrefab.GetComponent<Bullet>().bulletSpeed=mineBulletSpeed;
        // this.thisPlayer=GetComponentInParent<Transform>();
 
@@ -83,6 +83,7 @@ public class Shooter : MonoBehaviour
         {
             if (shootFullAuto == true && TimerForRechargeEast <= 0)
             {
+               
                 StartCoroutine(FireFullAuto());
                 return;
             }
@@ -101,7 +102,10 @@ public class Shooter : MonoBehaviour
     {
     
          this.shootFullAuto = false;
+        
         StopCoroutine(FireFullAuto());
+        m_Animator.SetBool("ShootingLeft", false);
+
     }
 
 
@@ -183,13 +187,18 @@ public class Shooter : MonoBehaviour
     {
         while (shootFullAuto == true)
         {
-
-
+          
+            if (PM.IsMoving == false)
+            {
+             
+                this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, this.transform.position.y, LO.lockOnTarget.transform.position.z));
+            }
+            m_Animator.SetBool("ShootingLeft", true);
             //  if (LO.Locked == true)
             //  {
             // this.thisPlayer.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             lookat = LO.lockOnTarget;
-            this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
+         //   this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             this.FullAutoFirePoint1.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             this.FullAutoFirePoint2.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             //  }
@@ -217,6 +226,7 @@ public class Shooter : MonoBehaviour
 
             yield return null;
         }
+        m_Animator.SetBool("ShootingLeft", false);
     }
    
 }

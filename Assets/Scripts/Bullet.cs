@@ -30,27 +30,21 @@ public class Bullet : MonoBehaviour
     }
     /* private void OnCollisionEnter(Collision collision)
      {
-         if (collision.collider.GetComponent<MedaPartScript>().playerX == 2)
-         {
-             collision.collider.GetComponent<MedaPartScript>().Damage = collision.collider.GetComponent<MedaPartScript>().Damage-2;
-             Destroy(this.gameObject);
-         }
-         if (collision.collider.CompareTag("Floor") || collision.collider.CompareTag("InvisiWalls"))
-         {
-             Destroy(this.gameObject);
-         }
-         Destroy(this.gameObject);
-       //  this.bulletSpeed = 0;
-        // this.rb.velocity = Vector3.zero;
-     }*/
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<MedaPartScript>().playerX == 2|| other.GetComponent<MedaPartScript>().playerX == 1)
+         if (other.GetComponent<MedaPartScript>().playerX == 2|| other.GetComponent<MedaPartScript>().playerX == 1)
         {
             other.GetComponent<MedaPartScript>().Damage = other.GetComponent<MedaPartScript>().Damage - 2;
             Destroy(this.gameObject);
         }
+     }*/
+
+    private void OnTriggerEnter(Collider other)
+    {
+       
+        if (other.GetComponent<MedaPartScript>().playerX == 2|| other.GetComponent<MedaPartScript>().playerX == 1)
+        {
+            other.GetComponent<MedaPartScript>().ApplyDamage(2);
+        }
+        else { return; }
         if (other.CompareTag("Floor"))
         {
             Destroy(this.gameObject);

@@ -57,7 +57,7 @@ public class PlayerMovements : MonoBehaviour
     public UnityEvent On;
     [SerializeField]
     public UnityEvent Off;
-
+    public bool IsMoving;
  
 
     private void Awake()
@@ -237,6 +237,7 @@ public class PlayerMovements : MonoBehaviour
 
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
         {
+            IsMoving = true;
             Vector3 forward = Camera.main.transform.forward;
             Vector3 right = Camera.main.transform.right;
             forward.y = 0;
@@ -260,6 +261,7 @@ public class PlayerMovements : MonoBehaviour
             if (horizontalInput.x == 0 && horizontalInput.y == 0 && isGrounded == true)
             {
                 rb.velocity = new Vector3(0, groundGravity, 0);
+                IsMoving = false;
             }
 
         }
