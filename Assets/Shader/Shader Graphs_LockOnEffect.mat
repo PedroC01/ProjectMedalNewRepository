@@ -23,17 +23,15 @@ Material:
   m_Name: Shader Graphs_LockOnEffect
   m_Shader: {fileID: -6465566751694194690, guid: 4b93c3d67110d174895430cb5be72c13,
     type: 3}
-  m_ValidKeywords:
-  - _SURFACE_TYPE_TRANSPARENT
+  m_ValidKeywords: []
   m_InvalidKeywords:
   - _DOUBLESIDED_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: 2000
   stringTagMap:
     MotionVector: User
-    RenderType: Transparent
   disabledShaderPasses:
   - TransparentDepthPrepass
   - TransparentDepthPostpass
@@ -62,7 +60,7 @@ Material:
     m_Floats:
     - _AddPrecomputedVelocity: 0
     - _AlphaCutoffEnable: 0
-    - _AlphaDstBlend: 10
+    - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
     - _AlphaToMask: 0
     - _AlphaToMaskInspectorValue: 0
@@ -76,13 +74,15 @@ Material:
     - _DoubleSidedEnable: 1
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 2
-    - _DstBlend: 10
+    - _DstBlend: 0
+    - _Emission_Intensity: 0.68
     - _EnableBlendModePreserveSpecularLighting: 0
     - _EnableFogOnTransparent: 0
-    - _Fresnel_Size: 0.6
+    - _Exposure: -0.81
+    - _Fresnel_Size: 7.54
     - _OpaqueCullMode: 2
-    - _OutlineSize: 0.06
-    - _RenderQueueType: 4
+    - _OutlineSize: 6.91
+    - _RenderQueueType: 1
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 0
@@ -94,7 +94,7 @@ Material:
     - _StencilWriteMaskDistortionVec: 4
     - _StencilWriteMaskGBuffer: 14
     - _StencilWriteMaskMV: 40
-    - _SurfaceType: 1
+    - _SurfaceType: 0
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 1
     - _TransparentDepthPostpassEnable: 0
@@ -103,15 +103,15 @@ Material:
     - _TransparentWritingMotionVec: 0
     - _TransparentZWrite: 0
     - _UseShadowThreshold: 0
-    - _ZTestDepthEqualForOpaque: 4
+    - _ZTestDepthEqualForOpaque: 3
     - _ZTestGBuffer: 4
-    - _ZTestTransparent: 4
-    - _ZWrite: 0
+    - _ZTestTransparent: 5
+    - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.015686275, g: 0.627451, b: 0.37254903, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Fresnel_Color: {r: 1, g: 0, b: 0, a: 1}
+    - _Fresnel_Color: {r: 0, g: 1, b: 0.87667346, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7739707789511380501
 MonoBehaviour:
