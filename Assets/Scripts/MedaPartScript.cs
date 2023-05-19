@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -9,28 +10,32 @@ public class MedaPartScript : MonoBehaviour
     [Header("0=Body,1=Head,2=LeftArm,3=RightArm,4=legs")]
     public int MedapartNumber;
     public float partEnergy=20;
-    private float partEnergyInitial = 20;
+    private float partEnergyInitial;
+    public float defense;
     public float Damage;
     public MedaHealthSlider healthSlider;
     public Animator animator_UI;
     [Header("1=player_1,2 player_2, Filled Auto")]
     public int playerX;
     public int mdpart;
+    private PlayerMovements PM;
     void Start()
     {
       //  healthSlider.SetEnergy();
         if (this.gameObject.GetComponentInParent<Player2>()==true)
         {
             animator_UI = GameObject.FindGameObjectWithTag("UIPlayer2").GetComponent<Animator>();
+            PM = GetComponentInParent<PlayerMovements>();
             playerX = 2;
         }
         if (this.gameObject.GetComponentInParent<Player1>() == true)
         {
             animator_UI = GameObject.FindGameObjectWithTag("UIPlayer1").GetComponent<Animator>();
+            PM = GetComponentInParent<PlayerMovements>();
             playerX = 1;
         }
         mdpart = this.MedapartNumber;
-        
+        this.partEnergyInitial = this.partEnergy;
     }
 
     // Update is called once per frame
@@ -84,11 +89,23 @@ public class MedaPartScript : MonoBehaviour
             }
         }*/
     }
-     public void ApplyDamage(int damage)
+     public void ApplyDamage(float damage)
     {
+        if (PM.block == true)
+        {
+            if (this.MedapartNumber == 2 || this.MedapartNumber == 3)
+            {
+                damage = ((damage/partEnergyInitial)*100) - ((defense/damage)*100);
+            }
+            else
+            {
+                damage = 0;
+            }
+            
 
+        }
 
-        this.partEnergy = Mathf.Clamp(this.partEnergy -= damage, 0, partEnergyInitial);
+        this.partEnergy = Mathf.Clamp(this.partEnergy -= ((damage / partEnergyInitial) * 100) - ((defense / damage) * 100), 0, partEnergyInitial);
       
 
 

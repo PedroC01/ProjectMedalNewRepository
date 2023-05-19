@@ -156,7 +156,7 @@ public class PlayerMovements : MonoBehaviour
     }
     public void R1(bool Hold)
     {
-        Debug.Log("Reduce Damage");
+        Debug.Log(block);
         block = Hold;
 
         m_Animator1.SetBool("Blocking", block);
