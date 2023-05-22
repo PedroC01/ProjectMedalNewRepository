@@ -22,7 +22,9 @@ public class LockOn : MonoBehaviour
     public GameObject Target3D1;
     public GameObject Target3D2;
     public GameObject Enemy;
+    public LockOnShader LOS;
     private int enemyReference;
+    public int pieceReference;
         // Start is called before the first frame update
     void Start()
     {
@@ -76,27 +78,31 @@ public class LockOn : MonoBehaviour
 
        
         lockOnTarget = medaparts[0].transform;
-
+        this.pieceReference = 0;
 
     }
 
     public void DPadUp()
     {
         lockOnTarget = medaparts[1].transform;
+        this.pieceReference = 1;
       
     }
 
     public void DPadLeft()
     {
         lockOnTarget = medaparts[2].transform;
+        this.pieceReference = 2;
     }
     public void DPadRight()
     {
         lockOnTarget = medaparts[3].transform;
+        this.pieceReference = 3;
     }
     public void DPadDown()
     {
         lockOnTarget = medaparts[4].transform;
+        this.pieceReference = 4;
     }
 
     public void LeftShoulderL1()

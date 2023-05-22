@@ -19,6 +19,8 @@ public class MedaPartScript : MonoBehaviour
     public int playerX;
     public int mdpart;
     private PlayerMovements PM;
+
+    
     void Start()
     {
       //  healthSlider.SetEnergy();
@@ -26,16 +28,19 @@ public class MedaPartScript : MonoBehaviour
         {
             animator_UI = GameObject.FindGameObjectWithTag("UIPlayer2").GetComponent<Animator>();
             PM = GetComponentInParent<PlayerMovements>();
+
             playerX = 2;
         }
         if (this.gameObject.GetComponentInParent<Player1>() == true)
         {
             animator_UI = GameObject.FindGameObjectWithTag("UIPlayer1").GetComponent<Animator>();
+           
             PM = GetComponentInParent<PlayerMovements>();
             playerX = 1;
         }
         mdpart = this.MedapartNumber;
         this.partEnergyInitial = this.partEnergy;
+        
     }
 
     // Update is called once per frame

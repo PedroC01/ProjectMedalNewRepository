@@ -232,7 +232,8 @@ public class PlayerMovements : MonoBehaviour
     {
         if (block)
         {
-
+            horizontalInput.x = 0;
+            horizontalInput.y = 0;
         }
 
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
