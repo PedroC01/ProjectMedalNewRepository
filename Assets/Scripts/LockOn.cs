@@ -33,6 +33,7 @@ public class LockOn : MonoBehaviour
            this.medaparts = GameObject.FindGameObjectsWithTag("Player2Parts");
             this.Enemy = FindObjectOfType<Player2>().gameObject;
             enemyReference = 2;
+            LOS=Enemy.GetComponent<LockOnShader>();
         }
         
 
@@ -43,6 +44,7 @@ public class LockOn : MonoBehaviour
            this.medaparts = GameObject.FindGameObjectsWithTag("Player1Parts");
            this.Enemy = FindObjectOfType<Player1>().gameObject;
             enemyReference = 1;
+            LOS = Enemy.GetComponent<LockOnShader>();
         }
         //------------------------------
 
@@ -93,16 +95,19 @@ public class LockOn : MonoBehaviour
     {
         lockOnTarget = medaparts[2].transform;
         this.pieceReference = 2;
+
     }
     public void DPadRight()
     {
         lockOnTarget = medaparts[3].transform;
         this.pieceReference = 3;
+  
     }
     public void DPadDown()
     {
         lockOnTarget = medaparts[4].transform;
         this.pieceReference = 4;
+   
     }
 
     public void LeftShoulderL1()

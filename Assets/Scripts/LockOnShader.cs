@@ -10,11 +10,13 @@ public class LockOnShader : MonoBehaviour
     
     private LockOn LO;
     public int thisPieceNum;
-    public static int thisLockOnNum;
+    public int thisLockOnNumA;
+    public int thisLockOnNum;
     private GameObject thisMedapartParent;
     public GameObject[] thisPartPieces;
-    new GameObject[] singlePartpieces;
+    public List<PartPiece> singlePartpieces;
     public GameObject Enemy;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -34,16 +36,17 @@ public class LockOnShader : MonoBehaviour
        
          
         }
-        foreach (GameObject piece in thisPartPieces)
-        {
-            if (piece.GetComponentInChildren<PartPiece>())
+       
+           foreach(PartPiece ppiece in this.gameObject.GetComponentsInChildren<PartPiece>())
             {
 
-                piece.GetComponentInChildren<PartPiece>().PieceNum= thisPieceNum;
+                ppiece.PieceNum = this.thisPieceNum;
 
             }
+        
 
-        }
+
+      
         thisLockOnNum = LO.pieceReference;
         ChangePieceEffect();
 
@@ -52,29 +55,41 @@ public class LockOnShader : MonoBehaviour
     void Update()
     {
         
+        if (thisLockOnNum != LO.pieceReference)
+        {
+            thisLockOnNum = LO.pieceReference;
+            ChangePieceEffect();
+        }
     }
 
 
 
     public void ChangePieceEffect()
     {
-        thisLockOnNum = LO.pieceReference;
+       
+       
         foreach (GameObject piece in thisPartPieces)
         {
-            if (thisLockOnNum == thisPieceNum)
+            foreach (PartPiece ppiece in piece.GetComponentsInChildren<PartPiece>())
             {
-                piece.GetComponentInChildren<PartPiece>().isLocked = true;
+
+                if (ppiece.PieceNum==thisLockOnNum)
+                {
+                    ppiece.isLocked = true;
+                }
+                if (ppiece.PieceNum != thisLockOnNum)
+                {
+                    ppiece.isLocked = false;
+                }
+
             }
-            else
-            {
-                piece.GetComponentInChildren<PartPiece>().isLocked = false;
-            }
-        
-       piece.GetComponentInChildren<PartPiece>().ChangeMaterial();
+
+
+       //piece.GetComponentInChildren<PartPiece>().ChangeMaterial();
 
        }
-         
 
+      
     }
 
 
