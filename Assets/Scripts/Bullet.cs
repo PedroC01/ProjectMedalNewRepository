@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     private Rigidbody rb;
     public float bulletSpeed;
+    public float damagePerBullet;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -37,14 +38,22 @@ public class Bullet : MonoBehaviour
         }
      }*/
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-       
-        if (other.GetComponent<MedaPartScript>().playerX == 2|| other.GetComponent<MedaPartScript>().playerX == 1)
+
+        var Medapart = other.GetComponent<MedaPartScript>();
+
+        if(Medapart != null)
         {
-            other.GetComponent<MedaPartScript>().ApplyDamage(2);
+            if (Medapart.playerX == 2 || Medapart.playerX == 1)
+            {
+                other.GetComponent<MedaPartScript>().ApplyDamage(damagePerBullet);
+            }
+            
+
         }
         else { return; }
+
         if (other.CompareTag("Floor"))
         {
             Destroy(this.gameObject);

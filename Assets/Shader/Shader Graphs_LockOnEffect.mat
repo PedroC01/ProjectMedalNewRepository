@@ -24,11 +24,10 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 4b93c3d67110d174895430cb5be72c13,
     type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _DOUBLESIDED_ON
+  m_InvalidKeywords: []
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 1
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2000
   stringTagMap:
     MotionVector: User
@@ -59,28 +58,37 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
-    - _Alpha: 0
+    - _Alpha: 1
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
     - _AlphaToMask: 0
     - _AlphaToMaskInspectorValue: 0
+    - _BUILTIN_AlphaClip: 0
+    - _BUILTIN_Blend: 0
+    - _BUILTIN_CullMode: 2
+    - _BUILTIN_DstBlend: 0
     - _BUILTIN_QueueControl: -1
     - _BUILTIN_QueueOffset: 0
+    - _BUILTIN_SrcBlend: 1
+    - _BUILTIN_Surface: 0
+    - _BUILTIN_ZTest: 4
+    - _BUILTIN_ZWrite: 1
+    - _BUILTIN_ZWriteControl: 0
     - _BlendMode: 0
     - _ConservativeDepthOffsetEnable: 0
-    - _CullMode: 0
-    - _CullModeForward: 0
+    - _CullMode: 2
+    - _CullModeForward: 2
     - _DepthOffsetEnable: 0
-    - _DoubleSidedEnable: 1
+    - _DoubleSidedEnable: 0
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 0
-    - _Emission_Intensity: 1.02
+    - _Emission_Intensity: 11.83
     - _EnableBlendModePreserveSpecularLighting: 0
     - _EnableFogOnTransparent: 0
     - _Exposure: 0.03
-    - _Fresnel_Size: 10.63
+    - _Fresnel_Size: 24.95
     - _OpaqueCullMode: 2
     - _OutlineSize: 6.91
     - _RenderQueueType: 1
@@ -101,7 +109,7 @@ Material:
     - _TransparentCullMode: 1
     - _TransparentDepthPostpassEnable: 0
     - _TransparentDepthPrepassEnable: 0
-    - _TransparentSortPriority: 0
+    - _TransparentSortPriority: -20
     - _TransparentWritingMotionVec: 0
     - _TransparentZWrite: 0
     - _UseShadowThreshold: 0
@@ -110,10 +118,10 @@ Material:
     - _ZTestTransparent: 5
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.18565707, g: 0.14440194, b: 0.5566038, a: 1}
+    - _Color: {r: 1, g: 0, b: 0.03997326, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Fresnel_Color: {r: 1, g: 0.09424058, b: 0, a: 1}
+    - _Fresnel_Color: {r: 1, g: 0.09411766, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7739707789511380501
 MonoBehaviour:

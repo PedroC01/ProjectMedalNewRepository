@@ -67,7 +67,7 @@ MonoBehaviour:
   rocketSpeed: 20
   target: {fileID: 0}
   targetRb: {fileID: 0}
-  autoDestructTimer: 5
+  autoDestructTimer: 2
   canDestroy: 0
   _explosionPrefab: {fileID: 8836354246954985214, guid: 3b47f2b8af8a3a94fb1956b9ac4e005f,
     type: 3}
@@ -87,7 +87,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4120398702531518976}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.11692488
   m_Height: 0.30830336

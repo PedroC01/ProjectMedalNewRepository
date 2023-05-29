@@ -58,8 +58,17 @@ public class PlayerMovements : MonoBehaviour
     [SerializeField]
     public UnityEvent Off;
     public bool IsMoving;
- 
+    private bool canDash;
+    public bool dash;
+    private bool isDashing = false;
+    public float dashDuration = 0.5f;
+    public float currentDashTime;
+    public float dashDistance = 5f;
+    private Vector3 dashDirection;
+    public LayerMask obstacleLayerMask;
 
+    public float dashCoolDown;
+    private float dashCoolDownReset;
     private void Awake()
     {
         setupJump();
@@ -82,7 +91,8 @@ public class PlayerMovements : MonoBehaviour
           
         }
 
-
+        dashCoolDownReset = dashCoolDown;
+        dashCoolDown = 0;
 
       
         if (this.gameObject.GetComponent<Player2>() == true)
@@ -129,6 +139,18 @@ public class PlayerMovements : MonoBehaviour
 
         // StartCoroutine(Jump(this.jumped));
 
+    }
+    public void OnDash()
+    {
+        
+            if (isGrounded == true && !isDashing&& canDash == true)
+            {
+                dashDirection = transform.forward;
+                dash = true;
+                StartCoroutine(Dash());
+            }
+        
+      
     }
     public void OnEast()
     {
@@ -201,6 +223,7 @@ public class PlayerMovements : MonoBehaviour
             up = transform.up * (jumpExtraForce + initialJumpVelocity) * 0.5f;
             up.x = 0;
             up.z = 0;
+            m_Animator1.SetBool("Jumping", true);
             this.rb.velocity = up;
             isGrounded = false;
             count = true;
@@ -294,17 +317,30 @@ public class PlayerMovements : MonoBehaviour
             countTime -= Time.deltaTime;
             if (countTime <= maxJumpTime / 2)
             {
+               
                 jumped = false;
                 countTime = maxJumpTime;
+                m_Animator1.SetBool("Jumping", false);
                 count = false;
             }
         }
-       
+        if (dashCoolDown > 0)
+        {
+            dashCoolDown-= Time.deltaTime;
+        }
+        else
+        {
+            canDash = true;
+        }
+        
     }
 
 
     private void FixedUpdate()
     {
+      
+        
+
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
         {
             float oldy = this.rb.velocity.y;
@@ -339,10 +375,55 @@ public class PlayerMovements : MonoBehaviour
           yield return null;
       }*/
 
+    private IEnumerator Dash()
+    {
+        isDashing = true;
+        currentDashTime = 0f;
+       
+        while (currentDashTime < dashDuration)
+        {
+           
+            float dashSpeed = dashDistance / dashDuration;
+            Vector3 nextpos = dashDirection * dashSpeed * Time.deltaTime;
+            Debug.Log("Is Dashing but not moving");
+            // Check if the next position will collide with obstacles
+            if (!CheckCollision(transform.position + nextpos))
+            {
+                Debug.Log("dashed");
+                this.transform.position += nextpos;
+                this.currentDashTime += Time.deltaTime;
+            }
+            else
+            {
+                Debug.Log("hiting sum");
+                break; // Stop dashing if there's an obstacle
+            }
+
+            yield return null;
+        }
+        dash = false;
+        isDashing = false;
+        canDash = false;
+        dashCoolDown = dashCoolDownReset;
+        
+    }
 
 
+    private bool CheckCollision(Vector3 position)
+    {
+        Collider[] colliders = Physics.OverlapSphere(position, 0.5f);
 
+        // verificar se o dash bate numa parede ou no outro jogador
+        foreach (Collider collider in colliders)
+        {
+            if (collider.CompareTag("InvisiWalls"))
+            {
+                return true; 
+            }
+        }
 
+        return false; 
+    }
 
 
 
@@ -350,12 +431,19 @@ public class PlayerMovements : MonoBehaviour
     {
         if (collision.collider.CompareTag("Floor") && isGrounded == false)
         {
+            
             isGrounded = true;
             jumped = false;
+
+            m_Animator1.SetTrigger("Landed");
+
 
         }
        
     }
+
+
+
     void OnCollisionStay(Collision collision)
     {
         if (collision.collider.CompareTag("Floor") && isGrounded == false)

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
+using UnityEditor.Rendering.LookDev;
+using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
@@ -16,7 +18,10 @@ public class PlayerInputHandler : MonoBehaviour
     private Shooter eastButton;
     private RocketLaucher northButton;
     private bool hold;
-
+    
+    [SerializeField] 
+    private float doubleTapTimeThreshold = 1;
+    private float lastTapTime;
     void Start()
     {
         playerInput=GetComponent<PlayerInput>();
@@ -25,13 +30,39 @@ public class PlayerInputHandler : MonoBehaviour
         var eastButtons = FindObjectsOfType<Shooter>();
         var northButtons = FindObjectsOfType<RocketLaucher>();
         pMovement = pMovements.FirstOrDefault(m => m.GetPlayerIndex() == index);
+      
     }
-
-
+  
     void Update()
     {
-        
+   
     }
+    private bool IsDoubleTap()
+    {
+        float timeSinceLastTap = Time.time - lastTapTime;
+
+        if (timeSinceLastTap <= doubleTapTimeThreshold)
+        {
+            lastTapTime = 0f;
+            return true;
+        }
+        else
+        {
+            lastTapTime = Time.time;
+            StartCoroutine(ResetLastTapTime());
+            return false;
+        }
+    }
+
+
+    private IEnumerator ResetLastTapTime()
+    {
+        yield return new WaitForSeconds(doubleTapTimeThreshold);
+        lastTapTime = 0f;
+    }
+
+
+
 
     public void OnMove(CallbackContext context)
     {
@@ -40,7 +71,33 @@ public class PlayerInputHandler : MonoBehaviour
     }
     public void OnJump(CallbackContext context)//por algum motivo o call back context dá erro aqui
     {
-        pMovement.OnJump();
+
+        if (context.performed)
+        {
+            if (IsDoubleTap()==true)
+            {
+
+              
+                pMovement.OnDash();
+            }
+            else
+            {
+
+           
+                pMovement.OnJump();
+            }
+        }
+
+        
+
+    }
+    public void OnDash(CallbackContext context)
+    {
+       
+       
+          
+                pMovement.OnDash();
+           
     }
     public void OnEast(CallbackContext context)
     {

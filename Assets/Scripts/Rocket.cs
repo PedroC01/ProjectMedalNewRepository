@@ -118,7 +118,20 @@ public class Rocket : MonoBehaviour
         RotateRocket();
         if (canDestroy == true)
         {
-            Destroy(this);
+            Instantiate(_explosionPrefab, this.transform.position, this.transform.rotation);
+
+            Collider[] colliders = Physics.OverlapSphere(this.transform.position, explosionRadious);
+            foreach (Collider coll in colliders)
+            {
+                if (coll.GetComponent<MedaPartScript>())
+                {
+
+                    coll.GetComponent<MedaPartScript>().ApplyDamage(30);
+
+                }
+
+            }
+            Destroy(this.gameObject);
         }
         else
         {
@@ -126,12 +139,23 @@ public class Rocket : MonoBehaviour
         }
     }
 
-  /*  private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        Instantiate(_explosionPrefab, this.transform.position, this.transform.rotation);
-       
-        Destroy(this.gameObject);
-    }*/
+
+        /*Instantiate(_explosionPrefab, this.transform.position, this.transform.rotation);
+
+        Collider[] colliders = Physics.OverlapSphere(this.transform.position, explosionRadious);
+        foreach (Collider coll in colliders)
+        {
+            if (coll.GetComponent<MedaPartScript>())
+            {
+
+                coll.GetComponent<MedaPartScript>().ApplyDamage(30);
+
+            }
+
+        }*/
+    }
     void OnTriggerEnter(Collider other)
     {
         

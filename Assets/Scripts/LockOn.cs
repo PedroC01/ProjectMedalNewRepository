@@ -33,7 +33,7 @@ public class LockOn : MonoBehaviour
            this.medaparts = GameObject.FindGameObjectsWithTag("Player2Parts");
             this.Enemy = FindObjectOfType<Player2>().gameObject;
             enemyReference = 2;
-            LOS=Enemy.GetComponent<LockOnShader>();
+            this.LOS=this.Enemy.GetComponent<LockOnShader>();
         }
         
 
@@ -44,7 +44,7 @@ public class LockOn : MonoBehaviour
            this.medaparts = GameObject.FindGameObjectsWithTag("Player1Parts");
            this.Enemy = FindObjectOfType<Player1>().gameObject;
             enemyReference = 1;
-            LOS = Enemy.GetComponent<LockOnShader>();
+            this.LOS = this.Enemy.GetComponent<LockOnShader>();
         }
         //------------------------------
 
@@ -79,7 +79,7 @@ public class LockOn : MonoBehaviour
         }*/
 
        
-        lockOnTarget = medaparts[0].transform;
+        this.lockOnTarget = medaparts[0].transform;
         this.pieceReference = 0;
 
     }

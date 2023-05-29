@@ -20,7 +20,7 @@
                     "id": "46b34b3d-7a77-48f6-8437-8a3d392cbc10",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Tap",
+                    "interactions": "MultiTap(tapTime=0.32,tapDelay=0.66)",
                     "initialStateCheck": false
                 },
                 {
@@ -119,7 +119,7 @@
                     "id": "6fc011f0-71f0-46fa-b49c-fb2b5037cb14",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 }
             ],
@@ -423,8 +423,8 @@
                 },
                 {
                     "name": "",
-                    "id": "92845186-b61d-4f18-a057-e49e8fb591ec",
-                    "path": "",
+                    "id": "912d659f-3b59-4c87-a2ba-fbbfe78cb080",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

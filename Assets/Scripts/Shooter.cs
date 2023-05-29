@@ -45,8 +45,8 @@ public class Shooter : MonoBehaviour
         magSizeRecharge = magSize;
         PM = GetComponent<PlayerMovements>();
         this.bulletPrefab.GetComponent<Bullet>().bulletSpeed=mineBulletSpeed;
-       // this.thisPlayer=GetComponentInParent<Transform>();
-
+        // this.thisPlayer=GetComponentInParent<Transform>();
+        m_Animator = GetComponentInChildren<Animator>();
     }
 
     public void East()
@@ -168,6 +168,7 @@ public class Shooter : MonoBehaviour
     {
         //if (LO.Locked == true)
         //{
+
             this.thisPlayer.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             this.firePoint.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
