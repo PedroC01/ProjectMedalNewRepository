@@ -39,7 +39,7 @@ MonoBehaviour:
     m_Value: 0
   windOrientation:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 209
   windSpeed:
     m_OverrideState: 0
     m_Value: 100
@@ -79,7 +79,7 @@ MonoBehaviour:
     m_Value: {x: 0.20353886, y: 0.38109303, z: 0.5}
   desiredLuxValue:
     m_OverrideState: 1
-    m_Value: 5212
+    m_Value: 9862
   updateMode:
     m_OverrideState: 1
     m_Value: 0
