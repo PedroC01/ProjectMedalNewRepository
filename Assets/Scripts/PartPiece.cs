@@ -18,10 +18,17 @@ public class PartPiece : MonoBehaviour
     private Material[] originalMaterialsList;
     private SkinnedMeshRenderer renderer1;
     private LockOnShader lockOnShader;
+    private Texture thisPieceTexture;
     private void Start()
     {
       renderer1 = GetComponent<SkinnedMeshRenderer>();
-        originalMaterialsList = this.renderer1.sharedMaterials;
+       originalMaterialsList = this.renderer1.sharedMaterials;
+        for (int i = 0;i <= originalMaterialsList.Length; i++){
+            this.thisPieceTexture = originalMaterialsList[i].mainTexture;
+            this.ShaderMaterialsList[i].SetTexture("_Texture", this.thisPieceTexture);
+        }
+            
+            
     }
     
     void Update()
@@ -35,6 +42,7 @@ public class PartPiece : MonoBehaviour
         }
         if(this.isLocked == true)
         {
+            // ShaderMaterialsList[1].SetTexture
             renderer1.sharedMaterials= ShaderMaterialsList;
             // this.renderer1.material= loShader;
             // LockOnSh.Invoke();
