@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Blue 1
+  m_Name: Red
   m_Shader: {fileID: -6465566751694194690, guid: 4b93c3d67110d174895430cb5be72c13,
     type: 3}
   m_ValidKeywords: []
@@ -58,7 +58,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
-    - _Alpha: 0.27
+    - _Alpha: 1
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
@@ -87,12 +87,12 @@ Material:
     - _Emission_Intensity: 11.83
     - _EnableBlendModePreserveSpecularLighting: 0
     - _EnableFogOnTransparent: 0
-    - _Exposure: 0.72
+    - _Exposure: 0.03
     - _Fresnel_Size: 24.95
     - _OpaqueCullMode: 2
     - _OutlineSize: 6.91
     - _RenderQueueType: 1
-    - _SpeedUp: 4.75
+    - _SpeedUp: 4
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 0
@@ -118,10 +118,10 @@ Material:
     - _ZTestTransparent: 5
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0, g: 1, b: 0.90588236, a: 1}
+    - _Color: {r: 1, g: 0, b: 0.03997326, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Fresnel_Color: {r: 0, g: 1, b: 0.8830581, a: 1}
+    - _Fresnel_Color: {r: 1, g: 0.09411766, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7739707789511380501
 MonoBehaviour:

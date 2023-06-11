@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 3012.3467, g: 2673.8022, b: 2537.4097, a: 1}
+  m_IndirectSpecularColor: {r: 3015.041, g: 2676.4688, b: 2540.0056, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -177,6 +177,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &15335
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -593,6 +596,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &9495153
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -976,6 +982,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &44128546
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1376,6 +1385,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &76140294
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -2143,6 +2155,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &127003812
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -2413,6 +2428,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &139606063
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -2525,6 +2543,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &140004904
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -3007,7 +3028,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 16
+  m_Priority: 18
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 1314757490}
   m_Follow: {fileID: 7862484790357110741}
@@ -3391,6 +3412,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &197859941
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3618,6 +3642,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &201505312
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -3898,6 +3925,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &216837881
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4103,6 +4133,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &229045003
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7073,6 +7106,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &447354180
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -7293,6 +7329,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &461092586
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -8030,6 +8069,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &529800030
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -8726,6 +8768,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &595687195
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -8952,6 +8997,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &629220660
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -9332,6 +9380,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &679573972
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -9983,6 +10034,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &716859541
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -10572,6 +10626,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &768020578
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -11244,6 +11301,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &807303116
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -11355,6 +11415,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &836674527
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -11795,6 +11858,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &880909101
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -12078,6 +12144,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &893810244
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -14217,6 +14286,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1056694555
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -14654,6 +14726,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1075380019
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -15032,6 +15107,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1094671409
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -15793,6 +15871,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1140597396
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -16258,6 +16339,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1184542744
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -16371,6 +16455,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1186567201
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -17034,6 +17121,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1232033687
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -17310,6 +17400,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1242214687
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -17428,6 +17521,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &1248303753
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -17778,6 +17874,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1258178443
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -18226,6 +18325,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &1276451320
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19624,6 +19726,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1293799845
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -20508,6 +20613,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1352978169
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -21106,6 +21214,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1397299694
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -21329,6 +21440,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1410762326
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -21769,6 +21883,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1430804529
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -24003,6 +24120,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1497033945
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -24510,6 +24630,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1510373941
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -25024,8 +25147,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561276689}
-  m_LocalRotation: {x: -0.032536097, y: 0.9408832, z: -0.09459339, w: -0.32362378}
-  m_LocalPosition: {x: 11.008291, y: 4.3206162, z: 14.576399}
+  m_LocalRotation: {x: -0.0325367, y: 0.9408812, z: -0.09459321, w: -0.32362968}
+  m_LocalPosition: {x: 11.0083885, y: 4.3206167, z: 14.5763235}
   m_LocalScale: {x: 1, y: 0.8108334, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25085,6 +25208,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1566638036
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -25479,6 +25605,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1614991814
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -25864,6 +25993,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1629532643
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -26622,6 +26754,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1716005400
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -26734,6 +26869,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1717741070
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -26846,6 +26984,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1728529927
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -27409,6 +27550,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1771870481
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -27595,6 +27739,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &1777063800
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28343,8 +28490,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823688464}
-  m_LocalRotation: {x: -0.032536097, y: 0.9408832, z: -0.09459339, w: -0.32362378}
-  m_LocalPosition: {x: 10.195477, y: -2.169228, z: -2.098773}
+  m_LocalRotation: {x: 0.08875611, y: 0.3238266, z: -0.030529087, w: 0.9414492}
+  m_LocalPosition: {x: -17.732464, y: -2.3527098, z: -37.89282}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29308,6 +29455,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &1858740455
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -29517,6 +29667,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1868013174
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -30074,6 +30227,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &1903388537
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -30986,6 +31142,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &1980861903
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32181,6 +32340,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &2043156162
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -32313,6 +32475,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &2058927770
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -32921,6 +33086,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &2105494215
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -33471,6 +33639,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &2135757729
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -53508,6 +53679,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &2342153565760530137
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -70092,6 +70266,166 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 300808036}
     m_Modifications:
+    - target: {fileID: 453392039193451781, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: loShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 453392039193451781, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 453392039193451781, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 961a16ce7fb18614496350de6bbf6e74, type: 2}
+    - target: {fileID: 1550079559975449988, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: loShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 1575815974689245499, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: loShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 1575815974689245499, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 1575815974689245499, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 961a16ce7fb18614496350de6bbf6e74, type: 2}
+    - target: {fileID: 1662652137698624886, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: loShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 1662652137698624886, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 1662652137698624886, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 961a16ce7fb18614496350de6bbf6e74, type: 2}
+    - target: {fileID: 2042354035645154062, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: loShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 2042354035645154062, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 2042354035645154062, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 961a16ce7fb18614496350de6bbf6e74, type: 2}
+    - target: {fileID: 2121323816311156033, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: loShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 2344660561854217892, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: loShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 2344660561854217892, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8008ad122b13c234eb015e368c4cfd9b, type: 2}
+    - target: {fileID: 2344660561854217892, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 961a16ce7fb18614496350de6bbf6e74, type: 2}
+    - target: {fileID: 2644960798623059697, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: loShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 2820498401637889369, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: loShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 3141414557542267015, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: loShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 3141414557542267015, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 3141414557542267015, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 961a16ce7fb18614496350de6bbf6e74, type: 2}
+    - target: {fileID: 3410031640540974094, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: loShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 3671445447063241495, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: loShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 3671445447063241495, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 3671445447063241495, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 961a16ce7fb18614496350de6bbf6e74, type: 2}
+    - target: {fileID: 3861644640743382888, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: loShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 3989639768657884389, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: loShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 4095087806632998179, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: loShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 4095087806632998179, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 4095087806632998179, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 961a16ce7fb18614496350de6bbf6e74, type: 2}
+    - target: {fileID: 4364098262893205825, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: loShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
     - target: {fileID: 4364098262893205825, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
         type: 3}
       propertyPath: ShaderMaterialsList.Array.size
@@ -70099,9 +70433,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4364098262893205825, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
         type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 4364098262893205825, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 961a16ce7fb18614496350de6bbf6e74, type: 2}
+    - target: {fileID: 4364098262893205825, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
       propertyPath: ShaderMaterialsList.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 790fa87a7376ed54892e48a2cc113b84, type: 2}
+    - target: {fileID: 4467997190694254565, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: loShader
+      value: 
+      objectReference: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6, type: 2}
+    - target: {fileID: 4467997190694254565, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467997190694254565, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
+      propertyPath: ShaderMaterialsList.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8008ad122b13c234eb015e368c4cfd9b, type: 2}
     - target: {fileID: 4717149582519882515, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
         type: 3}
       propertyPath: healthSlider
@@ -70146,7 +70505,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 790fa87a7376ed54892e48a2cc113b84, type: 2}
+      objectReference: {fileID: 2100000, guid: 6514a94e76670b24292fa3b8d3363dd5, type: 2}
     - target: {fileID: 8191908886902028185, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
         type: 3}
       propertyPath: m_Materials.Array.data[3]
@@ -70159,9 +70518,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8376198464493788757, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
         type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 91b858fb0e87e1e4e86e4350a704fe52, type: 2}
+    - target: {fileID: 8376198464493788757, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
+        type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: 961a16ce7fb18614496350de6bbf6e74, type: 2}
+      objectReference: {fileID: 2100000, guid: 91b858fb0e87e1e4e86e4350a704fe52, type: 2}
     - target: {fileID: 8580454816880792989, guid: 2ef7e9bc27d48614e849af02eaa5dcdd,
         type: 3}
       propertyPath: m_RootOrder
@@ -71806,6 +72170,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &4903395610309644518
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -72165,6 +72532,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &4984304724653981357
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -75855,6 +76225,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!1 &5586106479217040083
 GameObject:
   m_ObjectHideFlags: 0
@@ -75978,6 +76351,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!33 &5611735338080354564
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -76687,6 +77063,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &5713193499739969182
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -81150,6 +81529,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!4 &6398471769616112475
 Transform:
   m_ObjectHideFlags: 0
@@ -83752,6 +84134,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &6778339449418665711
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -84742,6 +85127,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &6957805038091953867
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -87387,6 +87775,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!4 &7263143221615020717
 Transform:
   m_ObjectHideFlags: 0
@@ -88143,6 +88534,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &7375270825718866959
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -89947,6 +90341,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!4 &7685430517640876287
 Transform:
   m_ObjectHideFlags: 0
@@ -91873,6 +92270,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &7911957236737150084
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -92374,6 +92774,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &8000000716018001679
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -94326,6 +94729,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!4 &8341565488740723567
 Transform:
   m_ObjectHideFlags: 0
@@ -96795,6 +97201,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &8577501095583670246
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -97764,6 +98173,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!64 &8706111342046637392
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -99565,6 +99977,9 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!137 &9002541369541172509
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -101125,12 +101540,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PieceNum: 0
-  loShader: {fileID: 0}
+  loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   thisPeaceMaterial: {fileID: 2100000, guid: 0fc35964b968ed743862558c66eef418, type: 2}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  originalMaterialsList: []
+  thisPieceTexture: []
+  NewMaterialsList: []
 --- !u!4 &9187297210649192117
 Transform:
   m_ObjectHideFlags: 0

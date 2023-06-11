@@ -15,17 +15,26 @@ public class PartPiece : MonoBehaviour
     public bool isLocked;
     [SerializeField]
     private Material[] ShaderMaterialsList;
-    private Material[] originalMaterialsList;
+    public Material[] originalMaterialsList;
     private SkinnedMeshRenderer renderer1;
     private LockOnShader lockOnShader;
-    private Texture thisPieceTexture;
+    public Texture[] thisPieceTexture;
+    private Renderer ShaderRenderer;
+    public Material[] NewMaterialsList;
     private void Start()
     {
       renderer1 = GetComponent<SkinnedMeshRenderer>();
+     
+  
        originalMaterialsList = this.renderer1.sharedMaterials;
-        for (int i = 0;i <= originalMaterialsList.Length; i++){
-            this.thisPieceTexture = originalMaterialsList[i].mainTexture;
-            this.ShaderMaterialsList[i].SetTexture("_Texture", this.thisPieceTexture);
+        thisPieceTexture = new Texture[originalMaterialsList.Length];
+        NewMaterialsList = new Material[originalMaterialsList.Length];
+        for (int i = 0;i <= originalMaterialsList.Length-1; i++){
+            this.thisPieceTexture[i] = originalMaterialsList[i].mainTexture;
+        //*    this.ShaderMaterialsList[i].SetTexture("_Texture", this.thisPieceTexture[i]);
+            Material newMaterial = new Material(loShader);
+            newMaterial.SetTexture("_Texture", this.thisPieceTexture[i]);
+            NewMaterialsList[i] = newMaterial;
         }
             
             
@@ -43,7 +52,12 @@ public class PartPiece : MonoBehaviour
         if(this.isLocked == true)
         {
             // ShaderMaterialsList[1].SetTexture
-            renderer1.sharedMaterials= ShaderMaterialsList;
+            for (int i = 0; i <= originalMaterialsList.Length - 1; i++)
+            {
+                this.NewMaterialsList[i].SetTexture("_Texture", this.thisPieceTexture[i]);
+            }
+            renderer1.sharedMaterials= NewMaterialsList;
+           
             // this.renderer1.material= loShader;
             // LockOnSh.Invoke();
         }
