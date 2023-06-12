@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     private Rigidbody rb;
     public float bulletSpeed;
     public float damagePerBullet;
+    public GameObject impactVFX;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -48,6 +49,7 @@ public class Bullet : MonoBehaviour
             if (Medapart.playerX == 2 || Medapart.playerX == 1)
             {
                 other.GetComponent<MedaPartScript>().ApplyDamage(damagePerBullet);
+                Instantiate(this.impactVFX, this.transform.position, this.transform.rotation);
             }
             
 

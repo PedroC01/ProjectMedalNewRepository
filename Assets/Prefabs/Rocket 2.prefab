@@ -67,7 +67,7 @@ MonoBehaviour:
   rocketSpeed: 20
   target: {fileID: 0}
   targetRb: {fileID: 0}
-  autoDestructTimer: 2
+  autoDestructTimer: 3
   canDestroy: 0
   _explosionPrefab: {fileID: 8836354246954985214, guid: 3b47f2b8af8a3a94fb1956b9ac4e005f,
     type: 3}

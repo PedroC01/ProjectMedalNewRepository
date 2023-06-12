@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 3012.4863, g: 2673.8022, b: 2537.4097, a: 1}
+  m_IndirectSpecularColor: {r: 3012.3467, g: 2673.3774, b: 2536.924, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -364,7 +364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3347295}
   m_LocalRotation: {x: -0.13798259, y: 0.43640897, z: 0.056028806, w: 0.88733804}
-  m_LocalPosition: {x: 0.513257, y: 0.82191616, z: 0.3693499}
+  m_LocalPosition: {x: 0.507, y: 0.917, z: 0.519}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15047,14 +15047,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094287957}
-  m_LocalRotation: {x: -0.19151911, y: -0.48542526, z: -0.10990003, w: 0.84593433}
-  m_LocalPosition: {x: -0.5098362, y: 0.8542512, z: 0.2794184}
+  m_LocalRotation: {x: -0.18825312, y: -0.4607013, z: -0.11540515, w: 0.85964924}
+  m_LocalPosition: {x: -0.46, y: 0.873, z: 0.445}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 114195586}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -25.513, y: -59.697, z: 0}
+  m_LocalEulerAnglesHint: {x: -25.467, y: -56.017, z: -1.584}
 --- !u!1 &1094671406
 GameObject:
   m_ObjectHideFlags: 0
@@ -25147,8 +25147,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561276689}
-  m_LocalRotation: {x: -0.032536697, y: 0.9408812, z: -0.09459316, w: -0.3236298}
-  m_LocalPosition: {x: 11.008391, y: 4.3206162, z: 14.576324}
+  m_LocalRotation: {x: -0.033398423, y: 0.9406689, z: -0.09714455, w: -0.3234032}
+  m_LocalPosition: {x: 10.999419, y: 4.3736405, z: 14.56947}
   m_LocalScale: {x: 1, y: 0.8108334, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25781,7 +25781,7 @@ MonoBehaviour:
   m_LookaheadSmoothing: 2.4
   m_LookaheadIgnoreY: 0
   m_XDamping: 0.5
-  m_YDamping: 0.5
+  m_YDamping: 1
   m_ZDamping: 0.5
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
@@ -28361,7 +28361,7 @@ MonoBehaviour:
   m_LookaheadSmoothing: 2.4
   m_LookaheadIgnoreY: 0
   m_XDamping: 0.5
-  m_YDamping: 0.5
+  m_YDamping: 1
   m_ZDamping: 0.5
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
@@ -31644,7 +31644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2010010857
 Transform:
   m_ObjectHideFlags: 0
@@ -32598,7 +32598,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 1314757490}
   m_Follow: {fileID: 1314757490}
   m_Lens:
-    FieldOfView: 30
+    FieldOfView: 20
     OrthographicSize: 10
     NearClipPlane: 0.001
     FarClipPlane: 500

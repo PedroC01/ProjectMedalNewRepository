@@ -159,28 +159,27 @@ public class Rocket : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         
-        Instantiate(_explosionPrefab,this.transform.position,this.transform.rotation);
-        
+       
+
+        if (other.GetComponent<MedaPartScript>().playerX == 2 || other.GetComponent<MedaPartScript>().playerX == 1)
+        {
+            Instantiate(_explosionPrefab, this.transform.position, this.transform.rotation);
+
             Collider[] colliders = Physics.OverlapSphere(this.transform.position, explosionRadious);
             foreach (Collider coll in colliders)
             {
-            if (coll.GetComponent<MedaPartScript>())
-            {
- 
+                if (coll.GetComponent<MedaPartScript>())
+                {
+
                     coll.GetComponent<MedaPartScript>().ApplyDamage(30);
-                
-            }
-              
+
+                }
+
             }
             Debug.Log("usou trigger");
-        
-            Destroy(this.gameObject);
 
-     //   if (other.GetComponent<MedaPartScript>().playerX == 2 || other.GetComponent<MedaPartScript>().playerX == 1)
-       // {
-        //    other.GetComponent<MedaPartScript>().Damage = -30;
-         //   Destroy(this.gameObject);
-      //  }
+            Destroy(this.gameObject);
+        }
         if (other.CompareTag("Floor"))
         {
 

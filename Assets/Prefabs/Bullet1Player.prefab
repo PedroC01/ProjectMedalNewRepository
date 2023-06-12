@@ -49,6 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 1
   damagePerBullet: 1
+  impactVFX: {fileID: 439803550336415084, guid: ddeb9cbc639538f43984c0b5ab6224cf,
+    type: 3}
 --- !u!54 &8187585539443330880
 Rigidbody:
   m_ObjectHideFlags: 0
