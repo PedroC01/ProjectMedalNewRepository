@@ -77,7 +77,7 @@ public class PlayerMovements : MonoBehaviour
     void Start()
     {
         this.rb = GetComponent<Rigidbody>();
-       // this.camera1 = FindObjectOfType<Camera>(); para testar split screen-------------------------------
+       this.camera1 = FindObjectOfType<Camera>(); //para testar split screen-------------------------------
         this.shooter = GetComponentInChildren<Shooter>();
         this.LO = GetComponent<LockOn>();
         this.RL = GetComponentInChildren<RocketLaucher>();
