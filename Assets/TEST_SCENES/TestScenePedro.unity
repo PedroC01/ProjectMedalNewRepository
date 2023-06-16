@@ -25149,8 +25149,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561276689}
-  m_LocalRotation: {x: -0.03253551, y: 0.9408856, z: -0.094593994, w: -0.3236166}
-  m_LocalPosition: {x: 11.008171, y: 4.3206234, z: 14.576486}
+  m_LocalRotation: {x: -0.03253413, y: 0.9408936, z: -0.094597846, w: -0.3235925}
+  m_LocalPosition: {x: 11.0077715, y: 4.3206863, z: 14.576786}
   m_LocalScale: {x: 1, y: 0.8108334, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -30781,7 +30781,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1823688466}
-  m_PlaneDistance: 1
+  m_PlaneDistance: 0.01
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -30789,7 +30789,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 218
+  m_SortingOrder: 300
   m_TargetDisplay: 0
 --- !u!224 &1970929023
 RectTransform:
@@ -32698,7 +32698,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 1314757490}
   m_Follow: {fileID: 1314757490}
   m_Lens:
-    FieldOfView: 30
+    FieldOfView: 20
     OrthographicSize: 10
     NearClipPlane: 0.001
     FarClipPlane: 500
