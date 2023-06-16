@@ -9,7 +9,6 @@ public class Bullet : MonoBehaviour
     public float bulletSpeed;
     public float damagePerBullet;
     public GameObject impactVFX;
-    public Vector3 firstposition;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -21,8 +20,8 @@ public class Bullet : MonoBehaviour
     {
         Vector3 bulletVelocity=this.transform.forward*bulletSpeed;
         rb.velocity= bulletVelocity;
-        /// this.rb.AddForce(velocity,ForceMode.Impulse);
-        firstposition = this.transform.position;
+       /// this.rb.AddForce(velocity,ForceMode.Impulse);
+       
     }
     private void Update()
     {
@@ -42,26 +41,15 @@ public class Bullet : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-       
-      
-    
-        Vector3 hitPoint = other.ClosestPoint(firstposition);
-        Vector3 hitNormal = (transform.position - hitPoint).normalized;
-
-        // Calculate the new position outside the mesh
-        Vector3 newPosition = hitPoint + hitNormal * 0.1f;
-
 
         var Medapart = other.GetComponent<MedaPartScript>();
 
         if(Medapart != null)
         {
-           // Vector3 HitPoint= transform.position;
             if (Medapart.playerX == 2 || Medapart.playerX == 1)
             {
                 other.GetComponent<MedaPartScript>().ApplyDamage(damagePerBullet);
-               Instantiate(this.impactVFX, newPosition, this.transform.rotation);
-             
+                Instantiate(this.impactVFX, this.transform.position, this.transform.rotation);
             }
             
 
@@ -70,10 +58,8 @@ public class Bullet : MonoBehaviour
 
         if (other.CompareTag("Floor"))
         {
-            
             Destroy(this.gameObject);
         }
-   
         Destroy(this.gameObject);
     }
 }

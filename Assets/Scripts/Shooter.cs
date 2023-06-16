@@ -38,7 +38,6 @@ public class Shooter : MonoBehaviour
     [SerializeField]
     public UIbuttons ub;
     public UIbuttons1 ub1;
-    public float delayFullAuto;
     // Start is called before the first frame update
     void Start()
     {
@@ -101,11 +100,11 @@ public class Shooter : MonoBehaviour
 
     public void WestRelease()
     {
-        StopCoroutine(FireFullAuto());
-        this.shootFullAuto = false;
+    
+         this.shootFullAuto = false;
         
-        m_Animator.SetBool("ShootingLeft", false);
         StopCoroutine(FireFullAuto());
+        m_Animator.SetBool("ShootingLeft", false);
 
     }
 
@@ -194,7 +193,6 @@ public class Shooter : MonoBehaviour
             {
              
                 this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, this.transform.position.y, LO.lockOnTarget.transform.position.z));
-                new WaitForSeconds(delayFullAuto);
             }
             m_Animator.SetBool("ShootingLeft", true);
             //  if (LO.Locked == true)
@@ -229,7 +227,7 @@ public class Shooter : MonoBehaviour
 
             yield return null;
         }
-       // m_Animator.SetBool("ShootingLeft", false);
+        m_Animator.SetBool("ShootingLeft", false);
     }
    
 }

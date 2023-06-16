@@ -17,7 +17,6 @@ TagManager:
   - UIPlayer1
   - Player1PartPiece
   - Player2PartPiece
-  - Bots
   layers:
   - Default
   - TransparentFX

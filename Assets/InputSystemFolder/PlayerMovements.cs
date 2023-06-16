@@ -77,7 +77,7 @@ public class PlayerMovements : MonoBehaviour
     void Start()
     {
         this.rb = GetComponent<Rigidbody>();
-       this.camera1 = FindObjectOfType<Camera>(); //para testar split screen-------------------------------
+        this.camera1 = FindObjectOfType<Camera>();
         this.shooter = GetComponentInChildren<Shooter>();
         this.LO = GetComponent<LockOn>();
         this.RL = GetComponentInChildren<RocketLaucher>();
@@ -262,10 +262,8 @@ public class PlayerMovements : MonoBehaviour
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
         {
             IsMoving = true;
-            Vector3 forward = camera1.transform.forward;
-            Vector3 right = camera1.transform.right;
-           // Vector3 forward = Camera.main.transform.forward;
-          //  Vector3 right = Camera.main.transform.right;
+            Vector3 forward = Camera.main.transform.forward;
+            Vector3 right = Camera.main.transform.right;
             forward.y = 0;
             right.y = 0;
             forward = forward.normalized;
