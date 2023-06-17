@@ -10,6 +10,13 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
+# Ignore Fmode files except sounds
+Fmode/*
+!Fmode/*.wav
+!Fmode/*.mp3
+!Fmode/Banks/
+!Fmode/Events/
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
