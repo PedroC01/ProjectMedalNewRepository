@@ -79,7 +79,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1380115005}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: OnJump
+        m_MethodName: OnDash
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -252,19 +252,7 @@ MonoBehaviour:
     m_ActionId: 85d9c637-adaa-4364-9417-daec07dad6ff
     m_ActionName: PlayerMovement/LeftArmAttackrelease[/DualShock4GamepadHID/buttonWest,/Keyboard/leftArrow]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1380115005}
-        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: OnDash
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 6fc011f0-71f0-46fa-b49c-fb2b5037cb14
     m_ActionName: PlayerMovement/Dash/Evade
   m_NeverAutoSwitchControlSchemes: 0
