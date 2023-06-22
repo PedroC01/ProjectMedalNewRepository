@@ -36,8 +36,8 @@ public class Rocket : MonoBehaviour
     [Header("DEVIATION")]
     [SerializeField] private float deviationAmount = 50;
     [SerializeField] private float deviationSpeed = 2;
-
-    
+    private bool isFollowing;
+    private Vector3 storedLastPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +50,7 @@ public class Rocket : MonoBehaviour
         //targetRb=target.GetComponent<Rigidbody>(); 
        
         thisGotShooted = true;
+        this.isFollowing = true;
 
     }
 
@@ -83,40 +84,48 @@ public class Rocket : MonoBehaviour
     {
         if (thisGotShooted)
         {
-            
-            this.autoDestructTimer = math.clamp(this.autoDestructTimer - Time.deltaTime, 0, 10);
-            if (this.autoDestructTimer <= 0)
+            if (isFollowing)
             {
-                canDestroy = true;
-                this.thisGotShooted = false;
-            }
-            else
-            {
-                canDestroy = false;
-                return;
+                this.autoDestructTimer = math.clamp(this.autoDestructTimer - Time.deltaTime, 0, 10);
+                if (this.autoDestructTimer <= 0)
+                {
+                  //  canDestroy = true;
+                    storedLastPosition = new Vector3(targetRb.transform.position.x,0, targetRb.transform.position.z);
+                 
+                }
+                else
+                {
+                  //  canDestroy = false;
+                    return;
 
+                }
             }
+           
         }
         
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, explosionRadious);
-    }
+
     void FixedUpdate()
     {
         rb.velocity = transform.forward * rocketSpeed;
-       
-        var leadTimePercentage = Mathf.InverseLerp(minDistancePredict, maxDistancePredict, Vector3.Distance(transform.position, targetRb.transform.position));
+       if(isFollowing)
+        {
+            var leadTimePercentage = Mathf.InverseLerp(minDistancePredict, maxDistancePredict, Vector3.Distance(transform.position, targetRb.transform.position));
 
-        MovementPrediction(leadTimePercentage);
+            MovementPrediction(leadTimePercentage);
 
-        AddDeviation(leadTimePercentage);
+            AddDeviation(leadTimePercentage);
 
-        RotateRocket();
-        if (canDestroy == true)
+            RotateRocket();
+        }
+        if (!isFollowing)
+        {
+            transform.LookAt(storedLastPosition);
+            rb.MovePosition(rb.position+transform.forward*rocketSpeed*Time.deltaTime);
+        }
+        
+        /*if (canDestroy == true)
         {
             Instantiate(_explosionPrefab, this.transform.position, this.transform.rotation);
 
@@ -136,7 +145,7 @@ public class Rocket : MonoBehaviour
         else
         {
             return;
-        }
+        }*/
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -189,6 +198,19 @@ public class Rocket : MonoBehaviour
         }
         if (other.CompareTag("Floor"))
         {
+            Instantiate(_explosionPrefab, this.transform.position, this.transform.rotation);
+
+            Collider[] colliders = Physics.OverlapSphere(this.transform.position, explosionRadious);
+            foreach (Collider coll in colliders)
+            {
+                if (coll.GetComponent<MedaPartScript>())
+                {
+
+                    coll.GetComponent<MedaPartScript>().ApplyDamage(30);
+
+                }
+
+            }
 
             Destroy(this.gameObject);
         }
