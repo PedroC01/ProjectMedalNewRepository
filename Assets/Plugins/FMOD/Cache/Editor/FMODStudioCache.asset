@@ -1,5 +1,140 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7020127953413860606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Walk Steps
+  m_EditorClassIdentifier: 
+  Path: event:/Walk Steps
+  Guid:
+    Data1: -581619789
+    Data2: 1214571049
+    Data3: 1391497142
+    Data4: 1474514929
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7014054216965671481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AI Assistant/Name-Metabee
+  m_EditorClassIdentifier: 
+  Path: event:/AI Assistant/Name-Metabee
+  Guid:
+    Data1: -1820091397
+    Data2: 1150606652
+    Data3: -1086551650
+    Data4: 1588374916
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6792363607117283413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AI Assistant/Critical-Rokusho
+  m_EditorClassIdentifier: 
+  Path: event:/AI Assistant/Critical-Rokusho
+  Guid:
+    Data1: -721524907
+    Data2: 1162139873
+    Data3: 806558117
+    Data4: 28485337
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6762466067376396372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Extra Sound 2
+  m_EditorClassIdentifier: 
+  Path: event:/Extra Sound 2
+  Guid:
+    Data1: -2109849221
+    Data2: 1216740772
+    Data3: -1996460636
+    Data4: -794355088
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6033581468691073336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Missile Launch
+  m_EditorClassIdentifier: 
+  Path: event:/Missile Launch
+  Guid:
+    Data1: -2019918693
+    Data2: 1136647106
+    Data3: -852589912
+    Data4: 1598002493
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-4612373966467907178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18,6 +153,33 @@ MonoBehaviour:
     Data2: 1306014053
     Data3: -479445327
     Data4: 668585921
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2691667684309604580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Punch
+  m_EditorClassIdentifier: 
+  Path: event:/Punch
+  Guid:
+    Data1: 65803901
+    Data2: 1300306429
+    Data3: 507009944
+    Data4: 1765372524
   Banks:
   - {fileID: -400167153326446528}
   IsStream: 0
@@ -108,6 +270,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1595774615582188406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AI Assistant/Name-Rokusho
+  m_EditorClassIdentifier: 
+  Path: event:/AI Assistant/Name-Rokusho
+  Guid:
+    Data1: 416979605
+    Data2: 1270962934
+    Data3: -980503370
+    Data4: 1396509263
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1313511319599991760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,10 +339,10 @@ MonoBehaviour:
   Path: FmodFolderProjectMedal/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638202097891882831
+  lastModified: 638234364182234524
   FileSizes:
   - Name: Desktop
-    Value: 1445344
+    Value: 1911936
   Exists: 1
 --- !u!114 &-308462318287087330
 MonoBehaviour:
@@ -206,13 +395,57 @@ MonoBehaviour:
   - {fileID: -2554072357269639948}
   - {fileID: 5575613774771883441}
   - {fileID: -1946056883263858016}
+  - {fileID: 7155941139465505622}
+  - {fileID: 5860338375961791267}
+  - {fileID: 2307251696290942784}
+  - {fileID: 4747870309496632788}
+  - {fileID: 1843426485952647906}
+  - {fileID: -6792363607117283413}
+  - {fileID: 9190455564390201426}
+  - {fileID: -6762466067376396372}
+  - {fileID: -2691667684309604580}
+  - {fileID: -1595774615582188406}
+  - {fileID: -6033581468691073336}
+  - {fileID: -7020127953413860606}
+  - {fileID: 6931961613168792287}
+  - {fileID: 2192477006028568815}
+  - {fileID: 6801927635316342790}
+  - {fileID: -7014054216965671481}
+  - {fileID: 7503357913449412572}
   EditorParameters: []
   MasterBanks:
   - {fileID: -400167153326446528}
   StringsBanks:
   - {fileID: 6864873817982603600}
-  cacheTime: 638202097891914337
+  cacheTime: 638234364182254871
   cacheVersion: 131601
+--- !u!114 &1843426485952647906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Shoot 2
+  m_EditorClassIdentifier: 
+  Path: event:/Shoot 2
+  Guid:
+    Data1: 1021640266
+    Data2: 1088508860
+    Data3: -464033643
+    Data4: -1531895926
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2168909266211624326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +464,87 @@ MonoBehaviour:
     Data2: 1169472846
     Data3: 1814790566
     Data4: 147110218
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2192477006028568815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Revolver
+  m_EditorClassIdentifier: 
+  Path: event:/Revolver
+  Guid:
+    Data1: 969722346
+    Data2: 1078516841
+    Data3: -319150959
+    Data4: -1020615530
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2307251696290942784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Extra Sound 1
+  m_EditorClassIdentifier: 
+  Path: event:/Extra Sound 1
+  Guid:
+    Data1: 270449704
+    Data2: 1331680823
+    Data3: -1996166737
+    Data4: 1410785220
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4747870309496632788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Shoot 1
+  m_EditorClassIdentifier: 
+  Path: event:/Shoot 1
+  Guid:
+    Data1: 1795613250
+    Data2: 1224310860
+    Data3: -371719798
+    Data4: 1521626275
   Banks:
   - {fileID: -400167153326446528}
   IsStream: 0
@@ -267,6 +581,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5860338375961791267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AI Assistant/Legs Damaged
+  m_EditorClassIdentifier: 
+  Path: event:/AI Assistant/Legs Damaged
+  Guid:
+    Data1: 687799326
+    Data2: 1207156155
+    Data3: -865774955
+    Data4: 121999933
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6801927635316342790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Missile Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Missile Hit
+  Guid:
+    Data1: -982024467
+    Data2: 1108371052
+    Data3: 1029854871
+    Data4: -1864403185
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6864873817982603600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,8 +650,116 @@ MonoBehaviour:
   Path: FmodFolderProjectMedal/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638202097891914337
+  lastModified: 638234364182254871
   FileSizes:
   - Name: Desktop
-    Value: 1160
+    Value: 1944
   Exists: 1
+--- !u!114 &6931961613168792287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AI Assistant/Critical-Metabee
+  m_EditorClassIdentifier: 
+  Path: event:/AI Assistant/Critical-Metabee
+  Guid:
+    Data1: -319084078
+    Data2: 1245224314
+    Data3: 1148151739
+    Data4: -1484032135
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7155941139465505622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AI Assistant/Right Arm Damaged
+  m_EditorClassIdentifier: 
+  Path: event:/AI Assistant/Right Arm Damaged
+  Guid:
+    Data1: 130235932
+    Data2: 1079182229
+    Data3: -268471378
+    Data4: -973595536
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7503357913449412572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/RUN
+  m_EditorClassIdentifier: 
+  Path: event:/RUN
+  Guid:
+    Data1: -2079592425
+    Data2: 1321792513
+    Data3: 20824979
+    Data4: 1449159366
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &9190455564390201426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AI Assistant/Left Arm Damaged
+  m_EditorClassIdentifier: 
+  Path: event:/AI Assistant/Left Arm Damaged
+  Guid:
+    Data1: -1414446237
+    Data2: 1153591063
+    Data3: -476148066
+    Data4: 205921263
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0

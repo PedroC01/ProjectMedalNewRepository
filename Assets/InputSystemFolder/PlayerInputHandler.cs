@@ -18,10 +18,9 @@ public class PlayerInputHandler : MonoBehaviour
     private Shooter eastButton;
     private RocketLaucher northButton;
     private bool hold;
-    
-    [SerializeField] 
-    private float doubleTapTimeThreshold = 1;
-    private float lastTapTime;
+    private bool leftTriggerPressed;
+    private bool rightTriggerPressed;
+
     void Start()
     {
         playerInput=GetComponent<PlayerInput>();
@@ -37,31 +36,58 @@ public class PlayerInputHandler : MonoBehaviour
     {
    
     }
-    private bool IsDoubleTap()
-    {
-        float timeSinceLastTap = Time.time - lastTapTime;
 
-        if (timeSinceLastTap <= doubleTapTimeThreshold)
+    private void OnEnable()
+    {
+        playerInput.actions["LeftTrigger"].performed += OnLeftTriggerPressed;
+        playerInput.actions["RightTrigger"].performed += OnRightTriggerPressed;
+        playerInput.actions["LeftTrigger"].canceled += OnLeftTriggerReleased;
+        playerInput.actions["RightTrigger"].canceled += OnRightTriggerReleased;
+    }
+
+    private void OnDisable()
+    {
+        playerInput.actions["LeftTrigger"].performed -= OnLeftTriggerPressed;
+        playerInput.actions["RightTrigger"].performed -= OnRightTriggerPressed;
+        playerInput.actions["LeftTrigger"].canceled -= OnLeftTriggerReleased;
+        playerInput.actions["RightTrigger"].canceled -= OnRightTriggerReleased;
+    }
+
+    private void OnLeftTriggerPressed(InputAction.CallbackContext context)
+    {
+        leftTriggerPressed = true;
+        CheckCombo();
+    }
+
+    private void OnLeftTriggerReleased(InputAction.CallbackContext context)
+    {
+        leftTriggerPressed = false;
+    }
+
+    private void OnRightTriggerPressed(InputAction.CallbackContext context)
+    {
+        rightTriggerPressed = true;
+        CheckCombo();
+    }
+
+    private void OnRightTriggerReleased(InputAction.CallbackContext context)
+    {
+        rightTriggerPressed = false;
+    }
+
+    private void CheckCombo()
+    {
+        if (leftTriggerPressed && rightTriggerPressed)
         {
-            lastTapTime = 0f;
-            return true;
-        }
-        else
-        {
-            lastTapTime = Time.time;
-            StartCoroutine(ResetLastTapTime());
-            return false;
+            PerformComboAction();
         }
     }
 
-
-    private IEnumerator ResetLastTapTime()
+    private void PerformComboAction()
     {
-        yield return new WaitForSeconds(doubleTapTimeThreshold);
-        lastTapTime = 0f;
+        // Perform your desired action when the button combo is detected
+        Debug.Log("Button combo performed!");
     }
-
-
 
 
     public void OnMove(CallbackContext context)
@@ -71,25 +97,9 @@ public class PlayerInputHandler : MonoBehaviour
     }
     public void OnJump(CallbackContext context)//por algum motivo o call back context dá erro aqui
     {
-
-        if (context.performed)
-        {
-            if (IsDoubleTap()==true)
-            {
-
-              
-                pMovement.OnDash();
-            }
-            else
-            {
-
-           
+   
                 pMovement.OnJump();
-            }
-        }
-
-        
-
+       
     }
     public void OnDash(CallbackContext context)
     {

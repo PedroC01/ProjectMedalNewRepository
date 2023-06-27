@@ -22,7 +22,8 @@ public class Shooter : MonoBehaviour
     public Transform lookat;
     public LockOn LO;
     public float melleeDamage;
-    public float dealDamage;
+    public float smgDamage;
+    public float revolverDamage;
     public bool shootFullAuto;
     public int magSize;
     private int magSizeRecharge;
@@ -208,6 +209,7 @@ public class Shooter : MonoBehaviour
             if (magSize > 0)
             {
                 GameObject newBullet = Instantiate(bulletPrefab, FullAutoFirePoint1.position, FullAutoFirePoint1.rotation);
+                newBullet.GetComponent<Bullet>().damagePerBullet = smgDamage;
                 Mathf.Clamp(magSize--, 0, magSizeRecharge);
 
             }
@@ -216,6 +218,7 @@ public class Shooter : MonoBehaviour
             {
 
                 GameObject newBullet2 = Instantiate(bulletPrefab, FullAutoFirePoint2.position, FullAutoFirePoint2.rotation);
+                newBullet2.GetComponent<Bullet>().damagePerBullet = smgDamage;
                 Mathf.Clamp(magSize--, 0, magSizeRecharge);
 
             }
