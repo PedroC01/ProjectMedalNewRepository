@@ -9,7 +9,7 @@ public class MedaPartScript : MonoBehaviour
     // Start is called before the first frame update
     [Header("0=Body,1=Head,2=LeftArm,3=RightArm,4=legs")]
     public int MedapartNumber;
-    public float partEnergy = 20;
+    public float partEnergy = 100;
     private float partEnergyInitial;
     public float defense;
     public float damage;

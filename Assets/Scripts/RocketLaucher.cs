@@ -16,12 +16,16 @@ public class RocketLaucher : MonoBehaviour
     public Transform lookat;
     public LockOn LO;
     public float damagePerRocket;
-
-
+    public float delayInSecondRocket = 0.5f;
+    [Header("Sounds")]
+    public string RocketLaunchSound;
+    private FMOD.Studio.EventInstance RocketLaunchSoundInstance;
+    
     // Start is called before the first frame update
     void Start()
     {
         LO = GetComponent<LockOn>();
+        RocketLaunchSoundInstance = FMODUnity.RuntimeManager.CreateInstance(RocketLaunchSound);
     }
 
     public void North()
@@ -53,18 +57,28 @@ public class RocketLaucher : MonoBehaviour
 
     private IEnumerator Fire()
     {
+        TimerForRecharge = rechargeTime;
         if (LO.Locked == true)
         {
             this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             lookat = LO.lockOnTarget;
         }
+
+        RocketLaunchSoundInstance.start();
         GameObject HeadPrefabBullet = Instantiate(rocketPrefab, firePointRocket.position, firePointRocket.rotation);
-        GameObject HeadPrefabBullet2 = Instantiate(rocketPrefab, firePointRocket2.position, firePointRocket2.rotation);
         HeadPrefabBullet.GetComponent<Rocket>().targetRb = this.LO.Enemy.GetComponent<Rigidbody>();
+        HeadPrefabBullet.GetComponent<Rocket>().RocketDamage = damagePerRocket;
+
+
+
+        yield return new WaitForSecondsRealtime(delayInSecondRocket);
+
+        RocketLaunchSoundInstance.start();
+        GameObject HeadPrefabBullet2 = Instantiate(rocketPrefab, firePointRocket2.position, firePointRocket2.rotation);
         HeadPrefabBullet2.GetComponent<Rocket>().targetRb = this.LO.Enemy.GetComponent<Rigidbody>();
         HeadPrefabBullet2.GetComponent<Rocket>().RocketDamage=damagePerRocket;
-        HeadPrefabBullet.GetComponent<Rocket>().RocketDamage = damagePerRocket;
-        TimerForRecharge = rechargeTime;
+        
+        
         yield return new WaitForSecondsRealtime(0.1f);
     }
 }

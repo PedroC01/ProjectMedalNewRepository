@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 3011.6797, g: 2672.2878, b: 2535.0273, a: 1}
+  m_IndirectSpecularColor: {r: 3010.561, g: 2671.228, b: 2532.8481, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6990,6 +6990,8 @@ MonoBehaviour:
   lookat: {fileID: 0}
   LO: {fileID: 0}
   damagePerRocket: 0
+  delayInSecondRocket: 0.5
+  RocketLaunchSound: event:/Missile Launch
 --- !u!1 &303219051
 GameObject:
   m_ObjectHideFlags: 0
@@ -7559,6 +7561,8 @@ MonoBehaviour:
   lookat: {fileID: 0}
   LO: {fileID: 0}
   damagePerRocket: 0
+  delayInSecondRocket: 0.5
+  RocketLaunchSound: 
 --- !u!1 &331904270
 GameObject:
   m_ObjectHideFlags: 0
@@ -35096,8 +35100,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697339436}
-  m_LocalRotation: {x: 0.019400658, y: 0.28098664, z: -0.0056814295, w: 0.95949876}
-  m_LocalPosition: {x: -23.789547, y: -4.101838, z: -55.205147}
+  m_LocalRotation: {x: 0.019400643, y: 0.28098664, z: -0.005681426, w: 0.95949876}
+  m_LocalPosition: {x: -23.789547, y: -4.101839, z: -55.205147}
   m_LocalScale: {x: 1, y: 0.81083345, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -102692,6 +102696,8 @@ MonoBehaviour:
   lookat: {fileID: 0}
   LO: {fileID: 0}
   damagePerRocket: 0
+  delayInSecondRocket: 0.5
+  RocketLaunchSound: event:/Missile Launch
 --- !u!114 &7862484790357110750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102707,11 +102713,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 130235932
-      Data2: 1079182229
-      Data3: -268471378
-      Data4: -973595536
-    Path: event:/AI Assistant/Right Arm Damaged
+      Data1: -2019918693
+      Data2: 1136647106
+      Data3: -852589912
+      Data4: 1598002493
+    Path: event:/Missile Launch
   Event: 
   PlayEvent: 0
   StopEvent: 0

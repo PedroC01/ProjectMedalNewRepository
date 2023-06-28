@@ -20,12 +20,14 @@ public class PlayerHealth : MonoBehaviour
     public float LowEnergyMark=0;
     public float LowEnergyMarkHead= 35;
     private SoundManagerScript soundManager;
+    private bool DontRepeat;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        DontRepeat = false;
         soundManager = FindObjectOfType<SoundManagerScript>();
         medapartsScripts = GetComponentsInChildren<MedaPartScript>();
         if (this.gameObject.GetComponent<Player2>()==true)
@@ -76,16 +78,22 @@ public class PlayerHealth : MonoBehaviour
     {
         foreach (MedaPartScript medapart in medapartsScripts)
         {
+            if (medapart.MedapartNumber == 1 && medapart.partEnergy <= 35)
+            {
+                if (DontRepeat==false)
+                {
+                    soundManager.PlayHeadCritDamageSound();
+                    DontRepeat = true;
+                }
+                
+            }
+            
             if (medapart.partEnergy <= LowEnergyMark )
             {
                 // Perform actions for low energy Medaparts
                 switch (medapart.MedapartNumber)
                 {
-                    case 1:
-                        // Call the appropriate sound method for the specific medapart
-                        soundManager.PlayHeadCritDamageSound();
-                        break;
-
+                    
                     case 2:
                         soundManager.PlayLeftArmDestroyedSound();
                         break;

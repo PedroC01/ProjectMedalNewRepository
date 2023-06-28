@@ -9,6 +9,9 @@ using static UnityEngine.InputSystem.InputAction;
 using FMODUnity;
 public class Shooter : MonoBehaviour
 {
+
+    private bool rechargingWest;
+    private bool rechargingEast;
     public float rechargeTimeEast;
     public float rechargeTimeWest;
     public float TimerForRechargeEast;
@@ -97,22 +100,30 @@ public class Shooter : MonoBehaviour
     /// </summary>
     public void West()
     {
-       this. shootFullAuto = true;
-        if (PM.closeRange == false)
+        if (rechargingWest==false)
         {
-            if (shootFullAuto == true && TimerForRechargeEast <= 0)
+            this.shootFullAuto = true;
+            if (PM.closeRange == false)
             {
-               
-                StartCoroutine(FireFullAuto());
+                if (shootFullAuto == true && TimerForRechargeEast <= 0)
+                {
+
+                    StartCoroutine(FireFullAuto());
+                    return;
+                }
+            }
+            if (PM.closeRange == true)
+            {
+                MeleeWest = true;
+                m_Animator.SetTrigger("MeleeWest");
                 return;
             }
         }
-        if (PM.closeRange == true)
+        else
         {
-            MeleeWest = true;
-            m_Animator.SetTrigger("MeleeWest");
-           return ;
+            return;
         }
+      
       
         
     }
@@ -168,6 +179,7 @@ public class Shooter : MonoBehaviour
 
             if (TimerForRechargeWest <= 0)
             {
+                rechargingWest = false;
                 magSizeFullAuto = MaxMagFullAuto; // Reset the magazine size after recharge
             }
         }
@@ -246,6 +258,12 @@ public class Shooter : MonoBehaviour
         
         while (shootFullAuto == true)
         {
+            if (magSizeFullAuto <= 0)
+            {
+                shootFullAuto = false;
+                TimerForRechargeWest = rechargeTimeWest;
+                rechargingWest = true;
+            }
             if (PM.IsMoving == false)
             {
                 this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, this.transform.position.y, LO.lockOnTarget.transform.position.z));
@@ -288,11 +306,7 @@ public class Shooter : MonoBehaviour
                 }
             }
 
-            if (magSizeFullAuto <= 0)
-            {
-                shootFullAuto = false;
-                TimerForRechargeWest = rechargeTimeWest;
-            }
+           
             
             yield return null;
         }
