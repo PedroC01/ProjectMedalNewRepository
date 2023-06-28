@@ -64,10 +64,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016c52222ed0fef49a65be4985e92a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RocketDamage: 0
   rocketSpeed: 20
   target: {fileID: 0}
   targetRb: {fileID: 0}
-  autoDestructTimer: 3
+  autoDestructTimer: 1.5
   canDestroy: 0
   _explosionPrefab: {fileID: 8836354246954985214, guid: 3b47f2b8af8a3a94fb1956b9ac4e005f,
     type: 3}
@@ -79,6 +80,7 @@ MonoBehaviour:
   maxTimePrediction: 600
   deviationAmount: 50
   deviationSpeed: 2
+  ExplosionSound: event:/Missile Hit
 --- !u!136 &8161052793125049662
 CapsuleCollider:
   m_ObjectHideFlags: 0

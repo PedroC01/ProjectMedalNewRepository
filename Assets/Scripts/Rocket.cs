@@ -39,14 +39,18 @@ public class Rocket : MonoBehaviour
     [SerializeField] private float deviationSpeed = 2;
     private bool isFollowing;
     private Vector3 storedLastPosition;
+
+    [Header("Sounds")]
+    public string ExplosionSound;
+    private FMOD.Studio.EventInstance explosionSoundInstance;
     // Start is called before the first frame update
     void Start()
     {
 
 
-        
 
-        
+        explosionSoundInstance = FMODUnity.RuntimeManager.CreateInstance(ExplosionSound);
+
         rb = GetComponent<Rigidbody>();
         //targetRb=target.GetComponent<Rigidbody>(); 
        
@@ -92,7 +96,7 @@ public class Rocket : MonoBehaviour
                 {
                   //  canDestroy = true;
                     storedLastPosition = new Vector3(targetRb.transform.position.x,0, targetRb.transform.position.z);
-                 
+                isFollowing = false;
                 }
                 else
                 {
@@ -110,7 +114,7 @@ public class Rocket : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = transform.forward * rocketSpeed;
-       if(isFollowing)
+       if(isFollowing==true)
         {
             var leadTimePercentage = Mathf.InverseLerp(minDistancePredict, maxDistancePredict, Vector3.Distance(transform.position, targetRb.transform.position));
 
@@ -120,10 +124,11 @@ public class Rocket : MonoBehaviour
 
             RotateRocket();
         }
-        if (!isFollowing)
+        if (isFollowing==false)
         {
-            transform.LookAt(storedLastPosition);
-            rb.MovePosition(rb.position+transform.forward*rocketSpeed*Time.deltaTime);
+            this.rb.transform.LookAt(storedLastPosition);
+
+            
         }
         
         /*if (canDestroy == true)
@@ -179,7 +184,7 @@ public class Rocket : MonoBehaviour
 
 
                 Instantiate(_explosionPrefab, this.transform.position, this.transform.rotation);
-
+                explosionSoundInstance.start();
                 Collider[] colliders = Physics.OverlapSphere(this.transform.position, explosionRadious);
                 foreach (Collider coll in colliders)
                 {
@@ -200,7 +205,7 @@ public class Rocket : MonoBehaviour
         if (other.CompareTag("Floor"))
         {
             Instantiate(_explosionPrefab, this.transform.position, this.transform.rotation);
-
+            explosionSoundInstance.start();
             Collider[] colliders = Physics.OverlapSphere(this.transform.position, explosionRadious);
             foreach (Collider coll in colliders)
             {

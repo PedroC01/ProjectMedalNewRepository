@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
-
+using FMODUnity;
 public class Shooter : MonoBehaviour
 {
     public float rechargeTimeEast;
@@ -36,6 +36,7 @@ public class Shooter : MonoBehaviour
     public UIbuttons ub;
     public UIbuttons1 ub1;
     public float fireRateRevolver;
+    public float fireRateFullAuto;
     public float delayFullAuto;
     public int bulletsShotCount = 0;
     public bool lastBulletCrit = false;
@@ -46,6 +47,13 @@ public class Shooter : MonoBehaviour
     private int MaxMagFullAuto;
     private int bulletsInMagazineRev;
     public int maxMagazineSizeRevolver = 6;
+
+    [Header("Sounds")]
+    public string shootRevSoundEvent;
+    private FMOD.Studio.EventInstance shootRevSoundInstance;
+    public string shootAutoSoundEvent;
+    private FMOD.Studio.EventInstance shootAutoSoundInstance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +64,8 @@ public class Shooter : MonoBehaviour
         // this.thisPlayer=GetComponentInParent<Transform>();
         m_Animator = GetComponentInChildren<Animator>();
         bulletsInMagazineRev = maxMagazineSizeRevolver;
+        shootRevSoundInstance = FMODUnity.RuntimeManager.CreateInstance(shootRevSoundEvent);
+        shootAutoSoundInstance = FMODUnity.RuntimeManager.CreateInstance(shootAutoSoundEvent);
     }
 
     public void East()
@@ -207,7 +217,7 @@ public class Shooter : MonoBehaviour
             this.firePoint.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             lookat = LO.lockOnTarget.transform;
 
-            
+            shootRevSoundInstance.start();
             GameObject newBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             newBullet.GetComponent<Bullet>().damagePerBullet = revolverDamage;
 
@@ -233,7 +243,7 @@ public class Shooter : MonoBehaviour
 
     private IEnumerator FireFullAuto()
     {
-        ResetBulletShotCount();
+        
         while (shootFullAuto == true)
         {
             if (PM.IsMoving == false)
@@ -250,6 +260,7 @@ public class Shooter : MonoBehaviour
 
             if (magSizeFullAuto > 0)
             {
+                shootAutoSoundInstance.start();
                 GameObject newBullet = Instantiate(bulletPrefab, FullAutoFirePoint1.position, FullAutoFirePoint1.rotation);
                 newBullet.GetComponent<Bullet>().damagePerBullet = smgDamage;
                 this.bulletsShotCount++;
@@ -261,10 +272,11 @@ public class Shooter : MonoBehaviour
                 }
             }
 
-            yield return new WaitForSecondsRealtime(0.1f);
+            yield return new WaitForSecondsRealtime(fireRateFullAuto);
             
             if (magSizeFullAuto > 0)
             {
+                shootAutoSoundInstance.start();
                 GameObject newBullet2 = Instantiate(bulletPrefab, FullAutoFirePoint2.position, FullAutoFirePoint2.rotation);
                 newBullet2.GetComponent<Bullet>().damagePerBullet = smgDamage;
                 this.bulletsShotCount++;
@@ -284,6 +296,7 @@ public class Shooter : MonoBehaviour
             
             yield return null;
         }
+        ResetBulletShotCount();
     }
 
 }
