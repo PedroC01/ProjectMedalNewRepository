@@ -15,13 +15,13 @@ public class RocketLaucher : MonoBehaviour
     public Transform firePointRocket2;
     public Transform lookat;
     public LockOn LO;
-    
+    public float damagePerRocket;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        LO = GetComponentInParent<LockOn>();
+        LO = GetComponent<LockOn>();
     }
 
     public void North()
@@ -62,6 +62,8 @@ public class RocketLaucher : MonoBehaviour
         GameObject HeadPrefabBullet2 = Instantiate(rocketPrefab, firePointRocket2.position, firePointRocket2.rotation);
         HeadPrefabBullet.GetComponent<Rocket>().targetRb = this.LO.Enemy.GetComponent<Rigidbody>();
         HeadPrefabBullet2.GetComponent<Rocket>().targetRb = this.LO.Enemy.GetComponent<Rigidbody>();
+        HeadPrefabBullet2.GetComponent<Rocket>().RocketDamage=damagePerRocket;
+        HeadPrefabBullet.GetComponent<Rocket>().RocketDamage = damagePerRocket;
         TimerForRecharge = rechargeTime;
         yield return new WaitForSecondsRealtime(0.1f);
     }

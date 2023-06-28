@@ -10,6 +10,9 @@ public class Bullet : MonoBehaviour
     public float damagePerBullet;
     public GameObject impactVFX;
     public Vector3 firstposition;
+    public bool hasCrit;
+    public float critValue;
+    private float crit;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -42,7 +45,14 @@ public class Bullet : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-       
+        if (hasCrit)
+        {
+            this.crit = critValue;
+        }
+        else
+        {
+            this.crit = 1;
+        }
       
     
         Vector3 hitPoint = other.ClosestPoint(firstposition);
@@ -59,7 +69,7 @@ public class Bullet : MonoBehaviour
            // Vector3 HitPoint= transform.position;
             if (Medapart.playerX == 2 || Medapart.playerX == 1)
             {
-                other.GetComponent<MedaPartScript>().ApplyDamage(damagePerBullet);
+                other.GetComponent<MedaPartScript>().ApplyDamage(damagePerBullet*crit);
                Instantiate(this.impactVFX, newPosition, this.transform.rotation);
              
             }

@@ -22,11 +22,7 @@ public class Shooter : MonoBehaviour
     public Transform lookat;
     public LockOn LO;
     public float melleeDamage;
-    public float smgDamage;
-    public float revolverDamage;
     public bool shootFullAuto;
-    public int magSize;
-    private int magSizeRecharge;
     private PlayerMovements PM;
     private bool MeleeEast;
     private bool MeleeWest;
@@ -39,16 +35,27 @@ public class Shooter : MonoBehaviour
     [SerializeField]
     public UIbuttons ub;
     public UIbuttons1 ub1;
+    public float fireRateRevolver;
     public float delayFullAuto;
+    public int bulletsShotCount = 0;
+    public bool lastBulletCrit = false;
+    [Header("Guns Damage and MagSizes")]
+    public float smgDamage;
+    public float revolverDamage;
+    public int magSizeFullAuto;
+    private int MaxMagFullAuto;
+    private int bulletsInMagazineRev;
+    public int maxMagazineSizeRevolver = 6;
     // Start is called before the first frame update
     void Start()
     {
         LO = GetComponent<LockOn>();
-        magSizeRecharge = magSize;
+        MaxMagFullAuto = magSizeFullAuto;
         PM = GetComponent<PlayerMovements>();
         this.bulletPrefab.GetComponent<Bullet>().bulletSpeed=mineBulletSpeed;
         // this.thisPlayer=GetComponentInParent<Transform>();
         m_Animator = GetComponentInChildren<Animator>();
+        bulletsInMagazineRev = maxMagazineSizeRevolver;
     }
 
     public void East()
@@ -58,7 +65,7 @@ public class Shooter : MonoBehaviour
         {
             if (Shooted == true && TimerForRechargeEast <= 0)
             {
-                StartCoroutine(Fire());
+                StartCoroutine(Fire(fireRateRevolver));
               return;
             }
            
@@ -109,6 +116,25 @@ public class Shooter : MonoBehaviour
         StopCoroutine(FireFullAuto());
 
     }
+    public void EastRelease()
+    {
+        this.Shooted = false;
+        StopCoroutine(Fire(fireRateRevolver));
+    }
+
+
+    public void ResetBulletShotCount()
+    {
+        bulletsShotCount = 0;
+        lastBulletCrit = false;
+    }
+
+    public bool LastBulletCrit()
+    {
+        return lastBulletCrit;
+    }
+
+
 
 
     // Update is called once per frame
@@ -117,20 +143,25 @@ public class Shooter : MonoBehaviour
         lookat = LO.lockOnTarget.transform;
         if (TimerForRechargeEast > 0)
         {
-            Mathf.Clamp(TimerForRechargeEast -= Time.deltaTime, 0, TimerForRechargeEast);
-           
-        }
-        if(TimerForRechargeWest > 0)
-        {
-            
-            Mathf.Clamp(TimerForRechargeWest -= Time.deltaTime, 0, TimerForRechargeWest);
-         
-            if (TimerForRechargeWest <= 0)
+            TimerForRechargeEast -= Time.deltaTime;
+            TimerForRechargeEast = Mathf.Clamp(TimerForRechargeEast, 0f, Mathf.Infinity);
+            if (TimerForRechargeEast <= 0)
             {
-                magSize = magSizeRecharge;
+                bulletsInMagazineRev = maxMagazineSizeRevolver; // Reset the magazine size after recharge
             }
         }
-       
+
+        if (TimerForRechargeWest > 0)
+        {
+            TimerForRechargeWest -= Time.deltaTime;
+            TimerForRechargeWest = Mathf.Clamp(TimerForRechargeWest, 0f, Mathf.Infinity);
+
+            if (TimerForRechargeWest <= 0)
+            {
+                magSizeFullAuto = MaxMagFullAuto; // Reset the magazine size after recharge
+            }
+        }
+
     }
 
     private void OnDrawGizmos()
@@ -166,21 +197,35 @@ public class Shooter : MonoBehaviour
         }
     }
 
-        private IEnumerator Fire()
+    private IEnumerator Fire(float fireRate)
     {
-        //if (LO.Locked == true)
-        //{
-
+        
+        while (Shooted && TimerForRechargeEast <= 0 && bulletsInMagazineRev > 0)
+        {
             this.thisPlayer.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             this.firePoint.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
-        lookat = LO.lockOnTarget.transform;
-       // }
+            lookat = LO.lockOnTarget.transform;
 
-        TimerForRechargeEast = rechargeTimeEast;
-        GameObject newBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        
-        yield return new WaitForSeconds(0.1f);
+            
+            GameObject newBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            newBullet.GetComponent<Bullet>().damagePerBullet = revolverDamage;
+
+            bulletsInMagazineRev--;
+            this.bulletsShotCount++;
+            if (bulletsInMagazineRev<=0)
+            {
+                this.Shooted = false;
+                TimerForRechargeEast = rechargeTimeEast;
+            }
+            if (bulletsInMagazineRev <= 0 && bulletsShotCount > 0)
+            {
+                lastBulletCrit = true;
+                newBullet.GetComponent<Bullet>().hasCrit = true;
+            }
+            yield return new WaitForSeconds(fireRate);
+        }
+        ResetBulletShotCount();
     }
 
 
@@ -188,51 +233,57 @@ public class Shooter : MonoBehaviour
 
     private IEnumerator FireFullAuto()
     {
+        ResetBulletShotCount();
         while (shootFullAuto == true)
         {
-          
             if (PM.IsMoving == false)
             {
-             
                 this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, this.transform.position.y, LO.lockOnTarget.transform.position.z));
                 new WaitForSeconds(delayFullAuto);
             }
             m_Animator.SetBool("ShootingLeft", true);
-            //  if (LO.Locked == true)
-            //  {
-            // this.thisPlayer.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
+
             lookat = LO.lockOnTarget;
-         //   this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
+
             this.FullAutoFirePoint1.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             this.FullAutoFirePoint2.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
-            //  }
-            if (magSize > 0)
+
+            if (magSizeFullAuto > 0)
             {
                 GameObject newBullet = Instantiate(bulletPrefab, FullAutoFirePoint1.position, FullAutoFirePoint1.rotation);
                 newBullet.GetComponent<Bullet>().damagePerBullet = smgDamage;
-                Mathf.Clamp(magSize--, 0, magSizeRecharge);
-
+                this.bulletsShotCount++;
+                magSizeFullAuto--;
+                if (magSizeFullAuto <= 0 && bulletsShotCount > 0)
+                {
+                    lastBulletCrit = true;
+                    newBullet.GetComponent<Bullet>().hasCrit = true;
+                }
             }
-            yield return new WaitForSecondsRealtime(0.1f);
-            if (magSize > 0)
-            {
 
+            yield return new WaitForSecondsRealtime(0.1f);
+            
+            if (magSizeFullAuto > 0)
+            {
                 GameObject newBullet2 = Instantiate(bulletPrefab, FullAutoFirePoint2.position, FullAutoFirePoint2.rotation);
                 newBullet2.GetComponent<Bullet>().damagePerBullet = smgDamage;
-                Mathf.Clamp(magSize--, 0, magSizeRecharge);
-
+                this.bulletsShotCount++;
+                magSizeFullAuto--;
+                if (magSizeFullAuto <= 0 && bulletsShotCount > 0)
+                {
+                    lastBulletCrit = true;
+                    newBullet2.GetComponent<Bullet>().hasCrit = true;
+                }
             }
-            if (magSize <= 0)
+
+            if (magSizeFullAuto <= 0)
             {
                 shootFullAuto = false;
                 TimerForRechargeWest = rechargeTimeWest;
-
-
             }
-
+            
             yield return null;
         }
-       // m_Animator.SetBool("ShootingLeft", false);
     }
-   
+
 }

@@ -15,7 +15,7 @@ public class PlayerMovements : MonoBehaviour
     private Vector3 move;
     public Camera camera1;
     [SerializeField]
-    private float playerSpeed = 2.0f;
+    public float playerSpeed = 2.0f;
 
 
     //jump---------------------------------------------------------
@@ -69,6 +69,7 @@ public class PlayerMovements : MonoBehaviour
 
     public float dashCoolDown;
     private float dashCoolDownReset;
+    private PlayerMedapartsController pmc;
     private void Awake()
     {
         setupJump();
@@ -80,8 +81,8 @@ public class PlayerMovements : MonoBehaviour
       // this.camera1 = FindObjectOfType<Camera>(); //para testar split screen-------------------------------
         this.shooter = GetComponentInChildren<Shooter>();
         this.LO = GetComponent<LockOn>();
-        this.RL = GetComponentInChildren<RocketLaucher>();
-       
+        this.RL = GetComponent<RocketLaucher>();
+       this.pmc = GetComponent<PlayerMedapartsController>();
         m_Animator1 = GetComponentInChildren<Animator>();
         jumped = false;
         if (this.gameObject.GetComponent<Player1>() == true)
@@ -156,6 +157,10 @@ public class PlayerMovements : MonoBehaviour
     {
         shooter.East();
     }
+    public void OnEastRelease()
+    {
+        shooter.EastRelease();
+    }
     public void OnWest()
     {
         shooter.West();
@@ -180,7 +185,7 @@ public class PlayerMovements : MonoBehaviour
     {
         Debug.Log(block);
         block = Hold;
-
+        pmc.SetBlocking(true);
         m_Animator1.SetBool("Blocking", block);
 
     }
@@ -307,12 +312,12 @@ public class PlayerMovements : MonoBehaviour
         if (dist <= distClose)
         {
             closeRange = true;
-            Off.Invoke();
+            On.Invoke();
         }
         else
         {
             closeRange = false;
-            On.Invoke();
+            Off.Invoke();
         }
         if (count == true)
         {
@@ -387,17 +392,17 @@ public class PlayerMovements : MonoBehaviour
            
             float dashSpeed = dashDistance / dashDuration;
             Vector3 nextpos = dashDirection * dashSpeed * Time.deltaTime;
-            Debug.Log("Is Dashing but not moving");
+          
             // Check if the next position will collide with obstacles
             if (!CheckCollision(transform.position + nextpos))
             {
-                Debug.Log("dashed");
+            
                 this.transform.position += nextpos;
                 this.currentDashTime += Time.deltaTime;
             }
             else
             {
-                Debug.Log("hiting sum");
+              
                 break; // Stop dashing if there's an obstacle
             }
 

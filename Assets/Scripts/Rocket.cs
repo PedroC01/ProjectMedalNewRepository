@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
+    public float RocketDamage;
     private Rigidbody rb;
     public float rocketSpeed;
     //public float maxTimePrediciton;
@@ -185,7 +186,7 @@ public class Rocket : MonoBehaviour
                     if (coll.GetComponent<MedaPartScript>())
                     {
 
-                        coll.GetComponent<MedaPartScript>().ApplyDamage(30);
+                        coll.GetComponent<MedaPartScript>().ApplyDamage(RocketDamage);
 
                     }
 
@@ -206,7 +207,7 @@ public class Rocket : MonoBehaviour
                 if (coll.GetComponent<MedaPartScript>())
                 {
 
-                    coll.GetComponent<MedaPartScript>().ApplyDamage(30);
+                    coll.GetComponent<MedaPartScript>().ApplyDamage(RocketDamage);
 
                 }
 

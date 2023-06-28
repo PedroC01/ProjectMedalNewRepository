@@ -319,7 +319,7 @@ MonoBehaviour:
   - {fileID: -400167153326446528}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -339,7 +339,7 @@ MonoBehaviour:
   Path: FmodFolderProjectMedal/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638234364182234524
+  lastModified: 638235234137118544
   FileSizes:
   - Name: Desktop
     Value: 1911936
@@ -417,7 +417,7 @@ MonoBehaviour:
   - {fileID: -400167153326446528}
   StringsBanks:
   - {fileID: 6864873817982603600}
-  cacheTime: 638234364182254871
+  cacheTime: 638235234137138661
   cacheVersion: 131601
 --- !u!114 &1843426485952647906
 MonoBehaviour:
@@ -650,7 +650,7 @@ MonoBehaviour:
   Path: FmodFolderProjectMedal/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638234364182254871
+  lastModified: 638235234137138661
   FileSizes:
   - Name: Desktop
     Value: 1944

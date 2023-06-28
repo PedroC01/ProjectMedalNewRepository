@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -25,7 +26,9 @@ public class LockOn : MonoBehaviour
     public LockOnShader LOS;
     private int enemyReference;
     public int pieceReference;
-        // Start is called before the first frame update
+    public MedaPartScript lockedOnMedapart;
+    public int startPiece=1;
+    // Start is called before the first frame update
     void Start()
     {
         if (this.gameObject.GetComponent<Player1>()==true)
@@ -79,35 +82,47 @@ public class LockOn : MonoBehaviour
         }*/
 
        
-        this.lockOnTarget = medaparts[0].transform;
-        this.pieceReference = 0;
+        this.lockOnTarget = medaparts[startPiece].transform;
+        this.pieceReference = startPiece;
 
     }
 
     public void DPadUp()
     {
-        lockOnTarget = medaparts[1].transform;
-        this.pieceReference = 1;
-      
-    }
+        if (medaparts[1].GetComponent<MedaPartScript>().partEnergy > 0)
+        {
+            lockOnTarget = medaparts[1].transform;
+            this.pieceReference = 1;
+            this.lockedOnMedapart = medaparts[1].GetComponent<MedaPartScript>();
+        }
+}
 
     public void DPadLeft()
     {
-        lockOnTarget = medaparts[2].transform;
-        this.pieceReference = 2;
-
+        if (medaparts[2].GetComponent<MedaPartScript>().partEnergy > 0)
+        {
+            lockOnTarget = medaparts[2].transform;
+            this.pieceReference = 2;
+            this.lockedOnMedapart = medaparts[2].GetComponent<MedaPartScript>();
+        }
     }
     public void DPadRight()
     {
-        lockOnTarget = medaparts[3].transform;
-        this.pieceReference = 3;
-  
+        if (medaparts[3].GetComponent<MedaPartScript>().partEnergy > 0)
+        {
+            lockOnTarget = medaparts[3].transform;
+            this.pieceReference = 3;
+            this.lockedOnMedapart = medaparts[3].GetComponent<MedaPartScript>();
+        }
     }
     public void DPadDown()
     {
-        lockOnTarget = medaparts[4].transform;
-        this.pieceReference = 4;
-   
+        if (medaparts[4].GetComponent<MedaPartScript>().partEnergy > 0)
+        {
+            lockOnTarget = medaparts[4].transform;
+            this.pieceReference = 4;
+            this.lockedOnMedapart = medaparts[4].GetComponent<MedaPartScript>();
+        }
     }
 
     public void LeftShoulderL1()
@@ -126,16 +141,15 @@ public class LockOn : MonoBehaviour
     void Update()
     {
 
-        targetDir = lockOnTarget.position;
-        if (this.enemyReference == 1)
+     
+        if (lockedOnMedapart != null && lockedOnMedapart.partEnergy <= 0 && medaparts[1] != null)
         {
-            Target3D1.transform.position = targetDir;
+            lockOnTarget = medaparts[1].transform;
+            // Update the pieceReference to the head medapart's index
+            this.pieceReference = 1;
+            // Set the lockedOnMedapart to the head medapart
+            this.lockedOnMedapart = medaparts[1].GetComponent<MedaPartScript>();
         }
-        if (this.enemyReference == 2)
-        {
-            Target3D2.transform.position = targetDir;
-        }
-
     }
 
 

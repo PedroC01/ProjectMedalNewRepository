@@ -111,7 +111,19 @@ public class PlayerInputHandler : MonoBehaviour
     }
     public void OnEast(CallbackContext context)
     {
-        pMovement.OnEast();
+        if (context.started)
+        {
+            pMovement.OnEast();
+        }
+        if (context.performed)
+        {
+            pMovement.OnEast();
+        }
+        if (context.canceled)
+        {
+            pMovement.OnEastRelease();
+        }
+
     }
     public void OnWest(CallbackContext context)
     {
