@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,9 +14,13 @@ public class Bullet : MonoBehaviour
     public bool hasCrit;
     public float critValue;
     private float crit;
+    [Header("Bullet Sounds")]
+    public string collisionSoundEvent;
+    private StudioEventEmitter eventEmitter;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        eventEmitter = GetComponent<StudioEventEmitter>();
       
     }
 
@@ -71,7 +76,8 @@ public class Bullet : MonoBehaviour
             {
                 other.GetComponent<MedaPartScript>().ApplyDamage(damagePerBullet*crit);
                Instantiate(this.impactVFX, newPosition, this.transform.rotation);
-             
+                RuntimeManager.PlayOneShot(collisionSoundEvent);
+
             }
             
 

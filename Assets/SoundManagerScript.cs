@@ -1,25 +1,41 @@
 using UnityEngine;
-using System;
 using FMODUnity;
 using FMOD.Studio;
 using System.Collections.Generic;
-
 
 public class SoundManagerScript : MonoBehaviour
 {
     [Header("SoundsForMedaParts")]
     public string HeadCritDamage;
-    private FMOD.Studio.EventInstance HeadCritSoundInstance;
     public string LeftArmDestroyed;
-    private FMOD.Studio.EventInstance LArmDSoundInstance;
     public string RightArmDestroyed;
-    private FMOD.Studio.EventInstance RArmDSoundInstance;
     public string LegsDestroyed;
-    private FMOD.Studio.EventInstance LegsDSoundInstance;
-    private FMOD.Studio.EventInstance currentSoundInstance;
 
     private Queue<string> soundEventQueue = new Queue<string>();
     private bool isPlayingSound = false;
+    private FMOD.Studio.EventInstance currentSoundInstance;
+
+    private void Update()
+    {
+        if (!isPlayingSound)
+        {
+            PlayNextSoundEvent();
+        }
+        else
+        {
+            if (currentSoundInstance.isValid())
+            {
+                PLAYBACK_STATE playbackState;
+                currentSoundInstance.getPlaybackState(out playbackState);
+
+                if (playbackState != PLAYBACK_STATE.PLAYING)
+                {
+                    isPlayingSound = false;
+                    currentSoundInstance.release();
+                }
+            }
+        }
+    }
 
     public void PlayHeadCritDamageSound()
     {
@@ -44,11 +60,6 @@ public class SoundManagerScript : MonoBehaviour
     private void EnqueueSoundEvent(string soundEventPath)
     {
         soundEventQueue.Enqueue(soundEventPath);
-
-        if (!isPlayingSound)
-        {
-            PlayNextSoundEvent();
-        }
     }
 
     private void PlayNextSoundEvent()
@@ -57,20 +68,10 @@ public class SoundManagerScript : MonoBehaviour
         {
             string soundEventPath = soundEventQueue.Dequeue();
 
-            if (currentSoundInstance.isValid())
-            {
-                currentSoundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-                currentSoundInstance.release();
-            }
-
             currentSoundInstance = RuntimeManager.CreateInstance(soundEventPath);
             currentSoundInstance.start();
 
             isPlayingSound = true;
-        }
-        else
-        {
-            isPlayingSound = false;
         }
     }
 }

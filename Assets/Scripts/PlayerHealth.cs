@@ -20,14 +20,16 @@ public class PlayerHealth : MonoBehaviour
     public float LowEnergyMark=0;
     public float LowEnergyMarkHead= 35;
     private SoundManagerScript soundManager;
-    private bool DontRepeat;
-
-
+    private bool playedHeadCritDamageSound=false;
+    private bool playedLeftArmDestroyedSound=false;
+    private bool playedRightArmDestroyedSound=false;
+    private bool playedLegsDestroyedSound=false;
+    private HashSet<int> destroyedParts = new HashSet<int>();
 
     // Start is called before the first frame update
     void Start()
     {
-        DontRepeat = false;
+        
         soundManager = FindObjectOfType<SoundManagerScript>();
         medapartsScripts = GetComponentsInChildren<MedaPartScript>();
         if (this.gameObject.GetComponent<Player2>()==true)
@@ -80,35 +82,39 @@ public class PlayerHealth : MonoBehaviour
         {
             if (medapart.MedapartNumber == 1 && medapart.partEnergy <= 35)
             {
-                if (DontRepeat==false)
+                if (!destroyedParts.Contains(1))
                 {
-                    soundManager.PlayHeadCritDamageSound();
-                    DontRepeat = true;
+                    this.soundManager.PlayHeadCritDamageSound();
+                    destroyedParts.Add(1);
                 }
-                
             }
-            
-            if (medapart.partEnergy <= LowEnergyMark )
+
+            if (medapart.partEnergy <= LowEnergyMark)
             {
                 // Perform actions for low energy Medaparts
-                switch (medapart.MedapartNumber)
+                int partNumber = medapart.MedapartNumber;
+                if (!destroyedParts.Contains(partNumber))
                 {
-                    
-                    case 2:
-                        soundManager.PlayLeftArmDestroyedSound();
-                        break;
+                    switch (partNumber)
+                    {
+                        case 2:
+                           this.soundManager.PlayLeftArmDestroyedSound();
+                            break;
 
-                    case 3:
-                        soundManager.PlayRightArmDestroyedSound();
-                        break;
+                        case 3:
+                            this.soundManager.PlayRightArmDestroyedSound();
+                            break;
 
-                    case 4:
-                        soundManager.PlayLegsDestroyedSound();
-                        break;
+                        case 4:
+                            this.soundManager.PlayLegsDestroyedSound();
+                            break;
 
-                    default:
-                        // Handle other medaparts if needed
-                        break;
+                        default:
+                            // Handle other medaparts if needed
+                            break;
+                    }
+
+                    destroyedParts.Add(partNumber);
                 }
             }
         }

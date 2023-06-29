@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4751764892457178335}
   - component: {fileID: 8187585539443330880}
   - component: {fileID: 7551864314947887586}
+  - component: {fileID: -5231462289157856936}
   m_Layer: 7
   m_Name: Bullet1Player
   m_TagString: Player1Bullet
@@ -51,6 +52,10 @@ MonoBehaviour:
   damagePerBullet: 1
   impactVFX: {fileID: 439803550336415084, guid: ddeb9cbc639538f43984c0b5ab6224cf,
     type: 3}
+  firstposition: {x: 0, y: 0, z: 0}
+  hasCrit: 0
+  critValue: 4
+  collisionSoundEvent: event:/Bullets/BulletMetalImpact
 --- !u!54 &8187585539443330880
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -81,6 +86,36 @@ CapsuleCollider:
   m_Height: 0.12
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-5231462289157856936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3109997235097872882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 978148544
+      Data2: 1230241712
+      Data3: 561020814
+      Data4: -994669146
+    Path: event:/Bullets/BulletMetalImpact
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 0
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8868695570098834705
 GameObject:
   m_ObjectHideFlags: 0

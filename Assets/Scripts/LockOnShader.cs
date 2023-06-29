@@ -16,10 +16,11 @@ public class LockOnShader : MonoBehaviour
     public GameObject[] thisPartPieces;
     public List<PartPiece> singlePartpieces;
     public GameObject Enemy;
-   
+    [SerializeField]
+    public Material thisPiecesLockOnShader;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (this.gameObject.GetComponentInParent<Player2>() == true)
         {
@@ -41,7 +42,7 @@ public class LockOnShader : MonoBehaviour
             {
 
                 ppiece.PieceNum = this.thisPieceNum;
-
+               ppiece.loShader=this.thisPiecesLockOnShader;
             }
         
 

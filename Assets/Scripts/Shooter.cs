@@ -140,6 +140,7 @@ public class Shooter : MonoBehaviour
     public void EastRelease()
     {
         this.Shooted = false;
+        m_Animator.SetBool("ShootingR", false);
         StopCoroutine(Fire(fireRateRevolver));
     }
 
@@ -224,11 +225,16 @@ public class Shooter : MonoBehaviour
         
         while (Shooted && TimerForRechargeEast <= 0 && bulletsInMagazineRev > 0)
         {
+            
+            PM.rb.velocity = Vector3.zero;
+            PM.canMove = false;
+            PM.horizontalInput.x = 0;
+            PM.horizontalInput.y = 0;
             this.thisPlayer.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             this.firePoint.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             lookat = LO.lockOnTarget.transform;
-
+            m_Animator.SetBool("ShootingR", true);
             shootRevSoundInstance.start();
             GameObject newBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             newBullet.GetComponent<Bullet>().damagePerBullet = revolverDamage;
@@ -238,6 +244,7 @@ public class Shooter : MonoBehaviour
             if (bulletsInMagazineRev<=0)
             {
                 this.Shooted = false;
+                m_Animator.SetBool("ShootingR", false);
                 TimerForRechargeEast = rechargeTimeEast;
             }
             if (bulletsInMagazineRev <= 0 && bulletsShotCount > 0)
@@ -247,6 +254,7 @@ public class Shooter : MonoBehaviour
             }
             yield return new WaitForSeconds(fireRate);
         }
+        PM.canMove = true;
         ResetBulletShotCount();
     }
 

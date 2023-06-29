@@ -162,6 +162,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-3828722052737725336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/AttackReady
+  m_EditorClassIdentifier: 
+  Path: event:/UI/AttackReady
+  Guid:
+    Data1: -182796338
+    Data2: 1127124636
+    Data3: -390204765
+    Data4: -231159512
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2692138175554941734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PieceWithoutEnergy
+  m_EditorClassIdentifier: 
+  Path: event:/PieceWithoutEnergy
+  Guid:
+    Data1: -1442331278
+    Data2: 1333729156
+    Data3: 1115514779
+    Data4: -1458495591
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2691667684309604580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,10 +393,10 @@ MonoBehaviour:
   Path: FmodFolderProjectMedal/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638235644328241760
+  lastModified: 638236148469780607
   FileSizes:
   - Name: Desktop
-    Value: 1912384
+    Value: 1960672
   Exists: 1
 --- !u!114 &-308462318287087330
 MonoBehaviour:
@@ -412,12 +466,15 @@ MonoBehaviour:
   - {fileID: 6801927635316342790}
   - {fileID: -7014054216965671481}
   - {fileID: 7503357913449412572}
+  - {fileID: -2692138175554941734}
+  - {fileID: -3828722052737725336}
+  - {fileID: 5141509257925195875}
   EditorParameters: []
   MasterBanks:
   - {fileID: -400167153326446528}
   StringsBanks:
   - {fileID: 6864873817982603600}
-  cacheTime: 638235644328251757
+  cacheTime: 638236148469790609
   cacheVersion: 131601
 --- !u!114 &1843426485952647906
 MonoBehaviour:
@@ -554,6 +611,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5141509257925195875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Bullets/BulletMetalImpact
+  m_EditorClassIdentifier: 
+  Path: event:/Bullets/BulletMetalImpact
+  Guid:
+    Data1: 978148544
+    Data2: 1230241712
+    Data3: 561020814
+    Data4: -994669146
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5575613774771883441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,10 +734,10 @@ MonoBehaviour:
   Path: FmodFolderProjectMedal/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638235644328251757
+  lastModified: 638236148469790609
   FileSizes:
   - Name: Desktop
-    Value: 1944
+    Value: 2116
   Exists: 1
 --- !u!114 &6931961613168792287
 MonoBehaviour:

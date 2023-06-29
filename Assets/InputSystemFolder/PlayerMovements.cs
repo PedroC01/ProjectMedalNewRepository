@@ -36,7 +36,7 @@ public class PlayerMovements : MonoBehaviour
     public LayerMask groundMask;
     public Vector3 up;
     public Rigidbody rb;
-    private Vector3 horizontalInput = Vector2.zero;
+    public Vector3 horizontalInput = Vector2.zero;
     public bool count;
     public int playerIndex;
     public float DamageReduction;
@@ -70,6 +70,16 @@ public class PlayerMovements : MonoBehaviour
     public float dashCoolDown;
     private float dashCoolDownReset;
     private PlayerMedapartsController pmc;
+
+    public float recoveryTime = 2f;
+    public bool isInvencible;
+
+    public bool canMove;
+
+    public float knockbackForce = 10f;
+    public float knockbackDuration = 0.5f;
+    private Vector3 knockbackDirection;
+    public bool KnockBack;
     private void Awake()
     {
         setupJump();
@@ -91,7 +101,7 @@ public class PlayerMovements : MonoBehaviour
             this.Enemy = FindObjectOfType<Player2>().gameObject;
           
         }
-
+        canMove = true;
         dashCoolDownReset = dashCoolDown;
         dashCoolDown = 0;
 
@@ -126,7 +136,10 @@ public class PlayerMovements : MonoBehaviour
 
     public void OnMove(Vector2 direction)
     {
-        horizontalInput = direction;
+        if (canMove)
+        {
+            horizontalInput = direction;
+        }
     }
     public void OnJump()
     {
@@ -145,8 +158,9 @@ public class PlayerMovements : MonoBehaviour
     {
         
             if (isGrounded == true && !isDashing&& canDash == true)
-            {
-                dashDirection = transform.forward;
+        {
+            m_Animator1.SetBool("Dash", true);
+            dashDirection = transform.forward;
                 dash = true;
                 StartCoroutine(Dash());
             }
@@ -263,7 +277,12 @@ public class PlayerMovements : MonoBehaviour
             horizontalInput.x = 0;
             horizontalInput.y = 0;
         }
-
+        if (KnockBack)
+        {
+            // Move the player in the opposite direction of knockbackDirection
+            transform.position += knockbackDirection * knockbackForce * Time.deltaTime;
+         
+        }
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
         {
             IsMoving = true;
@@ -409,6 +428,7 @@ public class PlayerMovements : MonoBehaviour
             yield return null;
         }
         dash = false;
+        m_Animator1.SetBool("Dash", false);
         isDashing = false;
         canDash = false;
         dashCoolDown = dashCoolDownReset;
@@ -442,13 +462,28 @@ public class PlayerMovements : MonoBehaviour
             isGrounded = true;
             jumped = false;
 
-            m_Animator1.SetTrigger("Landed");
+         //   m_Animator1.SetTrigger("Landed");
 
 
         }
        
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<Rocket>()!=null)
+        {
+            
+            KnockBack = true;
+
+                knockbackDirection = (transform.position - other.transform.position).normalized;
+
+             
+                StartCoroutine(KnockbackCoroutine());
+              
+            
+        }
+    }
 
 
     void OnCollisionStay(Collision collision)
@@ -462,7 +497,12 @@ public class PlayerMovements : MonoBehaviour
 
     }
 
-
+    private IEnumerator KnockbackCoroutine()
+    {
+        yield return new WaitForSeconds(knockbackDuration);
+        m_Animator1.SetBool("KnockBack", false);
+        KnockBack = false;
+    }
 
 
 }

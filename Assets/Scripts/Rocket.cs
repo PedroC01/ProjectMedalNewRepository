@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -43,11 +44,13 @@ public class Rocket : MonoBehaviour
     [Header("Sounds")]
     public string ExplosionSound;
     private FMOD.Studio.EventInstance explosionSoundInstance;
+    public string collisionSoundEvent;
+    private StudioEventEmitter eventEmitter;
     // Start is called before the first frame update
     void Start()
     {
 
-
+        eventEmitter = GetComponent<StudioEventEmitter>();
 
         explosionSoundInstance = FMODUnity.RuntimeManager.CreateInstance(ExplosionSound);
 
@@ -175,14 +178,14 @@ public class Rocket : MonoBehaviour
     {
 
         var Medapart = other.GetComponent<MedaPartScript>();
-
+      
         if (Medapart != null)
         {
            
             if (Medapart.playerX == 2 || Medapart.playerX == 1)
             {
 
-
+                RuntimeManager.PlayOneShot(collisionSoundEvent);
                 Instantiate(_explosionPrefab, this.transform.position, this.transform.rotation);
                 explosionSoundInstance.start();
                 Collider[] colliders = Physics.OverlapSphere(this.transform.position, explosionRadious);

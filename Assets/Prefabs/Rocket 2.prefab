@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7832315321130176769}
   - component: {fileID: 263549974}
   - component: {fileID: 8161052793125049662}
+  - component: {fileID: 4843591124807619980}
   m_Layer: 7
   m_Name: Rocket 2
   m_TagString: Player2Bullet
@@ -81,6 +82,7 @@ MonoBehaviour:
   deviationAmount: 50
   deviationSpeed: 2
   ExplosionSound: event:/Missile Hit
+  collisionSoundEvent: event:/Bullets/BulletMetalImpact
 --- !u!136 &8161052793125049662
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -95,6 +97,36 @@ CapsuleCollider:
   m_Height: 0.30830336
   m_Direction: 2
   m_Center: {x: 0.0074682073, y: -0.008819698, z: -0.04584834}
+--- !u!114 &4843591124807619980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4120398702531518976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 978148544
+      Data2: 1230241712
+      Data3: 561020814
+      Data4: -994669146
+    Path: event:/Bullets/BulletMetalImpact
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &319932200625048277
 PrefabInstance:
   m_ObjectHideFlags: 0

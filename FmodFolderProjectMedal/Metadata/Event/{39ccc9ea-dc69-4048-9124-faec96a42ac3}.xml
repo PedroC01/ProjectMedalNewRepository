@@ -62,7 +62,11 @@
 			<destination>{ddfbc7e0-cd29-401c-88e3-beb550cd5af0}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{167f8c38-f472-4824-982d-05cfb1fed1d3}" />
+	<object class="EventAutomatableProperties" id="{167f8c38-f472-4824-982d-05cfb1fed1d3}">
+		<property name="dopplerScale">
+			<value>125</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{14cad1c1-3f47-471b-a7e8-3dd4ae6bdecd}" />
 	<object class="GroupTrack" id="{4081bbee-e6f1-458f-90f8-04e187246f76}">
 		<relationship name="mixerGroup">
@@ -80,6 +84,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{ba9cda5e-c578-4654-9157-038b9484de62}">
+		<property name="volume">
+			<value>-4.5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{4f18c63e-ed17-4377-adbe-d07ea79b6711}</destination>
 		</relationship>
@@ -122,6 +129,12 @@
 	</object>
 	<object class="MixerBusPanner" id="{2d63d282-152f-4996-adb2-a852a9251982}" />
 	<object class="SingleSound" id="{56adae7f-cec3-4812-a9f5-7a9cc550bb19}">
+		<property name="volume">
+			<value>-2</value>
+		</property>
+		<property name="pitch">
+			<value>2.60000014</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{2101b5e7-c7c1-4dd1-956c-bce708415ad4}</destination>
 		</relationship>

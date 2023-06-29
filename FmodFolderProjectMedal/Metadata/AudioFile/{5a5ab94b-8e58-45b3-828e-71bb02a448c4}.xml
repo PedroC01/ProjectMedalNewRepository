@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{5a5ab94b-8e58-45b3-828e-71bb02a448c4}">
+		<property name="assetPath">
+			<value>Bullet hit metal maddness combat sound effect!.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.0332916666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{42d514a3-e758-46af-b0f2-5885c3a0a026}</destination>
+		</relationship>
+	</object>
+</objects>

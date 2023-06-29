@@ -28,9 +28,18 @@ public class PlayerMedapartsController : MonoBehaviour
     public float LE_DamageEastAttack;
     public int LE_MagSizeRev;
     public float LE_MovementSpeed;
+    [Header("Sounds")]
+    public string turningOffSound;
+    private FMOD.Studio.EventInstance turningOffSoundInstance;
+    private bool playedRArmSound;
+    private bool playedLArmSound;
+    private bool playedLegSound;
     private void Start()
     {
-        medaparts = GetComponentsInChildren<MedaPartScript>();
+      playedRArmSound=false;
+     playedLArmSound=false;
+     playedLegSound=false;
+    medaparts = GetComponentsInChildren<MedaPartScript>();
         this.shooter = GetComponent<Shooter>();
         this.shooter.smgDamage = DamageWestAttack;
         this.shooter.bulletPrefab.GetComponent<Bullet>().critValue = this.lastBulletCritMultiplyer;
@@ -47,6 +56,7 @@ public class PlayerMedapartsController : MonoBehaviour
         {
             enLockON = FindObjectOfType<Player1>().GetComponent<LockOn>();
         }
+        turningOffSoundInstance = FMODUnity.RuntimeManager.CreateInstance(turningOffSound);
     }
 
     private void Update()
@@ -88,18 +98,35 @@ public class PlayerMedapartsController : MonoBehaviour
                 switch (medapart.MedapartNumber)
                 {
                     case 2: // Arm Medapart
-                        // Decrease damage or change behavior for arms
-                        this.shooter.magSizeFullAuto = this.LE_MagSizeSmg;
-                       
-                        break;
-                    case 3: // Arm Medapart
+                        if (!playedLArmSound)
+                        {
                             // Decrease damage or change behavior for arms
-                        this.shooter.maxMagazineSizeRevolver = this.LE_MagSizeRev;
+                            turningOffSoundInstance.start();
+                            this.shooter.magSizeFullAuto = this.LE_MagSizeSmg;
+                            playedLArmSound = true;
+                        }
                         break;
+
+                    case 3: // Arm Medapart
+                        if (!playedRArmSound)
+                        {
+                            // Decrease damage or change behavior for arms
+                            turningOffSoundInstance.start();
+                            this.shooter.maxMagazineSizeRevolver = this.LE_MagSizeRev;
+                            playedRArmSound = true;
+                        }
+                        break;
+
                     case 4: // Leg Medapart
-                        // Decrease movement speed or change behavior for legs
-                        PM.playerSpeed = LE_MovementSpeed;
+                        if (!playedLegSound)
+                        {
+                            // Decrease movement speed or change behavior for legs
+                            turningOffSoundInstance.start();
+                            PM.playerSpeed = LE_MovementSpeed;
+                            playedLegSound = true;
+                        }
                         break;
+
                     default:
                         // Handle other medaparts if needed
                         break;
@@ -107,7 +134,6 @@ public class PlayerMedapartsController : MonoBehaviour
             }
         }
     }
-
     public void SetBlocking(bool isBlocking)
     {
         this.isBlocking = isBlocking;

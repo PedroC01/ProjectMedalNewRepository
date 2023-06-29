@@ -9,7 +9,7 @@ public class PartPiece : MonoBehaviour
    
     public int PieceNum;
     [SerializeField]
-     Material loShader;
+     public Material loShader;
     [SerializeField]
      Material thisPeaceMaterial;
     public bool isLocked;

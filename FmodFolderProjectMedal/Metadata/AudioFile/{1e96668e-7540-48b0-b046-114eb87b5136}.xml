@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1e96668e-7540-48b0-b046-114eb87b5136}">
+		<property name="assetPath">
+			<value>Special &amp; Powerup (9).wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.1666213151927438</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{42d514a3-e758-46af-b0f2-5885c3a0a026}</destination>
+		</relationship>
+	</object>
+</objects>
