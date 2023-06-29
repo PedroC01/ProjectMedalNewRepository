@@ -10180,7 +10180,7 @@ MonoBehaviour:
       Data2: 1321792513
       Data3: 20824979
       Data4: 1449159366
-    Path: event:/RUN
+    Path: event:/BattleGeneral/RUN
   Event: 
   PlayEvent: 0
   StopEvent: 0

@@ -2131,7 +2131,7 @@ Camera:
     height: 1
   near clip plane: 0.001
   far clip plane: 500
-  field of view: 32.220676
+  field of view: 32.22062
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -2359,8 +2359,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112452652}
-  m_LocalRotation: {x: -0.027708068, y: 0.95486844, z: -0.09440301, w: -0.28026178}
-  m_LocalPosition: {x: 15.290141, y: -1.7799964, z: 5.7014236}
+  m_LocalRotation: {x: -0.027706964, y: 0.95487154, z: -0.0944031, w: -0.2802513}
+  m_LocalPosition: {x: 15.289925, y: -1.7800016, z: 5.701559}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6460,8 +6460,8 @@ MonoBehaviour:
   revolverDamage: 0
   magSizeFullAuto: 0
   maxMagazineSizeRevolver: 6
-  shootRevSoundEvent: event:/Revolver
-  shootAutoSoundEvent: event:/Shoot 1
+  shootRevSoundEvent: event:/Metabee/Revolver
+  shootAutoSoundEvent: event:/Metabee/Shoot 1
 --- !u!114 &300808028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6766,7 +6766,7 @@ MonoBehaviour:
   LE_DamageEastAttack: 0
   LE_MagSizeRev: 2
   LE_MovementSpeed: 5
-  turningOffSound: event:/PieceWithoutEnergy
+  turningOffSound: event:/BattleGeneral/PieceWithoutEnergy
 --- !u!114 &300808038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6790,7 +6790,7 @@ MonoBehaviour:
   LO: {fileID: 0}
   damagePerRocket: 0
   delayInSecondRocket: 0.5
-  RocketLaunchSound: event:/Missile Launch
+  RocketLaunchSound: event:/Metabee/Missile Launch
 --- !u!1 &303219051
 GameObject:
   m_ObjectHideFlags: 0
@@ -32657,8 +32657,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561276689}
-  m_LocalRotation: {x: -0.027708068, y: 0.95486844, z: -0.09440301, w: -0.28026178}
-  m_LocalPosition: {x: 14.283664, y: -2.1458402, z: 4.1345634}
+  m_LocalRotation: {x: -0.027706964, y: 0.95487154, z: -0.0944031, w: -0.2802513}
+  m_LocalPosition: {x: 14.283483, y: -2.1458445, z: 4.13468}
   m_LocalScale: {x: 1, y: 0.8108335, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -34616,8 +34616,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697339436}
-  m_LocalRotation: {x: 0.019667925, y: 0.28094092, z: -0.0057587177, w: 0.9595063}
-  m_LocalPosition: {x: -23.78688, y: -4.0853004, z: -55.20605}
+  m_LocalRotation: {x: 0.01940066, y: 0.28098664, z: -0.00568143, w: 0.95949876}
+  m_LocalPosition: {x: -23.789547, y: -4.101838, z: -55.205147}
   m_LocalScale: {x: 1, y: 0.81083345, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36902,7 +36902,7 @@ MonoBehaviour:
       Data2: 1087154501
       Data3: -1492021325
       Data4: 1438827518
-    Path: event:/BGM Battle 1
+    Path: event:/BattleGeneral/BGM Battle 1
   Event: 
   PlayEvent: 11
   StopEvent: 12
@@ -101910,8 +101910,8 @@ MonoBehaviour:
   revolverDamage: 0
   magSizeFullAuto: 20
   maxMagazineSizeRevolver: 6
-  shootRevSoundEvent: event:/Revolver
-  shootAutoSoundEvent: event:/Shoot 1
+  shootRevSoundEvent: event:/Metabee/Revolver
+  shootAutoSoundEvent: event:/Metabee/Shoot 1
 --- !u!114 &7862484790357110748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101941,7 +101941,7 @@ MonoBehaviour:
   LE_DamageEastAttack: 0
   LE_MagSizeRev: 2
   LE_MovementSpeed: 5
-  turningOffSound: event:/PieceWithoutEnergy
+  turningOffSound: event:/BattleGeneral/PieceWithoutEnergy
 --- !u!114 &7862484790357110749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101965,7 +101965,7 @@ MonoBehaviour:
   LO: {fileID: 0}
   damagePerRocket: 0
   delayInSecondRocket: 0.5
-  RocketLaunchSound: event:/Missile Launch
+  RocketLaunchSound: event:/Metabee/Missile Launch
 --- !u!114 &7862484790357110750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101981,11 +101981,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1442331278
-      Data2: 1333729156
-      Data3: 1115514779
-      Data4: -1458495591
-    Path: event:/PieceWithoutEnergy
+      Data1: -2019918693
+      Data2: 1136647106
+      Data3: -852589912
+      Data4: 1598002493
+    Path: event:/Metabee/Missile Launch
   Event: 
   PlayEvent: 0
   StopEvent: 0

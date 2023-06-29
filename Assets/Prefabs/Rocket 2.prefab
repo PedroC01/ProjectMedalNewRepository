@@ -81,7 +81,7 @@ MonoBehaviour:
   maxTimePrediction: 600
   deviationAmount: 50
   deviationSpeed: 2
-  ExplosionSound: event:/Missile Hit
+  ExplosionSound: event:/Metabee/Missile Hit
   collisionSoundEvent: event:/Bullets/BulletMetalImpact
 --- !u!136 &8161052793125049662
 CapsuleCollider:
