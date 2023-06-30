@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 3012.3467, g: 2673.3774, b: 2536.924, a: 1}
+  m_IndirectSpecularColor: {r: 3012.4668, g: 2673.8022, b: 2537.4097, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6752,20 +6752,27 @@ MonoBehaviour:
   medaparts: []
   lowEnergyThreshold: 0
   isBlocking: 0
-  Defense: 0
-  lastBulletCritMultiplyer: 4
-  DamageWestAttack: 0.5
-  MagSizeSmg: 20
-  DamageEastAttack: 2
-  MagSizeRev: 6
-  DamageNorthAttack: 20
-  MovementSpeed: 10
-  LE_Defense: 0
-  LE_DamageWestAttack: 0
-  LE_MagSizeSmg: 10
-  LE_DamageEastAttack: 0
-  LE_MagSizeRev: 2
-  LE_MovementSpeed: 5
+  lastBulletCritMultiplyer: 0
+  BaseDamageNorthAttack: 0
+  baseDefense: 0
+  baseDamageWestAttack: 0
+  baseMagSizeSmg: 0
+  baseDamageEastAttack: 0
+  baseMagSizeRev: 0
+  baseMovementSpeed: 0
+  lowEnergyDefense: 0
+  lowEnergyDamageWestAttack: 0
+  lowEnergyMagSizeSmg: 0
+  lowEnergyDamageEastAttack: 0
+  lowEnergyMagSizeRev: 0
+  lowEnergyMovementSpeed: 0
+  MedaForceNorthAttack: 0
+  medaForceDefense: 0
+  medaForceDamageWestAttack: 0
+  medaForceMagSizeSmg: 0
+  medaForceDamageEastAttack: 0
+  medaForceMagSizeRev: 0
+  medaForceMovementSpeed: 0
   turningOffSound: event:/BattleGeneral/PieceWithoutEnergy
 --- !u!114 &300808038
 MonoBehaviour:
@@ -34616,8 +34623,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697339436}
-  m_LocalRotation: {x: 0.01940066, y: 0.28098664, z: -0.00568143, w: 0.95949876}
-  m_LocalPosition: {x: -23.789547, y: -4.101838, z: -55.205147}
+  m_LocalRotation: {x: 0.0195277, y: 0.28095382, z: -0.005717925, w: 0.9595056}
+  m_LocalPosition: {x: -23.787704, y: -4.093981, z: -55.205948}
   m_LocalScale: {x: 1, y: 0.81083345, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -101927,20 +101934,27 @@ MonoBehaviour:
   medaparts: []
   lowEnergyThreshold: 0
   isBlocking: 0
-  Defense: 0
-  lastBulletCritMultiplyer: 4
-  DamageWestAttack: 0.5
-  MagSizeSmg: 20
-  DamageEastAttack: 2
-  MagSizeRev: 6
-  DamageNorthAttack: 20
-  MovementSpeed: 10
-  LE_Defense: 0
-  LE_DamageWestAttack: 0
-  LE_MagSizeSmg: 10
-  LE_DamageEastAttack: 0
-  LE_MagSizeRev: 2
-  LE_MovementSpeed: 5
+  lastBulletCritMultiplyer: 0
+  BaseDamageNorthAttack: 0
+  baseDefense: 0
+  baseDamageWestAttack: 0
+  baseMagSizeSmg: 0
+  baseDamageEastAttack: 0
+  baseMagSizeRev: 0
+  baseMovementSpeed: 0
+  lowEnergyDefense: 0
+  lowEnergyDamageWestAttack: 0
+  lowEnergyMagSizeSmg: 0
+  lowEnergyDamageEastAttack: 0
+  lowEnergyMagSizeRev: 0
+  lowEnergyMovementSpeed: 0
+  MedaForceNorthAttack: 0
+  medaForceDefense: 0
+  medaForceDamageWestAttack: 0
+  medaForceMagSizeSmg: 0
+  medaForceDamageEastAttack: 0
+  medaForceMagSizeRev: 0
+  medaForceMovementSpeed: 0
   turningOffSound: event:/BattleGeneral/PieceWithoutEnergy
 --- !u!114 &7862484790357110749
 MonoBehaviour:

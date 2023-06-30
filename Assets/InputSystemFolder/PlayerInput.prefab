@@ -255,6 +255,38 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 6fc011f0-71f0-46fa-b49c-fb2b5037cb14
     m_ActionName: PlayerMovement/Dash/Evade
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1380115005}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnRightTriggerPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c4ae9d1d-4213-42ef-b293-c2aaa0894eeb
+    m_ActionName: PlayerMovement/RightTrigger[/DualShock4GamepadHID/leftTrigger,/DualShock4GamepadHID/rightTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1380115005}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnLeftTriggerPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6801da5b-e89a-4cd3-9e1b-0ab71967f695
+    m_ActionName: PlayerMovement/LeftTrigger1[/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/leftTrigger]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerMovement
@@ -272,4 +304,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03d88987e0a92084ba66fe3b30e9e0ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doubleTapTimeThreshold: 0.5

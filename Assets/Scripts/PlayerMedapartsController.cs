@@ -10,44 +10,67 @@ public class PlayerMedapartsController : MonoBehaviour
     private RocketLaucher RL;
     private Shooter shooter;
     private PlayerMovements PM;
-    [Header("Base Attacks, Defenses and Speed Values")]
-    public float Defense;
     [Header("perBullet")]
     public float lastBulletCritMultiplyer;
-    public float DamageWestAttack;
-    public int MagSizeSmg;
-    public float DamageEastAttack;
-    public int MagSizeRev;
-    [Header("in total")]
-    public float DamageNorthAttack;
-    public float MovementSpeed;
-    [Header("Damaged Attack, Defense and Speed Values")]
-    public float LE_Defense;
-    public float LE_DamageWestAttack;
-    public int LE_MagSizeSmg;
-    public float LE_DamageEastAttack;
-    public int LE_MagSizeRev;
-    public float LE_MovementSpeed;
+   
+    [Header("Base Attacks, Defenses, and Speed Values")]
+
+    public float BaseDamageNorthAttack;
+    public float baseDefense;
+    public float baseDamageWestAttack;
+    public int baseMagSizeSmg;
+    public float baseDamageEastAttack;
+    public int baseMagSizeRev;
+    public float baseMovementSpeed;
+
+    [Header("Low Energy Attacks, Defenses, and Speed Values")]
+    public float lowEnergyDefense;
+    public float lowEnergyDamageWestAttack;
+    public int lowEnergyMagSizeSmg;
+    public float lowEnergyDamageEastAttack;
+    public int lowEnergyMagSizeRev;
+    public float lowEnergyMovementSpeed;
+
+    [Header("MedaForce Attacks, Defenses, and Speed Values")]
+    public float MedaForceNorthAttack;
+    public float medaForceDefense;
+    public float medaForceDamageWestAttack;
+    public int medaForceMagSizeSmg;
+    public float medaForceDamageEastAttack;
+    public int medaForceMagSizeRev;
+    public float medaForceMovementSpeed;
+
     [Header("Sounds")]
     public string turningOffSound;
     private FMOD.Studio.EventInstance turningOffSoundInstance;
     private bool playedRArmSound;
     private bool playedLArmSound;
     private bool playedLegSound;
+
+    [Header("MedaForce Related")]
+    private bool MedaForceActive = false;
+    private float MedaForceDuration = 5f; // Adjust the duration as needed
+    private float MedaForceTimer = 0f;
+    private float originalDamageWestAttack;
+    private float originalDamageEastAttack;
+    private int originalMagSizeSmg;
+    private int originalMagSizeRev;
+    private float originalMovementSpeed;
+
     private void Start()
     {
-      playedRArmSound=false;
-     playedLArmSound=false;
-     playedLegSound=false;
-    medaparts = GetComponentsInChildren<MedaPartScript>();
-        this.shooter = GetComponent<Shooter>();
-        this.shooter.smgDamage = DamageWestAttack;
-        this.shooter.bulletPrefab.GetComponent<Bullet>().critValue = this.lastBulletCritMultiplyer;
-        this.shooter.revolverDamage = DamageEastAttack;
+        playedRArmSound = false;
+        playedLArmSound = false;
+        playedLegSound = false;
+        medaparts = GetComponentsInChildren<MedaPartScript>();
+        shooter = GetComponent<Shooter>();
         PM = GetComponent<PlayerMovements>();
-        PM.playerSpeed = MovementSpeed;
-        this.RL = GetComponent<RocketLaucher>();
-        this.RL.damagePerRocket = DamageNorthAttack / 2;
+        RL = GetComponent<RocketLaucher>();
+      
+        // Set the base medapart stats
+        SetMedapartStats(baseDamageWestAttack, baseDamageEastAttack, baseMagSizeSmg, baseMagSizeRev, baseMovementSpeed);
+        this.shooter.bulletPrefab.GetComponent<Bullet>().critValue = this.lastBulletCritMultiplyer;
+
         if (GetComponent<Player1>() != null)
         {
             enLockON = FindObjectOfType<Player2>().GetComponent<LockOn>();
@@ -56,13 +79,30 @@ public class PlayerMedapartsController : MonoBehaviour
         {
             enLockON = FindObjectOfType<Player1>().GetComponent<LockOn>();
         }
+
         turningOffSoundInstance = FMODUnity.RuntimeManager.CreateInstance(turningOffSound);
     }
 
     private void Update()
     {
         DetermineTarget();
-        CheckLowEnergy();
+       
+
+        if (MedaForceActive)
+        {
+            MedaForceTimer -= Time.deltaTime;
+
+            if (MedaForceTimer <= 0f)
+            {
+                // Combo time is over, restore the original medapart stats
+                MedaForceActive = false;
+                SetMedapartStats(originalDamageWestAttack, originalDamageEastAttack, originalMagSizeSmg, originalMagSizeRev, originalMovementSpeed);
+            }
+        }
+        else
+        {
+            CheckLowEnergy();
+        }
     }
 
     private void DetermineTarget()
@@ -98,42 +138,71 @@ public class PlayerMedapartsController : MonoBehaviour
                 switch (medapart.MedapartNumber)
                 {
                     case 2: // Arm Medapart
+
+                        this.shooter.magSizeFullAuto = this.lowEnergyMagSizeSmg;
                         if (!playedLArmSound)
-                        {
-                            // Decrease damage or change behavior for arms
-                            turningOffSoundInstance.start();
-                            this.shooter.magSizeFullAuto = this.LE_MagSizeSmg;
-                            playedLArmSound = true;
-                        }
+                            {
+                                turningOffSoundInstance.start();
+                                playedLArmSound = true;
+                            }
+                        
                         break;
 
-                    case 3: // Arm Medapart
+                    case 3:
+
+                        this.shooter.maxMagazineSizeRevolver = this.lowEnergyMagSizeRev;
                         if (!playedRArmSound)
-                        {
-                            // Decrease damage or change behavior for arms
-                            turningOffSoundInstance.start();
-                            this.shooter.maxMagazineSizeRevolver = this.LE_MagSizeRev;
-                            playedRArmSound = true;
-                        }
+                            {
+                                turningOffSoundInstance.start();
+                                playedRArmSound = true;
+                            }
+                        
                         break;
 
                     case 4: // Leg Medapart
+
+                        PM.playerSpeed = lowEnergyMovementSpeed;
+
                         if (!playedLegSound)
-                        {
-                            // Decrease movement speed or change behavior for legs
-                            turningOffSoundInstance.start();
-                            PM.playerSpeed = LE_MovementSpeed;
-                            playedLegSound = true;
-                        }
+                            {
+                                turningOffSoundInstance.start();
+                                playedLegSound = true;
+                            }
+                        
                         break;
 
                     default:
-                        // Handle other medaparts if needed
+                        // Handle other medaparts if needed(body if we decide to make it separate)
                         break;
                 }
             }
         }
     }
+
+    //For Medaforce, Base Stats and go back to the originals
+    private void SetMedapartStats(float damageWestAttack, float damageEastAttack, int magSizeSmg, int magSizeRev, float movementSpeed)
+    {
+        shooter.smgDamage = damageWestAttack;
+        shooter.revolverDamage = damageEastAttack;
+        shooter.magSizeFullAuto = magSizeSmg;
+        shooter.maxMagazineSizeRevolver = magSizeRev;
+        PM.playerSpeed = movementSpeed;
+    }
+
+    public void UseMedaForce()
+    {
+        MedaForceActive = true;
+        MedaForceTimer = MedaForceDuration;
+
+        // Save the original medapart stats to restore them later
+        originalDamageWestAttack = shooter.smgDamage;
+        originalDamageEastAttack = shooter.revolverDamage;
+        originalMagSizeSmg = shooter.magSizeFullAuto;
+        originalMagSizeRev = shooter.maxMagazineSizeRevolver;
+        originalMovementSpeed = PM.playerSpeed;
+        SetMedapartStats(medaForceDamageWestAttack, medaForceDamageEastAttack, medaForceMagSizeSmg, medaForceMagSizeRev, medaForceMovementSpeed);
+    }
+
     public void SetBlocking(bool isBlocking)
     {
         this.isBlocking = isBlocking;
@@ -144,4 +213,3 @@ public class PlayerMedapartsController : MonoBehaviour
         }
     }
 }
-

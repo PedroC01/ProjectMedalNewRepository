@@ -132,7 +132,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "LeftTrigger1",
+                    "name": "LeftTrigger",
                     "type": "Button",
                     "id": "6801da5b-e89a-4cd3-9e1b-0ab71967f695",
                     "expectedControlType": "Button",
@@ -452,7 +452,7 @@
                 },
                 {
                     "name": "Button With One Modifier",
-                    "id": "833194b5-a52e-4872-b4ab-bbdf796775ac",
+                    "id": "f9b7b2e5-7b29-4c29-8106-a7ae237c6c17",
                     "path": "ButtonWithOneModifier",
                     "interactions": "",
                     "processors": "",
@@ -462,9 +462,9 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Modifier",
-                    "id": "aabc2b6c-8e65-420f-a1e0-96d24149a82f",
-                    "path": "<Gamepad>/leftTrigger",
+                    "name": "button",
+                    "id": "cb4cccd0-9433-42a0-88cf-3adb880491ef",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -473,9 +473,9 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "Button",
-                    "id": "7c4c8ef0-1ea1-4d11-9c37-b7c84b30a0b5",
-                    "path": "<Gamepad>/rightTrigger",
+                    "name": "modifier",
+                    "id": "ec6ae04c-1383-4444-b84f-3ea192f9979e",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -490,7 +490,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "LeftTrigger1",
+                    "action": "LeftTrigger",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -501,7 +501,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "LeftTrigger1",
+                    "action": "LeftTrigger",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -512,7 +512,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "LeftTrigger1",
+                    "action": "LeftTrigger",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }

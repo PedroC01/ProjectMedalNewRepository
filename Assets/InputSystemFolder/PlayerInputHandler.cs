@@ -20,6 +20,9 @@ public class PlayerInputHandler : MonoBehaviour
     private bool hold;
     private bool leftTriggerPressed;
     private bool rightTriggerPressed;
+    private PlayerMedapartsController medapartsController;
+    private PlayerHealth ph;
+
 
     void Start()
     {
@@ -29,51 +32,47 @@ public class PlayerInputHandler : MonoBehaviour
         var eastButtons = FindObjectsOfType<Shooter>();
         var northButtons = FindObjectsOfType<RocketLaucher>();
         pMovement = pMovements.FirstOrDefault(m => m.GetPlayerIndex() == index);
-      
+        medapartsController = GetComponent<PlayerMedapartsController>();
     }
   
     void Update()
     {
+        CheckCombo();
+    }
+
+
+
+
+    public void OnLeftTriggerPressed(CallbackContext context)
+    {
+
+        if (context.phase == InputActionPhase.Started)
+        {
+            leftTriggerPressed = true;
+        }
+        else if (context.phase == InputActionPhase.Canceled)
+        {
+            leftTriggerPressed = false;
+        }
+
+
+    }
+
    
+
+    public void OnRightTriggerPressed(CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            rightTriggerPressed = true;
+        }
+        else if (context.phase == InputActionPhase.Canceled)
+        {
+            rightTriggerPressed = false;
+        }
     }
 
-    private void OnEnable()
-    {
-        playerInput.actions["LeftTrigger"].performed += OnLeftTriggerPressed;
-        playerInput.actions["RightTrigger"].performed += OnRightTriggerPressed;
-        playerInput.actions["LeftTrigger"].canceled += OnLeftTriggerReleased;
-        playerInput.actions["RightTrigger"].canceled += OnRightTriggerReleased;
-    }
-
-    private void OnDisable()
-    {
-        playerInput.actions["LeftTrigger"].performed -= OnLeftTriggerPressed;
-        playerInput.actions["RightTrigger"].performed -= OnRightTriggerPressed;
-        playerInput.actions["LeftTrigger"].canceled -= OnLeftTriggerReleased;
-        playerInput.actions["RightTrigger"].canceled -= OnRightTriggerReleased;
-    }
-
-    private void OnLeftTriggerPressed(InputAction.CallbackContext context)
-    {
-        leftTriggerPressed = true;
-        CheckCombo();
-    }
-
-    private void OnLeftTriggerReleased(InputAction.CallbackContext context)
-    {
-        leftTriggerPressed = false;
-    }
-
-    private void OnRightTriggerPressed(InputAction.CallbackContext context)
-    {
-        rightTriggerPressed = true;
-        CheckCombo();
-    }
-
-    private void OnRightTriggerReleased(InputAction.CallbackContext context)
-    {
-        rightTriggerPressed = false;
-    }
+    
 
     private void CheckCombo()
     {
@@ -85,9 +84,17 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void PerformComboAction()
     {
-        // Perform your desired action when the button combo is detected
-        Debug.Log("Button combo performed!");
+        if(ph.canGoBerserk == true)
+        {
+            medapartsController.UseMedaForce();
+        }
+ 
+
     }
+
+
+
+
 
 
     public void OnMove(CallbackContext context)
