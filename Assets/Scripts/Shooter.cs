@@ -7,6 +7,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
 using FMODUnity;
+using UnityEngine.Animations.Rigging;
+using Unity.Burst.Intrinsics;
+
 public class Shooter : MonoBehaviour
 {
 
@@ -57,6 +60,15 @@ public class Shooter : MonoBehaviour
     public string shootAutoSoundEvent;
     private FMOD.Studio.EventInstance shootAutoSoundInstance;
 
+    [Header("Animation Rigging")]
+    public Transform leftArm;
+    public Transform rightArm;
+    public TwoBoneIKConstraint leftArmIKConstraint;
+    public TwoBoneIKConstraint rightArmIKConstraint;
+    public MultiAimConstraint leftArmAimConstraint;
+    public MultiAimConstraint rightArmAimConstraint;
+    private WeightedTransformArray targetArray;
+    private RigBuilder rigs;
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +81,14 @@ public class Shooter : MonoBehaviour
         bulletsInMagazineRev = maxMagazineSizeRevolver;
         shootRevSoundInstance = FMODUnity.RuntimeManager.CreateInstance(shootRevSoundEvent);
         shootAutoSoundInstance = FMODUnity.RuntimeManager.CreateInstance(shootAutoSoundEvent);
+
+        leftArmIKConstraint = leftArm.GetComponent<TwoBoneIKConstraint>();
+        rightArmIKConstraint = rightArm.GetComponent<TwoBoneIKConstraint>();
+        leftArmAimConstraint = leftArm.GetComponent<TwoBoneIKConstraint>().data.target.GetComponent<MultiAimConstraint>();
+        rightArmAimConstraint = rightArm.GetComponent<TwoBoneIKConstraint>().data.target.GetComponent<MultiAimConstraint>();
+        rigs = GetComponent<RigBuilder>();
+        targetArray = new WeightedTransformArray(1);
+        
     }
 
     public void East()
@@ -156,13 +176,18 @@ public class Shooter : MonoBehaviour
         return lastBulletCrit;
     }
 
-
+   
 
 
     // Update is called once per frame
     void Update()
     {
+    
+        
+      
         lookat = LO.lockOnTarget.transform;
+       
+
         if (TimerForRechargeEast > 0)
         {
             TimerForRechargeEast -= Time.deltaTime;
@@ -234,6 +259,8 @@ public class Shooter : MonoBehaviour
             this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             this.firePoint.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             lookat = LO.lockOnTarget.transform;
+            rightArmIKConstraint.data.target = LO.lockOnTarget;
+
             m_Animator.SetBool("ShootingR", true);
             shootRevSoundInstance.start();
             GameObject newBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
@@ -280,7 +307,7 @@ public class Shooter : MonoBehaviour
             m_Animator.SetBool("ShootingLeft", true);
 
             lookat = LO.lockOnTarget;
-
+            leftArmIKConstraint.data.target = LO.lockOnTarget;
             this.FullAutoFirePoint1.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             this.FullAutoFirePoint2.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
 
