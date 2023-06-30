@@ -26,7 +26,7 @@ public class Rocket : MonoBehaviour
     public float explosionRadious;
 
     [Header("MOVEMENT")]
-    [SerializeField] private float _speed = 15;
+    //[SerializeField] private float _speed = 15;
     [SerializeField] private float rotateSpeed = 95;
 
     [Header("PREDICTION")]

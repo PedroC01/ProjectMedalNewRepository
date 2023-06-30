@@ -20,10 +20,10 @@ public class PlayerHealth : MonoBehaviour
     public float LowEnergyMark=0;
     public float LowEnergyMarkHead= 35;
     private SoundManagerScript soundManager;
-    private bool playedHeadCritDamageSound=false;
-    private bool playedLeftArmDestroyedSound=false;
-    private bool playedRightArmDestroyedSound=false;
-    private bool playedLegsDestroyedSound=false;
+ //   private bool playedHeadCritDamageSound=false;
+   // private bool playedLeftArmDestroyedSound=false;
+    //private bool playedRightArmDestroyedSound=false;
+    //private bool playedLegsDestroyedSound=false;
     private HashSet<int> destroyedParts = new HashSet<int>();
 
     // Start is called before the first frame update

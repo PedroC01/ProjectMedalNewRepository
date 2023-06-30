@@ -48,8 +48,9 @@ public class PlayerMedapartsController : MonoBehaviour
     private bool playedLegSound;
 
     [Header("MedaForce Related")]
+    public float MedaForceDuration = 5f;
     private bool MedaForceActive = false;
-    private float MedaForceDuration = 5f; // Adjust the duration as needed
+    // Adjust the duration as needed
     private float MedaForceTimer = 0f;
     private float originalDamageWestAttack;
     private float originalDamageEastAttack;
