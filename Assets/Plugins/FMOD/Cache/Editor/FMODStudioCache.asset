@@ -393,7 +393,7 @@ MonoBehaviour:
   Path: FmodFolderProjectMedal/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638236806626067077
+  lastModified: 638237207673574883
   FileSizes:
   - Name: Desktop
     Value: 1960672
@@ -474,7 +474,7 @@ MonoBehaviour:
   - {fileID: -400167153326446528}
   StringsBanks:
   - {fileID: 6864873817982603600}
-  cacheTime: 638236806626082142
+  cacheTime: 638237207673574883
   cacheVersion: 131601
 --- !u!114 &2168909266211624326
 MonoBehaviour:
@@ -680,7 +680,7 @@ MonoBehaviour:
   Path: FmodFolderProjectMedal/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638236806626082142
+  lastModified: 638237207673574883
   FileSizes:
   - Name: Desktop
     Value: 2158

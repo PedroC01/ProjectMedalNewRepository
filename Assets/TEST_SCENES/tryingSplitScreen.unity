@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 3015.0254, g: 2676.4492, b: 2539.9988, a: 1}
+  m_IndirectSpecularColor: {r: 0.12811697, g: 0.15874434, b: 0.2101121, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2183,8 +2183,6 @@ GameObject:
   - component: {fileID: 112452655}
   - component: {fileID: 112452654}
   - component: {fileID: 112452660}
-  - component: {fileID: 112452661}
-  - component: {fileID: 112452662}
   m_Layer: 11
   m_Name: Main Camera Player2
   m_TagString: MainCamera
@@ -2445,8 +2443,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112452652}
-  m_LocalRotation: {x: -0.0274398, y: 0.9525972, z: -0.090384215, w: -0.28919956}
-  m_LocalPosition: {x: 17.31622, y: -1.8993225, z: 7.309458}
+  m_LocalRotation: {x: -0.027439672, y: 0.9525976, z: -0.09038425, w: -0.28919825}
+  m_LocalPosition: {x: 17.316196, y: -1.899322, z: 7.309477}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2487,83 +2485,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &112452661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 112452652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: e665af8c5c8d24549bea68b900c9c469, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
---- !u!114 &112452662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 112452652}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 112452659}
-  volumeLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 0
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 0
-    keepAlpha: 0
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 1
-  m_ShowCustomSorter: 1
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles: []
 --- !u!1 &112516332
 GameObject:
   m_ObjectHideFlags: 0
@@ -6663,7 +6584,7 @@ MonoBehaviour:
   TimerForRechargeEast: 0
   TimerForRechargeWest: 0
   Shooted: 0
-  bulletPrefab: {fileID: 3109997235097872882, guid: 68d3916040a635d4e8af37b259627198,
+  bulletPrefab: {fileID: 3109997235097872882, guid: 41f754231f59db24f9e95213283d3f87,
     type: 3}
   firePoint: {fileID: 1599350825}
   FullAutoFirePoint1: {fileID: 960183571}
@@ -6987,7 +6908,7 @@ MonoBehaviour:
   lowEnergyThreshold: 0
   isBlocking: 0
   lastBulletCritMultiplyer: 4
-  BaseDamageNorthAttack: 20
+  BaseDamageNorthAttack: 10
   baseDefense: 0
   baseDamageWestAttack: 0.5
   baseMagSizeSmg: 20
@@ -7021,7 +6942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b23e1512c6ab04bae322a76d66d550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rechargeTime: 10
+  rechargeTime: 20
   TimerForRecharge: 0
   Shooted: 0
   rocketPrefab: {fileID: 4120398702531518976, guid: 81e2113fe8f39e34cbb1656bc25da630,
@@ -9559,6 +9480,55 @@ RectTransform:
   m_AnchoredPosition: {x: 0.38502502, y: 0.21999884}
   m_SizeDelta: {x: 0.4299615, y: 9.619999}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &468898021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 468898023}
+  - component: {fileID: 468898022}
+  m_Layer: 0
+  m_Name: PostProcessingVolume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &468898022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468898021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 2e81ea9203828c94c88450f5a6d6abcb, type: 2}
+--- !u!4 &468898023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468898021}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &471120575
 GameObject:
   m_ObjectHideFlags: 0
@@ -11382,8 +11352,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592512808}
-  m_LocalRotation: {x: -0.0072902986, y: 0.9530249, z: -0.023011515, w: -0.30192867}
-  m_LocalPosition: {x: 28.005016, y: -3.868655, z: 22.002289}
+  m_LocalRotation: {x: -0.0072902967, y: 0.9530249, z: -0.02301151, w: -0.30192867}
+  m_LocalPosition: {x: 28.005016, y: -3.8686552, z: 22.002289}
   m_LocalScale: {x: 1, y: 0.81083345, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33315,8 +33285,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561276689}
-  m_LocalRotation: {x: -0.0274398, y: 0.9525972, z: -0.090384215, w: -0.28919956}
-  m_LocalPosition: {x: 16.360203, y: -2.2232928, z: 5.8800583}
+  m_LocalRotation: {x: -0.027439672, y: 0.9525976, z: -0.09038425, w: -0.28919825}
+  m_LocalPosition: {x: 16.36018, y: -2.2232928, z: 5.8800716}
   m_LocalScale: {x: 1, y: 0.8108335, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -35274,8 +35244,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697339436}
-  m_LocalRotation: {x: 0.019025309, y: 0.28773507, z: -0.0057172053, w: 0.95750403}
-  m_LocalPosition: {x: -24.140633, y: -4.1226244, z: -54.977722}
+  m_LocalRotation: {x: 0.018665273, y: 0.28794098, z: -0.005613346, w: 0.9574498}
+  m_LocalPosition: {x: -24.151669, y: -4.1448975, z: -54.971478}
   m_LocalScale: {x: 1, y: 0.81083345, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -37329,8 +37299,6 @@ GameObject:
   - component: {fileID: 1823688470}
   - component: {fileID: 1823688473}
   - component: {fileID: 1823688474}
-  - component: {fileID: 1823688475}
-  - component: {fileID: 1823688476}
   m_Layer: 1
   m_Name: Main Camera Player1
   m_TagString: MainCamera
@@ -37598,83 +37566,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
---- !u!114 &1823688475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823688464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: e665af8c5c8d24549bea68b900c9c469, type: 2}
-  isGlobal: 1
-  blendDistance: -54.79
-  weight: 1
-  priority: 72.23
---- !u!114 &1823688476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823688464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 112452659}
-  volumeLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 0
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 0
-    keepAlpha: 0
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 1
-  m_ShowCustomSorter: 1
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles: []
 --- !u!1 &1829875426
 GameObject:
   m_ObjectHideFlags: 0
@@ -110461,7 +110352,7 @@ MonoBehaviour:
   lowEnergyThreshold: 0
   isBlocking: 0
   lastBulletCritMultiplyer: 4
-  BaseDamageNorthAttack: 20
+  BaseDamageNorthAttack: 10
   baseDefense: 0
   baseDamageWestAttack: 0.5
   baseMagSizeSmg: 20
@@ -110473,7 +110364,7 @@ MonoBehaviour:
   lowEnergyMagSizeSmg: 10
   lowEnergyDamageEastAttack: 2
   lowEnergyMagSizeRev: 2
-  lowEnergyMovementSpeed: 5
+  lowEnergyMovementSpeed: 7
   MedaForceNorthAttack: 24
   medaForceDefense: 0
   medaForceDamageWestAttack: 0.6

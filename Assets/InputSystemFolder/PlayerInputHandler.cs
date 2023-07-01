@@ -99,36 +99,32 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnMove(CallbackContext context)
     {
-        if(pMovement!=null)
-        pMovement.OnMove(context.ReadValue<Vector2>());
+        pMovement?.OnMove(context.ReadValue<Vector2>());
     }
     public void OnJump(CallbackContext context)//por algum motivo o call back context dá erro aqui
     {
    
-                pMovement.OnJump();
+        pMovement?.OnJump();
        
     }
     public void OnDash(CallbackContext context)
     {
-       
-       
-          
-                pMovement.OnDash();
+        pMovement?.OnDash();
            
     }
     public void OnEast(CallbackContext context)
     {
         if (context.started)
         {
-            pMovement.OnEast();
+            pMovement?.OnEast();
         }
         if (context.performed)
         {
-            pMovement.OnEast();
+            pMovement?.OnEast();
         }
         if (context.canceled)
         {
-            pMovement.OnEastRelease();
+            pMovement?.OnEastRelease();
         }
 
     }
@@ -136,15 +132,15 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.started)
         {
-            pMovement.OnWest();
+            pMovement?.OnWest();
         }
         if (context.performed)
         {
-            pMovement.OnWest();
+            pMovement?.OnWest();
         }
         if (context.canceled)
         {
-            pMovement.OnWestRelease();
+            pMovement?.OnWestRelease();
         }
             
         
@@ -162,32 +158,32 @@ public class PlayerInputHandler : MonoBehaviour
     }*/
     public void L1(CallbackContext context)
     {
-        pMovement.L1();
+        pMovement?.L1();
     }
     public void R1(CallbackContext context)
     {
         hold = context.action.IsPressed();
-        pMovement.R1(hold);
+        pMovement?.R1(hold);
 
     }
     public void DPaddUp(CallbackContext context)
     {
-        pMovement.DPaddUp();
+        pMovement?.DPaddUp();
     }
     public void DPaddLeft(CallbackContext context)
     {
-        pMovement.DPaddLeft();
+        pMovement?.DPaddLeft();
     }
     public void DPaddRight(CallbackContext context)
     {
-        pMovement.DPaddRight();
+        pMovement?.DPaddRight();
     }
     public void DPaddDown(CallbackContext context)
     {
-        pMovement.DPaddDown();
+        pMovement?.DPaddDown();
     }
     public void OnNorth(CallbackContext context)
     {
-        pMovement.northButton();
+        pMovement?.northButton();
     }
 }
