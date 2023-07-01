@@ -61,14 +61,25 @@ public class Shooter : MonoBehaviour
     private FMOD.Studio.EventInstance shootAutoSoundInstance;
 
     [Header("Animation Rigging")]
-    public Transform leftArm;
-    public Transform rightArm;
-    public TwoBoneIKConstraint leftArmIKConstraint;
-    public TwoBoneIKConstraint rightArmIKConstraint;
+
     public MultiAimConstraint leftArmAimConstraint;
     public MultiAimConstraint rightArmAimConstraint;
- 
+    public GameObject aimTarget;
+    private Rig ShooterRig;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        if (GetComponent<Player1>() == true)
+        {
+            aimTarget = FindObjectOfType<Player1Aim>().gameObject;
+       
+        }
+        else if (GetComponent<Player2>() == true)
+        {
+            aimTarget = FindObjectOfType<Player2Aim>().gameObject;
+        }
+
+    }
     void Start()
     {
         LO = GetComponent<LockOn>();
@@ -80,9 +91,13 @@ public class Shooter : MonoBehaviour
         bulletsInMagazineRev = maxMagazineSizeRevolver;
         shootRevSoundInstance = FMODUnity.RuntimeManager.CreateInstance(shootRevSoundEvent);
         shootAutoSoundInstance = FMODUnity.RuntimeManager.CreateInstance(shootAutoSoundEvent);
+        ShooterRig=GetComponentInChildren<Rig>();
+        GameObject leftArmObject = GameObject.Find("LeftArm");
+        GameObject rightArmObject = GameObject.Find("RightArm");
 
+        leftArmAimConstraint = leftArmObject.GetComponent<MultiAimConstraint>();
+        rightArmAimConstraint = rightArmObject.GetComponent<MultiAimConstraint>();
 
-        
     }
 
     public void East()
@@ -92,6 +107,7 @@ public class Shooter : MonoBehaviour
         {
             if (Shooted == true && TimerForRechargeEast <= 0)
             {
+                leftArmAimConstraint.weight = 0;
                 StartCoroutine(Fire(fireRateRevolver));
               return;
             }
@@ -121,7 +137,7 @@ public class Shooter : MonoBehaviour
             {
                 if (shootFullAuto == true && TimerForRechargeEast <= 0)
                 {
-
+                    rightArmAimConstraint.weight = 0;
                     StartCoroutine(FireFullAuto());
                     return;
                 }
@@ -180,7 +196,7 @@ public class Shooter : MonoBehaviour
         
       
         lookat = LO.lockOnTarget.transform;
-       
+        aimTarget.transform.position = LO.lockOnTarget.transform.position;
 
         if (TimerForRechargeEast > 0)
         {
@@ -253,8 +269,8 @@ public class Shooter : MonoBehaviour
             this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             this.firePoint.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             lookat = LO.lockOnTarget.transform;
-      
-
+            aimTarget.transform.position = LO.lockOnTarget.transform.position;
+            rightArmAimConstraint.weight = 1;
             m_Animator.SetBool("ShootingR", true);
             shootRevSoundInstance.start();
             GameObject newBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
@@ -275,6 +291,7 @@ public class Shooter : MonoBehaviour
             }
             yield return new WaitForSeconds(fireRate);
         }
+        rightArmAimConstraint.weight = 0;
         PM.canMove = true;
         ResetBulletShotCount();
     }
@@ -301,7 +318,8 @@ public class Shooter : MonoBehaviour
             m_Animator.SetBool("ShootingLeft", true);
 
             lookat = LO.lockOnTarget;
-    
+            aimTarget.transform.position = LO.lockOnTarget.transform.position;
+            leftArmAimConstraint.weight = 1;
             this.FullAutoFirePoint1.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             this.FullAutoFirePoint2.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
 
@@ -339,6 +357,7 @@ public class Shooter : MonoBehaviour
             
             yield return null;
         }
+        leftArmAimConstraint.weight = 0;
         ResetBulletShotCount();
     }
 
