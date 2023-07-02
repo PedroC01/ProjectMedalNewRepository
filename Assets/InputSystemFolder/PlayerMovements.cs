@@ -73,7 +73,7 @@ public class PlayerMovements : MonoBehaviour
 
     public float recoveryTime = 2f;
     public bool isInvencible;
-
+    public int CheckIfCharacter;
     public bool canMove;
 
     public float knockbackForce = 10f;
@@ -83,16 +83,25 @@ public class PlayerMovements : MonoBehaviour
     private void Awake()
     {
         setupJump();
+        this.pmc = GetComponent<PlayerMedapartsController>();
     }
 
     void Start()
     {
         this.rb = GetComponent<Rigidbody>();
-      // this.camera1 = FindObjectOfType<Camera>(); //para testar split screen-------------------------------
-        this.shooter = GetComponentInChildren<Shooter>();
         this.LO = GetComponent<LockOn>();
-        this.RL = GetComponent<RocketLaucher>();
-       this.pmc = GetComponent<PlayerMedapartsController>();
+        if (pmc.characterStatsSO.characterReferenceNumber == 1)
+        {
+            this.shooter = GetComponentInChildren<Shooter>();
+            this.RL = GetComponentInChildren<RocketLaucher>();
+        }
+
+        // this.camera1 = FindObjectOfType<Camera>(); //para testar split screen-------------------------------
+
+
+        
+        
+
         m_Animator1 = GetComponentInChildren<Animator>();
         jumped = false;
         if (this.gameObject.GetComponent<Player1>() == true)
@@ -101,17 +110,18 @@ public class PlayerMovements : MonoBehaviour
             this.Enemy = FindObjectOfType<Player2>().gameObject;
           
         }
+        if (this.gameObject.GetComponent<Player2>() == true)
+        {
+
+            this.Enemy = FindObjectOfType<Player1>().gameObject;
+
+        }
         canMove = true;
         dashCoolDownReset = dashCoolDown;
         dashCoolDown = 0;
 
       
-        if (this.gameObject.GetComponent<Player2>() == true)
-        {
-           
-            this.Enemy = FindObjectOfType<Player1>().gameObject;
-            
-        }
+       
     }
 
 
@@ -187,10 +197,7 @@ public class PlayerMovements : MonoBehaviour
     {
         RL.North();
     }
-    public void L1()
-    {
-        LO.LeftShoulderL1();
-    }
+    
     public void L2()
     {
 
@@ -203,22 +210,7 @@ public class PlayerMovements : MonoBehaviour
         m_Animator1.SetBool("Blocking", block);
 
     }
-    public void DPaddUp()
-    {
-        LO.DPadUp();
-    }
-    public void DPaddLeft()
-    {
-        LO.DPadLeft();
-    }
-    public void DPaddRight()
-    {
-        LO.DPadRight();
-    }
-    public void DPaddDown()
-    {
-        LO.DPadDown();
-    }
+   
 
 
     //------------------------------------------------------------------------------------------------------------------
@@ -277,6 +269,7 @@ public class PlayerMovements : MonoBehaviour
             horizontalInput.x = 0;
             horizontalInput.y = 0;
         }
+     
         if (KnockBack)
         {
             // Move the player in the opposite direction of knockbackDirection

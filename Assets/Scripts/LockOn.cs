@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -10,9 +12,11 @@ public class LockOn : MonoBehaviour
 {
 
 
-  
+    private List<GameObject> medapartsList = new List<GameObject>();
     [SerializeField]
     private GameObject[] medaparts;
+    [SerializeField]
+    private MedaPartScript[] medapartsScript;
     private Transform[] medapartsLock;
     private GameObject temp;
     public Transform lockOnTarget;
@@ -27,47 +31,74 @@ public class LockOn : MonoBehaviour
     private int enemyReference;
     public int pieceReference;
     public MedaPartScript lockedOnMedapart;
-    public int startPiece=1;
+    public int startPiece = 1;
+    private RocketLaucher rl;
+    private Shooter sh;
+    public PlayerMedapartsController pmc;
+   
+
+
+    private void Awake()
+    {
+        this.pmc = GetComponent<PlayerMedapartsController>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        if (this.gameObject.GetComponent<Player1>()==true)
+        if (this.gameObject.GetComponent<Player1>() == true)
         {
-           this.medaparts = GameObject.FindGameObjectsWithTag("Player2Parts");
             this.Enemy = FindObjectOfType<Player2>().gameObject;
+
+            medapartsScript = Enemy.GetComponentsInChildren<MedaPartScript>(false);
+
+
+            foreach (MedaPartScript medap in medapartsScript)
+            {
+                GameObject temp = medap.gameObject;
+                medapartsList.Add(temp);
+            }
+
+          
             enemyReference = 2;
-            this.LOS=this.Enemy.GetComponent<LockOnShader>();
+            this.LOS = this.Enemy.GetComponent<LockOnShader>();
+
         }
-        
-
-
-        //quando criar as peças direitas para o player 1 descomentar a baixo--------------------------------
-        if (this.gameObject.GetComponent<Player2>() == true)
+        else if (this.gameObject.GetComponent<Player2>() == true)
         {
-           this.medaparts = GameObject.FindGameObjectsWithTag("Player1Parts");
-           this.Enemy = FindObjectOfType<Player1>().gameObject;
+            this.Enemy = FindObjectOfType<Player1>().gameObject;
+
+            medapartsScript = Enemy.GetComponentsInChildren<MedaPartScript>(false);
+
+
+            foreach (MedaPartScript medap in medapartsScript)
+            {
+                GameObject temp = medap.gameObject;
+                medapartsList.Add(temp);
+            }
+
             enemyReference = 1;
             this.LOS = this.Enemy.GetComponent<LockOnShader>();
+
         }
-        //------------------------------
 
+        this.medaparts = this.medapartsList.ToArray();
         this.medapartsLock = new Transform[this.medaparts.Length];
-
         //Organiazar as peças na ordem certa pq vai ser necessario para selecionar onde queremos o LockOn
-        for (int i=0; i < this.medaparts.Length-1; i++)
+        for (int i = 0; i < this.medaparts.Length - 1; i++)
         {
-            for(int j=i+1; j < this.medaparts.Length; j++)
+            for (int j = i + 1; j < this.medaparts.Length; j++)
             {
-               if(this.medaparts[i].GetComponent<MedaPartScript>().MedapartNumber > this.medaparts[j].GetComponent<MedaPartScript>().MedapartNumber)
+                if (this.medaparts[i].GetComponent<MedaPartScript>().MedapartNumber > this.medaparts[j].GetComponent<MedaPartScript>().MedapartNumber)
                 {
-                    this.temp= this.medaparts[i];
+                    this.temp = this.medaparts[i];
                     this.medaparts[i] = this.medaparts[j];
-                    this.medaparts[j]=this.temp;
-                   
+                    this.medaparts[j] = this.temp;
+
                 }
 
             }
-          
+
         }
         //Agora guardar as transforms já na ordem certa ou guardar logo só a posição da target;
         for (int i = 0; i < medaparts.Length; i++)
@@ -75,13 +106,26 @@ public class LockOn : MonoBehaviour
             this.medapartsLock[i] = medaparts[i].GetComponent<Transform>();
         }
 
-/*
-        for (int i = 0; i < medapartsLock.Length; i++)
+        if (pmc.characterStatsSO.characterReferenceNumber == 1)
         {
-            Debug.Log(i+"="+medapartsLock[i]);
-        }*/
+            sh = GetComponentInChildren<Shooter>();
+            sh.LO = this;
+            sh.Enemy = this.Enemy;
+            rl = GetComponentInChildren<RocketLaucher>();
+            rl.LO = this;
+        }
 
-       
+
+
+
+
+        /*
+                for (int i = 0; i < medapartsLock.Length; i++)
+                {
+                    Debug.Log(i+"="+medapartsLock[i]);
+                }*/
+
+
         this.lockOnTarget = medaparts[startPiece].transform;
         this.pieceReference = startPiece;
 
@@ -95,7 +139,7 @@ public class LockOn : MonoBehaviour
             this.pieceReference = 1;
             this.lockedOnMedapart = medaparts[1].GetComponent<MedaPartScript>();
         }
-}
+    }
 
     public void DPadLeft()
     {
@@ -141,7 +185,7 @@ public class LockOn : MonoBehaviour
     void Update()
     {
 
-     
+
         if (lockedOnMedapart != null && lockedOnMedapart.partEnergy <= 0 && medaparts[1] != null)
         {
             lockOnTarget = medaparts[1].transform;
@@ -155,10 +199,10 @@ public class LockOn : MonoBehaviour
 
 
 
-   
-    
 
 
 
 
 }
+
+

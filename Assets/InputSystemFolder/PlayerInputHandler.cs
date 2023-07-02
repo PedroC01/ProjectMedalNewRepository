@@ -20,9 +20,12 @@ public class PlayerInputHandler : MonoBehaviour
     private bool hold;
     private bool leftTriggerPressed;
     private bool rightTriggerPressed;
-    private PlayerMedapartsController medapartsController;
-    private PlayerHealth ph;
-
+    [Header("Scripts")]
+    public GameObject thisPlayer;
+    public PlayerMedapartsController MpC;
+    public PlayerHealth ph;
+    public LockOn LO;
+    private OverrideInput OI;
 
     void Start()
     {
@@ -32,7 +35,11 @@ public class PlayerInputHandler : MonoBehaviour
         var eastButtons = FindObjectsOfType<Shooter>();
         var northButtons = FindObjectsOfType<RocketLaucher>();
         pMovement = pMovements.FirstOrDefault(m => m.GetPlayerIndex() == index);
-        medapartsController = GetComponent<PlayerMedapartsController>();
+        thisPlayer = pMovement.gameObject;
+        MpC = thisPlayer.GetComponent<PlayerMedapartsController>();
+        ph = thisPlayer.GetComponent<PlayerHealth>();
+        LO = thisPlayer.GetComponent<LockOn>();
+        OI = thisPlayer.GetComponent<OverrideInput>();
     }
   
     void Update()
@@ -86,22 +93,24 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if(ph.canGoBerserk == true)
         {
-            medapartsController.UseMedaForce();
+            MpC.UseMedaForce();
         }
  
 
     }
 
 
-
-
+    public void OnNorth(CallbackContext context)
+    {
+        OI?.OnNorth();
+    }
 
 
     public void OnMove(CallbackContext context)
     {
         pMovement?.OnMove(context.ReadValue<Vector2>());
     }
-    public void OnJump(CallbackContext context)//por algum motivo o call back context dá erro aqui
+    public void OnJump(CallbackContext context)
     {
    
         pMovement?.OnJump();
@@ -116,38 +125,36 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.started)
         {
-            pMovement?.OnEast();
+           OI?.OnEast();
         }
         if (context.performed)
         {
-            pMovement?.OnEast();
+            OI?.OnEast();
         }
         if (context.canceled)
         {
-            pMovement?.OnEastRelease();
+            OI?.OnEastRelease();
         }
 
     }
-    public void OnWest(CallbackContext context)
+    public  void OnWest(CallbackContext context)
     {
         if (context.started)
         {
-            pMovement?.OnWest();
+            OI?.OnWest();
         }
         if (context.performed)
         {
-            pMovement?.OnWest();
+            OI?.OnWest();
         }
         if (context.canceled)
         {
-            pMovement?.OnWestRelease();
+            OI?.OnWestRelease();
         }
-            
-        
-        
        
-        ///criar release action----------------------------------------------------------------------------------------------------------------
+        
     }
+
   /*  public void OnWestRelease(CallbackContext context)
     {
 
@@ -158,7 +165,7 @@ public class PlayerInputHandler : MonoBehaviour
     }*/
     public void L1(CallbackContext context)
     {
-        pMovement?.L1();
+        LO?.LeftShoulderL1();
     }
     public void R1(CallbackContext context)
     {
@@ -168,22 +175,19 @@ public class PlayerInputHandler : MonoBehaviour
     }
     public void DPaddUp(CallbackContext context)
     {
-        pMovement?.DPaddUp();
+        LO?.DPadUp();
     }
     public void DPaddLeft(CallbackContext context)
     {
-        pMovement?.DPaddLeft();
+        LO?.DPadLeft();
     }
     public void DPaddRight(CallbackContext context)
     {
-        pMovement?.DPaddRight();
+       LO?.DPadRight();
     }
     public void DPaddDown(CallbackContext context)
     {
-        pMovement?.DPaddDown();
+       LO?.DPadDown();
     }
-    public void OnNorth(CallbackContext context)
-    {
-        pMovement?.northButton();
-    }
+   
 }

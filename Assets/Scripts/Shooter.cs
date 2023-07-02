@@ -12,7 +12,9 @@ using Unity.Burst.Intrinsics;
 
 public class Shooter : MonoBehaviour
 {
-
+    public GameObject Enemy;
+    public bool RightSide;
+    public bool LeftSide;
     private bool rechargingWest;
     private bool rechargingEast;
     public float rechargeTimeEast;
@@ -62,43 +64,53 @@ public class Shooter : MonoBehaviour
 
     [Header("Animation Rigging")]
 
-    public MultiAimConstraint leftArmAimConstraint;
+    public MultiAimConstraint leftArmDownAimConstraint;
+    public MultiAimConstraint leftArmUpAimConstraint;
     public MultiAimConstraint rightArmAimConstraint;
     public GameObject aimTarget;
+    //public GameObject getParent;
     private Rig ShooterRig;
+    
     // Start is called before the first frame update
     private void Awake()
     {
-        if (GetComponent<Player1>() == true)
-        {
-            aimTarget = FindObjectOfType<Player1Aim>().gameObject;
-       
-        }
-        else if (GetComponent<Player2>() == true)
-        {
-            aimTarget = FindObjectOfType<Player2Aim>().gameObject;
-        }
 
+        
     }
     void Start()
     {
-        LO = GetComponent<LockOn>();
+    //    LO = GetComponent<LockOn>();
+        
         MaxMagFullAuto = magSizeFullAuto;
-        PM = GetComponent<PlayerMovements>();
+        PM = GetComponentInParent<PlayerMovements>();
         this.bulletPrefab.GetComponent<Bullet>().bulletSpeed=mineBulletSpeed;
-        // this.thisPlayer=GetComponentInParent<Transform>();
-        m_Animator = GetComponentInChildren<Animator>();
+        this.thisPlayer=PM.gameObject.GetComponent<Transform>();
+        m_Animator = GetComponent<Animator>();
         bulletsInMagazineRev = maxMagazineSizeRevolver;
         shootRevSoundInstance = FMODUnity.RuntimeManager.CreateInstance(shootRevSoundEvent);
         shootAutoSoundInstance = FMODUnity.RuntimeManager.CreateInstance(shootAutoSoundEvent);
-        ShooterRig=GetComponentInChildren<Rig>();
-        GameObject leftArmObject = GameObject.Find("LeftArm");
+        ShooterRig=GetComponent<Rig>();
+        GameObject leftArmDownObject = GameObject.Find("LeftArmDown");
+        GameObject leftArmUpObject = GameObject.Find("LeftArmUp");
         GameObject rightArmObject = GameObject.Find("RightArm");
+        if (GetComponentInParent<Player1>() == true)
+        {
+            aimTarget = FindObjectOfType<Player1Aim>().gameObject;
 
-        leftArmAimConstraint = leftArmObject.GetComponent<MultiAimConstraint>();
+        }
+        else if (GetComponentInParent<Player2>() == true)
+        {
+            aimTarget = FindObjectOfType<Player2Aim>().gameObject;
+
+        }
+       // this.Enemy = this.LO.Enemy.gameObject;
+        leftArmDownAimConstraint = leftArmDownObject.GetComponent<MultiAimConstraint>();
         rightArmAimConstraint = rightArmObject.GetComponent<MultiAimConstraint>();
-
+        leftArmUpAimConstraint= leftArmUpObject.GetComponent<MultiAimConstraint>();
     }
+
+
+
 
     public void East()
     {
@@ -107,7 +119,8 @@ public class Shooter : MonoBehaviour
         {
             if (Shooted == true && TimerForRechargeEast <= 0)
             {
-                leftArmAimConstraint.weight = 0;
+                leftArmDownAimConstraint.weight = 0;
+                leftArmUpAimConstraint.weight = 0;
                 StartCoroutine(Fire(fireRateRevolver));
               return;
             }
@@ -192,9 +205,30 @@ public class Shooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
-        
-      
+        Vector3 direction = this.Enemy.transform.position - this.transform.position;
+        float dotProduct = Vector3.Dot(direction, this.transform.right);
+
+        if (dotProduct > 0)
+        {
+            // Enemy is on the right side of the player
+            RightSide = true;
+            LeftSide = false;
+        }
+        else if (dotProduct < 0)
+        {
+            // Enemy is on the left side of the player
+            LeftSide = true;
+            RightSide = false;
+        }
+        else
+        {
+            LeftSide = false;
+            RightSide = false;
+          
+        }
+
+
+
         lookat = LO.lockOnTarget.transform;
         aimTarget.transform.position = LO.lockOnTarget.transform.position;
 
@@ -266,11 +300,17 @@ public class Shooter : MonoBehaviour
             PM.horizontalInput.x = 0;
             PM.horizontalInput.y = 0;
             this.thisPlayer.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
-            this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             this.firePoint.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             lookat = LO.lockOnTarget.transform;
             aimTarget.transform.position = LO.lockOnTarget.transform.position;
-            rightArmAimConstraint.weight = 1;
+
+
+            ///here we mess with the IK-----------------------------------------------------------------------------
+            if (RightSide == true)
+            {
+                rightArmAimConstraint.weight = 1;
+            }
+           
             m_Animator.SetBool("ShootingR", true);
             shootRevSoundInstance.start();
             GameObject newBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
@@ -312,14 +352,19 @@ public class Shooter : MonoBehaviour
             }
             if (PM.IsMoving == false)
             {
-                this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, this.transform.position.y, LO.lockOnTarget.transform.position.z));
+                this.thisPlayer.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, this.transform.position.y, LO.lockOnTarget.transform.position.z));
                 new WaitForSeconds(delayFullAuto);
             }
             m_Animator.SetBool("ShootingLeft", true);
 
             lookat = LO.lockOnTarget;
             aimTarget.transform.position = LO.lockOnTarget.transform.position;
-            leftArmAimConstraint.weight = 1;
+
+            ///here we mess with the IK-----------------------------------------------------------------------------
+            
+                leftArmDownAimConstraint.weight = 1;
+                leftArmUpAimConstraint.weight = 1;
+
             this.FullAutoFirePoint1.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             this.FullAutoFirePoint2.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
 
@@ -357,8 +402,16 @@ public class Shooter : MonoBehaviour
             
             yield return null;
         }
-        leftArmAimConstraint.weight = 0;
+        leftArmDownAimConstraint.weight = 0;
+        leftArmUpAimConstraint.weight = 0;
         ResetBulletShotCount();
     }
 
+
+
+
+
+
 }
+
+

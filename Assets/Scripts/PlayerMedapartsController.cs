@@ -5,11 +5,15 @@ public class PlayerMedapartsController : MonoBehaviour
     public MedaPartScript[] medaparts;
     public float lowEnergyThreshold = 0;
     public bool isBlocking = false;
-    private LockOn enLockON;
+    public LockOn enLockON;
     private MedaPartScript currentTarget;
     private RocketLaucher RL;
     private Shooter shooter;
     private PlayerMovements PM;
+    public CharacterStatsSO characterStatsSO;
+
+
+ 
     [Header("perBullet")]
     public float lastBulletCritMultiplyer;
    
@@ -57,7 +61,20 @@ public class PlayerMedapartsController : MonoBehaviour
     private int originalMagSizeSmg;
     private int originalMagSizeRev;
     private float originalMovementSpeed;
+   
 
+    private void Awake()
+    {
+        if (GetComponent<Player1>() != null)
+        {
+            enLockON = FindObjectOfType<Player2>().gameObject.GetComponent<LockOn>();
+        }
+        else if (GetComponent<Player2>() != null)
+        {
+            enLockON = FindObjectOfType<Player1>().GetComponent<LockOn>();
+        }
+
+    }
     private void Start()
     {
         playedRArmSound = false;
@@ -72,15 +89,7 @@ public class PlayerMedapartsController : MonoBehaviour
         SetMedapartStats(baseDamageWestAttack, baseDamageEastAttack, baseMagSizeSmg, baseMagSizeRev, baseMovementSpeed);
         this.shooter.bulletPrefab.GetComponent<Bullet>().critValue = this.lastBulletCritMultiplyer;
 
-        if (GetComponent<Player1>() != null)
-        {
-            enLockON = FindObjectOfType<Player2>().GetComponent<LockOn>();
-        }
-        else if (GetComponent<Player2>() != null)
-        {
-            enLockON = FindObjectOfType<Player1>().GetComponent<LockOn>();
-        }
-
+       
         turningOffSoundInstance = FMODUnity.RuntimeManager.CreateInstance(turningOffSound);
     }
 

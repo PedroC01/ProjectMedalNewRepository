@@ -199,7 +199,7 @@ public class Rocket : MonoBehaviour
                     }
 
                 }
-                Debug.Log("usou trigger");
+       
 
                 Destroy(this.gameObject);
             }

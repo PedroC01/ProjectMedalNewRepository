@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
 {
     public float playerHealth;
     public GameObject[] MedaParts;
+    private List<GameObject> medapartsList = new List<GameObject>();
+    private GameObject temp;
     public MedaPartScript[] medapartsScripts;
     private MedaPartScript mScript;
     public float partsTotalHealth;
@@ -25,22 +28,63 @@ public class PlayerHealth : MonoBehaviour
     //private bool playedRightArmDestroyedSound=false;
     //private bool playedLegsDestroyedSound=false;
     private HashSet<int> destroyedParts = new HashSet<int>();
+    public GameObject mbot;
 
     // Start is called before the first frame update
     void Start()
     {
         
         soundManager = FindObjectOfType<SoundManagerScript>();
-        medapartsScripts = GetComponentsInChildren<MedaPartScript>();
-        if (this.gameObject.GetComponent<Player2>()==true)
+     
+        if (this.gameObject.GetComponent<Player2>()!=null)
         {
-            this.MedaParts = GameObject.FindGameObjectsWithTag("Player2Parts");
+            this.mbot = GetComponentInChildren<Medabot>().gameObject;
+            medapartsScripts = mbot.GetComponentsInChildren<MedaPartScript>(false);
+
+
+            foreach (MedaPartScript medap in medapartsScripts)
+            {
+                GameObject temp = medap.gameObject;
+                medapartsList.Add(temp);
+            }
+
+
         }
-        if (this.gameObject.GetComponent<Player1>() == true)
+        else if (this.gameObject.GetComponent<Player1>()!=null)
         {
-            this.MedaParts = GameObject.FindGameObjectsWithTag("Player1Parts");
+            this.mbot = GetComponentInChildren<Medabot>().gameObject;
+            medapartsScripts = mbot.GetComponentsInChildren<MedaPartScript>(false);
+
+
+            foreach (MedaPartScript medap in medapartsScripts)
+            {
+                GameObject temp = medap.gameObject;
+                medapartsList.Add(temp);
+            }
+
         }
-        
+
+
+
+        this.MedaParts = this.medapartsList.ToArray();
+       
+
+        for (int i = 0; i < this.MedaParts.Length - 1; i++)
+        {
+            for (int j = i + 1; j < this.MedaParts.Length; j++)
+            {
+                if (this.MedaParts[i].GetComponent<MedaPartScript>().MedapartNumber > this.MedaParts[j].GetComponent<MedaPartScript>().MedapartNumber)
+                {
+                    this.temp = this.MedaParts[i];
+                    this.MedaParts[i] = this.MedaParts[j];
+                    this.MedaParts[j] = this.temp;
+
+                }
+
+            }
+
+        }
+
         //Find<MedaPartScript>(mScript);
         foreach (GameObject part in this.MedaParts)
         {

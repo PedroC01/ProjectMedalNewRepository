@@ -24,8 +24,9 @@ public class RocketLaucher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LO = GetComponent<LockOn>();
+   
         RocketLaunchSoundInstance = FMODUnity.RuntimeManager.CreateInstance(RocketLaunchSound);
+        TimerForRecharge = rechargeTime;
     }
 
     public void North()
