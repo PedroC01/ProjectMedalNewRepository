@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
-
+using UnityEngine.Rendering;
 
 public class PartPiece : MonoBehaviour
 {
@@ -17,29 +18,26 @@ public class PartPiece : MonoBehaviour
     private Material[] ShaderMaterialsList;
     public Material[] originalMaterialsList;
     private SkinnedMeshRenderer renderer1;
-    private LockOnShader lockOnShader;
+    public LockOnShader lShader;
     public Texture[] thisPieceTexture;
     private Renderer ShaderRenderer;
     public Material[] NewMaterialsList;
     private void Start()
     {
       renderer1 = GetComponent<SkinnedMeshRenderer>();
-     
-  
-       originalMaterialsList = this.renderer1.sharedMaterials;
+        originalMaterialsList = this.renderer1.sharedMaterials;
         thisPieceTexture = new Texture[originalMaterialsList.Length];
         NewMaterialsList = new Material[originalMaterialsList.Length];
-        for (int i = 0;i <= originalMaterialsList.Length-1; i++){
+        for (int i = 0; i <= originalMaterialsList.Length - 1; i++)
+        {
             this.thisPieceTexture[i] = originalMaterialsList[i].mainTexture;
-        //*    this.ShaderMaterialsList[i].SetTexture("_Texture", this.thisPieceTexture[i]);
-            Material newMaterial = new Material(loShader);
+            //*    this.ShaderMaterialsList[i].SetTexture("_Texture", this.thisPieceTexture[i]);
+            Material newMaterial = new Material(this.loShader);
             newMaterial.SetTexture("_Texture", this.thisPieceTexture[i]);
             NewMaterialsList[i] = newMaterial;
         }
-            
-            
     }
-    
+ 
     void Update()
     {
         

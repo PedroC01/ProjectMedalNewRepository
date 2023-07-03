@@ -349,6 +349,7 @@ public class Shooter : MonoBehaviour
                 shootFullAuto = false;
                 TimerForRechargeWest = rechargeTimeWest;
                 rechargingWest = true;
+                yield return null;
             }
             if (PM.IsMoving == false)
             {
