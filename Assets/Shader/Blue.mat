@@ -85,15 +85,15 @@ Material:
     - _DoubleSidedGIMode: 0
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 0
-    - _Emission_Intensity: 17.7
+    - _Emission_Intensity: 22.67
     - _EnableBlendModePreserveSpecularLighting: 0
     - _EnableFogOnTransparent: 0
-    - _Exposure: -7.04
-    - _Fresnel_Size: 23.44
+    - _Exposure: -1.5
+    - _Fresnel_Size: 23.2
     - _OpaqueCullMode: 2
-    - _OutlineSize: 6.91
+    - _OutlineSize: -10.72
     - _RenderQueueType: 1
-    - _SpeedUp: 17.44
+    - _SpeedUp: 0
     - _SrcBlend: 1
     - _StencilRef: 0
     - _StencilRefDepth: 0
@@ -119,10 +119,10 @@ Material:
     - _ZTestTransparent: 5
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0, g: 1, b: 0.16342613, a: 1}
+    - _Color: {r: 0, g: 1, b: 0.16342607, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Fresnel_Color: {r: 0, g: 1, b: 0.08543228, a: 1}
+    - _Fresnel_Color: {r: 0, g: 1, b: 0.018348932, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &7739707789511380501
 MonoBehaviour:

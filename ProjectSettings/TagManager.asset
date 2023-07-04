@@ -35,10 +35,10 @@ TagManager:
   - CinemachineBound
   - PostProcessLayer
   - Players
-  - 
-  - 
-  - 
-  - 
+  - Player1
+  - Player2
+  - Player1Bullets
+  - Player2Bullets
   - 
   - 
   - 

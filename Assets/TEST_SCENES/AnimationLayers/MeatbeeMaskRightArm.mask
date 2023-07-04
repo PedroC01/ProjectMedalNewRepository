@@ -1,0 +1,323 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MeatbeeMaskRightArm
+  m_Mask: 00000000000000000000000000000000000000000000000001000000000000000100000000000000000000000000000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Base_Torso
+    m_Weight: 0
+  - m_Path: Base_Torso/Saia3
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Head
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Left_Arm_Up
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Left_Arm_Up/Left_Arm_Down
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Left_Arm_Up/Left_Arm_Down/Left_Palm
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left__Index_Base
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left__Index_Base/Left__Index_Midle
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left__Index_Base/Left__Index_Midle/Left__Index_Tip
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Anelar_Base
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Anelar_Base/Left_Anelar__Midle
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Anelar_Base/Left_Anelar__Midle/Left_Anelar_Tip
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Midle_Base
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Midle_Base/Left_Midle_Midle
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Midle_Base/Left_Midle_Midle/Left_Midle_Tip
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Pinkie_Base
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Pinkie_Base/Left_Pinkie_Midle
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Pinkie_Base/Left_Pinkie_Midle/Left_Pinkie_Tip
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Thumb_Base
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Thumb_Base/Left_Thumb_Tip
+    m_Weight: 0
+  - m_Path: Base_Torso/Up_Torso/joint3/Right_Arm_Up
+    m_Weight: 1
+  - m_Path: Base_Torso/Up_Torso/joint3/Right_Arm_Up/Right_Arm_Down
+    m_Weight: 1
+  - m_Path: Base_Torso/Up_Torso/joint3/Right_Arm_Up/Right_Arm_Down/Right_Palm
+    m_Weight: 1
+  - m_Path: Base_Torso/Up_Torso/joint3/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Anelar_Base
+    m_Weight: 1
+  - m_Path: Base_Torso/Up_Torso/joint3/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Anelar_Base/Right_Anelar_Midle
+    m_Weight: 1
+  - m_Path: Base_Torso/Up_Torso/joint3/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Anelar_Base/Right_Anelar_Midle/Right_Anelar_Tip
+    m_Weight: 1
+  - m_Path: Base_Torso/Up_Torso/joint3/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Index_Base
+    m_Weight: 1
+  - m_Path: Base_Torso/Up_Torso/joint3/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Index_Base/Right_Index_Midle
+    m_Weight: 1
+  - m_Path: Base_Torso/Up_Torso/joint3/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Index_Base/Right_Index_Midle/Right_Index_Tip
+    m_Weight: 1
+  - m_Path: Base_Torso/Up_Torso/joint3/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Midle_Base
+    m_Weight: 1
+  - m_Path: Base_Torso/Up_Torso/joint3/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Midle_Base/Right_Midle_Midle
+    m_Weight: 1
+  - m_Path: Base_Torso/Up_Torso/joint3/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Midle_Base/Right_Midle_Midle/Right_Midle_Tip
+    m_Weight: 1
+  - m_Path: Base_Torso/Up_Torso/joint3/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Pinkie_Base
+    m_Weight: 1
+  - m_Path: Base_Torso/Up_Torso/joint3/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Pinkie_Base/Right_Pinkie_Midle
+    m_Weight: 1
+  - m_Path: Base_Torso/Up_Torso/joint3/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Pinkie_Base/Right_Pinkie_Midle/Right_Pinkie_Tip
+    m_Weight: 1
+  - m_Path: Base_Torso/Up_Torso/joint3/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Thumb_Base
+    m_Weight: 1
+  - m_Path: Base_Torso/Up_Torso/joint3/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Thumb_Base/Right_Thumb_Tip
+    m_Weight: 1
+  - m_Path: Body_og
+    m_Weight: 0
+  - m_Path: Body_og/arm_l
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Antebrtaco_E4_geo
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Dedo_Anelar_End_E4_geo
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Dedo_Anelar_Mid_E4_geo
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Dedo_Anelar_Top_E4_geo
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Dedo_Gordo_End_E4_geo
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Dedo_Gordo_Top_E4_geo
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Dedo_Indicador_End_E4_geo
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Dedo_Indicador_Mid_E4_geo
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Dedo_Indicador_Top_E4_geo
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Dedo_Meio_End_E4_geo
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Dedo_Meio_Mid_E4_geo
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Dedo_Meio_Top_E4_geo
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Dedo_Mindinho_End_E4_geo
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Dedo_Mindinho_Mid_E4_geo
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Lig_Mao_LowPoly4
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/M_AnteBraco_E_Low_Poly4
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/M_Braco_E_LowPoly009
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Mao_E8
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Object630
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Object634
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/Object638
+    m_Weight: 0
+  - m_Path: Body_og/arm_l/polySurface2
+    m_Weight: 0
+  - m_Path: Body_og/arm_r
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Antebrtaco_E6_geo
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Dedo_Anelar_End_E6_geo
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Dedo_Anelar_Mid_E6_geo
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Dedo_Anelar_Top_E6_geo
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Dedo_Gordo_End_E6_geo
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Dedo_Gordo_Top_E6_geo
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Dedo_Indicador_End_E6_geo
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Dedo_Indicador_Mid_E6_geo
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Dedo_Indicador_Top_E6_geo
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Dedo_Meio_End_E6_geo
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Dedo_Meio_Mid_E6_geo
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Dedo_Meio_Top_E6_geo
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Dedo_Mindinho_End_E6_geo
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Dedo_Mindinho_Mid_E6_geo
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Lig_Mao_LowPoly6
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/M_AnteBraco_D_Low_Poly
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/M_Braco_E_LowPoly011
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Mao_E10
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Object632
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Object636
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/Object640
+    m_Weight: 1
+  - m_Path: Body_og/arm_r/polySurface3
+    m_Weight: 1
+  - m_Path: Body_og/Head
+    m_Weight: 1
+  - m_Path: Body_og/Head/Head
+    m_Weight: 0
+  - m_Path: Body_og/leg_l
+    m_Weight: 0
+  - m_Path: Body_og/leg_l/M_AntePerna_E_Low_Poly5
+    m_Weight: 0
+  - m_Path: Body_og/leg_l/M_Perna_E_Low5
+    m_Weight: 0
+  - m_Path: Body_og/leg_l/Pe_Metabee_LowPoly_E5
+    m_Weight: 0
+  - m_Path: Body_og/leg_r
+    m_Weight: 0
+  - m_Path: Body_og/leg_r/M_AntePerna_E_Low_Poly4
+    m_Weight: 0
+  - m_Path: Body_og/leg_r/M_Perna_E_Low4
+    m_Weight: 0
+  - m_Path: Body_og/leg_r/Pe_Metabee_LowPoly_E4
+    m_Weight: 0
+  - m_Path: Body_og/Torso
+    m_Weight: 0
+  - m_Path: Body_og/Torso/M_Anca_LowPoly
+    m_Weight: 0
+  - m_Path: Body_og/Torso/M_Chest_LowPoly
+    m_Weight: 0
+  - m_Path: Body_og/Torso/M_Cinta_Body_Rot
+    m_Weight: 0
+  - m_Path: Body_og/Torso/M_Escudo_Saia_LowPoly
+    m_Weight: 0
+  - m_Path: Body_og/Torso/Pescoco_M
+    m_Weight: 0
+  - m_Path: Body_og/Torso/Saia_Traz_LowPoly
+    m_Weight: 0
+  - m_Path: bottom
+    m_Weight: 0
+  - m_Path: Left_Leg_Up
+    m_Weight: 0
+  - m_Path: Left_Leg_Up/Left_Leg_Down
+    m_Weight: 0
+  - m_Path: Left_Leg_Up/Left_Leg_Down/Left_Foot
+    m_Weight: 0
+  - m_Path: Right_Leg_up
+    m_Weight: 0
+  - m_Path: Right_Leg_up/Right_Leg_Down
+    m_Weight: 0
+  - m_Path: Right_Leg_up/Right_Leg_Down/Right_Foot
+    m_Weight: 0
+  - m_Path: Whole
+    m_Weight: 0
+  - m_Path: Whole/Left_Leg_Up
+    m_Weight: 0
+  - m_Path: Whole/Left_Leg_Up/Left_Knee
+    m_Weight: 0
+  - m_Path: Whole/Left_Leg_Up/Left_Knee/Left_Foot
+    m_Weight: 0
+  - m_Path: Whole/Right_Leg_Up
+    m_Weight: 0
+  - m_Path: Whole/Right_Leg_Up/Right_Knee
+    m_Weight: 0
+  - m_Path: Whole/Right_Leg_Up/Right_Knee/Right_Foot
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/saia
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Head
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Left_Arm_Up
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Left_Arm_Up/Left_Arm_Down
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Left_Arm_Up/Left_Arm_Down/Left_Palm
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Anelar_Base
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Anelar_Base/Left_Anelar_Midle
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Anelar_Base/Left_Anelar_Midle/Left_Anelar_Tip
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Index_Base
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Index_Base/Left_Index_Midle
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Index_Base/Left_Index_Midle/Left_Index_Tip
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Midle_Base
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Midle_Base/Left_Midle_Midle
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Midle_Base/Left_Midle_Midle/Left_Midle_Tip
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Pinkie_Base
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Pinkie_Base/Left_Pinkie_Midle
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Pinkie_Base/Left_Pinkie_Midle/Left_Pinkie_Tip
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Thumb_Base
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Left_Arm_Up/Left_Arm_Down/Left_Palm/Left_Thumb_Base/Left_Thumb_Tip
+    m_Weight: 0
+  - m_Path: Whole/Torso_Base/Torso_Up/Right_Arm_Up
+    m_Weight: 1
+  - m_Path: Whole/Torso_Base/Torso_Up/Right_Arm_Up/Right_Arm_Down
+    m_Weight: 1
+  - m_Path: Whole/Torso_Base/Torso_Up/Right_Arm_Up/Right_Arm_Down/Right_Palm
+    m_Weight: 1
+  - m_Path: Whole/Torso_Base/Torso_Up/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Anelar_Base
+    m_Weight: 1
+  - m_Path: Whole/Torso_Base/Torso_Up/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Anelar_Base/Right_Anelar_Midle
+    m_Weight: 1
+  - m_Path: Whole/Torso_Base/Torso_Up/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Anelar_Base/Right_Anelar_Midle/Right_Anelar_Tip
+    m_Weight: 1
+  - m_Path: Whole/Torso_Base/Torso_Up/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Index_Base
+    m_Weight: 1
+  - m_Path: Whole/Torso_Base/Torso_Up/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Index_Base/Right_Index_Midle
+    m_Weight: 1
+  - m_Path: Whole/Torso_Base/Torso_Up/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Index_Base/Right_Index_Midle/Right_Index_Tip
+    m_Weight: 1
+  - m_Path: Whole/Torso_Base/Torso_Up/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Midle_Base
+    m_Weight: 1
+  - m_Path: Whole/Torso_Base/Torso_Up/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Midle_Base/Right_Midle_Midle
+    m_Weight: 1
+  - m_Path: Whole/Torso_Base/Torso_Up/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Midle_Base/Right_Midle_Midle/Right_Midle_Tip
+    m_Weight: 1
+  - m_Path: Whole/Torso_Base/Torso_Up/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Pinkie_Base
+    m_Weight: 1
+  - m_Path: Whole/Torso_Base/Torso_Up/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Pinkie_Base/Right_Pinkie_Midle
+    m_Weight: 1
+  - m_Path: Whole/Torso_Base/Torso_Up/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Pinkie_Base/Right_Pinkie_Midle/Right_Pinkie_Tip
+    m_Weight: 1
+  - m_Path: Whole/Torso_Base/Torso_Up/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Thumb_Base
+    m_Weight: 1
+  - m_Path: Whole/Torso_Base/Torso_Up/Right_Arm_Up/Right_Arm_Down/Right_Palm/Right_Thumb_Base/Right_Thumb_Tip
+    m_Weight: 1

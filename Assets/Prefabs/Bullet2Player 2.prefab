@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8187585539443330880}
   - component: {fileID: 7551864314947887586}
   - component: {fileID: 7796748897266400106}
-  m_Layer: 7
+  m_Layer: 19
   m_Name: Bullet2Player 2
   m_TagString: Player2Bullet
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc23bbfd031d2c40b97e3f8efadbcf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 1
+  bulletSpeed: 50
   damagePerBullet: 1
   impactVFX: {fileID: 439803550336415084, guid: ddeb9cbc639538f43984c0b5ab6224cf,
     type: 3}
@@ -126,7 +126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6276482885038924620}
   - component: {fileID: 7285392875675093327}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,6 +342,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BalaveryLowPoly
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b57afd5afbc696a42aed403449b086d2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 19
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b57afd5afbc696a42aed403449b086d2, type: 3}

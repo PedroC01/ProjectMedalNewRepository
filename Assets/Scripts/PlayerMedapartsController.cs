@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerMedapartsController : MonoBehaviour
 {
@@ -53,7 +54,7 @@ public class PlayerMedapartsController : MonoBehaviour
 
     [Header("MedaForce Related")]
     public float MedaForceDuration = 5f;
-    private bool MedaForceActive = false;
+    public bool MedaForceActive = false;
     // Adjust the duration as needed
     private float MedaForceTimer = 0f;
     private float originalDamageWestAttack;
@@ -73,7 +74,7 @@ public class PlayerMedapartsController : MonoBehaviour
         {
             enLockON = FindObjectOfType<Player1>().GetComponent<LockOn>();
         }
-
+      
     }
     private void Start()
     {
@@ -84,12 +85,12 @@ public class PlayerMedapartsController : MonoBehaviour
         shooter = GetComponent<Shooter>();
         PM = GetComponent<PlayerMovements>();
         RL = GetComponent<RocketLaucher>();
-      
+        
         // Set the base medapart stats
         SetMedapartStats(baseDamageWestAttack, baseDamageEastAttack, baseMagSizeSmg, baseMagSizeRev, baseMovementSpeed);
         this.shooter.bulletPrefab.GetComponent<Bullet>().critValue = this.lastBulletCritMultiplyer;
-
        
+
         turningOffSoundInstance = FMODUnity.RuntimeManager.CreateInstance(turningOffSound);
     }
 

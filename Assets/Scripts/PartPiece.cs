@@ -22,9 +22,11 @@ public class PartPiece : MonoBehaviour
     public Texture[] thisPieceTexture;
     private Renderer ShaderRenderer;
     public Material[] NewMaterialsList;
+    public PlayerMedapartsController pmc;
     private void Start()
     {
-      renderer1 = GetComponent<SkinnedMeshRenderer>();
+       pmc=GetComponentInParent<PlayerMedapartsController>();
+         renderer1 = GetComponent<SkinnedMeshRenderer>();
         originalMaterialsList = this.renderer1.sharedMaterials;
         thisPieceTexture = new Texture[originalMaterialsList.Length];
         NewMaterialsList = new Material[originalMaterialsList.Length];
@@ -40,26 +42,46 @@ public class PartPiece : MonoBehaviour
  
     void Update()
     {
-        
-        if (this.isLocked == false)
+        /* 
+         if (this.isLocked == false)
+         {
+             // this.renderer1.material= thisPeaceMaterial;
+             renderer1.sharedMaterials = originalMaterialsList;
+            // Base.Invoke();
+         }
+         if(this.isLocked == true)
+         {
+             // ShaderMaterialsList[1].SetTexture
+             for (int i = 0; i <= originalMaterialsList.Length - 1; i++)
+             {
+                 this.NewMaterialsList[i].SetTexture("_Texture", this.thisPieceTexture[i]);
+             }
+             renderer1.sharedMaterials= NewMaterialsList;
+
+             // this.renderer1.material= loShader;
+             // LockOnSh.Invoke();
+         }*/
+
+
+        if (pmc.MedaForceActive == false)
         {
             // this.renderer1.material= thisPeaceMaterial;
             renderer1.sharedMaterials = originalMaterialsList;
-           // Base.Invoke();
+            // Base.Invoke();
         }
-        if(this.isLocked == true)
+        if (pmc.MedaForceActive == true)
         {
             // ShaderMaterialsList[1].SetTexture
             for (int i = 0; i <= originalMaterialsList.Length - 1; i++)
             {
                 this.NewMaterialsList[i].SetTexture("_Texture", this.thisPieceTexture[i]);
             }
-            renderer1.sharedMaterials= NewMaterialsList;
-           
+            renderer1.sharedMaterials = NewMaterialsList;
+
             // this.renderer1.material= loShader;
             // LockOnSh.Invoke();
         }
     }
 
-    
+
 }

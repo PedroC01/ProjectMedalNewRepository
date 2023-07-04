@@ -15,10 +15,10 @@ public class PlayerHealth : MonoBehaviour
     private MedaPartScript mScript;
     public float partsTotalHealth;
     public GameObject Enemy;
-    float averageHealth;
+   public float averageHealth;
     public GameObject HeadTorsoHealth;
     public float HeadHealth;
-    public float lifePerToMedaforce;
+    public float lifePerToMedaforce=30f;
     public bool canGoBerserk=false;//Can use MedaForce
     public float LowEnergyMark=0;
     public float LowEnergyMarkHead= 35;
@@ -84,12 +84,13 @@ public class PlayerHealth : MonoBehaviour
             }
 
         }
-
+        
         //Find<MedaPartScript>(mScript);
         foreach (GameObject part in this.MedaParts)
         {
             mScript = part.GetComponent<MedaPartScript>();
             partsTotalHealth += part.GetComponent<MedaPartScript>().partEnergy;
+            part.GetComponent<MedaPartScript>().medaparts = this.MedaParts;
             if (mScript.MedapartNumber == 1)
             {
                 this.HeadTorsoHealth = part;

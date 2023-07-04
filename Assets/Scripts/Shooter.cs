@@ -9,12 +9,15 @@ using static UnityEngine.InputSystem.InputAction;
 using FMODUnity;
 using UnityEngine.Animations.Rigging;
 using Unity.Burst.Intrinsics;
+using FMOD.Studio;
 
 public class Shooter : MonoBehaviour
 {
     public GameObject Enemy;
     public bool RightSide;
     public bool LeftSide;
+    public bool Front;
+    public bool Back;
     private bool rechargingWest;
     private bool rechargingEast;
     public float rechargeTimeEast;
@@ -63,11 +66,20 @@ public class Shooter : MonoBehaviour
     private FMOD.Studio.EventInstance shootAutoSoundInstance;
 
     [Header("Animation Rigging")]
-
+    public Transform rigObject;
+    public MultiAimConstraint HeadAimConstraint;
+    public MultiAimConstraint downBodyAimConstraint;
+    public MultiAimConstraint UpperBodyAimConstraint;
     public MultiAimConstraint leftArmDownAimConstraint;
     public MultiAimConstraint leftArmUpAimConstraint;
     public MultiAimConstraint rightArmAimConstraint;
     public GameObject aimTarget;
+    private float headAimOriginalValues;
+    private float downBodyAimOriginalValues;
+    private float upBodyAimOriginalValues;
+    private float leftArmDownAimOriginalValues;
+    private float rightArmAimOriginalValues;
+    private float leftArmUpAimOriginalValues;
     //public GameObject getParent;
     private Rig ShooterRig;
     
@@ -90,9 +102,14 @@ public class Shooter : MonoBehaviour
         shootRevSoundInstance = FMODUnity.RuntimeManager.CreateInstance(shootRevSoundEvent);
         shootAutoSoundInstance = FMODUnity.RuntimeManager.CreateInstance(shootAutoSoundEvent);
         ShooterRig=GetComponent<Rig>();
-        GameObject leftArmDownObject = GameObject.Find("LeftArmDown");
-        GameObject leftArmUpObject = GameObject.Find("LeftArmUp");
-        GameObject rightArmObject = GameObject.Find("RightArm");
+        rigObject = GetComponentInChildren<Rig>().transform;
+        GameObject leftArmDownObject = rigObject.transform.Find("LeftArmDown").gameObject;
+        GameObject leftArmUpObject = rigObject.transform.Find("LeftArmUp").gameObject;
+        GameObject rightArmObject = rigObject.transform.Find("RightArm").gameObject;
+        GameObject headObject = rigObject.transform.Find("Head").gameObject;
+        GameObject upperBodyObject = rigObject.transform.Find("Bodyup").gameObject;
+        GameObject downBodyObject = rigObject.transform.Find("Bodydown").gameObject;
+       
         if (GetComponentInParent<Player1>() == true)
         {
             aimTarget = FindObjectOfType<Player1Aim>().gameObject;
@@ -107,6 +124,15 @@ public class Shooter : MonoBehaviour
         leftArmDownAimConstraint = leftArmDownObject.GetComponent<MultiAimConstraint>();
         rightArmAimConstraint = rightArmObject.GetComponent<MultiAimConstraint>();
         leftArmUpAimConstraint= leftArmUpObject.GetComponent<MultiAimConstraint>();
+        HeadAimConstraint= headObject.GetComponent<MultiAimConstraint>();
+        downBodyAimConstraint= downBodyObject.GetComponent<MultiAimConstraint>();
+        UpperBodyAimConstraint= upperBodyObject.GetComponent<MultiAimConstraint>();
+        downBodyAimOriginalValues = downBodyAimConstraint.weight;
+        upBodyAimOriginalValues = UpperBodyAimConstraint.weight;
+
+
+
+
     }
 
 
@@ -206,17 +232,34 @@ public class Shooter : MonoBehaviour
     void Update()
     {
         Vector3 direction = this.Enemy.transform.position - this.transform.position;
-        float dotProduct = Vector3.Dot(direction, this.transform.right);
+        float dotProductForward = Vector3.Dot(direction, this.transform.forward);
+        float dotProductRight = Vector3.Dot(direction, this.transform.right);
 
-        if (dotProduct > 0)
+        // Check if the enemy is in front of the player
+        if (dotProductForward > 0)
         {
-            // Enemy is on the right side of the player
+            Front = true;
+            Back = false;
+        }
+        else if (dotProductForward < 0)
+        {
+            Back = true;
+            Front = false;
+        }
+        else
+        {
+            Front = false;
+            Back = false;
+        }
+
+        // Check if the enemy is on the right side of the player
+        if (dotProductRight > 0)
+        {
             RightSide = true;
             LeftSide = false;
         }
-        else if (dotProduct < 0)
+        else if (dotProductRight < 0)
         {
-            // Enemy is on the left side of the player
             LeftSide = true;
             RightSide = false;
         }
@@ -224,9 +267,7 @@ public class Shooter : MonoBehaviour
         {
             LeftSide = false;
             RightSide = false;
-          
         }
-
 
 
         lookat = LO.lockOnTarget.transform;
@@ -362,9 +403,20 @@ public class Shooter : MonoBehaviour
             aimTarget.transform.position = LO.lockOnTarget.transform.position;
 
             ///here we mess with the IK-----------------------------------------------------------------------------
-            
+            if (LeftSide)
+            {
                 leftArmDownAimConstraint.weight = 1;
                 leftArmUpAimConstraint.weight = 1;
+                m_Animator.SetFloat("Left_Right", -1);
+            }
+            if (RightSide==true&&LeftSide==false)
+            {
+                m_Animator.SetFloat("Left_Right", 1);
+                UpperBodyAimConstraint.weight = 1;  
+                downBodyAimConstraint.weight = 0.7f;
+                leftArmDownAimConstraint.weight = 1;
+                leftArmUpAimConstraint.weight = 1;
+            }               
 
             this.FullAutoFirePoint1.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             this.FullAutoFirePoint2.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
@@ -403,6 +455,8 @@ public class Shooter : MonoBehaviour
             
             yield return null;
         }
+        UpperBodyAimConstraint.weight = upBodyAimOriginalValues;
+        downBodyAimConstraint.weight = downBodyAimOriginalValues;
         leftArmDownAimConstraint.weight = 0;
         leftArmUpAimConstraint.weight = 0;
         ResetBulletShotCount();

@@ -17,7 +17,7 @@ public class PlayerMovements : MonoBehaviour
     [SerializeField]
     public float playerSpeed = 2.0f;
 
-
+    public bool isInvencible;
     //jump---------------------------------------------------------
     public float groundDistance = 0.4f;
     float countTime;
@@ -41,7 +41,6 @@ public class PlayerMovements : MonoBehaviour
     public int playerIndex;
     public float DamageReduction;
     [SerializeField]
-    public Animator UiNorthAttack;
     public Shooter shooter;
     public LockOn LO;
     public RocketLaucher RL;
@@ -58,6 +57,9 @@ public class PlayerMovements : MonoBehaviour
     [SerializeField]
     public UnityEvent Off;
     public bool IsMoving;
+    public LayerMask obstacleLayerMask;
+
+    [Header("Dash Related")]
     private bool canDash;
     public bool dash;
     private bool isDashing = false;
@@ -65,14 +67,13 @@ public class PlayerMovements : MonoBehaviour
     public float currentDashTime;
     public float dashDistance = 5f;
     private Vector3 dashDirection;
-    public LayerMask obstacleLayerMask;
-
+    public float delayAfterDash;
     public float dashCoolDown;
     private float dashCoolDownReset;
     private PlayerMedapartsController pmc;
 
     public float recoveryTime = 2f;
-    public bool isInvencible;
+    
     public int CheckIfCharacter;
     public bool canMove;
 
@@ -99,10 +100,7 @@ public class PlayerMovements : MonoBehaviour
         // this.camera1 = FindObjectOfType<Camera>(); //para testar split screen-------------------------------
 
 
-        
-        
-
-        m_Animator1 = GetComponentInChildren<Animator>();
+        this.m_Animator1 = GetComponentInChildren<Animator>();
         jumped = false;
         if (this.gameObject.GetComponent<Player1>() == true)
         {
@@ -156,7 +154,6 @@ public class PlayerMovements : MonoBehaviour
         if (isGrounded == true && jumped == false)
         {
             this.jumped = true;
-            UiNorthAttack.SetTrigger("Jump");
             countTime = maxJumpTime;
         }
 
@@ -177,26 +174,7 @@ public class PlayerMovements : MonoBehaviour
         
       
     }
-    public void OnEast()
-    {
-        shooter.East();
-    }
-    public void OnEastRelease()
-    {
-        shooter.EastRelease();
-    }
-    public void OnWest()
-    {
-        shooter.West();
-    }
-    public void OnWestRelease()
-    {
-        shooter.WestRelease();
-    }
-    public void northButton()
-    {
-        RL.North();
-    }
+   
     
     public void L2()
     {
@@ -269,12 +247,21 @@ public class PlayerMovements : MonoBehaviour
             horizontalInput.x = 0;
             horizontalInput.y = 0;
         }
-     
         if (KnockBack)
         {
             // Move the player in the opposite direction of knockbackDirection
-            transform.position += knockbackDirection * knockbackForce * Time.deltaTime;
-         
+            Vector3 newPosition = transform.position + (-knockbackDirection * knockbackForce * Time.deltaTime);
+
+            // Check if the new position will collide with obstacles
+            if (!CheckCollision(newPosition))
+            {
+                transform.position = newPosition;
+            }
+            else
+            {
+                // Stop knockback if there's an obstacle
+                KnockBack = false;
+            }
         }
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
         {
@@ -397,36 +384,61 @@ public class PlayerMovements : MonoBehaviour
     private IEnumerator Dash()
     {
         isDashing = true;
+        isInvencible = true;
         currentDashTime = 0f;
-       
-        while (currentDashTime < dashDuration)
-        {
-           
-            float dashSpeed = dashDistance / dashDuration;
-            Vector3 nextpos = dashDirection * dashSpeed * Time.deltaTime;
-          
-            // Check if the next position will collide with obstacles
-            if (!CheckCollision(transform.position + nextpos))
-            {
-            
-                this.transform.position += nextpos;
-                this.currentDashTime += Time.deltaTime;
-            }
-            else
-            {
-              
-                break; // Stop dashing if there's an obstacle
-            }
+        canMove = false;
+        horizontalInput.x = 0;
+        horizontalInput.y = 0;
+        Vector3 initialPosition = transform.position;
+        Vector3 targetPosition = initialPosition + dashDirection * dashDistance;
 
-            yield return null;
+        // Check if the next position will collide with obstacles
+        if (!CheckCollision(targetPosition))
+        {
+            while (currentDashTime < dashDuration)
+            {
+                float dashSpeed = dashDistance / dashDuration;
+                float t = currentDashTime / dashDuration;
+                Vector3 nextpos = Vector3.Lerp(initialPosition, targetPosition, t);
+
+                // Move the player only in the dash direction
+                nextpos += dashDirection * dashSpeed * Time.deltaTime;
+
+                // Check if the next position will collide with obstacles
+                if (!CheckCollision(nextpos))
+                {
+                    this.transform.position = nextpos;
+                    this.currentDashTime += Time.deltaTime;
+                }
+                else
+                {
+                    break; // Stop dashing if there's an obstacle
+                }
+
+                yield return null;
+            }
         }
+
+        // Delay to exit the dash animation
+        yield return new WaitForSeconds(delayAfterDash);
+
         dash = false;
+        horizontalInput.x = 0;
+        horizontalInput.y = 0;
+        rb.velocity = new Vector3(0, 0, 0);
         m_Animator1.SetBool("Dash", false);
         isDashing = false;
         canDash = false;
         dashCoolDown = dashCoolDownReset;
-        
+        canMove = true;
+        isInvencible = false;
     }
+   
+
+
+
+
+
 
 
     private bool CheckCollision(Vector3 position)
@@ -464,18 +476,22 @@ public class PlayerMovements : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Rocket>()!=null)
+        if (!isInvencible)
         {
-            
-            KnockBack = true;
+            if (other.GetComponent<Rocket>() != null && !KnockBack)
+            {
 
+                KnockBack = true;
+                Debug.Log("Rocket");
                 knockbackDirection = (transform.position - other.transform.position).normalized;
+                this.m_Animator1.SetBool("KnockBack", true);
 
-             
                 StartCoroutine(KnockbackCoroutine());
-              
-            
+
+
+            }
         }
+       
     }
 
 
@@ -492,9 +508,40 @@ public class PlayerMovements : MonoBehaviour
 
     private IEnumerator KnockbackCoroutine()
     {
-        yield return new WaitForSeconds(knockbackDuration);
-        m_Animator1.SetBool("KnockBack", false);
+        float timer = 0f;
+        KnockBack = true;
+
+        // Calculate the rotation needed to face the hit position
+        Quaternion targetRotation = Quaternion.LookRotation(knockbackDirection, Vector3.up);
+
+        while (timer < knockbackDuration)
+        {
+            // Move the player in the opposite direction of knockbackDirection
+            Vector3 newPosition = transform.position + (-knockbackDirection * knockbackForce * Time.deltaTime);
+
+            // Check if the new position will collide with obstacles
+            if (!CheckCollision(newPosition))
+            {
+                transform.position = newPosition;
+                timer += Time.deltaTime;
+            }
+            else
+            {
+                // Stop knockback if there's an obstacle
+                break;
+            }
+
+            // Rotate the player towards the hit position gradually
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+
+            yield return null;
+        }
+        isInvencible = true;
+        // Delay to exit the knockback animation
+        yield return new WaitForSeconds(0.5f);
+
         KnockBack = false;
+        isInvencible = false;
     }
 
 

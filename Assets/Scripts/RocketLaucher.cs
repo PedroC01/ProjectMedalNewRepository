@@ -70,16 +70,11 @@ public class RocketLaucher : MonoBehaviour
         HeadPrefabBullet.GetComponent<Rocket>().targetRb = this.LO.Enemy.GetComponent<Rigidbody>();
         HeadPrefabBullet.GetComponent<Rocket>().RocketDamage = damagePerRocket;
 
-
-
         yield return new WaitForSecondsRealtime(delayInSecondRocket);
 
         RocketLaunchSoundInstance.start();
         GameObject HeadPrefabBullet2 = Instantiate(rocketPrefab, firePointRocket2.position, firePointRocket2.rotation);
         HeadPrefabBullet2.GetComponent<Rocket>().targetRb = this.LO.Enemy.GetComponent<Rigidbody>();
-        HeadPrefabBullet2.GetComponent<Rocket>().RocketDamage=damagePerRocket;
-        
-        
-        yield return new WaitForSecondsRealtime(0.1f);
+        HeadPrefabBullet2.GetComponent<Rocket>().RocketDamage = damagePerRocket;
     }
 }
