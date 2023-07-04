@@ -65,9 +65,16 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Exclude specific files but include ToonShadingPP.asset.meta
+Assets/TEST_SCENES/ToonShadingPP.asset.meta
+
 Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
 fmod_editor.log
 *.asset
+
+# Exclude specific files but include MetabeeStats.asset
+Assets/ScriptableObjects/MetabeeStats.asset
+
 Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
 fmod_editor.log
 fmod_editor.log
