@@ -1,8 +1,9 @@
+using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerMedapartsController : MonoBehaviour
 {
+    public CharacterStatsSO[] characterStatsArray;
     public MedaPartScript[] medaparts;
     public float lowEnergyThreshold = 0;
     public bool isBlocking = false;
@@ -13,7 +14,6 @@ public class PlayerMedapartsController : MonoBehaviour
     private PlayerMovements PM;
     public CharacterStatsSO characterStatsSO;
 
-
  
     [Header("perBullet")]
     public float lastBulletCritMultiplyer;
@@ -21,12 +21,19 @@ public class PlayerMedapartsController : MonoBehaviour
     [Header("Base Attacks, Defenses, and Speed Values")]
 
     public float BaseDamageNorthAttack;
-    public float baseDefense;
+    public float defenseHead;
+    public float defenseLeftArm;
+    public float defenseRightArm;
+    public float denseLegs;
     public float baseDamageWestAttack;
     public int baseMagSizeSmg;
     public float baseDamageEastAttack;
     public int baseMagSizeRev;
     public float baseMovementSpeed;
+    public float baseRechargeSmg;
+    public float baseRechargeRevolver;
+    public float baseRechargeMissiles;
+    public float baseRechargeDash;
 
     [Header("Low Energy Attacks, Defenses, and Speed Values")]
     public float lowEnergyDefense;
@@ -35,6 +42,10 @@ public class PlayerMedapartsController : MonoBehaviour
     public float lowEnergyDamageEastAttack;
     public int lowEnergyMagSizeRev;
     public float lowEnergyMovementSpeed;
+    public float lowRechargeSmg;
+    public float lowRechargeRevolver;
+    public float lowRechargeMissiles;
+    public float lowRechargeDash;
 
     [Header("MedaForce Attacks, Defenses, and Speed Values")]
     public float MedaForceNorthAttack;
@@ -44,6 +55,8 @@ public class PlayerMedapartsController : MonoBehaviour
     public float medaForceDamageEastAttack;
     public int medaForceMagSizeRev;
     public float medaForceMovementSpeed;
+    public float medaforceRechargeSmg;
+    public float medafroceRechargeRevolver;
 
     [Header("Sounds")]
     public string turningOffSound;
@@ -57,15 +70,19 @@ public class PlayerMedapartsController : MonoBehaviour
     public bool MedaForceActive = false;
     // Adjust the duration as needed
     private float MedaForceTimer = 0f;
+    private float originalNorthAttack;
     private float originalDamageWestAttack;
     private float originalDamageEastAttack;
+    private float originalRechargeSmg;
+    private float originalRechargeRevolver;
     private int originalMagSizeSmg;
     private int originalMagSizeRev;
     private float originalMovementSpeed;
-   
+     
 
     private void Awake()
     {
+        characterStatsSO = characterStatsArray[0];
         if (GetComponent<Player1>() != null)
         {
             enLockON = FindObjectOfType<Player2>().gameObject.GetComponent<LockOn>();
@@ -74,22 +91,63 @@ public class PlayerMedapartsController : MonoBehaviour
         {
             enLockON = FindObjectOfType<Player1>().GetComponent<LockOn>();
         }
-      
+       
+
     }
     private void Start()
     {
         playedRArmSound = false;
         playedLArmSound = false;
         playedLegSound = false;
-        medaparts = GetComponentsInChildren<MedaPartScript>();
-        shooter = GetComponent<Shooter>();
+
+      
         PM = GetComponent<PlayerMovements>();
-        RL = GetComponent<RocketLaucher>();
-        
-        // Set the base medapart stats
-        SetMedapartStats(baseDamageWestAttack, baseDamageEastAttack, baseMagSizeSmg, baseMagSizeRev, baseMovementSpeed);
-        this.shooter.bulletPrefab.GetComponent<Bullet>().critValue = this.lastBulletCritMultiplyer;
-       
+        if (this.characterStatsSO.characterReferenceNumber == 1)
+        {
+            shooter = GetComponentInChildren<Shooter>();
+            RL = GetComponentInChildren<RocketLaucher>();
+          //  characterStatsSO = characterStatsArray[0].GetComponent<MetabeeStats>();
+        }
+        medaparts = GetComponentsInChildren<MedaPartScript>();
+
+        // Set metabee stats if metabee(in the future gotta see if he is a shooter or a melle and should work for everything)
+        if (this.characterStatsSO.characterReferenceNumber == 1&&characterStatsSO is MetabeeStats metabeeStats)
+        {
+            foreach (MedaPartScript medapart in medaparts)
+            {
+                int medapartNumber = medapart.MedapartNumber;
+                switch (medapartNumber)
+                {
+                    case 1:
+                        medapart.defense = metabeeStats.defenseHead;
+                        break;
+                    case 2:
+                        medapart.defense = metabeeStats.defenseLeftArm;
+                        break;
+                    case 3:
+                        medapart.defense = metabeeStats.defenseRightArm;
+                        break;
+                    case 4:
+                        medapart.defense = metabeeStats.defenseLegs;
+                        break;
+                    default:
+                        // Handle other medaparts if needed
+                        break;
+                }
+            }
+            this.PM.dashCoolDown = metabeeStats.baseRechargeDash; 
+            this.lowEnergyDamageWestAttack=metabeeStats.lowEnergyDamageWestAttack;
+            this.lowEnergyMagSizeSmg = metabeeStats.lowEnergyMagSizeSmg;
+            this.lowEnergyDamageEastAttack = metabeeStats.lowEnergyDamageEastAttack;
+            this.lowEnergyMagSizeRev = metabeeStats.lowEnergyMagSizeRev;
+            this.lowEnergyMovementSpeed=metabeeStats.lowEnergyMovementSpeed;
+            this.lowRechargeSmg = metabeeStats.lowRechargeSmg;
+            this.lowRechargeRevolver = metabeeStats.lowRechargeRevolver;
+            this.lowRechargeDash = metabeeStats.lowRechargeDash;
+
+    SetMedapartStatsShooter(metabeeStats.baseDamageWestAttack, metabeeStats.baseDamageEastAttack, metabeeStats.baseMagSizeSmg, metabeeStats.baseMagSizeRev, metabeeStats.baseMovementSpeed, metabeeStats.BaseDamageNorthAttack, metabeeStats.baseRechargeSmg, metabeeStats.baseRechargeRevolver);
+            this.shooter.bulletPrefab.GetComponent<Bullet>().critValue = metabeeStats.lastBulletCritMultiplyer;
+        }
 
         turningOffSoundInstance = FMODUnity.RuntimeManager.CreateInstance(turningOffSound);
     }
@@ -107,7 +165,7 @@ public class PlayerMedapartsController : MonoBehaviour
             {
                 // Combo time is over, restore the original medapart stats
                 MedaForceActive = false;
-                SetMedapartStats(originalDamageWestAttack, originalDamageEastAttack, originalMagSizeSmg, originalMagSizeRev, originalMovementSpeed);
+                SetMedapartStatsShooter(originalDamageWestAttack, originalDamageEastAttack, originalMagSizeSmg, originalMagSizeRev, originalMovementSpeed,originalNorthAttack,originalRechargeSmg,originalRechargeRevolver);
             }
         }
         else
@@ -191,13 +249,17 @@ public class PlayerMedapartsController : MonoBehaviour
     }
 
     //For Medaforce, Base Stats and go back to the originals
-    private void SetMedapartStats(float damageWestAttack, float damageEastAttack, int magSizeSmg, int magSizeRev, float movementSpeed)
+    private void SetMedapartStatsShooter(float damage_WestAttack, float damage_EastAttack, int mag_SizeSmg, int mag_SizeRev, float movement_Speed,
+    float damage_NorthAttack, float Recharge_Smg, float Recharge_Revolver)
     {
-        shooter.smgDamage = damageWestAttack;
-        shooter.revolverDamage = damageEastAttack;
-        shooter.magSizeFullAuto = magSizeSmg;
-        shooter.maxMagazineSizeRevolver = magSizeRev;
-        PM.playerSpeed = movementSpeed;
+        RL.damagePerRocket = damage_NorthAttack;
+        shooter.smgDamage = damage_WestAttack;
+        shooter.revolverDamage = damage_EastAttack;
+        shooter.rechargeTimeEast= Recharge_Revolver;
+        shooter.rechargeTimeWest= Recharge_Smg;
+        shooter.magSizeFullAuto = mag_SizeSmg;
+        shooter.maxMagazineSizeRevolver = mag_SizeRev;
+        PM.playerSpeed = movement_Speed;
     }
 
     public void UseMedaForce()
@@ -206,12 +268,16 @@ public class PlayerMedapartsController : MonoBehaviour
         MedaForceTimer = MedaForceDuration;
 
         // Save the original medapart stats to restore them later
+        originalNorthAttack = RL.damagePerRocket;
         originalDamageWestAttack = shooter.smgDamage;
         originalDamageEastAttack = shooter.revolverDamage;
         originalMagSizeSmg = shooter.magSizeFullAuto;
         originalMagSizeRev = shooter.maxMagazineSizeRevolver;
+        originalRechargeRevolver=shooter.rechargeTimeEast;
+        originalRechargeSmg=shooter.rechargeTimeWest;
+
         originalMovementSpeed = PM.playerSpeed;
-        SetMedapartStats(medaForceDamageWestAttack, medaForceDamageEastAttack, medaForceMagSizeSmg, medaForceMagSizeRev, medaForceMovementSpeed);
+        SetMedapartStatsShooter(medaForceDamageWestAttack, medaForceDamageEastAttack, medaForceMagSizeSmg, medaForceMagSizeRev, medaForceMovementSpeed,MedaForceNorthAttack,medaforceRechargeSmg,medafroceRechargeRevolver);
     }
 
     public void SetBlocking(bool isBlocking)

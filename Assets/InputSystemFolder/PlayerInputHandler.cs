@@ -112,50 +112,20 @@ public class PlayerInputHandler : MonoBehaviour
     {
         pMovement?.OnMove(context.ReadValue<Vector2>());
     }
-    public void OnSouth(CallbackContext context)
+    public void OnJump(CallbackContext context)
     {
 
-        if (context.performed)
-        {
-            double currentTime = context.time;
-
-            // Check if the time difference between the current click and the last click is within the threshold
-            if (currentTime - lastClickTime <= doubleClickTimeThreshold)
-            {
-                PerformDoubleSouthClickAction();
-
-            }
-            else
-            {
-                PerformSingleSouthClickAction();
-
-
-            }
-
-            lastClickTime = currentTime;
-        }
-
-    }
-    private void PerformDoubleSouthClickAction()
-    {
-        pMovement?.OnDash();
-        lastClickTime = 0;
-    }
-
-    private void PerformSingleSouthClickAction()
-    {
-        // Code to execute for a single-click
         pMovement?.OnJump();
-        // Reset lastClickTime after performing the action
-        lastClickTime = 0;
+
     }
-    public void OnDash(CallbackContext context)
+ 
+  /*  public void OnDash(CallbackContext context)
     {
       
 
           pMovement?.OnDash();
 
-    }
+    }*/
     public void OnEast(CallbackContext context)
     {
         if (context.started)
@@ -200,13 +170,18 @@ public class PlayerInputHandler : MonoBehaviour
     }*/
     public void L1(CallbackContext context)
     {
-        LO?.LeftShoulderL1();
+        hold = context.action.IsPressed();
+        pMovement?.R1(hold);
+      
     }
     public void R1(CallbackContext context)
     {
-        hold = context.action.IsPressed();
-        pMovement?.R1(hold);
+        pMovement?.OnDash();
+    }
 
+    public void LockOnOrNot(CallbackContext context)
+    {
+        //  LO?.LeftShoulderL1(); used to choose if i wanted to make lock on or not
     }
     public void DPaddUp(CallbackContext context)
     {

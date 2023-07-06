@@ -79,7 +79,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1380115005}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: OnSouth
+        m_MethodName: OnJump
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

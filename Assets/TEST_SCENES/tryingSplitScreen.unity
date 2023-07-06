@@ -8764,8 +8764,8 @@ MonoBehaviour:
   recoveryTime: 2
   CheckIfCharacter: 0
   canMove: 0
-  knockbackForce: 10
-  knockbackDuration: 2
+  knockbackForce: 5
+  knockbackDuration: 1
   KnockBack: 0
 --- !u!54 &300808032
 Rigidbody:
@@ -8877,6 +8877,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6fee2ae90caa3c4eaa7bd45022ee523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterStatsArray:
+  - {fileID: 11400000, guid: 0c82c52c5aeb4f5458ba62bc7f7f94a6, type: 2}
   medaparts: []
   lowEnergyThreshold: 0
   isBlocking: 0
@@ -8884,18 +8886,29 @@ MonoBehaviour:
   characterStatsSO: {fileID: 11400000, guid: 0c82c52c5aeb4f5458ba62bc7f7f94a6, type: 2}
   lastBulletCritMultiplyer: 4
   BaseDamageNorthAttack: 10
-  baseDefense: 0
+  defenseHead: 0
+  defenseLeftArm: 0
+  defenseRightArm: 0
+  denseLegs: 0
   baseDamageWestAttack: 0.5
   baseMagSizeSmg: 20
   baseDamageEastAttack: 2
   baseMagSizeRev: 6
   baseMovementSpeed: 10
+  baseRechargeSmg: 0
+  baseRechargeRevolver: 0
+  baseRechargeMissiles: 0
+  baseRechargeDash: 0
   lowEnergyDefense: 0
   lowEnergyDamageWestAttack: 0.5
   lowEnergyMagSizeSmg: 10
   lowEnergyDamageEastAttack: 2
   lowEnergyMagSizeRev: 2
   lowEnergyMovementSpeed: 5
+  lowRechargeSmg: 0
+  lowRechargeRevolver: 0
+  lowRechargeMissiles: 0
+  lowRechargeDash: 0
   MedaForceNorthAttack: 24
   medaForceDefense: 0
   medaForceDamageWestAttack: 0.6
@@ -8903,6 +8916,8 @@ MonoBehaviour:
   medaForceDamageEastAttack: 2.4
   medaForceMagSizeRev: 6
   medaForceMovementSpeed: 10
+  medaforceRechargeSmg: 0
+  medafroceRechargeRevolver: 0
   turningOffSound: event:/BattleGeneral/PieceWithoutEnergy
   MedaForceDuration: 5
   MedaForceActive: 0
@@ -16765,7 +16780,7 @@ VideoPlayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612490809}
-  m_Enabled: 1
+  m_Enabled: 0
   m_VideoClip: {fileID: 32900000, guid: 9908708bcafef1e43a80fff3db4958e0, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
@@ -47884,8 +47899,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697339436}
-  m_LocalRotation: {x: 0.017758142, y: 0.294198, z: -0.0054673576, w: 0.9555639}
-  m_LocalPosition: {x: -24.4482, y: -4.199015, z: -54.669136}
+  m_LocalRotation: {x: 0.017799927, y: 0.29428133, z: -0.0054819263, w: 0.9555374}
+  m_LocalPosition: {x: -24.452442, y: -4.1963863, z: -54.66613}
   m_LocalScale: {x: 1, y: 0.81083345, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -67629,6 +67644,7 @@ GameObject:
   - component: {fileID: 4813445333188998418}
   - component: {fileID: 4813445333188998420}
   - component: {fileID: 4813445333188998421}
+  - component: {fileID: 5965819101054312448}
   m_Layer: 0
   m_Name: MetabeeYellow
   m_TagString: Untagged
@@ -85441,7 +85457,7 @@ MonoBehaviour:
   maxMagazineSizeRevolver: 6
   shootRevSoundEvent: event:/Metabee/Revolver
   shootAutoSoundEvent: event:/Metabee/Shoot 1
-  rigObject: {fileID: 1156761297}
+  rigObject: {fileID: 1156761298}
   HeadAimConstraint: {fileID: 0}
   downBodyAimConstraint: {fileID: 0}
   UpperBodyAimConstraint: {fileID: 0}
@@ -90837,6 +90853,19 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &5965819101054312448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108207275058175806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66c9abcb4029a84b923dc07b264ffea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  metabeeStatsScriptableObect: {fileID: 0}
 --- !u!4 &5966824630316927414
 Transform:
   m_ObjectHideFlags: 0
@@ -102344,25 +102373,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6fee2ae90caa3c4eaa7bd45022ee523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterStatsArray:
+  - {fileID: 11400000, guid: 0c82c52c5aeb4f5458ba62bc7f7f94a6, type: 2}
   medaparts: []
   lowEnergyThreshold: 0
   isBlocking: 0
   enLockON: {fileID: 0}
-  characterStatsSO: {fileID: 11400000, guid: 0c82c52c5aeb4f5458ba62bc7f7f94a6, type: 2}
+  characterStatsSO: {fileID: 0}
   lastBulletCritMultiplyer: 4
   BaseDamageNorthAttack: 10
-  baseDefense: 0
+  defenseHead: 0
+  defenseLeftArm: 0
+  defenseRightArm: 0
+  denseLegs: 0
   baseDamageWestAttack: 0.5
   baseMagSizeSmg: 20
   baseDamageEastAttack: 2
   baseMagSizeRev: 6
   baseMovementSpeed: 10
+  baseRechargeSmg: 0
+  baseRechargeRevolver: 0
+  baseRechargeMissiles: 0
+  baseRechargeDash: 0
   lowEnergyDefense: 0
   lowEnergyDamageWestAttack: 0.5
   lowEnergyMagSizeSmg: 10
   lowEnergyDamageEastAttack: 2
   lowEnergyMagSizeRev: 2
   lowEnergyMovementSpeed: 7
+  lowRechargeSmg: 0
+  lowRechargeRevolver: 0
+  lowRechargeMissiles: 0
+  lowRechargeDash: 0
   MedaForceNorthAttack: 24
   medaForceDefense: 0
   medaForceDamageWestAttack: 0.6
@@ -102370,6 +102412,8 @@ MonoBehaviour:
   medaForceDamageEastAttack: 2.4
   medaForceMagSizeRev: 6
   medaForceMovementSpeed: 10
+  medaforceRechargeSmg: 0
+  medafroceRechargeRevolver: 0
   turningOffSound: event:/BattleGeneral/PieceWithoutEnergy
   MedaForceDuration: 5
   MedaForceActive: 0

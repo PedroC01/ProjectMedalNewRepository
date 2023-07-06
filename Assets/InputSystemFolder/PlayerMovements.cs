@@ -31,6 +31,7 @@ public class PlayerMovements : MonoBehaviour
     public float gravity = -9.8f;
     public float groundGravity = -2;
     public bool jumped;
+    private bool canJump;
     public bool isGrounded;
     public Transform groundCheck;
     public LayerMask groundMask;
@@ -151,13 +152,18 @@ public class PlayerMovements : MonoBehaviour
     }
     public void OnJump()
     {
-        if (isGrounded == true && jumped == false)
+        if (canJump)
         {
-            this.jumped = true;
-            countTime = maxJumpTime;
+
+
+            if (isGrounded == true && jumped == false)
+            {
+                this.jumped = true;
+                countTime = maxJumpTime;
+                canJump = false;
+            }
+
         }
-
-
         // StartCoroutine(Jump(this.jumped));
 
     }
@@ -261,6 +267,7 @@ public class PlayerMovements : MonoBehaviour
             {
                 // Stop knockback if there's an obstacle
                 KnockBack = false;
+                this.m_Animator1.SetBool("KnockBack", true);
             }
         }
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
@@ -466,7 +473,7 @@ public class PlayerMovements : MonoBehaviour
             
             isGrounded = true;
             jumped = false;
-
+            canJump = true;
             m_Animator1.SetTrigger("Landed");
 
 
@@ -541,6 +548,7 @@ public class PlayerMovements : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         KnockBack = false;
+        this.m_Animator1.SetBool("KnockBack", false);
         isInvencible = false;
     }
 
