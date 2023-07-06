@@ -17,6 +17,8 @@ public class PlayerInputHandler : MonoBehaviour
     public static int playerNo;
     private Shooter eastButton;
     private RocketLaucher northButton;
+    private double lastClickTime = 0;
+    private const double doubleClickTimeThreshold = 0.5f;
     private bool hold;
     private bool leftTriggerPressed;
     private bool rightTriggerPressed;
@@ -110,16 +112,49 @@ public class PlayerInputHandler : MonoBehaviour
     {
         pMovement?.OnMove(context.ReadValue<Vector2>());
     }
-    public void OnJump(CallbackContext context)
+    public void OnSouth(CallbackContext context)
     {
-   
+
+        if (context.performed)
+        {
+            double currentTime = context.time;
+
+            // Check if the time difference between the current click and the last click is within the threshold
+            if (currentTime - lastClickTime <= doubleClickTimeThreshold)
+            {
+                PerformDoubleSouthClickAction();
+
+            }
+            else
+            {
+                PerformSingleSouthClickAction();
+
+
+            }
+
+            lastClickTime = currentTime;
+        }
+
+    }
+    private void PerformDoubleSouthClickAction()
+    {
+        pMovement?.OnDash();
+        lastClickTime = 0;
+    }
+
+    private void PerformSingleSouthClickAction()
+    {
+        // Code to execute for a single-click
         pMovement?.OnJump();
-       
+        // Reset lastClickTime after performing the action
+        lastClickTime = 0;
     }
     public void OnDash(CallbackContext context)
     {
-        pMovement?.OnDash();
-           
+      
+
+          pMovement?.OnDash();
+
     }
     public void OnEast(CallbackContext context)
     {

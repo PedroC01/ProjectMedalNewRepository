@@ -467,7 +467,7 @@ public class PlayerMovements : MonoBehaviour
             isGrounded = true;
             jumped = false;
 
-         //   m_Animator1.SetTrigger("Landed");
+            m_Animator1.SetTrigger("Landed");
 
 
         }
