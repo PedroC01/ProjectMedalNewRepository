@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 public class PlayerMedabotSelected : MonoBehaviour
 {
@@ -10,4 +9,6 @@ public class PlayerMedabotSelected : MonoBehaviour
     public Sprite imgMedaInGame;
     public PlayerInput pInput;
     public int pInputIndex;
+    public Color medaColor;
+
 }

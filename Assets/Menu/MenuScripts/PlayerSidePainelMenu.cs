@@ -1,19 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.Assertions.Must;
 using UnityEngine.InputSystem;
-
-/// <summary>
-/// Este menu deve saber qual player é qual??
-/// 
-/// </summary>
 
 public class PlayerSidePainelMenu : MonoBehaviour
 {
-    int PlayerIndex;
+  /*  int PlayerIndex;
     public PlayerInput input;
     [SerializeField] TextMeshProUGUI titleText;
     [SerializeField] TextMeshProUGUI titleTextReady;
@@ -41,18 +33,39 @@ public class PlayerSidePainelMenu : MonoBehaviour
         }
     }
 
+
     private void OnPlayerInput(InputAction.CallbackContext context)
     {
         if (!isActive)
         {
             return;
         }
+
         if (context.action.name == "Navigate")
         {
+            Vector2 inputDirection = context.ReadValue<Vector2>();
+
+            if (inputDirection == Vector2.up)
+            {
+                // Handle up navigation
+                Debug.Log("UP");
+            }
+            else if (inputDirection == Vector2.down)
+            {
+                // Handle down navigation
+            }
+            else if (inputDirection == Vector2.left)
+            {
+                // Handle left navigation
+            }
+            else if (inputDirection == Vector2.right)
+            {
+                // Handle right navigation
+            }
         }
         else if (context.action.name == "Submit")
         {
-
+            // Handle submit
         }
     }
 
@@ -112,4 +125,5 @@ public class PlayerSidePainelMenu : MonoBehaviour
         });
     }
 
+    */
 }
