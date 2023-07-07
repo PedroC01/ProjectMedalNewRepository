@@ -72,13 +72,14 @@ public class Shooter : MonoBehaviour
     public MultiAimConstraint UpperBodyAimConstraint;
     public MultiAimConstraint leftArmDownAimConstraint;
     public MultiAimConstraint leftArmUpAimConstraint;
-    public MultiAimConstraint rightArmAimConstraint;
+    public MultiAimConstraint rightArmDownAimConstraint;
+    public MultiAimConstraint rightArmUpAimConstraint;
     public GameObject aimTarget;
     private float headAimOriginalValues;
     private float downBodyAimOriginalValues;
     private float upBodyAimOriginalValues;
     private float leftArmDownAimOriginalValues;
-    private float rightArmAimOriginalValues;
+    private float rightArmDownAimOriginalValues;
     private float leftArmUpAimOriginalValues;
     //public GameObject getParent;
     private Rig ShooterRig;
@@ -105,11 +106,11 @@ public class Shooter : MonoBehaviour
         rigObject = GetComponentInChildren<Rig>().transform;
         GameObject leftArmDownObject = rigObject.transform.Find("LeftArmDown").gameObject;
         GameObject leftArmUpObject = rigObject.transform.Find("LeftArmUp").gameObject;
-        GameObject rightArmObject = rigObject.transform.Find("RightArm").gameObject;
+        GameObject rightArmDownObject = rigObject.transform.Find("RightArmDown").gameObject;
         GameObject headObject = rigObject.transform.Find("Head").gameObject;
         GameObject upperBodyObject = rigObject.transform.Find("Bodyup").gameObject;
         GameObject downBodyObject = rigObject.transform.Find("Bodydown").gameObject;
-       
+        GameObject rightArmUpObject = rigObject.transform.Find("RightArmDown").gameObject;
         if (GetComponentInParent<Player1>() == true)
         {
             aimTarget = FindObjectOfType<Player1Aim>().gameObject;
@@ -122,11 +123,12 @@ public class Shooter : MonoBehaviour
         }
        // this.Enemy = this.LO.Enemy.gameObject;
         leftArmDownAimConstraint = leftArmDownObject.GetComponent<MultiAimConstraint>();
-        rightArmAimConstraint = rightArmObject.GetComponent<MultiAimConstraint>();
+        rightArmDownAimConstraint = rightArmDownObject.GetComponent<MultiAimConstraint>();
         leftArmUpAimConstraint= leftArmUpObject.GetComponent<MultiAimConstraint>();
         HeadAimConstraint= headObject.GetComponent<MultiAimConstraint>();
         downBodyAimConstraint= downBodyObject.GetComponent<MultiAimConstraint>();
         UpperBodyAimConstraint= upperBodyObject.GetComponent<MultiAimConstraint>();
+        rightArmUpAimConstraint = rightArmUpObject.GetComponent<MultiAimConstraint>();
         downBodyAimOriginalValues = downBodyAimConstraint.weight;
         upBodyAimOriginalValues = UpperBodyAimConstraint.weight;
 
@@ -176,7 +178,7 @@ public class Shooter : MonoBehaviour
             {
                 if (shootFullAuto == true && TimerForRechargeEast <= 0)
                 {
-                    rightArmAimConstraint.weight = 0;
+                    rightArmDownAimConstraint.weight = 0;
                     StartCoroutine(FireFullAuto());
                     return;
                 }
@@ -349,7 +351,7 @@ public class Shooter : MonoBehaviour
             ///here we mess with the IK-----------------------------------------------------------------------------
             if (RightSide == true)
             {
-                rightArmAimConstraint.weight = 1;
+                rightArmDownAimConstraint.weight = 1;
             }
            
             m_Animator.SetBool("ShootingR", true);
@@ -372,7 +374,7 @@ public class Shooter : MonoBehaviour
             }
             yield return new WaitForSeconds(fireRate);
         }
-        rightArmAimConstraint.weight = 0;
+        rightArmDownAimConstraint.weight = 0;
         PM.canMove = true;
         ResetBulletShotCount();
     }
