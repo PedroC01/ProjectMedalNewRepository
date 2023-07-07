@@ -45,6 +45,16 @@ public class MainMenus : MonoBehaviour
     }
     //
 
+    //----------------------------Set first bt ----> Remember!
+    void SetFirstButton()
+    {
+        //  bt_StoryMode.GetComponent<Button>().Select();
+        bt_VersusMode.GetComponent<Button>().Select();
+
+    }
+
+
+
     #region Inicializações //Awake()  
     void Initialize()
     {
@@ -58,7 +68,8 @@ public class MainMenus : MonoBehaviour
         panelExtras.SetActive(false);
         adviseTipsText.text = "";//no inicio nao deverá ter nada
         //1º Butão Selecionado ao iniciar este menu!
-        bt_StoryMode.GetComponent<Button>().Select();
+        // bt_StoryMode.GetComponent<Button>().Select();
+        SetFirstButton();
     }
     #endregion
 
