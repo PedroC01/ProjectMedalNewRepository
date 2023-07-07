@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,7 +5,9 @@ using UnityEngine.InputSystem.UI;
 
 public class PlayerDataVersus : MonoBehaviour
 {
-    [SerializeField] GameObject pref;
+    [SerializeField] GameObject prefP1;
+    [SerializeField] GameObject prefP2;
+
     public PlayerInput pInput;
     public int playerIndex;
     [SerializeField] List<GameObject> PlayerPanels = new List<GameObject>();
@@ -29,11 +30,21 @@ public class PlayerDataVersus : MonoBehaviour
     public void CreateSideMenu(PlayerInput input)
     {
         var objParent = GameObject.Find("Canvas");
-        GameObject playerPanel = Instantiate(pref, objParent.transform);
+        GameObject playerPanel = null;
+        if (input.playerIndex == 0)
+        {
+             playerPanel = Instantiate(prefP1, objParent.transform);
+        }
+        else { 
+             playerPanel = Instantiate(prefP2, objParent.transform);
+        }
         PlayerPanels.Add(playerPanel);
-        playerPanel.GetComponent<MenuPlayerXXX>().playerInputUsingThis = input;
-        playerPanel.GetComponent<MenuPlayerXXX>().playerIndexUsingThis = input.playerIndex;
-       playerPanel.GetComponent<InputSystemUIInputModule>().actionsAsset = this.gameObject.GetComponent<PlayerInput>().actions;
+        //  playerPanel.GetComponent<PlayerSideMenuData>().playerInputUsingThis = input;
+        // playerPanel.GetComponent<PlayerSideMenuData>().playerIndexUsingThis = input.playerIndex;
+        playerPanel.GetComponent<NewPlayerSideMenu>().playerInputUsingThis = input;
+        playerPanel.GetComponent<NewPlayerSideMenu>().playerIndexUsingThis = input.playerIndex;
+
+        playerPanel.GetComponent<InputSystemUIInputModule>().actionsAsset = this.gameObject.GetComponent<PlayerInput>().actions;
         //Agora a enviar o que se obtem do inicio:
        playerPanel.GetComponent<InputSystemUIInputModule>().actionsAsset = saveFromManager;
     }

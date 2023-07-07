@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.UI;
 
 public class SpawnSideEachPlayer : MonoBehaviour
 {
@@ -13,7 +9,6 @@ public class SpawnSideEachPlayer : MonoBehaviour
     [Space(20)]
     public PlayerInput input;
     public GameObject menuIsInstantiated = null;
-
     GameObject instantiated = null;
 
     public void AssignPlayerInputVersus(PlayerInput playerInput)
@@ -26,9 +21,11 @@ public class SpawnSideEachPlayer : MonoBehaviour
         Debug.Log("Primeiro butao selecionado neste menu!");
         sideMenuPrefab.GetComponentInChildren<Button>().Select();
         menuIsInstantiated = instantiated;
-        sideMenuPrefab.GetComponent<PlayerSidePainelMenu>().SetGetPlayerIndex(playerInput.playerIndex);//Aqui teoricamente ja atribui tbm o index....
-        sideMenuPrefab.GetComponent<PlayerSidePainelMenu>().input = playerInput;
-   
+        //antes
+        /*  sideMenuPrefab.GetComponent<PlayerSidePainelMenu>().SetGetPlayerIndex(playerInput.playerIndex);//Aqui teoricamente ja atribui tbm o index....
+          sideMenuPrefab.GetComponent<PlayerSidePainelMenu>().input = playerInput;*/
+        sideMenuPrefab.GetComponent<PlayerSideMenuData>().UpdateCharacterShow(playerInput.playerIndex);//Aqui teoricamente ja atribui tbm o index....
+        sideMenuPrefab.GetComponent<PlayerSideMenuData>().playerInputUsingThis = playerInput;
     }
 
     bool founded = false;

@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class MainMenus : MonoBehaviour
 {
@@ -46,13 +42,10 @@ public class MainMenus : MonoBehaviour
         if (desactivate == panelStarMenuMode) 
         { adviseTipsText.gameObject.SetActive(false); }
         else {  adviseTipsText.gameObject.SetActive(true); }
-
     }
     //
 
-    #region Inicializações //Awake()
-  
-
+    #region Inicializações //Awake()  
     void Initialize()
     {
         actualActivePanel = panelStarMenuMode;//é o 1º activo
@@ -68,9 +61,9 @@ public class MainMenus : MonoBehaviour
         bt_StoryMode.GetComponent<Button>().Select();
     }
     #endregion
-    //
-    //
 
+    //
+    //
     #region Switch Menu Panels// CallBacks Butões ----> Start()
     public void SwitchStartMenuPanel()
     {

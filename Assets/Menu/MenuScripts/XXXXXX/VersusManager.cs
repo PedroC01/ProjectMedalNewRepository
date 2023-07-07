@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -13,6 +11,9 @@ using UnityEngine.UI;
 public class VersusManager : MonoBehaviour
 {
     public static VersusManager instance;
+
+    public GameObject MiddleMenu;
+
     void Awake()
     {
         instance = this;//singleton!
@@ -46,15 +47,20 @@ public class VersusManager : MonoBehaviour
         listJoinedPlayers.Add(playerInput);//Add a lista de jogadores:
     }
 
-
     public void BTTellPlayersToCreatesideMenu()
     {
+        int i = 0;
         foreach (var player in listJoinedPlayers)
         {
+            i++;
+            if (i == 2)
+            {
+                var objParent = GameObject.Find("Canvas");
+                GameObject middlepanel = Instantiate(MiddleMenu, objParent.transform);
+            }
             player.GetComponent<PlayerDataVersus>().CreatesideMenuCalledButton();
         }
     }
-
 
     public void RemoveLastPlayer()
     {
@@ -83,12 +89,6 @@ public class VersusManager : MonoBehaviour
         }
     }
 
-
-
-
-
-
-
     private void Update()
     {
         AllReady();
@@ -96,8 +96,7 @@ public class VersusManager : MonoBehaviour
 
     public int amountReady = 0;
     void AllReady()
-    {
-   
+    {   
         if (amountReady == 2) 
         {
             amountReady = 0;
@@ -110,6 +109,7 @@ public class VersusManager : MonoBehaviour
         }
     }
 
+    //Not working
     private IEnumerator LoadNextSceneWithCountdown()
     {
         int countdownSeconds = 3;
@@ -141,9 +141,7 @@ public class VersusManager : MonoBehaviour
         {
             yield return new WaitForSeconds(countdownSeconds - elapsedTime);
             asyncOperation.allowSceneActivation = true;
-        }
-     
+        }     
     }
-
 
 }
