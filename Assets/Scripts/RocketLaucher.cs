@@ -20,6 +20,8 @@ public class RocketLaucher : MonoBehaviour
     [Header("Sounds")]
     public string RocketLaunchSound;
     private FMOD.Studio.EventInstance RocketLaunchSoundInstance;
+    private PlayerMovements pm;
+    private Transform thisPlayer;
     
     // Start is called before the first frame update
     void Start()
@@ -27,6 +29,8 @@ public class RocketLaucher : MonoBehaviour
    
         RocketLaunchSoundInstance = FMODUnity.RuntimeManager.CreateInstance(RocketLaunchSound);
         TimerForRecharge = rechargeTime;
+        pm=GetComponentInParent<PlayerMovements>();
+        this.thisPlayer = pm.gameObject.GetComponent<Transform>();
     }
 
     public void North()
@@ -64,7 +68,17 @@ public class RocketLaucher : MonoBehaviour
             this.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             lookat = LO.lockOnTarget;
         }
-
+        if (!pm.IsMoving)
+        {
+            pm.rb.velocity = Vector3.zero;
+            pm.canMove = false;
+            pm.horizontalInput.x = 0;
+            pm.horizontalInput.y = 0;
+            thisPlayer.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
+         
+            lookat = LO.lockOnTarget.transform;
+            pm.m_Animator1.SetBool("ShootRocket", true);
+        }
         RocketLaunchSoundInstance.start();
         GameObject HeadPrefabBullet = Instantiate(rocketPrefab, firePointRocket.position, firePointRocket.rotation);
         HeadPrefabBullet.GetComponent<Rocket>().targetRb = this.LO.Enemy.GetComponent<Rigidbody>();
@@ -76,5 +90,7 @@ public class RocketLaucher : MonoBehaviour
         GameObject HeadPrefabBullet2 = Instantiate(rocketPrefab, firePointRocket2.position, firePointRocket2.rotation);
         HeadPrefabBullet2.GetComponent<Rocket>().targetRb = this.LO.Enemy.GetComponent<Rigidbody>();
         HeadPrefabBullet2.GetComponent<Rocket>().RocketDamage = damagePerRocket;
+        pm.canMove = true;
+        pm.m_Animator1.SetBool("ShootRocket", false);
     }
 }

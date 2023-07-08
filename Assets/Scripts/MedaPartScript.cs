@@ -14,7 +14,7 @@ public class MedaPartScript : MonoBehaviour
     public float defense;
     public float damage;
     public MedaHealthSlider healthSlider;
-    public Animator animatorUI;
+  
     public int playerX;
     private PlayerMovements PM;
     private PlayerMedapartsController Pmc;
@@ -26,13 +26,13 @@ public class MedaPartScript : MonoBehaviour
     {
         if (GetComponentInParent<Player2>() != null)
         {
-            animatorUI = GameObject.FindGameObjectWithTag("UIPlayer2").GetComponent<Animator>();
+     
             PM = GetComponentInParent<PlayerMovements>();
             playerX = 2;
         }
         else if (GetComponentInParent<Player1>() != null)
         {
-            animatorUI = GameObject.FindGameObjectWithTag("UIPlayer1").GetComponent<Animator>();
+         
             PM = GetComponentInParent<PlayerMovements>();
             playerX = 1;
         }

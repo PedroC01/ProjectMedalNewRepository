@@ -257,24 +257,7 @@ public class PlayerMovements : MonoBehaviour
             horizontalInput.x = 0;
             horizontalInput.y = 0;
         }
-        if (KnockBack)
-        {
-            // Move the player in the opposite direction of knockbackDirection
-            Vector3 newPosition = transform.position + (knockbackDirection * knockbackForce * Time.deltaTime);
-
-            // Check if the new position will collide with obstacles
-            if (!CheckCollision(newPosition))
-            {
-                transform.position = newPosition;
-            }
-            else
-            {
-                // Stop knockback if there's an obstacle
-              
-                KnockBack = false;
-              
-            }
-        }
+      
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
         {
             IsMoving = true;
@@ -549,15 +532,19 @@ public class PlayerMovements : MonoBehaviour
 
             // Rotate the player towards the hit position gradually
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
-            Collider[] colliders = Physics.OverlapSphere(newPosition, 0.5f);
-            foreach (Collider collider in colliders)
+            if (KnockBack == true)
             {
-                if (collider.CompareTag("InvisiWalls"))
+                Collider[] colliders = Physics.OverlapSphere(newPosition, 0.5f);
+                foreach (Collider collider in colliders)
                 {
-                    cancelKnockback = true;
-                    break;
+                    if (collider.CompareTag("InvisiWalls"))
+                    {
+                        cancelKnockback = true;
+                        break;
+                    }
                 }
             }
+            
             if (cancelKnockback)
             {
                 break;
