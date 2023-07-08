@@ -18,6 +18,8 @@ public class PlayerMovements : MonoBehaviour
     public float playerSpeed = 2.0f;
 
     public bool isInvencible;
+    public bool backStrafe = false;
+    private Quaternion initialRotation;
     //jump---------------------------------------------------------
     public float groundDistance = 0.4f;
     float countTime;
@@ -119,8 +121,9 @@ public class PlayerMovements : MonoBehaviour
         dashCoolDownReset = dashCoolDown;
         dashCoolDown = 0;
 
-      
-       
+        // Store the initial rotation of the character
+        initialRotation = transform.rotation;
+
     }
 
 
@@ -248,6 +251,7 @@ public class PlayerMovements : MonoBehaviour
 
     void Update()
     {
+       
         if (block)
         {
             horizontalInput.x = 0;
@@ -256,7 +260,7 @@ public class PlayerMovements : MonoBehaviour
         if (KnockBack)
         {
             // Move the player in the opposite direction of knockbackDirection
-            Vector3 newPosition = transform.position + (-knockbackDirection * knockbackForce * Time.deltaTime);
+            Vector3 newPosition = transform.position + (knockbackDirection * knockbackForce * Time.deltaTime);
 
             // Check if the new position will collide with obstacles
             if (!CheckCollision(newPosition))
@@ -266,8 +270,9 @@ public class PlayerMovements : MonoBehaviour
             else
             {
                 // Stop knockback if there's an obstacle
+              
                 KnockBack = false;
-                this.m_Animator1.SetBool("KnockBack", true);
+              
             }
         }
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
@@ -283,7 +288,10 @@ public class PlayerMovements : MonoBehaviour
             right = right.normalized;
             move = horizontalInput.x * right + horizontalInput.y * forward;
             move *= playerSpeed;
-            m_Animator1.SetFloat("Moving", playerSpeed);
+     
+                m_Animator1.SetFloat("Moving", playerSpeed);
+            
+           
             if (move != Vector3.zero)
             {
                 transform.forward = move;
@@ -302,7 +310,7 @@ public class PlayerMovements : MonoBehaviour
             }
 
         }
-
+        
 
         var dir = new Vector3(Mathf.Cos(Time.time * playerSpeed) * size, Mathf.Sin(Time.time * playerSpeed) * size);
 
@@ -351,21 +359,21 @@ public class PlayerMovements : MonoBehaviour
 
     private void FixedUpdate()
     {
-      
-        
+
 
         if (horizontalInput.x != 0 || horizontalInput.y != 0)
         {
-            float oldy = this.rb.velocity.y;
+            float oldy = rb.velocity.y;
+           
             this.rb.velocity = this.rb.transform.forward * playerSpeed;
             this.rb.velocity = new Vector3(this.rb.velocity.x, oldy, this.rb.velocity.z);
             //this.rb.AddForce(transform.forward * playerSpeed, ForceMode.Force);
 
         }
+     
 
 
 
-       
         handleGravity();
 
     }
@@ -515,6 +523,7 @@ public class PlayerMovements : MonoBehaviour
 
     private IEnumerator KnockbackCoroutine()
     {
+        bool cancelKnockback = false;
         float timer = 0f;
         KnockBack = true;
 
@@ -540,13 +549,29 @@ public class PlayerMovements : MonoBehaviour
 
             // Rotate the player towards the hit position gradually
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
-
+            Collider[] colliders = Physics.OverlapSphere(newPosition, 0.5f);
+            foreach (Collider collider in colliders)
+            {
+                if (collider.CompareTag("InvisiWalls"))
+                {
+                    cancelKnockback = true;
+                    break;
+                }
+            }
+            if (cancelKnockback)
+            {
+                break;
+            }
             yield return null;
         }
         isInvencible = true;
         // Delay to exit the knockback animation
         yield return new WaitForSeconds(0.5f);
-
+        if (cancelKnockback)
+        {
+            this.m_Animator1.SetTrigger("KnockBackHit");
+            yield break; 
+        }
         KnockBack = false;
         this.m_Animator1.SetBool("KnockBack", false);
         isInvencible = false;

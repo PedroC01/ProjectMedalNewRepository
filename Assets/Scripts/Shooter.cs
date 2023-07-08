@@ -18,6 +18,7 @@ public class Shooter : MonoBehaviour
     public bool LeftSide;
     public bool Front;
     public bool Back;
+    public float strafeSpeed;
     private bool rechargingWest;
     private bool rechargingEast;
     public float rechargeTimeEast;
@@ -81,6 +82,7 @@ public class Shooter : MonoBehaviour
     private float leftArmDownAimOriginalValues;
     private float rightArmDownAimOriginalValues;
     private float leftArmUpAimOriginalValues;
+    private float getPlayerSpeed ;
     //public GameObject getParent;
     private Rig ShooterRig;
     
@@ -132,7 +134,7 @@ public class Shooter : MonoBehaviour
         downBodyAimOriginalValues = downBodyAimConstraint.weight;
         upBodyAimOriginalValues = UpperBodyAimConstraint.weight;
 
-
+        getPlayerSpeed = PM.playerSpeed;
 
 
     }
@@ -384,9 +386,11 @@ public class Shooter : MonoBehaviour
 
     private IEnumerator FireFullAuto()
     {
-        
+       
         while (shootFullAuto == true)
         {
+            
+            PM.playerSpeed = strafeSpeed;
             if (magSizeFullAuto <= 0)
             {
                 shootFullAuto = false;
@@ -403,7 +407,11 @@ public class Shooter : MonoBehaviour
 
             lookat = LO.lockOnTarget;
             aimTarget.transform.position = LO.lockOnTarget.transform.position;
+            m_Animator.SetBool("Strafe", true);
+                PM.backStrafe = true;
 
+            
+          
             ///here we mess with the IK-----------------------------------------------------------------------------
             if (LeftSide)
             {
@@ -461,6 +469,8 @@ public class Shooter : MonoBehaviour
         downBodyAimConstraint.weight = downBodyAimOriginalValues;
         leftArmDownAimConstraint.weight = 0;
         leftArmUpAimConstraint.weight = 0;
+        PM.playerSpeed = getPlayerSpeed;
+        m_Animator.SetBool("Strafe", false);
         ResetBulletShotCount();
     }
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 3806.1938, g: 3188.1494, b: 2790.0063, a: 1}
+  m_IndirectSpecularColor: {r: 3834.4443, g: 3219.1177, b: 2833.4849, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2473,7 +2473,7 @@ GameObject:
   - component: {fileID: 103058158}
   - component: {fileID: 103058160}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ImagePlayer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2756,7 +2756,7 @@ Camera:
     height: 1
   near clip plane: 0.001
   far clip plane: 500
-  field of view: 30.978498
+  field of view: 30.978413
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -2984,8 +2984,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112452652}
-  m_LocalRotation: {x: -0.025681203, y: 0.95302254, z: -0.084469356, w: -0.2897473}
-  m_LocalPosition: {x: 17.090565, y: -2.1208258, z: 6.9559765}
+  m_LocalRotation: {x: -0.025679829, y: 0.953027, z: -0.08446947, w: -0.2897327}
+  m_LocalPosition: {x: 17.09029, y: -2.1208305, z: 6.9561768}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4975,7 +4975,7 @@ GameObject:
   - component: {fileID: 156428569}
   - component: {fileID: 156428568}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ImagePlayer2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7788,6 +7788,7 @@ MonoBehaviour:
   camera1: {fileID: 112452653}
   playerSpeed: 10
   isInvencible: 0
+  backStrafe: 0
   groundDistance: 0.4
   jumpExtraForce: 0.32
   jumpForce: 5.38
@@ -7885,7 +7886,7 @@ MonoBehaviour:
   recoveryTime: 2
   CheckIfCharacter: 0
   canMove: 0
-  knockbackForce: 5
+  knockbackForce: 3.21
   knockbackDuration: 1
   KnockBack: 0
 --- !u!54 &300808032
@@ -21963,6 +21964,7 @@ MonoBehaviour:
   camera1: {fileID: 0}
   playerSpeed: 10
   isInvencible: 0
+  backStrafe: 0
   groundDistance: 0.4
   jumpExtraForce: 0.32
   jumpForce: 5.38
@@ -39311,8 +39313,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561276689}
-  m_LocalRotation: {x: -0.025681203, y: 0.95302254, z: -0.084469356, w: -0.2897473}
-  m_LocalPosition: {x: 16.379318, y: -2.3451545, z: 5.8943977}
+  m_LocalRotation: {x: -0.025679829, y: 0.953027, z: -0.08446947, w: -0.2897327}
+  m_LocalPosition: {x: 16.379066, y: -2.3451605, z: 5.8945656}
   m_LocalScale: {x: 1, y: 0.8108335, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -41916,8 +41918,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697339436}
-  m_LocalRotation: {x: 0.018227575, y: 0.29433876, z: -0.0056148833, w: 0.95551085}
-  m_LocalPosition: {x: -24.45496, y: -4.169763, z: -54.663204}
+  m_LocalRotation: {x: 0.017758142, y: 0.294198, z: -0.0054673576, w: 0.9555639}
+  m_LocalPosition: {x: -24.4482, y: -4.199015, z: -54.669136}
   m_LocalScale: {x: 1, y: 0.81083345, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -52188,6 +52190,7 @@ MonoBehaviour:
   LeftSide: 0
   Front: 0
   Back: 0
+  strafeSpeed: 0
   rechargeTimeEast: 5
   rechargeTimeWest: 1
   TimerForRechargeEast: 0
@@ -78560,6 +78563,7 @@ MonoBehaviour:
   LeftSide: 0
   Front: 0
   Back: 0
+  strafeSpeed: 7.02
   rechargeTimeEast: 3
   rechargeTimeWest: 2
   TimerForRechargeEast: 0
@@ -83350,6 +83354,7 @@ MonoBehaviour:
   LeftSide: 0
   Front: 0
   Back: 0
+  strafeSpeed: 0
   rechargeTimeEast: 3
   rechargeTimeWest: 1
   TimerForRechargeEast: 0
@@ -95224,6 +95229,7 @@ MonoBehaviour:
   camera1: {fileID: 1823688466}
   playerSpeed: 10
   isInvencible: 0
+  backStrafe: 0
   groundDistance: 0.4
   jumpExtraForce: 0.32
   jumpForce: 5.38
@@ -95321,7 +95327,7 @@ MonoBehaviour:
   recoveryTime: 2
   CheckIfCharacter: 0
   canMove: 0
-  knockbackForce: 10
+  knockbackForce: 3.21
   knockbackDuration: 0.5
   KnockBack: 0
 --- !u!136 &7862484790357110736
