@@ -78,7 +78,8 @@ public class PlayerMedapartsController : MonoBehaviour
     private int originalMagSizeSmg;
     private int originalMagSizeRev;
     private float originalMovementSpeed;
-     
+    public GameObject medaforceEnergy;
+   
 
     private void Awake()
     {
@@ -165,6 +166,7 @@ public class PlayerMedapartsController : MonoBehaviour
             {
                 // Combo time is over, restore the original medapart stats
                 MedaForceActive = false;
+
                 SetMedapartStatsShooter(originalDamageWestAttack, originalDamageEastAttack, originalMagSizeSmg, originalMagSizeRev, originalMovementSpeed,originalNorthAttack,originalRechargeSmg,originalRechargeRevolver);
             }
         }
@@ -196,6 +198,13 @@ public class PlayerMedapartsController : MonoBehaviour
             }
         }
     }
+
+
+    public bool IsUsingMedaForce()
+    {
+        return MedaForceActive;
+    }
+
 
     private void CheckLowEnergy()
     {
@@ -265,6 +274,8 @@ public class PlayerMedapartsController : MonoBehaviour
     public void UseMedaForce()
     {
         MedaForceActive = true;
+        Vector3 energyPos = new Vector3(this.transform.position.x,0f, this.transform.position.z);
+        Instantiate(this.medaforceEnergy, energyPos, this.transform.rotation);
         MedaForceTimer = MedaForceDuration;
 
         // Save the original medapart stats to restore them later

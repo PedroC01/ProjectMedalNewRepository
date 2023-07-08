@@ -79,11 +79,12 @@ public class PlayerMovements : MonoBehaviour
     
     public int CheckIfCharacter;
     public bool canMove;
-
+    public float timeToRotateToImpact;
     public float knockbackForce = 10f;
     public float knockbackDuration = 0.5f;
     private Vector3 knockbackDirection;
     public bool KnockBack;
+    private Vector3 onImpact;
     private void Awake()
     {
         setupJump();
@@ -474,6 +475,7 @@ public class PlayerMovements : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        onImpact = other.transform.position;
         if (!isInvencible)
         {
             if (other.GetComponent<Rocket>() != null && !KnockBack)
@@ -481,7 +483,7 @@ public class PlayerMovements : MonoBehaviour
 
                 KnockBack = true;
                 Debug.Log("Rocket");
-                knockbackDirection = (transform.position - other.transform.position).normalized;
+                knockbackDirection = ( onImpact- transform.position).normalized;
                 this.m_Animator1.SetBool("KnockBack", true);
 
                 StartCoroutine(KnockbackCoroutine());
@@ -531,7 +533,7 @@ public class PlayerMovements : MonoBehaviour
             }
 
             // Rotate the player towards the hit position gradually
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * timeToRotateToImpact);
             if (KnockBack == true)
             {
                 Collider[] colliders = Physics.OverlapSphere(newPosition, 0.5f);

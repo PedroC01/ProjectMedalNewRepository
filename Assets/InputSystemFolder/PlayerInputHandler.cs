@@ -96,6 +96,7 @@ public class PlayerInputHandler : MonoBehaviour
         if(ph.canGoBerserk == true)
         {
             MpC.UseMedaForce();
+            ph.canGoBerserk = false;
         }
  
 
