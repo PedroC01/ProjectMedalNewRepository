@@ -98,22 +98,20 @@ public class BattleManager : MonoBehaviour
         {
             player1EndCamera.Priority = 2;
             player2EndCamera.Priority = 0;
-        }
-        else if (_Player2Health <= 0)
-        {
-            player2EndCamera.Priority = 2;
-            player1EndCamera.Priority = 0;
-        }
-        yield return new WaitForSecondsRealtime(timeToDeadBody);
-        if (_Player1Health <= 0)
-        {
+            yield return new WaitForSecondsRealtime(timeToDeadBody);
             player1EndCamera.Priority = 0;
             player2EndCamera.Priority = 2;
         }
-        else if (_Player2Health <= 0)
+         if (_Player2Health <= 0)
         {
+            player2EndCamera.Priority = 2;
+            player1EndCamera.Priority = 0;
+            yield return new WaitForSecondsRealtime(timeToDeadBody);
             player2EndCamera.Priority = 0;
             player1EndCamera.Priority = 2;
         }
+        
+       
+      
     }
 }

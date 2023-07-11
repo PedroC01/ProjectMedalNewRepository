@@ -15,6 +15,7 @@ public class Rocket : MonoBehaviour
     public GameObject target;
     public  Rigidbody targetRb;
     public float autoDestructTimer=5;
+    public float AutoDestructv2=12;
     private LockOn LO;
     private bool thisGotShooted;
     public bool canDestroy;
@@ -108,7 +109,11 @@ public class Rocket : MonoBehaviour
 
                 }
             }
-           
+            this.AutoDestructv2 = math.clamp(this.AutoDestructv2 - Time.deltaTime, 0, 10);
+            if(this.AutoDestructv2 <= 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
         
     }
@@ -195,6 +200,7 @@ public class Rocket : MonoBehaviour
                     {
 
                         coll.GetComponent<MedaPartScript>().ApplyDamage(RocketDamage);
+                        coll.GetComponentInParent<PlayerMovements>().KnockbackCoroutine();
 
                     }
 

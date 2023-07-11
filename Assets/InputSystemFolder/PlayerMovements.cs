@@ -495,7 +495,7 @@ public class PlayerMovements : MonoBehaviour
 
     }
 
-    private IEnumerator KnockbackCoroutine()
+    public IEnumerator KnockbackCoroutine()
     {
         bool cancelKnockback = false;
         float timer = 0f;
