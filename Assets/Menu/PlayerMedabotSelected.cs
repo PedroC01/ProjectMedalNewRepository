@@ -9,6 +9,6 @@ public class PlayerMedabotSelected : MonoBehaviour
     public Sprite imgMedaInGame;
     public PlayerInput pInput;
     public int pInputIndex;
-    public int medaColor;
+   // public int medaColor;
 
 }

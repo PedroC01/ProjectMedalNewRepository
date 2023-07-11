@@ -143,6 +143,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterName: Rokusho
-  prefabCharacter: {fileID: 0}
+  prefabCharacter: {fileID: 8765425394122125919}
   imgMedaBig: {fileID: 21300000, guid: d63aada30ceb8bc429301d778b132e60, type: 3}
   imgMedaSmall: {fileID: 21300000, guid: a9a3a964d94e6b54c869436fb3473477, type: 3}

@@ -54,7 +54,6 @@ public class MainMenus : MonoBehaviour
     }
 
 
-
     #region Inicializações //Awake()  
     void Initialize()
     {
@@ -132,5 +131,31 @@ public class MainMenus : MonoBehaviour
 
     }
     #endregion
+
+
+
+
+
+
+
+
+
+
+    #region Others StartMenuAreas:
+    //Extras:
+    //Colocar Tutorial View:
+    //Credits-> Text + Anim a rodar p/ baixo
+
+    //Settings:
+    //Video-Quality Unity Settings
+    //Som
+
+    #endregion
+
+
+
+
+
+
 }
 

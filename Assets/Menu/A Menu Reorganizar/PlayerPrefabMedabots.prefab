@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 56477566013b5ea408e35ee26579f890,
     type: 3}
-  m_NotificationBehavior: 3
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109e49d067b318d49b6f7e005a67217a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefP1: {fileID: 1397484430964159013, guid: 2e8a67a1ef845c541ae3e058abbf8ab5, type: 3}
+  prefP1: {fileID: 9189998069415772138, guid: 7d97345eb312c7a40be4846c235be686, type: 3}
   prefP2: {fileID: 5224267113388043679, guid: f73c1a44228652849b0ec89806a4ace2, type: 3}
   pInput: {fileID: 0}
   playerIndex: 0
@@ -232,4 +232,3 @@ MonoBehaviour:
   imgMedaInGame: {fileID: 0}
   pInput: {fileID: 0}
   pInputIndex: 0
-  medaColor: {r: 0, g: 0, b: 0, a: 0}

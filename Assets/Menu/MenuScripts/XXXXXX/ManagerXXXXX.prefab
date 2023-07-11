@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8227854966223882847}
   - component: {fileID: 8227854966223882844}
   - component: {fileID: 950097528}
-  - component: {fileID: 1039591936}
+  - component: {fileID: 1039591937}
   m_Layer: 0
   m_Name: ManagerXXXXX
   m_TagString: Untagged
@@ -98,7 +98,7 @@ MonoBehaviour:
   LoadBar: {fileID: 0}
   listJoinedPlayers: []
   amountReady: 0
---- !u!114 &1039591936
+--- !u!114 &1039591937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

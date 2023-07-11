@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 
 public class NewPlayerSideMenu : MonoBehaviour
 {
@@ -87,7 +88,7 @@ public class NewPlayerSideMenu : MonoBehaviour
         //Aqui consoante o "state atual no menu a navegação deverá mudar "char select ou cores ou trocar entre estados de selecao(cores champ etc)
         if (playerInputUsingThis.actions["Navigate"].triggered)
         {
-            CallNavigateSound();
+            ScenesManager.instance.Play_MenuNavigateSound();
 
             Vector2 inputDirection = playerInputUsingThis.actions["Navigate"].ReadValue<Vector2>();
 
@@ -166,7 +167,7 @@ public class NewPlayerSideMenu : MonoBehaviour
         //Enter:
         if (playerInputUsingThis.actions["Submit"].triggered)
         {
-            CallEnterSound();
+            ScenesManager.instance.Play_MenuSubmitSound();
 
             #region Maneira Simples o que ocorre quando cada posicao de seta em X UI:
             //Metabee:
@@ -180,12 +181,12 @@ public class NewPlayerSideMenu : MonoBehaviour
              
                 selectingChamp = false;
                 selectingColor = true;
-                panelColorSelect.SetActive(true);
                 StartCoroutine(DelayInput());
                 UpdateCharacterShow(0);//Metabee
 
+                //  panelColorSelect.SetActive(true);
                 SwitchUIArrowOFF();
-                return;
+                //return;
             }      //Random select
             if (ArrowPositionSelect == 1 && selectingChamp)
             {
@@ -195,27 +196,27 @@ public class NewPlayerSideMenu : MonoBehaviour
                 //SendCharSelectInfoToPlayrMedabotSelected(charSelected);
                 int rand = UnityEngine.Random.Range(0, prefabsMedaBots.Count);
                 charSelected = rand;
-                UpdateCharacterShow(rand);
                 selectingChamp = false;
                 selectingColor = true;
-                panelColorSelect.SetActive(true);
+                UpdateCharacterShow(rand);
+
+                //  panelColorSelect.SetActive(true);
                 SwitchUIArrowOFF();
-                return;
+              //  return;
             }
             //Rokusho
             if (ArrowPositionSelect == 2 && selectingChamp)
             {
                 //ChampSelected->enviar para color select
                 //SendCharSelectInfoToPlayrMedabotSelected(charSelected);
-              
                 selectingChamp = false;
                 selectingColor = true;
-                panelColorSelect.SetActive(true);
+                StartCoroutine(DelayInput());
                 UpdateCharacterShow(1);//Rokusho
 
-                StartCoroutine(DelayInput());
+                //panelColorSelect.SetActive(true);
                 SwitchUIArrowOFF();
-                return;
+               // return;
             }
       
             //Tem de ser com bt escondido ou deteta logo o enter, ou colocar delay de input novamente?
@@ -240,7 +241,7 @@ public class NewPlayerSideMenu : MonoBehaviour
                 //-------//------
                 //------
                 //-------
-                // prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().medaColor = ListMedabotsImage(1);//list imgage color
+               //prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().medaColor = ListMedabotsImage(1);//list imgage color
                 SendCharSelectInfoToPlayrMedabotSelected(charSelected);
                 panel_ReadyUnready.SetActive(true);
 
@@ -258,14 +259,18 @@ public class NewPlayerSideMenu : MonoBehaviour
         //Cancel//voltar atras-------------------------------------------------------
         if (playerInputUsingThis.actions["Cancel"].triggered)
         {
+            ScenesManager.instance.Play_MenuCancelSound();
+
             if (selectingChamp)
             {
                 //se for playerinput index = 0 podera voltar ao menu anterior, mostrar menu tem a certeza?
                 //Garntir que nessa altura é destruido o outro pinput se voltar para tras
+
+
                 return;
             }
 
-            if (selectingColor)
+          /*  if (selectingColor)
             {
                 SwitchUIArrowOn();
                 StartCoroutine(DelayInput());
@@ -273,12 +278,20 @@ public class NewPlayerSideMenu : MonoBehaviour
                 selectingChamp = true;
                 panelColorSelect.SetActive(false);
                 return;
-            }
+            }*/
 
             if (playerIsReady)
             {
+                //maneira simples ou tirar:
+                SwitchUIArrowOn();
+                selectingChamp = true;
+                selectingColor = false;
+                //maneira simples ou tirar:
+
+
+
                 StartCoroutine(DelayInput());
-                selectingColor = true;
+               // selectingColor = true;
                 playerIsReady = false;
                 panelColorSelect.SetActive(true);
                 panel_ReadyUnready.SetActive(false);
@@ -356,7 +369,7 @@ public class NewPlayerSideMenu : MonoBehaviour
         playerInputUsingThis.gameObject.GetComponent<PlayerMedabotSelected>().prefabCharacterSlected = prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().prefabCharacter;
         playerInputUsingThis.gameObject.GetComponent<PlayerMedabotSelected>().imgMedaInGame = prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().imgMedaBig;
         //prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().medaColor = colorImages[0].GetComponent<Image>().color;//cor assim?
-        playerInputUsingThis.gameObject.GetComponent<PlayerMedabotSelected>().medaColor = prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().medaColor;
+      //  playerInputUsingThis.gameObject.GetComponent<PlayerMedabotSelected>().medaColor = prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().medaColor;
        //Falta aqui agora enviar tambem a color info!
        VersusManager.instance.amountReady++;
     }
@@ -463,7 +476,6 @@ public class NewPlayerSideMenu : MonoBehaviour
 
 
     //Rever a Representaçao das setas conforme input!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 
     bool changeArrow = true;
     void IncreasePlayerArrow()//--------------------------------------
@@ -596,6 +608,36 @@ public class NewPlayerSideMenu : MonoBehaviour
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------
     //---------ok
     void ColorChoicesInit()
     {
@@ -615,7 +657,7 @@ public class NewPlayerSideMenu : MonoBehaviour
             //-------//------
             //------
             //-------
-           // ListMedabotsImage[i].gameObject.GetComponent<Image>() = listColorsNumber[i];
+            // ListMedabotsImage[i].gameObject.GetComponent<Image>() = listColorsNumber[i];
         }
     }
     void ColorChoicesUpdateRight()
@@ -645,83 +687,5 @@ public class NewPlayerSideMenu : MonoBehaviour
             ListMedabotsImage[i].gameObject.GetComponent<Image>().color = originalColors[newColorIndex];
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //---------ok
-
-
-    //FIM SOM IMPLEMENTAR NOUTRO SCRIPT
-    /// <summary>
-    /// Colocar sound manager para pedro mais easy para sound calls!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  ***** !!!!!!!!!!!!!!!!!!!!!!
-    /// </summary>
-    //Chamadas de sons, testar depois com audio.
-    //Chamadas de sons, testar depois com audio.
-    //Chamadas de sons, testar depois com audio.
-    //Chamadas de sons, testar depois com audio.
-    //Chamadas de sons, testar depois com audio.
-    //Chamadas de sons, testar depois com audio.
-    #region Trocar para soundManagerUI()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ******1!!!!!+****!*!!*!*!*!!**!
-    void CallNavigateSound()
-    {
-        //  navigateSound.Play();
-    }
-    void CallEnterSound()
-    {
-        //  enterSound.Play();
-    }
-    //Enter
-    void CallReadySound()
-    {
-        // readySound.Play();
-    }
-    //back
-    void CallUnReadySound()
-    {
-        //  unReadySound.Play();
-    }
-
-
-    //--------------------------------------------------------------------Ainda por confirmar, e necessário!!!!!!
-
-    #region Call Menu Sounds
-    //0 = menu base sound, 1= Versus Sound!
-    [Space(5)]
-    [Header("0 = MenuBase Sound, 1 = Versus Sound, etc")]
-    public List<AudioSource> listMenuSounds = new List<AudioSource>(); //Colocar os sons nesta list e chamar com metodo abaixo via codigo: MenuSoundsIndex(int musicIndex)
-
-    //int 0 = menu int 1 = versus
-    void MenuSoundsIndex(int soundIndex)
-    {
-         listMenuSounds[soundIndex].Play();
-    }
-    #endregion
-    #endregion
-
 
 }
