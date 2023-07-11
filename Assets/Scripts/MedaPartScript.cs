@@ -14,7 +14,8 @@ public class MedaPartScript : MonoBehaviour
     public float defense;
     public float damage;
     public MedaHealthSlider healthSlider;
-  
+    private LockOnShader[] LShaderScripts;
+    private List<GameObject> thisPartList;
     public int playerX;
     private PlayerMovements PM;
     private PlayerMedapartsController Pmc;
@@ -22,6 +23,9 @@ public class MedaPartScript : MonoBehaviour
     private float damageReductionPercentage;
     private float reducedDamage;
     public GameObject[] medaparts;
+    private bool partMalFunction;
+    public GameObject medabot;
+    private GameObject thisMiniParts;
     private void Start()
     {
         if (GetComponentInParent<Player2>() != null)
@@ -36,7 +40,17 @@ public class MedaPartScript : MonoBehaviour
             PM = GetComponentInParent<PlayerMovements>();
             playerX = 1;
         }
-       
+        this.medabot = GetComponentInParent<Medabot>().gameObject;
+        LShaderScripts = this.medabot.GetComponentsInChildren<LockOnShader>(false);
+        foreach (LockOnShader ls in LShaderScripts)
+        {
+            GameObject temp = ls.gameObject;
+            if (ls.thisPieceNum == this.MedapartNumber)
+            {
+                thisMiniParts = ls.gameObject;
+            }
+            
+        }
         partEnergyInitial = partEnergy;
     }
 
@@ -53,7 +67,7 @@ public class MedaPartScript : MonoBehaviour
         }
         // Implement behavior when the medapart is targeted
     }
-
+   
     public void ApplyDamage(float damage)
     {
         if (!this.PM.isInvencible)
@@ -84,7 +98,16 @@ public class MedaPartScript : MonoBehaviour
             reducedDamage = damage * (damageReductionPercentage / 100f);
 
             this.partEnergy = Mathf.Clamp(this.partEnergy - reducedDamage, 0f, partEnergyInitial);
-
+            if(this.partEnergy <= 0f)
+            {
+                partMalFunction = true;
+                this.thisMiniParts.GetComponent<LockOnShader>().partsDestroyed = true;
+            }
+            else
+            {
+                partMalFunction = false;
+                this.thisMiniParts.GetComponent<LockOnShader>().partsDestroyed = false;
+            }
         }
         else
         {

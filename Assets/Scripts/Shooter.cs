@@ -10,6 +10,7 @@ using FMODUnity;
 using UnityEngine.Animations.Rigging;
 using Unity.Burst.Intrinsics;
 using FMOD.Studio;
+using UnityEngine.VFX;
 
 public class Shooter : MonoBehaviour
 {
@@ -84,7 +85,9 @@ public class Shooter : MonoBehaviour
     private float getPlayerSpeed ;
     //public GameObject getParent;
     private Rig ShooterRig;
-    
+    public VisualEffect muzzleSmg;
+    public VisualEffect muzzleSmg2;
+    public VisualEffect muzzleRev;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -356,10 +359,11 @@ public class Shooter : MonoBehaviour
             }
            
             m_Animator.SetBool("ShootingR", true);
+            muzzleRev.Play();
             shootRevSoundInstance.start();
             GameObject newBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             newBullet.GetComponent<Bullet>().damagePerBullet = revolverDamage;
-
+            
             bulletsInMagazineRev--;
             this.bulletsShotCount++;
             if (bulletsInMagazineRev<=0)
@@ -432,6 +436,7 @@ public class Shooter : MonoBehaviour
 
             if (magSizeFullAuto > 0)
             {
+                muzzleSmg.Play();
                 shootAutoSoundInstance.start();
                 GameObject newBullet = Instantiate(bulletPrefab, FullAutoFirePoint1.position, FullAutoFirePoint1.rotation);
                 newBullet.GetComponent<Bullet>().damagePerBullet = smgDamage;
@@ -448,6 +453,7 @@ public class Shooter : MonoBehaviour
             
             if (magSizeFullAuto > 0)
             {
+                muzzleSmg2.Play();
                 shootAutoSoundInstance.start();
                 GameObject newBullet2 = Instantiate(bulletPrefab, FullAutoFirePoint2.position, FullAutoFirePoint2.rotation);
                 newBullet2.GetComponent<Bullet>().damagePerBullet = smgDamage;

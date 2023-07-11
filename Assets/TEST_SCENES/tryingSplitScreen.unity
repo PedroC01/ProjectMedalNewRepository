@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 3835.163, g: 3219.9658, b: 2835.1433, a: 1}
+  m_IndirectSpecularColor: {r: 3835.5757, g: 3220.3027, b: 2836.087, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -177,11 +177,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &15335
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -757,11 +760,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &9495153
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -1261,11 +1267,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &44128546
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1705,6 +1714,7 @@ MonoBehaviour:
   healthSlider: {fileID: 2113625349}
   playerX: 0
   medaparts: []
+  medabot: {fileID: 0}
 --- !u!65 &60676787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2006,11 +2016,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &76140294
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -2731,7 +2744,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -22, y: -311}
+  m_AnchoredPosition: {x: -21.999512, y: -311}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &103058158
@@ -4097,11 +4110,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &127003812
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -4567,11 +4583,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &139606063
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -4684,11 +4703,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &140004904
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -5468,7 +5490,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 25, y: -345}
+  m_AnchoredPosition: {x: 24.999512, y: -345}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &156428568
@@ -6294,11 +6316,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &197859941
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6526,11 +6551,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &201505312
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -6924,11 +6952,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &216837881
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -7210,11 +7241,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &229045003
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9771,6 +9805,7 @@ MonoBehaviour:
   healthSlider: {fileID: 2113625349}
   playerX: 0
   medaparts: []
+  medabot: {fileID: 0}
 --- !u!65 &349151327
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11685,11 +11720,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &447354180
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -12196,11 +12234,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &461092586
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -12672,6 +12713,7 @@ MonoBehaviour:
   healthSlider: {fileID: 1338517902}
   playerX: 0
   medaparts: []
+  medabot: {fileID: 0}
 --- !u!65 &477017180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13576,11 +13618,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &529800030
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -14207,6 +14252,7 @@ MonoBehaviour:
   healthSlider: {fileID: 260250747}
   playerX: 0
   medaparts: []
+  medabot: {fileID: 0}
 --- !u!65 &550533500
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14710,6 +14756,7 @@ MonoBehaviour:
   healthSlider: {fileID: 682002729}
   playerX: 0
   medaparts: []
+  medabot: {fileID: 0}
 --- !u!65 &574449681
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14870,6 +14917,7 @@ MonoBehaviour:
   healthSlider: {fileID: 1064443126}
   playerX: 0
   medaparts: []
+  medabot: {fileID: 0}
 --- !u!65 &581417336
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15084,9 +15132,9 @@ RectTransform:
   m_Father: {fileID: 384707532}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 70, y: -1035.9181}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 349.99994, y: -1035.9181}
   m_SizeDelta: {x: 280, y: 104}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &588761418
@@ -15490,11 +15538,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &595687195
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -16585,11 +16636,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &629220660
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -17223,11 +17277,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &679573972
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -18081,11 +18138,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &716859541
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -18565,6 +18625,7 @@ MonoBehaviour:
   healthSlider: {fileID: 260250747}
   playerX: 0
   medaparts: []
+  medabot: {fileID: 0}
 --- !u!65 &726872334
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19221,6 +19282,7 @@ MonoBehaviour:
   healthSlider: {fileID: 1338517902}
   playerX: 0
   medaparts: []
+  medabot: {fileID: 0}
 --- !u!65 &762265930
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19324,11 +19386,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &768020578
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -20238,11 +20303,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &807303116
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -20849,11 +20917,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &836674527
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -21828,11 +21899,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &880909101
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -22243,11 +22317,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &893810244
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26950,11 +27027,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1056694555
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -27471,11 +27551,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1075380019
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -28150,11 +28233,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1094671409
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -28448,6 +28534,8 @@ MonoBehaviour:
   Enemy: {fileID: 0}
   thisPiecesLockOnShader: {fileID: 0}
   medabot: {fileID: 0}
+  medabotDestPiece: {fileID: 0}
+  partsDestroyed: 0
 --- !u!1 &1108617785
 GameObject:
   m_ObjectHideFlags: 0
@@ -29571,11 +29659,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1140597396
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -30704,11 +30795,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1184542744
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -30822,11 +30916,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1186567201
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -31885,11 +31982,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1232033687
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -32373,11 +32473,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1242214687
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -32572,11 +32675,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &1248303753
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -33192,11 +33298,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1258178443
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -33765,11 +33874,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &1276451320
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -34143,11 +34255,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1293799845
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -34992,6 +35107,8 @@ MonoBehaviour:
   Enemy: {fileID: 0}
   thisPiecesLockOnShader: {fileID: 0}
   medabot: {fileID: 0}
+  medabotDestPiece: {fileID: 0}
+  partsDestroyed: 0
 --- !u!1 &1321033970
 GameObject:
   m_ObjectHideFlags: 0
@@ -35878,11 +35995,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1352978169
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -36740,9 +36860,9 @@ RectTransform:
   m_Father: {fileID: 384707532}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 67, y: -611}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -213, y: -611}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1378646333
@@ -37690,11 +37810,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1397299694
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -38054,11 +38177,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1410762326
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -38195,6 +38321,119 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413051410}
   m_CullTransparentMesh: 1
+--- !u!1 &1415424245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1415424246}
+  - component: {fileID: 1415424248}
+  - component: {fileID: 1415424247}
+  m_Layer: 0
+  m_Name: Muzzle (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1415424246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415424245}
+  m_LocalRotation: {x: -0.19992165, y: -0.87735194, z: 0.31710353, w: 0.29955015}
+  m_LocalPosition: {x: -0.208, y: 0.009, z: -0.259}
+  m_LocalScale: {x: 0.69, y: 0.69, z: 0.69}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 4840392287010800024}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!73398921 &1415424247
+VFXRenderer:
+  serializedVersion: 1
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415424245}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 257
+  m_RendererPriority: 0
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!2083052967 &1415424248
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415424245}
+  m_Enabled: 1
+  m_Asset: {fileID: 8926484042661614526, guid: 6e262704cf5160e4387c4f4725433e70, type: 3}
+  m_InitialEventName: OnPlay
+  m_InitialEventNameOverriden: 0
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_ResourceVersion: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array: []
+    m_Vector2f:
+      m_Array: []
+    m_Vector3f:
+      m_Array: []
+    m_Vector4f:
+      m_Array:
+      - m_Value: {x: 5.9829507, y: 3.512344, z: 0.76197964, w: 1}
+        m_Name: color
+        m_Overridden: 1
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array: []
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array: []
+    m_Gradient:
+      m_Array: []
+    m_NamedObject:
+      m_Array: []
+    m_Bool:
+      m_Array: []
 --- !u!1 &1419615929
 GameObject:
   m_ObjectHideFlags: 0
@@ -38373,6 +38612,8 @@ MonoBehaviour:
   Enemy: {fileID: 0}
   thisPiecesLockOnShader: {fileID: 0}
   medabot: {fileID: 0}
+  medabotDestPiece: {fileID: 0}
+  partsDestroyed: 0
 --- !u!1 &1430386821
 GameObject:
   m_ObjectHideFlags: 0
@@ -38515,11 +38756,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1430804529
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -39851,6 +40095,119 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490558611}
   m_CullTransparentMesh: 1
+--- !u!1 &1492869537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1492869538}
+  - component: {fileID: 1492869540}
+  - component: {fileID: 1492869539}
+  m_Layer: 0
+  m_Name: Muzzle_Rev
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1492869538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492869537}
+  m_LocalRotation: {x: 0.39770356, y: 0.22688738, z: -0.8801038, w: 0.12558347}
+  m_LocalPosition: {x: -0.16, y: 0.02, z: 0.21}
+  m_LocalScale: {x: 0.69, y: 0.69, z: 0.69}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 2692471759605905}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!73398921 &1492869539
+VFXRenderer:
+  serializedVersion: 1
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492869537}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 257
+  m_RendererPriority: 0
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!2083052967 &1492869540
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1492869537}
+  m_Enabled: 1
+  m_Asset: {fileID: 8926484042661614526, guid: 6e262704cf5160e4387c4f4725433e70, type: 3}
+  m_InitialEventName: OnPlay
+  m_InitialEventNameOverriden: 0
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_ResourceVersion: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array: []
+    m_Vector2f:
+      m_Array: []
+    m_Vector3f:
+      m_Array: []
+    m_Vector4f:
+      m_Array:
+      - m_Value: {x: 5.9829507, y: 3.512344, z: 0.76197964, w: 1}
+        m_Name: color
+        m_Overridden: 1
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array: []
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array: []
+    m_Gradient:
+      m_Array: []
+    m_NamedObject:
+      m_Array: []
+    m_Bool:
+      m_Array: []
 --- !u!1 &1494741349
 GameObject:
   m_ObjectHideFlags: 0
@@ -39940,11 +40297,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1497033945
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -40385,11 +40745,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1510373941
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -41805,11 +42168,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1566638036
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -42233,6 +42599,8 @@ MonoBehaviour:
   Enemy: {fileID: 0}
   thisPiecesLockOnShader: {fileID: 0}
   medabot: {fileID: 0}
+  medabotDestPiece: {fileID: 0}
+  partsDestroyed: 0
 --- !u!1 &1588206061
 GameObject:
   m_ObjectHideFlags: 0
@@ -42570,11 +42938,11 @@ RectTransform:
   m_Father: {fileID: 2068480230}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -548, y: -532}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -128, y: -584}
   m_SizeDelta: {x: 280, y: 104}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &1604456330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43042,11 +43410,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1614991814
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -43584,11 +43955,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1629532643
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -45516,11 +45890,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1716005400
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -45724,11 +46101,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1717741070
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -45841,11 +46221,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1728529927
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -46892,11 +47275,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1771870481
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -47083,11 +47469,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &1777063800
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -49399,6 +49788,7 @@ MonoBehaviour:
   healthSlider: {fileID: 682002729}
   playerX: 0
   medaparts: []
+  medabot: {fileID: 0}
 --- !u!65 &1840844583
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49836,11 +50226,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &1858740455
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50050,11 +50443,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1868013174
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -50655,6 +51051,8 @@ MonoBehaviour:
   Enemy: {fileID: 0}
   thisPiecesLockOnShader: {fileID: 0}
   medabot: {fileID: 0}
+  medabotDestPiece: {fileID: 0}
+  partsDestroyed: 0
 --- !u!1 &1895444264
 GameObject:
   m_ObjectHideFlags: 0
@@ -50827,11 +51225,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &1903388537
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -52873,11 +53274,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &1980861903
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -54799,11 +55203,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &2043156162
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -54940,11 +55347,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &2058927770
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -55056,6 +55466,7 @@ MonoBehaviour:
   healthSlider: {fileID: 1064443126}
   playerX: 0
   medaparts: []
+  medabot: {fileID: 0}
 --- !u!65 &2059436233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55941,6 +56352,9 @@ MonoBehaviour:
   rightArmDownAimConstraint: {fileID: 0}
   rightArmUpAimConstraint: {fileID: 0}
   aimTarget: {fileID: 0}
+  muzzleSmg: {fileID: 0}
+  muzzleSmg2: {fileID: 0}
+  muzzleRev: {fileID: 0}
 --- !u!1 &2092974536
 GameObject:
   m_ObjectHideFlags: 0
@@ -56517,11 +56931,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!137 &2105494215
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -57312,6 +57729,8 @@ MonoBehaviour:
   Enemy: {fileID: 0}
   thisPiecesLockOnShader: {fileID: 0}
   medabot: {fileID: 0}
+  medabotDestPiece: {fileID: 0}
+  partsDestroyed: 0
 --- !u!1 &2124285648
 GameObject:
   m_ObjectHideFlags: 0
@@ -57472,11 +57891,14 @@ MonoBehaviour:
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &2135757729
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -57605,6 +58027,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1492869538}
   - {fileID: 1154632182331272890}
   - {fileID: 1598198502915487446}
   - {fileID: 7304654284849123442}
@@ -60403,11 +60826,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!1 &242115028104795511
 GameObject:
   m_ObjectHideFlags: 0
@@ -60479,11 +60905,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!137 &255014865682936125
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -60661,6 +61090,8 @@ MonoBehaviour:
   thisPiecesLockOnShader: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6,
     type: 2}
   medabot: {fileID: 0}
+  medabotDestPiece: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  partsDestroyed: 0
 --- !u!1 &281855664554188125
 GameObject:
   m_ObjectHideFlags: 0
@@ -61389,11 +61820,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &436405501140250206
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -61884,6 +62318,8 @@ MonoBehaviour:
   thisPiecesLockOnShader: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6,
     type: 2}
   medabot: {fileID: 0}
+  medabotDestPiece: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  partsDestroyed: 0
 --- !u!33 &529331206290399298
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -62301,11 +62737,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!33 &587465492948661701
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -64148,6 +64587,21 @@ Transform:
   m_Father: {fileID: 543450653541727841}
   m_RootOrder: 159
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1000251611235222832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519123207443208651}
+  m_LocalRotation: {x: -0.19992165, y: -0.87735194, z: 0.31710353, w: 0.29955015}
+  m_LocalPosition: {x: -0.133, y: -0.046, z: -0.299}
+  m_LocalScale: {x: 0.69, y: 0.69, z: 0.69}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 4840392287010800024}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1003254524526785916
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -65041,6 +65495,7 @@ MonoBehaviour:
   healthSlider: {fileID: 122423130}
   playerX: 0
   medaparts: []
+  medabot: {fileID: 0}
 --- !u!65 &1154632181653044225
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65139,6 +65594,7 @@ MonoBehaviour:
   healthSlider: {fileID: 726348629}
   playerX: 0
   medaparts: []
+  medabot: {fileID: 0}
 --- !u!65 &1154632182087731196
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65220,6 +65676,7 @@ MonoBehaviour:
   healthSlider: {fileID: 1853482201}
   playerX: 0
   medaparts: []
+  medabot: {fileID: 0}
 --- !u!65 &1154632182174105895
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65277,7 +65734,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2692471759605905}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 25.204, y: -48.296, z: -22.667}
 --- !u!1 &1154632182777049637
 GameObject:
@@ -65329,6 +65786,7 @@ MonoBehaviour:
   healthSlider: {fileID: 1221059628}
   playerX: 0
   medaparts: []
+  medabot: {fileID: 0}
 --- !u!65 &1154632182956262433
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65400,7 +65858,7 @@ Transform:
   m_GameObject: {fileID: 1154632182965105414}
   m_LocalRotation: {x: -0.19992168, y: -0.87735194, z: 0.31710374, w: 0.2995499}
   m_LocalPosition: {x: -0.04500033, y: 0.0119999945, z: -0.21800087}
-  m_LocalScale: {x: 0.9995632, y: 3.5232162, z: 0.28370872}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4840392287010800024}
@@ -65443,6 +65901,7 @@ MonoBehaviour:
   healthSlider: {fileID: 348554915}
   playerX: 0
   medaparts: []
+  medabot: {fileID: 0}
 --- !u!65 &1154632183087467653
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -65713,11 +66172,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!33 &1209519543570902640
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -65743,11 +66205,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!1 &1216448326247397329
 GameObject:
   m_ObjectHideFlags: 0
@@ -66738,11 +67203,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!4 &1490906111336807675
 Transform:
   m_ObjectHideFlags: 0
@@ -67237,7 +67705,7 @@ Transform:
   m_Children:
   - {fileID: 6194833701564850129}
   m_Father: {fileID: 2692471759605905}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -62.850685, y: 62.283024, z: -179.10152}
 --- !u!64 &1605645666880858295
 MeshCollider:
@@ -67320,6 +67788,8 @@ MonoBehaviour:
   thisPiecesLockOnShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d,
     type: 2}
   medabot: {fileID: 0}
+  medabotDestPiece: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  partsDestroyed: 0
 --- !u!33 &1654999889403287734
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -67845,11 +68315,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!4 &1776434510198168952
 Transform:
   m_ObjectHideFlags: 0
@@ -67898,11 +68371,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!23 &1786649104352704104
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -68907,11 +69383,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!23 &2095488656141853637
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69048,11 +69527,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!33 &2126574895557458550
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -69263,11 +69745,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!23 &2199397639820010602
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -70374,11 +70859,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!1 &2393666861224549577
 GameObject:
   m_ObjectHideFlags: 0
@@ -71491,11 +71979,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!23 &2635059858714397330
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71615,11 +72106,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &2665076987962298860
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -71849,11 +72343,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &2705887644930934309
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -72614,6 +73111,46 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7807538432633192378, guid: 8c11591a780787c4e8a42f250028f300, type: 3}
+--- !u!73398921 &2901874053393124746
+VFXRenderer:
+  serializedVersion: 1
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519123207443208651}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 257
+  m_RendererPriority: 0
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &2902525839918556839
 GameObject:
   m_ObjectHideFlags: 0
@@ -72821,11 +73358,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &2935695056628289817
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -72955,7 +73495,7 @@ Transform:
   m_Children:
   - {fileID: 8716637719029530063}
   m_Father: {fileID: 2692471759605905}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -57.24535, y: 26.224485, z: -145.19025}
 --- !u!4 &2974669907764807764
 Transform:
@@ -73111,11 +73651,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!33 &3010172807034435162
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -73559,11 +74102,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &3095061861369748599
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -73768,11 +74314,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!1 &3154057188870456190
 GameObject:
   m_ObjectHideFlags: 0
@@ -73995,11 +74544,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!4 &3194643783212911760
 Transform:
   m_ObjectHideFlags: 0
@@ -74271,6 +74823,8 @@ MonoBehaviour:
   thisPiecesLockOnShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d,
     type: 2}
   medabot: {fileID: 0}
+  medabotDestPiece: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  partsDestroyed: 0
 --- !u!4 &3238735405557750416
 Transform:
   m_ObjectHideFlags: 0
@@ -74454,11 +75008,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &3253200688298991077
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -74792,11 +75349,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!4 &3316992658450402854
 Transform:
   m_ObjectHideFlags: 0
@@ -76915,11 +77475,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!23 &3806891359540484192
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77737,11 +78300,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!64 &3897841687357311405
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -77980,11 +78546,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!4 &3968058150924110655
 Transform:
   m_ObjectHideFlags: 0
@@ -78255,11 +78824,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!1 &4008233623767470387
 GameObject:
   m_ObjectHideFlags: 0
@@ -78751,11 +79323,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!4 &4112144473537756216
 Transform:
   m_ObjectHideFlags: 0
@@ -78820,11 +79395,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!4 &4125630230901981283
 Transform:
   m_ObjectHideFlags: 0
@@ -79826,11 +80404,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &4328637278670958817
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -79904,6 +80485,8 @@ MonoBehaviour:
   thisPiecesLockOnShader: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6,
     type: 2}
   medabot: {fileID: 0}
+  medabotDestPiece: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  partsDestroyed: 0
 --- !u!1 &4345957225100391749
 GameObject:
   m_ObjectHideFlags: 0
@@ -80119,6 +80702,8 @@ MonoBehaviour:
   thisPiecesLockOnShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d,
     type: 2}
   medabot: {fileID: 0}
+  medabotDestPiece: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  partsDestroyed: 0
 --- !u!1 &4377019417258488815
 GameObject:
   m_ObjectHideFlags: 0
@@ -80787,11 +81372,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &4484539983741384793
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -80994,6 +81582,24 @@ Transform:
   m_Father: {fileID: 543450653541727841}
   m_RootOrder: 80
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4519123207443208651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1000251611235222832}
+  - component: {fileID: 5788740270146751103}
+  - component: {fileID: 2901874053393124746}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &4524298505741719022
 Transform:
   m_ObjectHideFlags: 0
@@ -81396,11 +82002,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &4577365744492291749
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -81993,11 +82602,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &4696015886529335972
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -82134,11 +82746,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &4724579756896563292
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -82620,6 +83235,9 @@ MonoBehaviour:
   rightArmDownAimConstraint: {fileID: 0}
   rightArmUpAimConstraint: {fileID: 0}
   aimTarget: {fileID: 1702635850}
+  muzzleSmg: {fileID: 5788740270146751103}
+  muzzleSmg2: {fileID: 1415424248}
+  muzzleRev: {fileID: 1492869540}
 --- !u!114 &4813445333188998420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82852,6 +83470,8 @@ Transform:
   - {fileID: 8619118100715799585}
   - {fileID: 1154632182965105415}
   - {fileID: 1154632182777049638}
+  - {fileID: 1000251611235222832}
+  - {fileID: 1415424246}
   m_Father: {fileID: 4141768010663547247}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 44.21418, y: 48.08761, z: 0.80935276}
@@ -83335,11 +83955,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!137 &4928941316186776819
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -83882,11 +84505,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &5093082373207887730
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -83918,11 +84544,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!1 &5096383313447815962
 GameObject:
   m_ObjectHideFlags: 0
@@ -84078,11 +84707,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!1 &5120724536513431113
 GameObject:
   m_ObjectHideFlags: 0
@@ -84466,11 +85098,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!4 &5210025417622812279
 Transform:
   m_ObjectHideFlags: 0
@@ -84694,11 +85329,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!33 &5263294475883744387
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -85826,11 +86464,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &5442770166263781852
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -86236,11 +86877,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &5514331758074673438
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -86884,6 +87528,8 @@ MonoBehaviour:
   thisPiecesLockOnShader: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6,
     type: 2}
   medabot: {fileID: 0}
+  medabotDestPiece: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  partsDestroyed: 0
 --- !u!4 &5708220699616088463
 Transform:
   m_ObjectHideFlags: 0
@@ -87001,11 +87647,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &5732661918157635473
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -87087,11 +87736,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &5740248976292497729
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -87185,11 +87837,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!4 &5761218512657814053
 Transform:
   m_ObjectHideFlags: 0
@@ -87412,6 +88067,9 @@ MonoBehaviour:
   rightArmDownAimConstraint: {fileID: 0}
   rightArmUpAimConstraint: {fileID: 0}
   aimTarget: {fileID: 1730703424}
+  muzzleSmg: {fileID: 0}
+  muzzleSmg2: {fileID: 0}
+  muzzleRev: {fileID: 0}
 --- !u!114 &5788088998205975422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87448,6 +88106,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6d856b5bd8d15b4fbecbfbffa64f12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!2083052967 &5788740270146751103
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519123207443208651}
+  m_Enabled: 1
+  m_Asset: {fileID: 8926484042661614526, guid: 6e262704cf5160e4387c4f4725433e70, type: 3}
+  m_InitialEventName: OnPlay
+  m_InitialEventNameOverriden: 1
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_ResourceVersion: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array: []
+    m_Vector2f:
+      m_Array: []
+    m_Vector3f:
+      m_Array: []
+    m_Vector4f:
+      m_Array:
+      - m_Value: {x: 5.9829507, y: 3.512344, z: 0.76197964, w: 1}
+        m_Name: color
+        m_Overridden: 1
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array: []
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array: []
+    m_Gradient:
+      m_Array: []
+    m_NamedObject:
+      m_Array: []
+    m_Bool:
+      m_Array: []
 --- !u!33 &5790645953809677007
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -88424,11 +89122,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &6030595206886256318
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -88633,11 +89334,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &6061139633448559945
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -89232,11 +89936,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!1 &6172843257285092761
 GameObject:
   m_ObjectHideFlags: 0
@@ -89380,7 +90087,7 @@ Transform:
   m_Children:
   - {fileID: 2106771069995509164}
   m_Father: {fileID: 2692471759605905}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 34.548912, y: -66.7493, z: 64.681175}
 --- !u!1 &6240733293508186148
 GameObject:
@@ -89415,11 +90122,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!23 &6272350531927756327
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -89479,11 +90189,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!64 &6280958754471412320
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -91140,11 +91853,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!114 &6600762639459051902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91162,11 +91878,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!4 &6615089395658782983
 Transform:
   m_ObjectHideFlags: 0
@@ -91413,11 +92132,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &6659644682149649432
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -92587,11 +93309,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &6858095393839529028
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -92787,11 +93512,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!4 &6930154590620487108
 Transform:
   m_ObjectHideFlags: 0
@@ -92930,11 +93658,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!23 &6947464325654284244
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -93242,11 +93973,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &6976900260944709778
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -93348,11 +94082,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!23 &7003577263082278175
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -93633,11 +94370,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &7056446579485256806
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -94026,11 +94766,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &7088276625610561199
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -94081,11 +94824,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!1 &7100647795368665964
 GameObject:
   m_ObjectHideFlags: 0
@@ -94219,11 +94965,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!4 &7117901467061797530
 Transform:
   m_ObjectHideFlags: 0
@@ -94282,6 +95031,8 @@ MonoBehaviour:
   thisPiecesLockOnShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d,
     type: 2}
   medabot: {fileID: 0}
+  medabotDestPiece: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  partsDestroyed: 0
 --- !u!23 &7120719019172196258
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -94733,11 +95484,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &7161535469155960950
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -94969,11 +95723,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!1 &7193339704806286693
 GameObject:
   m_ObjectHideFlags: 0
@@ -95267,11 +96024,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!33 &7221975588286358127
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -95619,11 +96379,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &7267738462862839570
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -95766,7 +96529,7 @@ Transform:
   m_Children:
   - {fileID: 8904306901507786840}
   m_Father: {fileID: 2692471759605905}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -58.829617, y: 95.29911, z: 154.09251}
 --- !u!4 &7307389438417649149
 Transform:
@@ -95819,11 +96582,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &7310965392487589861
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -95923,11 +96689,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &7327497183274480919
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -96300,11 +97069,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!23 &7385589940181697366
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -96383,11 +97155,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &7387685654842669422
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -96528,11 +97303,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &7402773323827832222
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -96641,11 +97419,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &7415034398840314147
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -96973,11 +97754,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &7489692208332786017
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -97099,11 +97883,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &7507211911178473126
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -97596,11 +98383,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &7616376940541585523
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -97647,11 +98437,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!23 &7621133392087539642
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -98010,11 +98803,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &7690347643946245058
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -98169,11 +98965,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &7693107227169924419
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -98221,7 +99020,7 @@ Transform:
   m_Children:
   - {fileID: 5665143913443557781}
   m_Father: {fileID: 2692471759605905}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -62.779797, y: 67.88719, z: 177.94534}
 --- !u!1 &7699509447245845819
 GameObject:
@@ -98820,11 +99619,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!137 &7817840907489519675
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -99627,11 +100429,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!1 &7881948243990946827
 GameObject:
   m_ObjectHideFlags: 0
@@ -99865,11 +100670,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!114 &7946996258216721728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99887,11 +100695,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &7946996258216721729
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -100210,11 +101021,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &7991418159281396923
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -100321,11 +101135,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &8029623555986019096
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -100418,11 +101235,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &8036718062451747580
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -100523,11 +101343,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &8057821691214984415
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -100855,6 +101678,8 @@ MonoBehaviour:
   thisPiecesLockOnShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d,
     type: 2}
   medabot: {fileID: 0}
+  medabotDestPiece: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  partsDestroyed: 0
 --- !u!23 &8144164606851306240
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101342,11 +102167,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &8262002994339853565
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -101676,11 +102504,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &8334289807820052651
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -101881,11 +102712,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!4 &8364049461380627889
 Transform:
   m_ObjectHideFlags: 0
@@ -101918,11 +102752,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!33 &8371810564748148797
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -102101,11 +102938,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!23 &8413364598847825165
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -102612,11 +103452,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &8476794185642409387
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -102770,11 +103613,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &8500121804877576651
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -102839,11 +103685,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!23 &8504526435253473717
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -103104,7 +103953,6 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f115161df7affc84faba5d79ecb54916, type: 2}
   - {fileID: 2100000, guid: f115161df7affc84faba5d79ecb54916, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -103478,11 +104326,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!33 &8591189833070173279
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -103932,11 +104783,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &8643927324658047035
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -104540,11 +105394,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &8717269498913288371
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -104682,11 +105539,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &8737753815615889940
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -104879,11 +105739,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &8794934451206164636
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -105469,6 +106332,8 @@ MonoBehaviour:
   thisPiecesLockOnShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d,
     type: 2}
   medabot: {fileID: 0}
+  medabotDestPiece: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  partsDestroyed: 0
 --- !u!33 &8897240367244886320
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -105539,11 +106404,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &8907968701567173513
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -105802,11 +106670,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!1 &8967432269954343313
 GameObject:
   m_ObjectHideFlags: 0
@@ -105844,6 +106715,8 @@ MonoBehaviour:
   thisPiecesLockOnShader: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6,
     type: 2}
   medabot: {fileID: 0}
+  medabotDestPiece: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  partsDestroyed: 0
 --- !u!64 &8971743736924774300
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -105894,11 +106767,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &8976369444693709174
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -106272,11 +107148,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!1 &9053131111092489858
 GameObject:
   m_ObjectHideFlags: 0
@@ -106501,6 +107380,8 @@ MonoBehaviour:
   thisPiecesLockOnShader: {fileID: 2100000, guid: 04f6e1586942caf448df1a797da654d6,
     type: 2}
   medabot: {fileID: 0}
+  medabotDestPiece: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  partsDestroyed: 0
 --- !u!114 &9099016021647349207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106518,11 +107399,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!4 &9101953103358875254
 Transform:
   m_ObjectHideFlags: 0
@@ -106969,11 +107853,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!33 &9155275840938761888
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -107079,11 +107966,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &9167809713260755458
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -107181,11 +108071,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 0}
+  destroyed: 0
 --- !u!64 &9185619937279944354
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -107217,11 +108110,14 @@ MonoBehaviour:
   thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList: []
+  destroyedMaterialList: []
   originalMaterialsList: []
   lShader: {fileID: 0}
   thisPieceTexture: []
   NewMaterialsList: []
   pmc: {fileID: 0}
+  destroyedMaterial: {fileID: 2100000, guid: 7fe9ac4117453484baae7ee69eb56ba4, type: 2}
+  destroyed: 0
 --- !u!1 &9197641759962687797
 GameObject:
   m_ObjectHideFlags: 0

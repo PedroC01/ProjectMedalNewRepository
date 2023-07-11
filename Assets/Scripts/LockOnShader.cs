@@ -21,7 +21,9 @@ public class LockOnShader : MonoBehaviour
     [SerializeField]
     public Material thisPiecesLockOnShader;
     public GameObject medabot;
-
+    [SerializeField]
+    public Material medabotDestPiece;
+    public bool partsDestroyed;
     // Start is called before the first frame update
     void Awake()
     {
@@ -57,9 +59,11 @@ public class LockOnShader : MonoBehaviour
 
            foreach(PartPiece ppiece in this.gameObject.GetComponentsInChildren<PartPiece>())
             {
+            ppiece.destroyedMaterial = this.medabotDestPiece;
             ppiece.lShader = this;
             ppiece.PieceNum = this.thisPieceNum;
             ppiece.loShader=this.thisPiecesLockOnShader;
+           
                
              }
         
@@ -72,7 +76,7 @@ public class LockOnShader : MonoBehaviour
     void Start()
     {
         thisLockOnNum = LO.pieceReference;
-        ChangePieceEffect();
+       // ChangePieceEffect();
     }
     // Update is called once per frame
     void Update()
@@ -81,13 +85,46 @@ public class LockOnShader : MonoBehaviour
         if (thisLockOnNum != LO.pieceReference)
         {
             thisLockOnNum = LO.pieceReference;
-            ChangePieceEffect();
+            //ChangePieceEffect();
+        }
+        if(this.partsDestroyed==true)
+        {
+            DestroyedPieces();
         }
     }
 
 
 
-    public void ChangePieceEffect()
+    public void DestroyedPieces()
+    {
+        foreach (GameObject piece in thisPartPieces)
+        {
+            foreach (PartPiece ppiece in piece.GetComponentsInChildren<PartPiece>())
+            {
+
+                if (ppiece.PieceNum == thisLockOnNum)
+                {
+                    ppiece.destroyed = partsDestroyed;
+                }
+                if (ppiece.PieceNum != thisLockOnNum)
+                {
+                    return;
+                }
+
+            }
+
+
+          
+
+        }
+
+
+    }
+
+
+
+
+        public void ChangePieceEffect()
     {
        
        
