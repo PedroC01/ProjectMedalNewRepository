@@ -125,7 +125,8 @@ public class Shooter : MonoBehaviour
             aimTarget = FindObjectOfType<Player2Aim>().gameObject;
 
         }
-       // this.Enemy = this.LO.Enemy.gameObject;
+        // this.Enemy = this.LO.Enemy.gameObject;
+     
         leftArmDownAimConstraint = leftArmDownObject.GetComponent<MultiAimConstraint>();
         rightArmDownAimConstraint = rightArmDownObject.GetComponent<MultiAimConstraint>();
         leftArmUpAimConstraint= leftArmUpObject.GetComponent<MultiAimConstraint>();
@@ -135,7 +136,7 @@ public class Shooter : MonoBehaviour
         rightArmUpAimConstraint = rightArmUpObject.GetComponent<MultiAimConstraint>();
         downBodyAimOriginalValues = downBodyAimConstraint.weight;
         upBodyAimOriginalValues = UpperBodyAimConstraint.weight;
-
+        
         getPlayerSpeed = PM.playerSpeed;
 
 
