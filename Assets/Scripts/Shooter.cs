@@ -98,7 +98,7 @@ public class Shooter : MonoBehaviour
     }
     void Start()
     {
-    //    LO = GetComponent<LockOn>();
+        
         
         MaxMagFullAuto = magSizeFullAuto;
         PM = GetComponentInParent<PlayerMovements>();
@@ -117,6 +117,7 @@ public class Shooter : MonoBehaviour
         GameObject upperBodyObject = rigObject.transform.Find("Bodyup").gameObject;
         GameObject downBodyObject = rigObject.transform.Find("Bodydown").gameObject;
         GameObject rightArmUpObject = rigObject.transform.Find("RightArmDown").gameObject;
+        LO = GetComponentInParent<LockOn>();
         if (GetComponentInParent<Player1>() == true)
         {
             aimTarget = FindObjectOfType<Player1Aim>().gameObject;

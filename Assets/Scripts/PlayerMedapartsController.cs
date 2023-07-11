@@ -13,7 +13,7 @@ public class PlayerMedapartsController : MonoBehaviour
     private Shooter shooter;
     private PlayerMovements PM;
     public CharacterStatsSO characterStatsSO;
-
+    public OverrideInput OI;
  
     [Header("perBullet")]
     public float lastBulletCritMultiplyer;
@@ -92,7 +92,7 @@ public class PlayerMedapartsController : MonoBehaviour
         {
             enLockON = FindObjectOfType<Player1>().GetComponent<LockOn>();
         }
-       
+        OI.GetComponent<OverrideInput>();
 
     }
     private void Start()
@@ -105,8 +105,11 @@ public class PlayerMedapartsController : MonoBehaviour
         PM = GetComponent<PlayerMovements>();
         if (this.characterStatsSO.characterReferenceNumber == 1)
         {
+            
             shooter = GetComponentInChildren<Shooter>();
+            OI.sh= shooter;
             RL = GetComponentInChildren<RocketLaucher>();
+            OI.rl= RL;
           //  characterStatsSO = characterStatsArray[0].GetComponent<MetabeeStats>();
         }
         medaparts = GetComponentsInChildren<MedaPartScript>();

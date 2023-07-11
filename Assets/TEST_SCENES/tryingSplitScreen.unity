@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 3834.7686, g: 3219.3884, b: 2834.063, a: 1}
+  m_IndirectSpecularColor: {r: 3833.8152, g: 3218.1802, b: 2831.3975, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -1185,7 +1185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -1960,7 +1960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -2799,7 +2799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -5373,7 +5373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -5878,7 +5878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -5998,7 +5998,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -7808,7 +7808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -8043,7 +8043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -8577,7 +8577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -8999,7 +8999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -14866,7 +14866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -15380,7 +15380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -17322,7 +17322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -19556,7 +19556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -20718,7 +20718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -21627,7 +21627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -22659,7 +22659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -24237,7 +24237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -25959,7 +25959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -26604,7 +26604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -28052,7 +28052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -28470,7 +28470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -33889,7 +33889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -34583,7 +34583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -35496,7 +35496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -37288,7 +37288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -38492,7 +38492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -38746,7 +38746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -40455,7 +40455,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -40946,7 +40946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -41148,7 +41148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -41869,7 +41869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -42748,7 +42748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -43161,7 +43161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -44965,7 +44965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -47009,7 +47009,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -47407,7 +47407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -48049,7 +48049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -49787,7 +49787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -50267,7 +50267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -51756,7 +51756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -53082,7 +53082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -53828,7 +53828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -56373,7 +56373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -56584,7 +56584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -56735,7 +56735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -58064,7 +58064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -58258,7 +58258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -61354,7 +61354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -61602,7 +61602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -62384,7 +62384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -64724,7 +64724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -67126,7 +67126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -67270,7 +67270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -69560,7 +69560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
@@ -70720,7 +70720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PieceNum: 0
   loShader: {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
-  thisPeaceMaterial: {fileID: 2100000, guid: a06e220f536d1854faf5692dcbba2d70, type: 2}
+  thisPeaceMaterial: {fileID: 0}
   isLocked: 0
   ShaderMaterialsList:
   - {fileID: 2100000, guid: 28b4cae4afbc634458a9257b302cb10d, type: 2}
