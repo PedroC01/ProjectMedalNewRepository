@@ -29,6 +29,8 @@ public class Shooter : MonoBehaviour
     //public float TimerForFirerate;
     public bool Shooted;
     public GameObject bulletPrefab;
+    public GameObject bulletPrefab2;
+    private GameObject bullet;
     public Transform firePoint;
     public Transform FullAutoFirePoint1;
     public Transform FullAutoFirePoint2;
@@ -118,12 +120,13 @@ public class Shooter : MonoBehaviour
         if (GetComponentInParent<Player1>() == true)
         {
             aimTarget = FindObjectOfType<Player1Aim>().gameObject;
+            bullet = bulletPrefab;
 
         }
         else if (GetComponentInParent<Player2>() == true)
         {
             aimTarget = FindObjectOfType<Player2Aim>().gameObject;
-
+            bullet= bulletPrefab2;
         }
         // this.Enemy = this.LO.Enemy.gameObject;
      
@@ -362,7 +365,7 @@ public class Shooter : MonoBehaviour
             m_Animator.SetBool("ShootingR", true);
             muzzleRev.Play();
             shootRevSoundInstance.start();
-            GameObject newBullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            GameObject newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
             newBullet.GetComponent<Bullet>().damagePerBullet = revolverDamage;
             
             bulletsInMagazineRev--;
@@ -439,7 +442,7 @@ public class Shooter : MonoBehaviour
             {
                 muzzleSmg.Play();
                 shootAutoSoundInstance.start();
-                GameObject newBullet = Instantiate(bulletPrefab, FullAutoFirePoint1.position, FullAutoFirePoint1.rotation);
+                GameObject newBullet = Instantiate(bullet, FullAutoFirePoint1.position, FullAutoFirePoint1.rotation);
                 newBullet.GetComponent<Bullet>().damagePerBullet = smgDamage;
                 this.bulletsShotCount++;
                 magSizeFullAuto--;
@@ -456,7 +459,7 @@ public class Shooter : MonoBehaviour
             {
                 muzzleSmg2.Play();
                 shootAutoSoundInstance.start();
-                GameObject newBullet2 = Instantiate(bulletPrefab, FullAutoFirePoint2.position, FullAutoFirePoint2.rotation);
+                GameObject newBullet2 = Instantiate(bullet, FullAutoFirePoint2.position, FullAutoFirePoint2.rotation);
                 newBullet2.GetComponent<Bullet>().damagePerBullet = smgDamage;
                 this.bulletsShotCount++;
                 magSizeFullAuto--;

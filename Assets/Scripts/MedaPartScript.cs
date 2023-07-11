@@ -25,7 +25,7 @@ public class MedaPartScript : MonoBehaviour
     public GameObject[] medaparts;
     private bool partMalFunction;
     public GameObject medabot;
-    private GameObject thisMiniParts;
+    public GameObject thisMiniParts;
     private void Start()
     {
         if (GetComponentInParent<Player2>() != null)

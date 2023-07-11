@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 3838.3042, g: 3222.62, b: 2838.0996, a: 1}
+  m_IndirectSpecularColor: {r: 3835.163, g: 3219.9658, b: 2835.1433, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2502,6 +2502,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &60676787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9236,7 +9237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d57b7ed6b9db84d993a3d70f918609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisPieceNum: 1
+  thisPieceNum: 0
   thisLockOnNumA: 0
   thisLockOnNum: 0
   thisPartPieces: []
@@ -12363,6 +12364,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &349151327
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12921,6 +12923,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &364373858
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15995,6 +15998,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &477017180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18103,6 +18107,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &550533500
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18773,6 +18778,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &574449681
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18934,6 +18940,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &581417336
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20906,6 +20913,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &635639465
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22893,6 +22901,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &720734044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23210,6 +23219,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &726872334
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24097,6 +24107,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &762265930
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41627,6 +41638,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &1252495872
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55875,8 +55887,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697339436}
-  m_LocalRotation: {x: 0.017821327, y: 0.29427543, z: -0.0054883994, w: 0.95553875}
-  m_LocalPosition: {x: -24.452114, y: -4.195057, z: -54.66629}
+  m_LocalRotation: {x: 0.017758142, y: 0.294198, z: -0.0054673576, w: 0.9555639}
+  m_LocalPosition: {x: -24.4482, y: -4.199015, z: -54.669136}
   m_LocalScale: {x: 1, y: 0.81083345, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -60673,6 +60685,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &1840844583
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67382,6 +67395,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &2059436233
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67980,6 +67994,8 @@ MonoBehaviour:
   Shooted: 0
   bulletPrefab: {fileID: 3109997235097872882, guid: 68d3916040a635d4e8af37b259627198,
     type: 3}
+  bulletPrefab2: {fileID: 3109997235097872882, guid: 41f754231f59db24f9e95213283d3f87,
+    type: 3}
   firePoint: {fileID: 2029227215}
   FullAutoFirePoint1: {fileID: 1265624939}
   FullAutoFirePoint2: {fileID: 1632135428}
@@ -68425,6 +68441,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &2077637395
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68897,6 +68914,7 @@ MonoBehaviour:
   Shooted: 0
   bulletPrefab: {fileID: 3109997235097872882, guid: 41f754231f59db24f9e95213283d3f87,
     type: 3}
+  bulletPrefab2: {fileID: 0}
   firePoint: {fileID: 620580751}
   FullAutoFirePoint1: {fileID: 1981626105}
   FullAutoFirePoint2: {fileID: 1472381359}
@@ -78411,6 +78429,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &1154632181653044225
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78510,6 +78529,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &1154632182087731196
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78592,6 +78612,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &1154632182174105895
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78702,6 +78723,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &1154632182956262433
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -78817,6 +78839,7 @@ MonoBehaviour:
   playerX: 0
   medaparts: []
   medabot: {fileID: 0}
+  thisMiniParts: {fileID: 0}
 --- !u!65 &1154632183087467653
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -96115,6 +96138,8 @@ MonoBehaviour:
   Shooted: 0
   bulletPrefab: {fileID: 3109997235097872882, guid: 68d3916040a635d4e8af37b259627198,
     type: 3}
+  bulletPrefab2: {fileID: 3109997235097872882, guid: 41f754231f59db24f9e95213283d3f87,
+    type: 3}
   firePoint: {fileID: 1154632182331272890}
   FullAutoFirePoint1: {fileID: 1154632182965105415}
   FullAutoFirePoint2: {fileID: 1154632182777049638}
@@ -100947,6 +100972,7 @@ MonoBehaviour:
   Shooted: 0
   bulletPrefab: {fileID: 3109997235097872882, guid: 41f754231f59db24f9e95213283d3f87,
     type: 3}
+  bulletPrefab2: {fileID: 0}
   firePoint: {fileID: 1599350825}
   FullAutoFirePoint1: {fileID: 960183571}
   FullAutoFirePoint2: {fileID: 1689807920}
