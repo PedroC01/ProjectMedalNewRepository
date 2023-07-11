@@ -48,8 +48,14 @@ public class NewPlayerSideMenu : MonoBehaviour
 
     //Por implementar:---------------
     public GameObject panelColorSelect;
-    public List<GameObject> colorImages = new List<GameObject>();//esq dir devera mudar cor selecionada e acutalizar lista
-    public List<Color> listColors = new List<Color>();//list Sprite para mudar cor visivel em img e qual sera usada in game
+
+
+
+
+
+    //----------------Listas para Mudar----------------------------------------------------------------------------------------------------------
+    public List<GameObject> ListMedabotsImage = new List<GameObject>();//esq dir devera mudar cor selecionada e acutalizar lista
+    public List<int> listColorsNumber = new List<int>();//list Sprite para mudar cor visivel em img e qual sera usada in game
     int actualIndexColorSelect = 0;
 
 
@@ -67,94 +73,13 @@ public class NewPlayerSideMenu : MonoBehaviour
     }
 
 
-    void RightOption()
-    {
-        Debug.Log("NextOption");
-        selectOption++;
-        //Caso chegemos a ultima opçáo
-        if (selectOption >= prefabsMedaBots.Count)
-        {
-            selectOption = 0;
-        }
-        UpdateCharacterShow(selectOption);
-    }
-    public void LeftOption()
-    {
-        Debug.Log("BackOption");
-        selectOption--;
-        //Caso chegemos a ultima opçáo
-        if (selectOption < 0)
-        {
-            selectOption = prefabsMedaBots.Count - 1;
-        }
-        UpdateCharacterShow(selectOption);
-    }
 
-
-    public void UpdateCharacterShow(int index)
-    {
-        charSelected = index;
-        ImgInMenu.sprite = prefabsMedaBots[index].GetComponent<Image>().sprite;//funciona mas esta invisivel?
-        //Actualizar Index
-        //txtPlayerIndex.text = playerIndexUsingThis.ToString();
-        if (playerIndexUsingThis == 0)
-        {
-            txtPlayerIndex.text = "Player One";
-        }
-        else if (playerIndexUsingThis == 1)
-        {
-            txtPlayerIndex.text = "Player Two";
-        }
-        //Actualizar MedaBotName
-        CharName.text = prefabsMedaBots[index].GetComponent<SelectedMedaBotFromMenu>().CharacterName;
-
-    }
-
-    //Sera necessáriooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo e acrescentar cores, sera chamado quando Ready!
-    void SendCharSelectInfoToPlayrMedabotSelected(int index)
-    {              
-        playerInputUsingThis.gameObject.GetComponent<PlayerMedabotSelected>().CharacterName = prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().CharacterName;
-        playerInputUsingThis.gameObject.GetComponent<PlayerMedabotSelected>().prefabCharacterSlected = prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().prefabCharacter;
-        playerInputUsingThis.gameObject.GetComponent<PlayerMedabotSelected>().imgMedaInGame = prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().imgMedaBig;
-        //prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().medaColor = colorImages[0].GetComponent<Image>().color;//cor assim?
-        playerInputUsingThis.gameObject.GetComponent<PlayerMedabotSelected>().medaColor = prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().medaColor;
-       //Falta aqui agora enviar tambem a color info!
-       VersusManager.instance.amountReady++;
-    }
     void UnReady()
     {
         VersusManager.instance.amountReady--;
     }
- 
 
-    IEnumerator DelayInput()
-    {
-        inptEnable = false;
-        yield return new WaitForSeconds(0.3f);
-        inptEnable = true;
-    }
-
-
-    //Chamadas de sons, testar depois com audio.
-    void CallNavigateSound()
-    {
-        //  navigateSound.Play();
-    }
-    void CallEnterSound()
-    {
-        //  enterSound.Play();
-    }
-    void CallReadySound()
-    {
-        // readySound.Play();
-    }
-    void CallUnReadySound()
-    {
-        //  unReadySound.Play();
-    }
-
- 
-
+    //WHAT BT'S DO!!!!!!
     void Update()
     {
         if (!inptEnable) { return; }
@@ -200,7 +125,7 @@ public class NewPlayerSideMenu : MonoBehaviour
                     //trocar champion se estiver na 1 opçao das stas
                     if (ArrowPositionSelect == 0)//0 = em cima champ select
                     {
-                        LeftOption();
+                      //  LeftOption();
                     }
                 }
                 //
@@ -222,7 +147,7 @@ public class NewPlayerSideMenu : MonoBehaviour
                     //trocar champion se estiver na 1 opçao das stas
                     if (ArrowPositionSelect == 0)//0 = em cima champ select
                     {
-                        RightOption();
+                    //    RightOption();
                     }
 
                 }
@@ -243,18 +168,25 @@ public class NewPlayerSideMenu : MonoBehaviour
         {
             CallEnterSound();
 
+            #region Maneira Simples o que ocorre quando cada posicao de seta em X UI:
+            //Metabee:
+            //Agora a forçar metabee= pos[0], Random = pos[1], Rokusho = Pos[2]
+
+            //Metabee
             if (ArrowPositionSelect == 0 && selectingChamp)
             {
                 //ChampSelected->enviar para color select
                 //SendCharSelectInfoToPlayrMedabotSelected(charSelected);
+             
                 selectingChamp = false;
                 selectingColor = true;
                 panelColorSelect.SetActive(true);
                 StartCoroutine(DelayInput());
+                UpdateCharacterShow(0);//Metabee
+
                 SwitchUIArrowOFF();
                 return;
-            }
-            //Random select
+            }      //Random select
             if (ArrowPositionSelect == 1 && selectingChamp)
             {
                 StartCoroutine(DelayInput());
@@ -270,6 +202,22 @@ public class NewPlayerSideMenu : MonoBehaviour
                 SwitchUIArrowOFF();
                 return;
             }
+            //Rokusho
+            if (ArrowPositionSelect == 2 && selectingChamp)
+            {
+                //ChampSelected->enviar para color select
+                //SendCharSelectInfoToPlayrMedabotSelected(charSelected);
+              
+                selectingChamp = false;
+                selectingColor = true;
+                panelColorSelect.SetActive(true);
+                UpdateCharacterShow(1);//Rokusho
+
+                StartCoroutine(DelayInput());
+                SwitchUIArrowOFF();
+                return;
+            }
+      
             //Tem de ser com bt escondido ou deteta logo o enter, ou colocar delay de input novamente?
             if (selectingColor)
             {
@@ -278,23 +226,28 @@ public class NewPlayerSideMenu : MonoBehaviour
                 StartCoroutine(DelayInput());
                 panelColorSelect.SetActive(false);
                 //Guarda info diz ready
-                prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().medaColor  = colorImages[1].GetComponent<Image>().color;
+                prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().medaColor = ListMedabotsImage(1);//list imgage color
                 SendCharSelectInfoToPlayrMedabotSelected(charSelected);
                 panel_ReadyUnready.SetActive(true);
 
                 return;
             }
+
+
+            #endregion
+
+
         }
         //
         //
         //
-        //Cancel//voltar atraz-------------------------------------------------------
+        //Cancel//voltar atras-------------------------------------------------------
         if (playerInputUsingThis.actions["Cancel"].triggered)
         {
             if (selectingChamp)
             {
-               //se for playerinput index = 0 podera voltar ao menu anterior, mostrar menu tem a certeza?
-               //Garntir que nessa altura é destruido o outro pinput se voltar para tras
+                //se for playerinput index = 0 podera voltar ao menu anterior, mostrar menu tem a certeza?
+                //Garntir que nessa altura é destruido o outro pinput se voltar para tras
                 return;
             }
 
@@ -317,16 +270,212 @@ public class NewPlayerSideMenu : MonoBehaviour
                 panel_ReadyUnready.SetActive(false);
                 UnReady();
                 return;
-            }           
+            }
         }
-      SwitchUIArrow();
+        SwitchUIArrow();
     }
 
 
-    bool changeArrow = true;
-    void IncreasePlayerArrow()
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Corrigir o analogico ao mudar!!!!
+    //Corrigir o analogico ao mudar!!!!
+    //Corrigir o analogico ao mudar!!!!
+    //Corrigir o analogico ao mudar!!!!
+    //Corrigir o analogico ao mudar!!!!
+    //Corrigir o analogico ao mudar!!!!
+    IEnumerator DelayInput()
     {
-        if (ArrowPositionSelect >= 1)
+        inptEnable = false;
+        yield return new WaitForSeconds(0.3f);
+        inptEnable = true;
+    }
+    //Corrigir o analogico ao mudar!!!!
+    //Corrigir o analogico ao mudar!!!!
+    //Corrigir o analogico ao mudar!!!!
+    //Corrigir o analogico ao mudar!!!!
+    //Corrigir o analogico ao mudar!!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Sera necessáriooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo e acrescentar cores, sera chamado quando Ready!
+    //O Que envia a info!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //O Que envia a info!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //O Que envia a info!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //O Que envia a info!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //O Que envia a info!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    void SendCharSelectInfoToPlayrMedabotSelected(int index)
+    {              
+        playerInputUsingThis.gameObject.GetComponent<PlayerMedabotSelected>().CharacterName = prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().CharacterName;
+        playerInputUsingThis.gameObject.GetComponent<PlayerMedabotSelected>().prefabCharacterSlected = prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().prefabCharacter;
+        playerInputUsingThis.gameObject.GetComponent<PlayerMedabotSelected>().imgMedaInGame = prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().imgMedaBig;
+        //prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().medaColor = colorImages[0].GetComponent<Image>().color;//cor assim?
+        playerInputUsingThis.gameObject.GetComponent<PlayerMedabotSelected>().medaColor = prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().medaColor;
+       //Falta aqui agora enviar tambem a color info!
+       VersusManager.instance.amountReady++;
+    }
+    
+    
+    
+    
+    
+    
+    //
+    //
+    //Antes e melhor.................
+    //isto esta funcional, pois e por index!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Ver onde o chamo conforme left/right mas agr top/down!
+    public void UpdateCharacterShow(int index)
+    {
+        charSelected = index;
+        ImgInMenu.sprite = prefabsMedaBots[index].GetComponent<Image>().sprite;//funciona mas esta invisivel?
+        //Actualizar Index
+        if (playerIndexUsingThis == 0)
+        {
+            txtPlayerIndex.text = "Player One";
+        }
+        else if (playerIndexUsingThis == 1)
+        {
+            txtPlayerIndex.text = "Player Two";
+        }
+        //Actualizar MedaBot Name text
+        CharName.text = prefabsMedaBots[index].GetComponent<SelectedMedaBotFromMenu>().CharacterName;
+    }
+    //
+    //Escolher X Agora de Forma Obrigatoria:
+
+
+
+  
+
+
+
+
+
+
+
+
+    /*
+     
+         public void UpdateCharacterShow(int index)
+    {
+        charSelected = index;
+        ImgInMenu.sprite = prefabsMedaBots[index].GetComponent<Image>().sprite;//funciona mas esta invisivel?
+        //Actualizar Index
+        //txtPlayerIndex.text = playerIndexUsingThis.ToString();
+        if (playerIndexUsingThis == 0)
+        {
+            txtPlayerIndex.text = "Player One";
+        }
+        else if (playerIndexUsingThis == 1)
+        {
+            txtPlayerIndex.text = "Player Two";
+        }
+        //Actualizar MedaBotName
+        CharName.text = prefabsMedaBots[index].GetComponent<SelectedMedaBotFromMenu>().CharacterName;
+
+    }
+     */
+
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    //REVER
+    //REVER
+    //REVER
+    //REVER
+    //REVER
+    //REVER
+    //REVER
+    //REVER
+
+    void RightOption()
+    {
+        Debug.Log("NextOption");
+        selectOption++;
+        //Caso chegemos a ultima opçáo
+        if (selectOption >= prefabsMedaBots.Count)
+        {
+            selectOption = 0;
+        }
+        UpdateCharacterShow(selectOption);
+    }
+    public void LeftOption()
+    {
+        Debug.Log("BackOption");
+        selectOption--;
+        //Caso chegemos a ultima opçáo
+        if (selectOption < 0)
+        {
+            selectOption = prefabsMedaBots.Count - 1;
+        }
+        UpdateCharacterShow(selectOption);
+    }
+
+
+    //Rever a Representaçao das setas conforme input!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+    bool changeArrow = true;
+    void IncreasePlayerArrow()//--------------------------------------
+    {
+        if (ArrowPositionSelect <= 0)
+        {
+            ArrowPositionSelect = 2;
+        }
+        else
+        {
+            ArrowPositionSelect--;
+        }
+
+
+      /*  if (ArrowPositionSelect >= 2)
+        {
+            ArrowPositionSelect = 0;
+        }
+        else
+        {
+            ArrowPositionSelect++;
+        }*/
+    }
+    void DecreasePlayerArrow()//-----------------------------------------------------------
+    {
+        if (ArrowPositionSelect >= 2)
         {
             ArrowPositionSelect = 0;
         }
@@ -334,19 +483,27 @@ public class NewPlayerSideMenu : MonoBehaviour
         {
             ArrowPositionSelect++;
         }
-    }
-    void DecreasePlayerArrow()
-    {
+
+        /*
         if (ArrowPositionSelect <= 0)
         {
-            ArrowPositionSelect = 1;
+            ArrowPositionSelect = 2;
         }
         else
         {
             ArrowPositionSelect--;
-        }
-
+        }*/
     }
+
+   
+
+
+
+
+
+
+
+
     //Em update ou chamar apos cada mudança, sempre que playerActualArrowState for alterado chama-lo SwitchUIArrow(playerActualArrowState);
     void SwitchUIArrow()
     {
@@ -386,41 +543,93 @@ public class NewPlayerSideMenu : MonoBehaviour
 
     }
 
+
+
+
+    //---------ok
     void ColorChoicesInit()
     {
-        for (int i = 0; i < colorImages.Count; i++)
+        for (int i = 0; i < ListMedabotsImage.Count; i++)
         {
-            colorImages[i].gameObject.GetComponent<Image>().color = listColors[i];
+            ListMedabotsImage[i].gameObject.GetComponent<Image>() = listColorsNumber[i];
         }
     }
     void ColorChoicesUpdateRight()
     {
         List<Color> originalColors = new List<Color>();
-        foreach (var image in colorImages)
+        foreach (var image in ListMedabotsImage)
         {
             originalColors.Add(image.gameObject.GetComponent<Image>().color);
         }
-        for (int i = 0; i < colorImages.Count; i++)
+        for (int i = 0; i < ListMedabotsImage.Count; i++)
         {
             int newColorIndex = (i + 1) % originalColors.Count;
-            colorImages[i].gameObject.GetComponent<Image>().color = originalColors[newColorIndex];
+            ListMedabotsImage[i].gameObject.GetComponent<Image>().color = originalColors[newColorIndex];
         }
     }
-
     void ColorChoicesUpdateLeft()
     {
         List<Color> originalColors = new List<Color>();
-        foreach (var image in colorImages)
+        foreach (var image in ListMedabotsImage)
         {
             originalColors.Add(image.gameObject.GetComponent<Image>().color);
         }
 
-        for (int i = 0; i < colorImages.Count; i++)
+        for (int i = 0; i < ListMedabotsImage.Count; i++)
         {
             int newColorIndex = (i - 1 + originalColors.Count) % originalColors.Count;
-            colorImages[i].gameObject.GetComponent<Image>().color = originalColors[newColorIndex];
+            ListMedabotsImage[i].gameObject.GetComponent<Image>().color = originalColors[newColorIndex];
         }
     }
- 
+    //---------ok
+
+
+    //FIM SOM IMPLEMENTAR NOUTRO SCRIPT
+    /// <summary>
+    /// Colocar sound manager para pedro mais easy para sound calls!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  ***** !!!!!!!!!!!!!!!!!!!!!!
+    /// </summary>
+    //Chamadas de sons, testar depois com audio.
+    //Chamadas de sons, testar depois com audio.
+    //Chamadas de sons, testar depois com audio.
+    //Chamadas de sons, testar depois com audio.
+    //Chamadas de sons, testar depois com audio.
+    //Chamadas de sons, testar depois com audio.
+    #region Trocar para soundManagerUI()!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ******1!!!!!+****!*!!*!*!*!!**!
+    void CallNavigateSound()
+    {
+        //  navigateSound.Play();
+    }
+    void CallEnterSound()
+    {
+        //  enterSound.Play();
+    }
+    //Enter
+    void CallReadySound()
+    {
+        // readySound.Play();
+    }
+    //back
+    void CallUnReadySound()
+    {
+        //  unReadySound.Play();
+    }
+
+
+    //--------------------------------------------------------------------Ainda por confirmar, e necessário!!!!!!
+
+    #region Call Menu Sounds
+    //0 = menu base sound, 1= Versus Sound!
+    [Space(5)]
+    [Header("0 = MenuBase Sound, 1 = Versus Sound, etc")]
+    public List<AudioSource> listMenuSounds = new List<AudioSource>(); //Colocar os sons nesta list e chamar com metodo abaixo via codigo: MenuSoundsIndex(int musicIndex)
+
+    //int 0 = menu int 1 = versus
+    void MenuSoundsIndex(int soundIndex)
+    {
+         listMenuSounds[soundIndex].Play();
+    }
+    #endregion
+    #endregion
+
 
 }

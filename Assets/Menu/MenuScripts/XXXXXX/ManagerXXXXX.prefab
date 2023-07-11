@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8227854966223882847}
   - component: {fileID: 8227854966223882844}
   - component: {fileID: 950097528}
+  - component: {fileID: 1039591936}
   m_Layer: 0
   m_Name: ManagerXXXXX
   m_TagString: Untagged
@@ -58,10 +59,10 @@ MonoBehaviour:
   m_JoinAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Join
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 46c20f79-a86c-4f44-a798-d22ed14541ef
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -89,7 +90,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201dce1bbe49b4e4a9dcc388ac80368b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefabXXXX: {fileID: 2554914994253204547, guid: 852d04ceaf770f64e98ad5b3f728ecd6, type: 3}
+  MiddleMenu: {fileID: 8187132655829063017, guid: 38b9dca23c8a4104884eb1a7fa13f7e1,
+    type: 3}
+  PlayerMenuPrefab: {fileID: 2554914994253204547, guid: 852d04ceaf770f64e98ad5b3f728ecd6,
+    type: 3}
+  countdownText: {fileID: 0}
+  LoadBar: {fileID: 0}
   listJoinedPlayers: []
-  NextSceneName: InGame
   amountReady: 0
+--- !u!114 &1039591936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8227854966223882843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 595b24388f4689a459e6ddbcfe49aab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMenuScene: StartMenuFinal
+  GameScene: InGame

@@ -14,12 +14,15 @@ public class VersusManager : MonoBehaviour
 
     public GameObject MiddleMenu;
 
+    //Singleton:
     void Awake()
     {
         instance = this;//singleton!
         Debug.Log("Queremos dont destroy on load? ou queremos destruir e ao voltar menu refaz?!  confirmar depois e rever compotamentos!!!!");
        DontDestroyOnLoad(this);
     }
+    //
+    //
     [SerializeField] GameObject PlayerMenuPrefab;
     [Space(2)]
     [Header("CountDown And LoadBar:")]
@@ -109,6 +112,19 @@ public class VersusManager : MonoBehaviour
         }
     }
 
+
+
+
+
+
+
+
+
+    //Not working
+    //Not working
+    //Not working
+    //Not working
+    //Not working
     //Not working
     private IEnumerator LoadNextSceneWithCountdown()
     {

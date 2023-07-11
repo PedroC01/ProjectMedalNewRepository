@@ -6,5 +6,5 @@ public class SelectedMedaBotFromMenu : MonoBehaviour
     public GameObject prefabCharacter;
     public Sprite imgMedaBig;
     public Sprite imgMedaSmall;
-    public Color medaColor;
+    public int medaColor;
 }
