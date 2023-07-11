@@ -29,7 +29,7 @@ public class EndRound : MonoBehaviour
             currentTimeText.text = currentTime.ToString();
             if (currentTime <= 0)
             {
-                Application.Quit();
+              //  Application.Quit();
             }
             yield return new WaitForSecondsRealtime(1);
         }
