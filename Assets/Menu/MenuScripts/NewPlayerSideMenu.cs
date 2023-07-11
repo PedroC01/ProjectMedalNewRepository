@@ -226,7 +226,21 @@ public class NewPlayerSideMenu : MonoBehaviour
                 StartCoroutine(DelayInput());
                 panelColorSelect.SetActive(false);
                 //Guarda info diz ready
-                prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().medaColor = ListMedabotsImage(1);//list imgage color
+                //------
+                //------
+                //-------
+                //------
+                //------
+                //-------//------
+                //------
+                //-------//------
+                //------
+                //-------//------
+                //------
+                //-------//------
+                //------
+                //-------
+                // prefabsMedaBots[charSelected].GetComponent<SelectedMedaBotFromMenu>().medaColor = ListMedabotsImage(1);//list imgage color
                 SendCharSelectInfoToPlayrMedabotSelected(charSelected);
                 panel_ReadyUnready.SetActive(true);
 
@@ -546,12 +560,62 @@ public class NewPlayerSideMenu : MonoBehaviour
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //---------ok
     void ColorChoicesInit()
     {
         for (int i = 0; i < ListMedabotsImage.Count; i++)
         {
-            ListMedabotsImage[i].gameObject.GetComponent<Image>() = listColorsNumber[i];
+            //------
+            //------
+            //-------
+            //------
+            //------
+            //-------//------
+            //------
+            //-------//------
+            //------
+            //-------//------
+            //------
+            //-------//------
+            //------
+            //-------
+           // ListMedabotsImage[i].gameObject.GetComponent<Image>() = listColorsNumber[i];
         }
     }
     void ColorChoicesUpdateRight()
@@ -581,6 +645,34 @@ public class NewPlayerSideMenu : MonoBehaviour
             ListMedabotsImage[i].gameObject.GetComponent<Image>().color = originalColors[newColorIndex];
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //---------ok
 
 
