@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 56477566013b5ea408e35ee26579f890,
     type: 3}
-  m_NotificationBehavior: 2
+  m_NotificationBehavior: 3
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -192,7 +192,7 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 80ebeed7-e866-415d-9e92-20a6fe64b43d
     m_ActionName: Player2UI/TrackedDeviceOrientation
-  m_NeverAutoSwitchControlSchemes: 1
+  m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player1UI
   m_SplitScreenIndex: -1
@@ -232,3 +232,4 @@ MonoBehaviour:
   imgMedaInGame: {fileID: 0}
   pInput: {fileID: 0}
   pInputIndex: 0
+  medaColor: {r: 0, g: 0, b: 0, a: 0}
