@@ -108,7 +108,7 @@ public class VersusManager : MonoBehaviour
             StartCoroutine(LoadNextSceneWithCountdown());
             countdownText.gameObject.SetActive(false);
             LoadBar.gameObject.SetActive(false);
-            ScenesManager.instance.LoadVersus();
+            ScenesManagerController.instance.LoadVersus();
         }
     }
 
@@ -138,7 +138,7 @@ public class VersusManager : MonoBehaviour
 
             if (!isLoading)
             {
-                asyncOperation =  SceneManager.LoadSceneAsync(ScenesManager.instance.GameScene);
+                asyncOperation =  SceneManager.LoadSceneAsync(ScenesManagerController.instance.GameScene);
                 asyncOperation.allowSceneActivation = false;
                 isLoading = true;
             }

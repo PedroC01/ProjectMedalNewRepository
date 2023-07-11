@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ScenesManager : MonoBehaviour
+public class ScenesManagerController : MonoBehaviour
 {
-    public static ScenesManager instance;
+    public static ScenesManagerController instance;
     private void Awake()
     {
         instance = this;
