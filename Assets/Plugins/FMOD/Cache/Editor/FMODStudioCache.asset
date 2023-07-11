@@ -393,10 +393,10 @@ MonoBehaviour:
   Path: FmodFolderProjectMedal/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638239288328363012
+  lastModified: 638246206668877531
   FileSizes:
   - Name: Desktop
-    Value: 1960896
+    Value: 2940864
   Exists: 1
 --- !u!114 &-308462318287087330
 MonoBehaviour:
@@ -469,13 +469,42 @@ MonoBehaviour:
   - {fileID: 8061786589422794016}
   - {fileID: -718834059384107217}
   - {fileID: -9025812044510961628}
+  - {fileID: 379640465967745710}
+  - {fileID: 8642374894643737527}
   EditorParameters: []
   MasterBanks:
   - {fileID: -400167153326446528}
   StringsBanks:
   - {fileID: 6864873817982603600}
-  cacheTime: 638239288328383011
+  cacheTime: 638246206668877531
   cacheVersion: 131601
+--- !u!114 &379640465967745710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Main Menu/BGM Menu
+  m_EditorClassIdentifier: 
+  Path: event:/Main Menu/BGM Menu
+  Guid:
+    Data1: -1129748385
+    Data2: 1256313470
+    Data3: -1780089183
+    Data4: 1343163905
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2168909266211624326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,10 +709,10 @@ MonoBehaviour:
   Path: FmodFolderProjectMedal/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638239288328383011
+  lastModified: 638246206668877531
   FileSizes:
   - Name: Desktop
-    Value: 2158
+    Value: 2260
   Exists: 1
 --- !u!114 &6931961613168792287
 MonoBehaviour:
@@ -811,6 +840,33 @@ MonoBehaviour:
     Data2: 1224310860
     Data3: -371719798
     Data4: 1521626275
+  Banks:
+  - {fileID: -400167153326446528}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8642374894643737527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/ChangeLockOn
+  m_EditorClassIdentifier: 
+  Path: event:/UI/ChangeLockOn
+  Guid:
+    Data1: 1232380036
+    Data2: 1156734425
+    Data3: 736570240
+    Data4: -1781870941
   Banks:
   - {fileID: -400167153326446528}
   IsStream: 0

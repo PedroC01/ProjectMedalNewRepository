@@ -28,6 +28,8 @@ public class UIbuttons : MonoBehaviour
     public TMP_Text westTimeText; // TMP_Text for West ability time
     public TMP_Text rocketTimeText; // TMP_Text for Rocket ability time
     public TMP_Text dashTimeText;
+    public TMP_Text SmgBulletsText;
+    public TMP_Text RevolverBulletsText;
     private float eastRechargePercentage = 0f; // Current recharge percentage for East ability
     private float westRechargePercentage = 0f; // Current recharge percentage for West ability
     private float rocketRechargePercentage = 0f; // Current recharge percentage for Rocket ability
@@ -68,6 +70,9 @@ public class UIbuttons : MonoBehaviour
         attackReadySoundInstanceWest = FMODUnity.RuntimeManager.CreateInstance(attackReady);
         attackReadySoundInstanceRocket = FMODUnity.RuntimeManager.CreateInstance(attackReady);
 
+        SmgBulletsText.text=sh.magSizeFullAuto.ToString()+"/"+sh.MaxMagFullAuto.ToString();
+        RevolverBulletsText.text = sh.bulletsInMagazineRev.ToString() + "/" + sh.maxMagazineSizeRevolver.ToString();
+
     }
 
     // Update is called once per frame
@@ -80,7 +85,8 @@ public class UIbuttons : MonoBehaviour
         eastTimeText.gameObject.SetActive(timerEast > 0);
         eastSlider.maxValue = rechargeTimeEast;
         eastSlider.value = sh.TimerForRechargeEast;
-
+        SmgBulletsText.text = sh.magSizeFullAuto.ToString() + "/" + sh.MaxMagFullAuto.ToString();
+        RevolverBulletsText.text = sh.bulletsInMagazineRev.ToString() + "/" + sh.maxMagazineSizeRevolver.ToString();
         if (sh.TimerForRechargeEast <= 0f)
         {
             coverObjectEast.SetActive(false);

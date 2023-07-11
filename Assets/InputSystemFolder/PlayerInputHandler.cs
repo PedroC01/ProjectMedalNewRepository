@@ -28,7 +28,8 @@ public class PlayerInputHandler : MonoBehaviour
     public PlayerHealth ph;
     public LockOn LO;
     private OverrideInput OI;
-
+    private BattleManager bm;
+    public static bool play;
     void Start()
     {
         playerInput=GetComponent<PlayerInput>();
@@ -42,6 +43,9 @@ public class PlayerInputHandler : MonoBehaviour
         ph = thisPlayer.GetComponent<PlayerHealth>();
         LO = thisPlayer.GetComponent<LockOn>();
         OI = thisPlayer.GetComponent<OverrideInput>();
+        bm= FindObjectOfType<BattleManager>();
+     
+   
     }
   
     void Update()
@@ -54,16 +58,17 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnLeftTriggerPressed(CallbackContext context)
     {
-
-        if (context.phase == InputActionPhase.Started)
+        if (play == true)
         {
-            leftTriggerPressed = true;
+            if (context.phase == InputActionPhase.Started)
+            {
+                leftTriggerPressed = true;
+            }
+            else if (context.phase == InputActionPhase.Canceled)
+            {
+                leftTriggerPressed = false;
+            }
         }
-        else if (context.phase == InputActionPhase.Canceled)
-        {
-            leftTriggerPressed = false;
-        }
-
 
     }
 
@@ -71,13 +76,16 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnRightTriggerPressed(CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started)
+        if (play == true)
         {
-            rightTriggerPressed = true;
-        }
-        else if (context.phase == InputActionPhase.Canceled)
-        {
-            rightTriggerPressed = false;
+            if (context.phase == InputActionPhase.Started)
+            {
+                rightTriggerPressed = true;
+            }
+            else if (context.phase == InputActionPhase.Canceled)
+            {
+                rightTriggerPressed = false;
+            }
         }
     }
 
@@ -85,38 +93,52 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void CheckCombo()
     {
-        if (leftTriggerPressed && rightTriggerPressed)
+        if (play == true)
         {
-            PerformComboAction();
+            if (leftTriggerPressed && rightTriggerPressed)
+            {
+                PerformComboAction();
+            }
         }
     }
 
     private void PerformComboAction()
     {
-        if(ph.canGoBerserk == true)
+        if (play == true)
         {
-            MpC.UseMedaForce();
-            ph.canGoBerserk = false;
-        }
- 
+            if (ph.canGoBerserk == true)
+            {
+                MpC.UseMedaForce();
+                ph.canGoBerserk = false;
+            }
 
+        }
     }
 
 
     public void OnNorth(CallbackContext context)
     {
-        OI?.OnNorth();
+        if (play == true)
+        {
+            OI?.OnNorth();
+        }
     }
 
 
     public void OnMove(CallbackContext context)
     {
-        pMovement?.OnMove(context.ReadValue<Vector2>());
+        if (play == true)
+        {
+            pMovement?.OnMove(context.ReadValue<Vector2>());
+        }   
     }
     public void OnJump(CallbackContext context)
     {
 
-        pMovement?.OnJump();
+        if (play == true)
+        {
+            pMovement?.OnJump();
+        }
 
     }
  
@@ -129,35 +151,39 @@ public class PlayerInputHandler : MonoBehaviour
     }*/
     public void OnEast(CallbackContext context)
     {
-        if (context.started)
+        if (play == true)
         {
-           OI?.OnEast();
+            if (context.started)
+            {
+                OI?.OnEast();
+            }
+            if (context.performed)
+            {
+                OI?.OnEast();
+            }
+            if (context.canceled)
+            {
+                OI?.OnEastRelease();
+            }
         }
-        if (context.performed)
-        {
-            OI?.OnEast();
-        }
-        if (context.canceled)
-        {
-            OI?.OnEastRelease();
-        }
-
     }
     public  void OnWest(CallbackContext context)
     {
-        if (context.started)
+        if (play == true)
         {
-            OI?.OnWest();
+            if (context.started)
+            {
+                OI?.OnWest();
+            }
+            if (context.performed)
+            {
+                OI?.OnWest();
+            }
+            if (context.canceled)
+            {
+                OI?.OnWestRelease();
+            }
         }
-        if (context.performed)
-        {
-            OI?.OnWest();
-        }
-        if (context.canceled)
-        {
-            OI?.OnWestRelease();
-        }
-       
         
     }
 
@@ -171,13 +197,19 @@ public class PlayerInputHandler : MonoBehaviour
     }*/
     public void L1(CallbackContext context)
     {
-        hold = context.action.IsPressed();
-        pMovement?.R1(hold);
+        if (play == true)
+        {
+            hold = context.action.IsPressed();
+            pMovement?.R1(hold);
+        }
       
     }
     public void R1(CallbackContext context)
     {
-        pMovement?.OnDash();
+        if (play == true)
+        {
+            pMovement?.OnDash();
+        }
     }
 
     public void LockOnOrNot(CallbackContext context)
@@ -186,19 +218,33 @@ public class PlayerInputHandler : MonoBehaviour
     }
     public void DPaddUp(CallbackContext context)
     {
-        LO?.DPadUp();
+        if (play == true)
+        {
+            LO?.DPadUp();
+        }
     }
     public void DPaddLeft(CallbackContext context)
     {
-        LO?.DPadLeft();
+        if (play == true)
+        {
+            LO?.DPadLeft();
+        }
     }
     public void DPaddRight(CallbackContext context)
     {
-       LO?.DPadRight();
+        if (play == true)
+        {
+            LO?.DPadRight();
+        }
     }
     public void DPaddDown(CallbackContext context)
     {
-       LO?.DPadDown();
+        if (play == true)
+        {
+            LO?.DPadDown();
+        }
+        
+      
     }
    
 }

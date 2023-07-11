@@ -30,7 +30,7 @@ TagManager:
   - FloorCheck
   - TestDoll
   - InvisiWalls
-  - Cinemachine
+  - CinemachineP1
   - ball
   - CinemachineBound
   - PostProcessLayer
@@ -39,8 +39,8 @@ TagManager:
   - Player2
   - Player1Bullets
   - Player2Bullets
-  - 
-  - 
+  - FinalCamera
+  - CinemachineP2
   - 
   - 
   - 

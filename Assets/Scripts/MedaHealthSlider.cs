@@ -1,28 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MedaHealthSlider : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject medapart;
+  //  public GameObject medapart;
     public float medaPartEnergy;
     public Slider partEnergySlider;
     public float percentageValue;
     public Gradient gradient;
     public float maxEnergy;
     public Image fill;
-    private float current;
+    public float current;
     private float next;
     public float sliderAnimationSpeed=1;
+    private PlayerHealth ph;
+    public int MedaPartNum;
+    public GameObject Player;
+    private GameObject Medapart;
+    public  TMP_Text MedapartEnergyText;
     void Start()
     {
-        medaPartEnergy= medapart.GetComponent<MedaPartScript>().partEnergy;
-        maxEnergy = medaPartEnergy;
+        
+            ph=Player.GetComponent<PlayerHealth>();
+        this.Medapart = ph.MedaParts[this.MedaPartNum];
+        this.medaPartEnergy = ph.MedaParts[this.MedaPartNum].GetComponent<MedaPartScript>().partEnergy;
+        //medaPartEnergy= medapart.GetComponent<MedaPartScript>().partEnergy;
+        maxEnergy = (int)medaPartEnergy;
         this.partEnergySlider=GetComponent<Slider>();
-        this.partEnergySlider.value = medapart.GetComponent<MedaPartScript>().partEnergy;
+        this.partEnergySlider.value = Medapart.GetComponent<MedaPartScript>().partEnergy;
+        current = (int)maxEnergy;
+        next = (int)maxEnergy;
        fill.color= gradient.Evaluate(1f);
+        percentageValue = (this.partEnergySlider.value * 100) / maxEnergy;
     }
 
     // Update is called once per frame
@@ -30,18 +43,21 @@ public class MedaHealthSlider : MonoBehaviour
     {
         //  SetEnergy();
         
-        next = medapart.GetComponent<MedaPartScript>().partEnergy;
-        if (current != next)
+        next = this.Medapart.GetComponent<MedaPartScript>().partEnergy;
+        
+      if (percentageValue != next)
         {
-            current-=Time.deltaTime+sliderAnimationSpeed;
-            this.partEnergySlider.value = Mathf.Lerp(current, next, 1f);
-            if (current == next)
+            percentageValue-= Time.deltaTime+sliderAnimationSpeed;
+           
+            this.partEnergySlider.value = Mathf.Lerp(percentageValue, next, 1f);
+            if (percentageValue == next)
             {
-                current = next;
+                percentageValue = next;
             }
+            this.MedapartEnergyText.text = ((int)percentageValue).ToString() + "%";
         }
         
-        
+
         percentageValue = (this.partEnergySlider.value * 100) / maxEnergy;
         if(65 <= percentageValue)
         {

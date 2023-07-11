@@ -55,10 +55,7 @@ public class PlayerMovements : MonoBehaviour
     public bool closeRange = false;
 
     //Unity Events------------------------------
-    [SerializeField]
-    public UnityEvent On;
-    [SerializeField]
-    public UnityEvent Off;
+
     public bool IsMoving;
     public LayerMask obstacleLayerMask;
 
@@ -307,16 +304,7 @@ public class PlayerMovements : MonoBehaviour
 
 
         dist = Vector3.Distance(Enemy.transform.position, this.transform.position);
-        if (dist <= distClose)
-        {
-            closeRange = true;
-            On.Invoke();
-        }
-        else
-        {
-            closeRange = false;
-            Off.Invoke();
-        }
+       
         if (count == true)
         {
             countTime -= Time.deltaTime;
@@ -484,6 +472,7 @@ public class PlayerMovements : MonoBehaviour
                 KnockBack = true;
                 Debug.Log("Rocket");
                 knockbackDirection = ( onImpact- transform.position).normalized;
+                
                 this.m_Animator1.SetBool("KnockBack", true);
 
                 StartCoroutine(KnockbackCoroutine());
@@ -536,7 +525,7 @@ public class PlayerMovements : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * timeToRotateToImpact);
             if (KnockBack == true)
             {
-                Collider[] colliders = Physics.OverlapSphere(newPosition, 0.5f);
+                Collider[] colliders = Physics.OverlapSphere(newPosition, 1f);
                 foreach (Collider collider in colliders)
                 {
                     if (collider.CompareTag("InvisiWalls"))
@@ -558,11 +547,13 @@ public class PlayerMovements : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if (cancelKnockback)
         {
-            this.m_Animator1.SetTrigger("KnockBackHit");
-            yield break; 
+          //  this.m_Animator1.SetBool("KnockBackHit0",true);
+         //   yield break; 
+            
         }
         KnockBack = false;
         this.m_Animator1.SetBool("KnockBack", false);
+        //this.m_Animator1.SetBool("KnockBackHit0", false);
         isInvencible = false;
     }
 

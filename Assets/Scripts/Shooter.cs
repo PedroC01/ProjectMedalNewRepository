@@ -46,7 +46,6 @@ public class Shooter : MonoBehaviour
     public Transform thisPlayer;
     [SerializeField]
     public UIbuttons ub;
-    public UIbuttons1 ub1;
     public float fireRateRevolver;
     public float fireRateFullAuto;
     public float delayFullAuto;
@@ -56,8 +55,8 @@ public class Shooter : MonoBehaviour
     public float smgDamage;
     public float revolverDamage;
     public int magSizeFullAuto;
-    private int MaxMagFullAuto;
-    private int bulletsInMagazineRev;
+    public int MaxMagFullAuto;
+    public int bulletsInMagazineRev;
     public int maxMagazineSizeRevolver = 6;
 
     [Header("Sounds")]

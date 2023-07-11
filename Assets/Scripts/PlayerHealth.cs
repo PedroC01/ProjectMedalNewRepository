@@ -29,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
     //private bool playedLegsDestroyedSound=false;
     private HashSet<int> destroyedParts = new HashSet<int>();
     public GameObject mbot;
-
+    public PlayerMovements pm;
     // Start is called before the first frame update
     void Start()
     {
@@ -96,7 +96,8 @@ public class PlayerHealth : MonoBehaviour
                 this.HeadTorsoHealth = part;
             }
         }
-    
+        this.pm = GetComponent<PlayerMovements>();
+   
     }
 
     // Update is called once per frame
@@ -110,10 +111,11 @@ public class PlayerHealth : MonoBehaviour
         HeadHealth = HeadTorsoHealth.GetComponent<MedaPartScript>().partEnergy;
         if (HeadHealth <= 0)
         {
-
+            pm.canMove = false;
+            pm.m_Animator1.SetBool("Lost",true); 
         }
 
-        //ativar medaforce se a media da vida passar x
+        //ativar medaforce se a media da vida passar x-*-------------------------------------------verify
         averageHealth = partsTotalHealth / (MedaParts.Length);
         if (averageHealth < lifePerToMedaforce)
         {
