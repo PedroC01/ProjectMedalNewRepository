@@ -121,14 +121,15 @@ public class Shooter : MonoBehaviour
         {
             aimTarget = FindObjectOfType<Player1Aim>().gameObject;
             bullet = bulletPrefab;
-
+            this.Enemy = FindObjectOfType<Player2>().gameObject;
         }
         else if (GetComponentInParent<Player2>() == true)
         {
             aimTarget = FindObjectOfType<Player2Aim>().gameObject;
             bullet= bulletPrefab2;
+            this.Enemy = FindObjectOfType<Player1>().gameObject;
         }
-        // this.Enemy = this.LO.Enemy.gameObject;
+         
      
         leftArmDownAimConstraint = leftArmDownObject.GetComponent<MultiAimConstraint>();
         rightArmDownAimConstraint = rightArmDownObject.GetComponent<MultiAimConstraint>();
@@ -394,7 +395,7 @@ public class Shooter : MonoBehaviour
     private IEnumerator FireFullAuto()
     {
        
-        while (shootFullAuto == true)
+        while (shootFullAuto == true && magSizeFullAuto > 0)
         {
             
             PM.playerSpeed = strafeSpeed;
