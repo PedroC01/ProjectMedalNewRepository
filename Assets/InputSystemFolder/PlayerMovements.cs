@@ -170,21 +170,14 @@ public class PlayerMovements : MonoBehaviour
     }
     public void OnDash()
     {
-        if (!isDashing)
+        
+            if (isGrounded == true && !isDashing&& canDash == true)
         {
-            if (isGrounded == true && canDash == true)
-            {
-                m_Animator1.SetBool("Dash", true);
-                dashDirection = transform.forward;
+            m_Animator1.SetBool("Dash", true);
+            dashDirection = transform.forward;
                 dash = true;
                 StartCoroutine(Dash());
             }
-        }
-        else
-        {
-            return;
-        }
-        
         
       
     }
