@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: d629637c8bbe7574b8829588ff101ad3
+guid: 35bae3c39d31b954c9c42842bcc4ff31
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
-      74: 5505670862351763837
-    second: 'Running '
+      74: -3554469013500874231
+    second: Flinch
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -19,8 +19,7 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
-    rigImportErrors: "Invalid copied Avatar Rig Configuration:\n\tNo human bone found.
-      Ensure both rig type match\n"
+    rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -28,43 +27,14 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: 'Running '
-      takeName: 'Running '
-      internalID: 0
-      firstFrame: 1
-      lastFrame: 40
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -124,9 +94,24 @@ ModelImporter:
       position: {x: 0.0015085493, y: 1.3829738, z: -0.00096047827}
       rotation: {x: 0.2526187, y: -0.0019644815, z: -0.65930253, w: 0.7081667}
       scale: {x: 1, y: 1, z: 1}
+    - name: Right_Leg_up
+      parentName: Base_Torso
+      position: {x: 0.14726233, y: 0.24586146, z: 0.058332957}
+      rotation: {x: -0.032869425, y: 0.8504124, z: -0.37923506, w: 0.36317915}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Right_Leg_Down
+      parentName: Right_Leg_up
+      position: {x: -0.38372293, y: -0.00039569577, z: -0.06194381}
+      rotation: {x: 0.97880954, y: 0.021613184, z: -0.20359321, w: 0.0038137522}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Right_Foot
+      parentName: Right_Leg_Down
+      position: {x: -0.80519646, y: -0.001638754, z: -0.086208194}
+      rotation: {x: 0.016648764, y: -0.016636793, z: -0.700693, w: 0.71307456}
+      scale: {x: 1, y: 1, z: 1}
     - name: Left_Leg_Up
       parentName: Base_Torso
-      position: {x: 0.16809013, y: -0.24737027, z: 0.013388582}
+      position: {x: 0.16809013, y: -0.2473703, z: 0.013388574}
       rotation: {x: -0.3787604, y: -0.3365954, z: 0.86026686, w: 0.056436066}
       scale: {x: 1, y: 1, z: 1}
     - name: Left_Leg_Down
@@ -138,21 +123,6 @@ ModelImporter:
       parentName: Left_Leg_Down
       position: {x: -0.80484414, y: -0.00030385287, z: 0.0857685}
       rotation: {x: 0.7037633, y: 0.7079986, z: -0.04168891, w: -0.041439526}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Right_Leg_up
-      parentName: Base_Torso
-      position: {x: 0.14726235, y: 0.24586149, z: 0.05833294}
-      rotation: {x: -0.03286942, y: 0.8504124, z: -0.37923506, w: 0.36317915}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Right_Leg_Down
-      parentName: Right_Leg_up
-      position: {x: -0.38372293, y: -0.00039569577, z: -0.06194381}
-      rotation: {x: 0.97880954, y: 0.021613184, z: -0.20359321, w: 0.0038137522}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Right_Foot
-      parentName: Right_Leg_Down
-      position: {x: -0.80519646, y: -0.001638754, z: -0.086208194}
-      rotation: {x: 0.016648764, y: -0.016636793, z: -0.700693, w: 0.71307456}
       scale: {x: 1, y: 1, z: 1}
     - name: Saia3
       parentName: Base_Torso
