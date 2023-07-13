@@ -152,19 +152,26 @@ public class Shooter : MonoBehaviour
 
     public void East()
     {
-        this.Shooted = true;
-        if (PM.closeRange == false)
-        {
-            if (Shooted == true && TimerForRechargeEast <= 0)
+           if (bulletsInMagazineRev > 0)
             {
-                leftArmDownAimConstraint.weight = 0;
-                leftArmUpAimConstraint.weight = 0;
-                StartCoroutine(Fire(fireRateRevolver));
-              return;
+
+                this.Shooted = true;
+                if (PM.closeRange == false)
+                {
+                    if (Shooted == true && TimerForRechargeEast <= 0)
+                    {
+                        leftArmDownAimConstraint.weight = 0;
+                        leftArmUpAimConstraint.weight = 0;
+                        StartCoroutine(Fire(fireRateRevolver));
+                        return;
+                    }
+
+                }
+
+
             }
-           
-        }
-        if (PM.closeRange == true)
+
+            if (PM.closeRange == true)
         {
             MeleeEast = true;
             m_Animator.SetTrigger("MeleeEast");
@@ -181,7 +188,8 @@ public class Shooter : MonoBehaviour
     /// </summary>
     public void West()
     {
-        if (rechargingWest==false)
+       
+        if(magSizeFullAuto > 0)
         {
             this.shootFullAuto = true;
             if (PM.closeRange == false)
@@ -193,20 +201,16 @@ public class Shooter : MonoBehaviour
                     return;
                 }
             }
-            if (PM.closeRange == true)
-            {
-                MeleeWest = true;
-                m_Animator.SetTrigger("MeleeWest");
-                return;
-            }
         }
-        else
+        if (PM.closeRange == true)
         {
+            MeleeWest = true;
+            m_Animator.SetTrigger("MeleeWest");
             return;
         }
-      
-      
-        
+
+
+
     }
 
     public void WestRelease()
@@ -344,10 +348,8 @@ public class Shooter : MonoBehaviour
 
     private IEnumerator Fire(float fireRate)
     {
-        
         while (Shooted && TimerForRechargeEast <= 0 && bulletsInMagazineRev > 0)
         {
-            
             PM.rb.velocity = Vector3.zero;
             PM.canMove = false;
             PM.horizontalInput.x = 0;
@@ -357,24 +359,23 @@ public class Shooter : MonoBehaviour
             lookat = LO.lockOnTarget.transform;
             aimTarget.transform.position = LO.lockOnTarget.transform.position;
 
-
-            ///here we mess with the IK-----------------------------------------------------------------------------
             if (RightSide == true)
             {
                 rightArmDownAimConstraint.weight = 1;
             }
-           
+
             m_Animator.SetBool("ShootingR", true);
+
             muzzleRev.Play();
             shootRevSoundInstance.start();
             GameObject newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
             newBullet.GetComponent<Bullet>().damagePerBullet = revolverDamage;
-            
+
             bulletsInMagazineRev--;
-            this.bulletsShotCount++;
-            if (bulletsInMagazineRev<=0)
+            bulletsShotCount++;
+            if (bulletsInMagazineRev <= 0)
             {
-                this.Shooted = false;
+                Shooted = false;
                 m_Animator.SetBool("ShootingR", false);
                 TimerForRechargeEast = rechargeTimeEast;
             }
@@ -383,20 +384,20 @@ public class Shooter : MonoBehaviour
                 lastBulletCrit = true;
                 newBullet.GetComponent<Bullet>().hasCrit = true;
             }
-            yield return new WaitForSeconds(fireRate);
+
+            yield return new WaitForSecondsRealtime(fireRate);
         }
+
         rightArmDownAimConstraint.weight = 0;
         PM.canMove = true;
         ResetBulletShotCount();
     }
 
 
-
-
     private IEnumerator FireFullAuto()
     {
        
-        while (shootFullAuto == true && magSizeFullAuto > 0)
+        while (shootFullAuto == true)
         {
             
             PM.playerSpeed = strafeSpeed;

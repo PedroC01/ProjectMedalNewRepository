@@ -92,7 +92,7 @@ public class PlayerMedapartsController : MonoBehaviour
         {
             enLockON = FindObjectOfType<Player1>().GetComponent<LockOn>();
         }
-        OI.GetComponent<OverrideInput>();
+        OI = GetComponent<OverrideInput>();
 
     }
     private void Start()
@@ -101,7 +101,7 @@ public class PlayerMedapartsController : MonoBehaviour
         playedLArmSound = false;
         playedLegSound = false;
 
-      
+       
         PM = GetComponent<PlayerMovements>();
         if (this.characterStatsSO.characterReferenceNumber == 1)
         {

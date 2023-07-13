@@ -79,11 +79,11 @@ public class UIbuttons : MonoBehaviour
     void Update()
     {
         // Handle Recharge East
-        eastSlider.maxValue = rechargeTimeEast;
-        eastSlider.value = Mathf.Clamp(rechargeTimeEast - sh.TimerForRechargeEast, 0f, rechargeTimeEast);
+    
+        eastSlider.value = Mathf.Clamp(sh.TimerForRechargeEast, 0f, rechargeTimeEast);
         timerEast = Mathf.CeilToInt(sh.TimerForRechargeEast);
         eastTimeText.text = timerEast.ToString();
-        eastTimeText.gameObject.SetActive(timerEast > 0);
+        eastTimeText.gameObject.SetActive(sh.TimerForRechargeEast > 0);
         SmgBulletsText.text = sh.magSizeFullAuto.ToString() + "/" + sh.MaxMagFullAuto.ToString();
         RevolverBulletsText.text = sh.bulletsInMagazineRev.ToString() + "/" + sh.maxMagazineSizeRevolver.ToString();
 
@@ -99,11 +99,11 @@ public class UIbuttons : MonoBehaviour
         }
 
         // Handle Recharge West
-        westSlider.maxValue = rechargeTimeWest;
-        westSlider.value = Mathf.Clamp(rechargeTimeWest - sh.TimerForRechargeWest, 0f, rechargeTimeWest);
+    
+        westSlider.value = Mathf.Clamp( sh.TimerForRechargeWest, 0f, rechargeTimeWest);
         timerWest = Mathf.CeilToInt(sh.TimerForRechargeWest);
         westTimeText.text = timerWest.ToString();
-        westTimeText.gameObject.SetActive(timerWest > 0);
+        westTimeText.gameObject.SetActive(sh.TimerForRechargeWest > 0);
 
         if (sh.TimerForRechargeWest <= 0f)
         {
@@ -117,11 +117,11 @@ public class UIbuttons : MonoBehaviour
         }
 
         // Handle Recharge Rocket
-        rocketSlider.maxValue = rechargeTimeRocket;
-        rocketSlider.value = Mathf.Clamp(rechargeTimeRocket - RL.TimerForRecharge, 0f, rechargeTimeRocket);
+   
+        rocketSlider.value = Mathf.Clamp(RL.TimerForRecharge, 0f, rechargeTimeRocket);
         timerRocket = Mathf.CeilToInt(RL.TimerForRecharge);
         rocketTimeText.text = timerRocket.ToString();
-        rocketTimeText.gameObject.SetActive(timerRocket > 0);
+        rocketTimeText.gameObject.SetActive(RL.TimerForRecharge > 0);
 
         if (RL.TimerForRecharge <= 0f)
         {
@@ -135,11 +135,11 @@ public class UIbuttons : MonoBehaviour
         }
 
         // Handle Recharge Dash
-        dashSlider.maxValue = rechargeTimeDash;
-        dashSlider.value = Mathf.Clamp(rechargeTimeDash - pm.dashCoolDown, 0f, rechargeTimeDash);
+   
+        dashSlider.value = Mathf.Clamp(pm.dashCoolDown, 0f, rechargeTimeDash);
         timerDash = Mathf.CeilToInt(pm.dashCoolDown);
         dashTimeText.text = timerDash.ToString();
-        dashTimeText.gameObject.SetActive(timerDash > 0);
+        dashTimeText.gameObject.SetActive(pm.dashCoolDown > 0);
 
         if (pm.dashCoolDown <= 0f)
         {

@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: d27e1539345078549899f9ea6aeb99be
+guid: dd6944bbdb79f894290647edcebcf0e0
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
   - first:
-      74: 2816758426054915535
-    second: Running 02
+      74: -2686773784002685997
+    second: KnockBack
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -18,7 +18,7 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
-    motionNodeName: 
+    motionNodeName: <Root Transform>
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 

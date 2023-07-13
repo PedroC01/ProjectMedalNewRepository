@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
-using UnityEditor.ShaderGraph;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
@@ -156,10 +155,7 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 OI?.OnEast();
             }
-            if (context.performed)
-            {
-                OI?.OnEast();
-            }
+          
             if (context.canceled)
             {
                 OI?.OnEastRelease();
@@ -174,10 +170,7 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 OI?.OnWest();
             }
-            if (context.performed)
-            {
-                OI?.OnWest();
-            }
+           
             if (context.canceled)
             {
                 OI?.OnWestRelease();
