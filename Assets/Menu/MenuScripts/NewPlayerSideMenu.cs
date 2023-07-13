@@ -88,7 +88,7 @@ public class NewPlayerSideMenu : MonoBehaviour
         //Aqui consoante o "state atual no menu a navegação deverá mudar "char select ou cores ou trocar entre estados de selecao(cores champ etc)
         if (playerInputUsingThis.actions["Navigate"].triggered)
         {
-            ScenesManagerController.instance.Play_MenuNavigateSound();
+            MainMenus.instance.Play_MenuNavigateSound();
 
             Vector2 inputDirection = playerInputUsingThis.actions["Navigate"].ReadValue<Vector2>();
 
@@ -167,7 +167,7 @@ public class NewPlayerSideMenu : MonoBehaviour
         //Enter:
         if (playerInputUsingThis.actions["Submit"].triggered)
         {
-            ScenesManagerController.instance.Play_MenuSubmitSound();
+            MainMenus.instance.Play_MenuSubmitSound();
 
             #region Maneira Simples o que ocorre quando cada posicao de seta em X UI:
             //Metabee:
@@ -259,13 +259,13 @@ public class NewPlayerSideMenu : MonoBehaviour
         //Cancel//voltar atras-------------------------------------------------------
         if (playerInputUsingThis.actions["Cancel"].triggered)
         {
-            ScenesManagerController.instance.Play_MenuCancelSound();
+            MainMenus.instance.Play_MenuCancelSound();
 
             if (selectingChamp)
             {
                 //se for playerinput index = 0 podera voltar ao menu anterior, mostrar menu tem a certeza?
                 //Garntir que nessa altura é destruido o outro pinput se voltar para tras
-
+             
 
                 return;
             }
