@@ -17,7 +17,8 @@ public class PlayerHealth : MonoBehaviour
    public float averageHealth;
     public GameObject HeadTorsoHealth;
     public float HeadHealth;
-    public float lifePerToMedaforce=30f;
+    public float lifePerToMedaforce;
+    private float AveragetoMeda;
     public bool canGoBerserk=false;//Can use MedaForce
     public float LowEnergyMark=0;
     public float LowEnergyMarkHead= 35;
@@ -95,6 +96,9 @@ public class PlayerHealth : MonoBehaviour
                 this.HeadTorsoHealth = part;
             }
         }
+        this.canGoBerserk = false;
+        partsTotalHealth -= 100;
+        AveragetoMeda = (lifePerToMedaforce * partsTotalHealth) / ((MedaParts.Length - 1)*100);
         this.pm = GetComponent<PlayerMovements>();
    
     }
@@ -102,26 +106,32 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         CheckLowEnergy();
-
 
         ////terminar o jogo
         HeadHealth = HeadTorsoHealth.GetComponent<MedaPartScript>().partEnergy;
         if (HeadHealth <= 0)
         {
             pm.canMove = false;
-            pm.m_Animator1.SetBool("Lost",true); 
+            pm.m_Animator1.SetBool("Lost", true);
         }
 
-        //ativar medaforce se a media da vida passar x-*-------------------------------------------verify
-        averageHealth = partsTotalHealth / (MedaParts.Length);
-        if (averageHealth < lifePerToMedaforce)
+        partsTotalHealth = 0; // Initialize the total health before the loop
+        foreach (GameObject part in this.MedaParts)
         {
-            canGoBerserk = true;
+            partsTotalHealth += part.GetComponent<MedaPartScript>().partEnergy;
         }
-        
+        partsTotalHealth -= 100;
+        this.averageHealth = partsTotalHealth / MedaParts.Length; // Calculate the average inside the loop
+
+        if (this.averageHealth < AveragetoMeda)
+        {
+            this.canGoBerserk = true;
+        }
     }
+
+
+
     private void CheckLowEnergy()
     {
         foreach (MedaPartScript medapart in medapartsScripts)

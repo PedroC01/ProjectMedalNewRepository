@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 using Unity.Mathematics;
+using UnityEngine.VFX;
 
 public class PlayerMovements : MonoBehaviour
 {
@@ -53,7 +54,7 @@ public class PlayerMovements : MonoBehaviour
     public float dist;
     public float distClose;
     public bool closeRange = false;
-
+    private bool collidingWithInivisi;
     //Unity Events------------------------------
 
     public bool IsMoving;
@@ -73,7 +74,7 @@ public class PlayerMovements : MonoBehaviour
     private PlayerMedapartsController pmc;
 
     public float recoveryTime = 2f;
-    
+    public GameObject dust;
     public int CheckIfCharacter;
     public bool canMove;
     public float timeToRotateToImpact;
@@ -82,6 +83,8 @@ public class PlayerMovements : MonoBehaviour
     private Vector3 knockbackDirection;
     public bool KnockBack;
     private Vector3 onImpact;
+    public bool jumpInactive;
+    public bool isAlreadyKnockingBack;
     private void Awake()
     {
         setupJump();
@@ -92,6 +95,7 @@ public class PlayerMovements : MonoBehaviour
     {
         this.rb = GetComponent<Rigidbody>();
         this.LO = GetComponent<LockOn>();
+        jumpInactive = false;
         if (pmc.characterStatsSO.characterReferenceNumber == 1)
         {
             this.shooter = GetComponentInChildren<Shooter>();
@@ -121,6 +125,7 @@ public class PlayerMovements : MonoBehaviour
 
         // Store the initial rotation of the character
         initialRotation = transform.rotation;
+        collidingWithInivisi = false;
 
     }
 
@@ -153,6 +158,7 @@ public class PlayerMovements : MonoBehaviour
     }
     public void OnJump()
     {
+        if (jumpInactive == false) { 
         if (canJump)
         {
 
@@ -165,8 +171,12 @@ public class PlayerMovements : MonoBehaviour
             }
 
         }
-        // StartCoroutine(Jump(this.jumped));
-
+            // StartCoroutine(Jump(this.jumped));
+        }
+        else
+        {
+            return;
+        }
     }
     public void OnDash()
     {
@@ -349,9 +359,7 @@ public class PlayerMovements : MonoBehaviour
             //this.rb.AddForce(transform.forward * playerSpeed, ForceMode.Force);
 
         }
-     
-
-
+       
 
         handleGravity();
 
@@ -456,9 +464,16 @@ public class PlayerMovements : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Floor") && isGrounded == false)
-        {
-            
+        { 
+
             isGrounded = true;
+
+            if (isGrounded == true)
+            {
+                Vector3 dustpos = new Vector3(this.transform.position.x, 0, this.transform.position.z);
+                Quaternion zeroRotation = Quaternion.identity;
+                GameObject dust1 = Instantiate(dust, dustpos, zeroRotation);
+            }
             jumped = false;
             canJump = true;
             m_Animator1.SetTrigger("Landed");
@@ -482,7 +497,7 @@ public class PlayerMovements : MonoBehaviour
                 
                 this.m_Animator1.SetBool("KnockBack", true);
 
-                StartCoroutine(KnockbackCoroutine());
+                if(isAlreadyKnockingBack==false)StartCoroutine(KnockbackCoroutine());
 
 
             }
@@ -499,70 +514,89 @@ public class PlayerMovements : MonoBehaviour
          
 
         }
+        if (collision.collider.CompareTag("InvisiWalls"))
+        {
+            collidingWithInivisi = true;
+        }
+        else
+        {
+            collidingWithInivisi = false;
+        }
 
     }
 
     public IEnumerator KnockbackCoroutine()
     {
-        bool cancelKnockback = false;
-        float timer = 0f;
-        KnockBack = true;
-
-        // Calculate the rotation needed to face the hit position
-        Quaternion targetRotation = Quaternion.LookRotation(knockbackDirection, Vector3.up);
-
-        while (timer < knockbackDuration)
+        if (isAlreadyKnockingBack == false)
         {
-            // Move the player in the opposite direction of knockbackDirection
-            Vector3 newPosition = transform.position + (-knockbackDirection * knockbackForce * Time.deltaTime);
+            isAlreadyKnockingBack = true;
 
-            // Check if the new position will collide with obstacles
-            if (!CheckCollision(newPosition))
-            {
-                transform.position = newPosition;
-                timer += Time.deltaTime;
-            }
-            else
-            {
-                // Stop knockback if there's an obstacle
-                break;
-            }
+            bool cancelKnockback = false;
+            float timer = 0f;
+            KnockBack = true;
 
-            // Rotate the player towards the hit position gradually
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * timeToRotateToImpact);
-            if (KnockBack == true)
+            // Calculate the rotation needed to face the hit position
+            Quaternion targetRotation = Quaternion.LookRotation(knockbackDirection, Vector3.up);
+            this.m_Animator1.SetBool("KnockBack", true);
+            while (timer < knockbackDuration)
             {
-                Collider[] colliders = Physics.OverlapSphere(newPosition, 1f);
-                foreach (Collider collider in colliders)
+                // Move the player in the opposite direction of knockbackDirection
+                Vector3 newPosition = transform.position + (-knockbackDirection * knockbackForce * Time.deltaTime);
+
+                // Check if the new position will collide with obstacles
+                if (!CheckCollision(newPosition))
                 {
-                    if (collider.CompareTag("InvisiWalls"))
+                    transform.position = newPosition;
+                    timer += Time.deltaTime;
+                }
+                else
+                {
+                    // Stop knockback if there's an obstacle
+                    break;
+                }
+
+                // Rotate the player towards the hit position gradually
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * timeToRotateToImpact);
+                if (KnockBack == true)
+                {
+                    Collider[] colliders = Physics.OverlapSphere(newPosition, 1f);
+                    foreach (Collider collider in colliders)
                     {
-                        cancelKnockback = true;
-                        break;
+                        if (collider.CompareTag("InvisiWalls"))
+                        {
+                            cancelKnockback = true;
+                            break;
+                        }
                     }
                 }
+
+                if (cancelKnockback)
+                {
+                    break;
+                }
+                yield return null;
             }
-            
+
+            // Delay to exit the knockback animation
+            yield return new WaitForSeconds(0.5f);
+            isInvencible = true;
             if (cancelKnockback)
             {
-                break;
+                //  this.m_Animator1.SetBool("KnockBackHit0",true);
+                //   yield break; 
+
             }
+            KnockBack = false;
+            this.m_Animator1.SetBool("KnockBack", false);
+            //this.m_Animator1.SetBool("KnockBackHit0", false);
+            isInvencible = false;
+            isAlreadyKnockingBack = false;
+        }
+        else
+        {
             yield return null;
         }
-        isInvencible = true;
-        // Delay to exit the knockback animation
-        yield return new WaitForSeconds(0.5f);
-        if (cancelKnockback)
-        {
-          //  this.m_Animator1.SetBool("KnockBackHit0",true);
-         //   yield break; 
-            
-        }
-        KnockBack = false;
-        this.m_Animator1.SetBool("KnockBack", false);
-        //this.m_Animator1.SetBool("KnockBackHit0", false);
-        isInvencible = false;
+        
     }
-
 
 }

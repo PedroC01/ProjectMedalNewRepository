@@ -111,7 +111,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1380115005}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: DPaddLeft
+        m_MethodName: DPaddRight
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -127,7 +127,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1380115005}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
-        m_MethodName: DPaddRight
+        m_MethodName: DPaddLeft
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -287,6 +287,78 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 6801da5b-e89a-4cd3-9e1b-0ab71967f695
     m_ActionName: PlayerMovement/LeftTrigger1[/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1380115005}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: PauseMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: PauseMenu
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 147522e3-a057-4388-b3a5-c2429e14274d
+    m_ActionName: PlayerMovement/StartButton[/DualShock4GamepadHID/start,/DualShock4GamepadHID1/start,/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: db122f60-65db-4e4b-aa60-cfe92d30a75a
+    m_ActionName: PauseMenu/Back[/DualShock4GamepadHID1/buttonEast,/DualShock4GamepadHID/buttonEast,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1380115005}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: PauseMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4fbc1940-4dc6-40b9-8f93-16f9d509624e
+    m_ActionName: PauseMenu/StartButton[/DualShock4GamepadHID1/start,/DualShock4GamepadHID/start,/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 48b4eff7-b539-4fce-8fa0-5886be6304da
+    m_ActionName: PauseMenu/Confirm[/DualShock4GamepadHID1/buttonSouth,/DualShock4GamepadHID/buttonSouth,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1380115005}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6f9acd72-d1ab-4b92-8602-e974f0e32f30
+    m_ActionName: PauseMenu/Movement[/DualShock4GamepadHID1/leftStick,/DualShock4GamepadHID/leftStick,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1380115005}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: MedaforceKeyboard
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c525be3f-0a53-46a4-80de-d134ee24d750
+    m_ActionName: PlayerMovement/MedaForceTeclado[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerMovement
@@ -308,3 +380,4 @@ MonoBehaviour:
   MpC: {fileID: 0}
   ph: {fileID: 0}
   LO: {fileID: 0}
+  indexOfPlayer: 0

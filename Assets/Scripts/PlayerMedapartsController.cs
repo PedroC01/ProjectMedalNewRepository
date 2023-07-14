@@ -149,7 +149,7 @@ public class PlayerMedapartsController : MonoBehaviour
             this.lowRechargeRevolver = metabeeStats.lowRechargeRevolver;
             this.lowRechargeDash = metabeeStats.lowRechargeDash;
 
-    SetMedapartStatsShooter(metabeeStats.baseDamageWestAttack, metabeeStats.baseDamageEastAttack, metabeeStats.baseMagSizeSmg, metabeeStats.baseMagSizeRev, metabeeStats.baseMovementSpeed, metabeeStats.BaseDamageNorthAttack, metabeeStats.baseRechargeSmg, metabeeStats.baseRechargeRevolver);
+             SetMedapartStatsShooter(metabeeStats.baseDamageWestAttack, metabeeStats.baseDamageEastAttack, metabeeStats.baseMagSizeSmg, metabeeStats.baseMagSizeRev, metabeeStats.baseMovementSpeed, metabeeStats.BaseDamageNorthAttack, metabeeStats.baseRechargeSmg, metabeeStats.baseRechargeRevolver);
             this.shooter.bulletPrefab.GetComponent<Bullet>().critValue = metabeeStats.lastBulletCritMultiplyer;
         }
 
@@ -169,7 +169,7 @@ public class PlayerMedapartsController : MonoBehaviour
             {
                 // Combo time is over, restore the original medapart stats
                 MedaForceActive = false;
-
+                PM.jumpInactive = true;
                 SetMedapartStatsShooter(originalDamageWestAttack, originalDamageEastAttack, originalMagSizeSmg, originalMagSizeRev, originalMovementSpeed,originalNorthAttack,originalRechargeSmg,originalRechargeRevolver);
             }
         }
@@ -220,7 +220,7 @@ public class PlayerMedapartsController : MonoBehaviour
                 {
                     case 2: // Arm Medapart
 
-                        this.shooter.magSizeFullAuto = this.lowEnergyMagSizeSmg;
+                        this.shooter.maxMagazineSizeRevolver = this.lowEnergyMagSizeRev;
                         if (!playedLArmSound)
                             {
                                 turningOffSoundInstance.start();
@@ -230,8 +230,9 @@ public class PlayerMedapartsController : MonoBehaviour
                         break;
 
                     case 3:
-
-                        this.shooter.maxMagazineSizeRevolver = this.lowEnergyMagSizeRev;
+                        this.shooter.magSizeFullAuto = this.lowEnergyMagSizeSmg;
+                        this.shooter.rechargeTimeWest = this.lowRechargeSmg;
+                   
                         if (!playedRArmSound)
                             {
                                 turningOffSoundInstance.start();
@@ -243,7 +244,7 @@ public class PlayerMedapartsController : MonoBehaviour
                     case 4: // Leg Medapart
 
                         PM.playerSpeed = lowEnergyMovementSpeed;
-
+                        PM.jumpInactive = true;
                         if (!playedLegSound)
                             {
                                 turningOffSoundInstance.start();
@@ -289,7 +290,7 @@ public class PlayerMedapartsController : MonoBehaviour
         originalMagSizeRev = shooter.maxMagazineSizeRevolver;
         originalRechargeRevolver=shooter.rechargeTimeEast;
         originalRechargeSmg=shooter.rechargeTimeWest;
-
+        PM.jumpInactive = false;
         originalMovementSpeed = PM.playerSpeed;
         SetMedapartStatsShooter(medaForceDamageWestAttack, medaForceDamageEastAttack, medaForceMagSizeSmg, medaForceMagSizeRev, medaForceMovementSpeed,MedaForceNorthAttack,medaforceRechargeSmg,medafroceRechargeRevolver);
     }

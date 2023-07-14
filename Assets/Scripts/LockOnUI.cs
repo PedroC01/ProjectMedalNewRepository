@@ -37,7 +37,7 @@ public class LockOnUI : MonoBehaviour
         {
             headTargeted.SetActive(false);
         }
-        if (Lo.pieceReference==2)
+        if (Lo.pieceReference==3)
         {
             leftArmTargeted.SetActive(true);
         }
@@ -45,7 +45,7 @@ public class LockOnUI : MonoBehaviour
         {
             leftArmTargeted.SetActive(false);
         }
-        if(Lo.pieceReference==3)
+        if(Lo.pieceReference==2)
         {
             rightArmTargeted.SetActive(true);
         }

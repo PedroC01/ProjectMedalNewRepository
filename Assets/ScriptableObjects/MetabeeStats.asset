@@ -29,9 +29,9 @@ MonoBehaviour:
   baseMagSizeRev: 6
   baseMovementSpeed: 10
   baseRechargeSmg: 1
-  baseRechargeRevolver: 2
+  baseRechargeRevolver: 3
   baseRechargeMissiles: 10
-  baseRechargeDash: 2
+  baseRechargeDash: 1
   lowEnergyDefense: 0
   lowEnergyDamageWestAttack: 0.5
   lowEnergyMagSizeSmg: 10
@@ -44,11 +44,11 @@ MonoBehaviour:
   lowRechargeDash: 3
   MedaForceNorthAttack: 10
   medaForceDefense: 0
-  medaForceDamageWestAttack: 0
-  medaForceMagSizeSmg: 0
-  medaForceDamageEastAttack: 0
-  medaForceMagSizeRev: 0
+  medaForceDamageWestAttack: 0.6
+  medaForceMagSizeSmg: 20
+  medaForceDamageEastAttack: 2.4
+  medaForceMagSizeRev: 6
   medaForceMovementSpeed: 10
-  medaforceRechargeSmg: 0
-  medafroceRechargeRevolver: 0
-  MedaForceDuration: 5
+  medaforceRechargeSmg: 1
+  medafroceRechargeRevolver: 2
+  MedaForceDuration: 10

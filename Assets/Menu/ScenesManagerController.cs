@@ -9,84 +9,49 @@ public class ScenesManagerController : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        Time.timeScale = 0;
     }
-
+    public PauseMenu pm;
 
     public string startMenuScene;
     public string GameScene;
+    public int BattleScene;
+    public BattleManager bm;
     public void LoadStartMenu()
     {
         SceneManager.LoadScene(startMenuScene);
     }
     public void LoadVersus()
     {
-        SceneManager.LoadScene(GameScene);
+        SceneManager.LoadScene(1);
+        
     }
-
-
-
-    //Main Menu Sound Callbacks:
-    #region Call Menu Sounds
-    [Space(5)]
-    [Header("Menu Sounds:")]
-    //public List<AudioSource> listMenuSounds = new List<AudioSource>(); //Colocar os sons nesta list e chamar com metodo abaixo via codigo: MenuSoundsIndex(int musicIndex)
-    public AudioSource menuMusicSound;
-    //
-    public AudioSource menuSubmitSound;
-    public AudioSource menuCancelSound;
-    public AudioSource menuNavigateSound;
-    //
-    //Versus
-    public AudioSource menuVersusMusicSound;
-    //
-    public AudioSource menuReadySound;
-    public AudioSource menuAllReadySound;
-    //
-    public void Play_MenuMusicSound()
+    
+    public void Pause(int index, PlayerInputHandler pih)
     {
-       // menuMusicSound.Play();
-    }
-    public void Play_MenuSubmitSound()
-    {
-      //  menuSubmitSound.Play();
-    }
-    public void Play_MenuCancelSound()
-    {
-       // menuCancelSound.Play();
-    }
-    public void Play_MenuNavigateSound()
-    {
-       // menuNavigateSound.Play();
-    }
-    //
-    //Versus
-    public void Play_MenuVersusMusicSound()
-    {
-//menuVersusMusicSound.Play();
-    }
-
-    public void Play_MenuReadySound()
-    {
-     //   menuReadySound.Play();
-    }
-    public void Play_MenuAllReadySound()
-    {
-     //   menuAllReadySound.Play();
+        Scene scene = SceneManager.GetActiveScene();
+        pm=FindObjectOfType<PauseMenu>();
+        bm = FindObjectOfType<BattleManager>();
+        if (this.BattleScene == scene.buildIndex)
+        {
+            if (Time.timeScale == 1)
+            {
+                Time.timeScale = 0;
+                bm.IsNotPlaying();
+                
+                pm.pausePanelActive(index,pih);
+                return;
+            }
+            else if (Time.timeScale== 0)
+            {
+                bm.IsPlaying();
+                Time.timeScale = 1;
+                pm.pausePanelInactive(index,pih);
+                return;
+            }
+        }
     }
 
 
-
-    //Antes com lista:
-    //int 0 = menu int 1 = versus
-    // [Header("Menu Sounds List:")]
-    //  public List<AudioSource> listMenuSounds = new List<AudioSource>(); //Colocar os sons nesta list e chamar com metodo abaixo via codigo: MenuSoundsIndex(int musicIndex)
-
-    /* void MenuSoundsIndex(int soundIndex)
-     {
-         listMenuSounds[soundIndex].Play();
-     }*/
-    #endregion
-    //Main Menu Init/Reset?<- meto aqui ref mais easy de call all???!?!?!?
-
-
+  
 }

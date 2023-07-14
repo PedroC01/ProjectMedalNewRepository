@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 263549974}
   - component: {fileID: 8161052793125049662}
   - component: {fileID: -6460570200970618290}
-  m_Layer: 7
+  m_Layer: 18
   m_Name: Rocket 1
   m_TagString: Player1Bullet
   m_Icon: {fileID: 0}
@@ -65,16 +65,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016c52222ed0fef49a65be4985e92a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RocketDamage: 0
+  RocketDamage: 10
   rocketSpeed: 20
   target: {fileID: 0}
   targetRb: {fileID: 0}
   autoDestructTimer: 1.5
+  AutoDestructv2: 12
   canDestroy: 0
-  _explosionPrefab: {fileID: 8836354246954985214, guid: 3b47f2b8af8a3a94fb1956b9ac4e005f,
+  _explosionPrefab: {fileID: 9177004571253976422, guid: f390a6f1145d1664fa5b005b14b4f518,
     type: 3}
-  explosionRadious: 3
-  _speed: 40
+  explosionRadious: 4.68
   rotateSpeed: 360
   maxDistancePredict: 300
   minDistancePredict: 300
@@ -83,6 +83,7 @@ MonoBehaviour:
   deviationSpeed: 2
   ExplosionSound: event:/Metabee/Missile Hit
   collisionSoundEvent: event:/Bullets/BulletMetalImpact
+  timerToCollidde: 0.2
 --- !u!136 &8161052793125049662
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -93,10 +94,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.11692488
-  m_Height: 0.30830336
+  m_Radius: 0.038661197
+  m_Height: 0.13883471
   m_Direction: 2
-  m_Center: {x: 0.0074682073, y: -0.008819698, z: -0.04584834}
+  m_Center: {x: 0.013279587, y: 0.004390523, z: -0.03730595}
 --- !u!114 &-6460570200970618290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +135,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6825168842469695556}
     m_Modifications:
+    - target: {fileID: -8961359253771211100, guid: 5045f7ac9a8ba2b4295e46742eb2e611,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5045f7ac9a8ba2b4295e46742eb2e611,
         type: 3}
       propertyPath: m_RootOrder
@@ -189,10 +195,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: 5045f7ac9a8ba2b4295e46742eb2e611,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: 5045f7ac9a8ba2b4295e46742eb2e611,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5045f7ac9a8ba2b4295e46742eb2e611,
         type: 3}
       propertyPath: m_Name
       value: rocket
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5045f7ac9a8ba2b4295e46742eb2e611,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148817236446094103, guid: 5045f7ac9a8ba2b4295e46742eb2e611,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507901977716847365, guid: 5045f7ac9a8ba2b4295e46742eb2e611,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513859187771203891, guid: 5045f7ac9a8ba2b4295e46742eb2e611,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5045f7ac9a8ba2b4295e46742eb2e611, type: 3}
@@ -273,6 +309,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SmokeEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6115033992737370188, guid: ac4985fd8911664499f7971bb8bce9ca,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac4985fd8911664499f7971bb8bce9ca, type: 3}

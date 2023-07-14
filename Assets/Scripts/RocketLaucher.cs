@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.VFX;
 //using static UnityEngine.InputSystem.InputAction;
 
 public class RocketLaucher : MonoBehaviour
@@ -10,7 +11,9 @@ public class RocketLaucher : MonoBehaviour
     public float rechargeTime;
     public float TimerForRecharge;
     public bool Shooted;
+    public GameObject _rocket;
     public GameObject rocketPrefab;
+    public GameObject rocketPrefab2;
     public Transform firePointRocket;
     public Transform firePointRocket2;
     public Transform lookat;
@@ -22,15 +25,32 @@ public class RocketLaucher : MonoBehaviour
     private FMOD.Studio.EventInstance RocketLaunchSoundInstance;
     private PlayerMovements pm;
     private Transform thisPlayer;
-    
+    public VisualEffect rocketSmoke;
+    public VisualEffect rocketSmoke2;
+    public float TimerForSmoke=1.5f;
+    private float rechargeSmoke;
     // Start is called before the first frame update
     void Start()
     {
-   
+        rocketSmoke.Stop();
+        rocketSmoke2.Stop();
         RocketLaunchSoundInstance = FMODUnity.RuntimeManager.CreateInstance(RocketLaunchSound);
         TimerForRecharge = rechargeTime;
+        rechargeSmoke = TimerForSmoke;
         pm=GetComponentInParent<PlayerMovements>();
         this.thisPlayer = pm.gameObject.GetComponent<Transform>();
+        if (GetComponentInParent<Player1>() == true)
+        {
+          
+            _rocket = rocketPrefab;
+          
+        }
+        else if (GetComponentInParent<Player2>() == true)
+        {
+   
+            _rocket = rocketPrefab2;
+         
+        }
     }
 
     public void North()
@@ -56,6 +76,12 @@ public class RocketLaucher : MonoBehaviour
                 Shooted = false;
             }
         }
+        if (TimerForSmoke > 0)
+        {
+            TimerForSmoke = Mathf.Clamp(TimerForSmoke - Time.deltaTime, 0, rechargeSmoke);
+            rocketSmoke.Stop();
+            rocketSmoke2.Stop();
+        }
             
         
     }
@@ -80,16 +106,18 @@ public class RocketLaucher : MonoBehaviour
             pm.m_Animator1.SetBool("ShootRocket", true);
         }
         RocketLaunchSoundInstance.start();
-        GameObject HeadPrefabBullet = Instantiate(rocketPrefab, firePointRocket.position, firePointRocket.rotation);
+        GameObject HeadPrefabBullet = Instantiate(_rocket, firePointRocket.position, firePointRocket.rotation);
         HeadPrefabBullet.GetComponent<Rocket>().targetRb = this.LO.Enemy.GetComponent<Rigidbody>();
         HeadPrefabBullet.GetComponent<Rocket>().RocketDamage = damagePerRocket;
-
+        rocketSmoke.Play();
         yield return new WaitForSecondsRealtime(delayInSecondRocket);
 
         RocketLaunchSoundInstance.start();
-        GameObject HeadPrefabBullet2 = Instantiate(rocketPrefab, firePointRocket2.position, firePointRocket2.rotation);
+        GameObject HeadPrefabBullet2 = Instantiate(_rocket, firePointRocket2.position, firePointRocket2.rotation);
         HeadPrefabBullet2.GetComponent<Rocket>().targetRb = this.LO.Enemy.GetComponent<Rigidbody>();
         HeadPrefabBullet2.GetComponent<Rocket>().RocketDamage = damagePerRocket;
+        rocketSmoke2.Play();
+        TimerForSmoke = rechargeSmoke;
         pm.canMove = true;
         pm.m_Animator1.SetBool("ShootRocket", false);
     }
