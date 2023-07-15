@@ -5,9 +5,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
+using UnityEngine.SceneManagement;
 
 public class NewPlayerSideMenu : MonoBehaviour
 {
+    [SerializeField] bool inptEnable = false;
+
     [SerializeField] public PlayerInput playerInputUsingThis;
     public int playerIndexUsingThis;
     [SerializeField] public TMP_Text txtPlayerIndex;
@@ -25,7 +28,6 @@ public class NewPlayerSideMenu : MonoBehaviour
     int charSelected = 0;
 
     float ignoreTime = 0.8f;
-    bool inptEnable = false;
 
     [SerializeField] AudioSource navigateSound;
     [SerializeField] AudioSource enterSound;
@@ -64,10 +66,12 @@ public class NewPlayerSideMenu : MonoBehaviour
     {
         panel_ReadyUnready.SetActive(false);
         panelColorSelect.SetActive(false);
+        
     }
 
     private void Start()
     {
+        Debug.Log("Start");
         StartCoroutine(DelayInput());
         UpdateCharacterShow(selectOption);
         ColorChoicesInit();
@@ -80,15 +84,33 @@ public class NewPlayerSideMenu : MonoBehaviour
         VersusManager.instance.amountReady--;
     }
 
+
+    public bool isSceneIngame = false;
+
     //WHAT BT'S DO!!!!!!
     void Update()
     {
+        Debug.Log("Update");
+
+        //nao ta a fazer nada pois começa off, mas pode vir dar a jeito
+      /*  if (isSceneIngame || SceneManager.actu)
+        {
+            Debug.Log("Desliga InputHandler");
+
+            isSceneIngame = false;
+            GetComponent<PlayerInputHandler>().enabled = true;
+        }*/
+
+        //So para ativar script na scene correta.... nao e melhor maneira mas porenquanto testes
+      inptEnable = true;
+
         if (!inptEnable) { return; }
+        Debug.Log("InputON");
 
         //Aqui consoante o "state atual no menu a navegação deverá mudar "char select ou cores ou trocar entre estados de selecao(cores champ etc)
         if (playerInputUsingThis.actions["Navigate"].triggered)
         {
-            MainMenus.instance.Play_MenuNavigateSound();
+           // MainMenus.instance.Play_MenuNavigateSound();***************************************************************************************************************************************
 
             Vector2 inputDirection = playerInputUsingThis.actions["Navigate"].ReadValue<Vector2>();
 
@@ -167,7 +189,8 @@ public class NewPlayerSideMenu : MonoBehaviour
         //Enter:
         if (playerInputUsingThis.actions["Submit"].triggered)
         {
-            MainMenus.instance.Play_MenuSubmitSound();
+           // MainMenus.instance.Play_MenuSubmitSound(); ***************************************************************************************************************************************
+           StartCoroutine(DelayInput());
 
             #region Maneira Simples o que ocorre quando cada posicao de seta em X UI:
             //Metabee:
@@ -259,7 +282,8 @@ public class NewPlayerSideMenu : MonoBehaviour
         //Cancel//voltar atras-------------------------------------------------------
         if (playerInputUsingThis.actions["Cancel"].triggered)
         {
-            MainMenus.instance.Play_MenuCancelSound();
+            //  MainMenus.instance.Play_MenuCancelSound();***************************************************************************************************************************************
+
 
             if (selectingChamp)
             {

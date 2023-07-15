@@ -22,9 +22,10 @@ public class ScenesManagerController : MonoBehaviour
         SceneManager.LoadScene(startMenuScene);
     }
     public void LoadVersus()
-    {
-        SceneManager.LoadScene(0);
-        
+    { 
+        //Chamada input enable = false *****************************************************************************************
+        SceneManager.LoadScene(1);
+       
     }
     
     public void Pause(int index, PlayerInputHandler pih)

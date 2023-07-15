@@ -30,19 +30,51 @@ public class PlayerInputHandler : MonoBehaviour
     private OverrideInput OI;
     private BattleManager bm;
     public static bool play;
+
     public int indexOfPlayer;
     private InputActionMap playerMovementActionMap;
     private InputActionMap pauseMenuActionMap;
     private StudioEventEmitter eventEmitter;
     public bool MUTE;
+
+
+
+
     void Start()
     {
-        playerInput=GetComponent<PlayerInput>();
-        var pMovements=FindObjectsOfType<PlayerMovements>();
-        var index=playerInput.playerIndex;
+
+
+
+
+        //Novo:
+        playerInput = GetComponent<PlayerInput>();
+        var pIndex = GetComponent<PlayerMedabotSelected>().pInputIndex;
+
+        //igual:
         var eastButtons = FindObjectsOfType<Shooter>();
         var northButtons = FindObjectsOfType<RocketLaucher>();
-        pMovement = pMovements.FirstOrDefault(m => m.GetPlayerIndex() == index);
+        //
+        var pMovements = FindObjectsOfType<PlayerMovements>();
+  
+
+
+        if (GetComponent<PlayerMedabotSelected>().pInputIndex == 0)
+        {
+            pMovement = pMovements[0];
+
+        }
+        if (GetComponent<PlayerMedabotSelected>().pInputIndex == 1)
+        {
+            pMovement = pMovements[1];
+
+        }
+     
+        Debug.Log(pMovement);
+
+
+
+
+
         thisPlayer = pMovement.gameObject;
         MpC = thisPlayer.GetComponent<PlayerMedapartsController>();
         ph = thisPlayer.GetComponent<PlayerHealth>();
@@ -58,6 +90,7 @@ public class PlayerInputHandler : MonoBehaviour
     void Update()
     {
         CheckCombo();
+       
     }
 
 

@@ -73,7 +73,7 @@ public class MenuSetings : MonoBehaviour
     //Mudar o volume do AudioMixer:
     public void SetVolume(float volume)
     {
-       MainMenus.instance.audioMixer.SetFloat("volume", volume);
+     //  MainMenus.instance.audioMixer.SetFloat("volume", volume);
     }
 
 

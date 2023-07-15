@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2554914994253204548}
   - component: {fileID: 8811633273311078097}
   - component: {fileID: 5457841619638475109}
+  - component: {fileID: 2720444178211884007}
   m_Layer: 0
   m_Name: PlayerPrefabMedabots
   m_TagString: Untagged
@@ -60,58 +61,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 429c23ef-b577-4310-af95-84b9748bed50
-    m_ActionName: Player/Move[/DualShock4GamepadHID/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 13d9d7df-70a2-4ef7-9a85-a6ef0342ff8a
-    m_ActionName: Player/Look[/DualShock4GamepadHID/rightStick,/Mouse/delta]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6c925bbe-209c-4232-a357-b0d4143e42ed
-    m_ActionName: Player/Fire[/DualShock4GamepadHID/rightTrigger,/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 823d0ec9-3b6b-454e-bf3c-d858ac3091a5
-    m_ActionName: UI/Navigate[/DualShock4GamepadHID/leftStick/up,/DualShock4GamepadHID/rightStick/up,/DualShock4GamepadHID/leftStick/down,/DualShock4GamepadHID/rightStick/down,/DualShock4GamepadHID/leftStick/left,/DualShock4GamepadHID/rightStick/left,/DualShock4GamepadHID/leftStick/right,/DualShock4GamepadHID/rightStick/right,/DualShock4GamepadHID/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 01c052ac-bfa1-4b10-a524-c347acefd442
-    m_ActionName: UI/Submit[/Keyboard/enter,/DualShock4GamepadHID/buttonSouth]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: b65e8396-8140-4cf1-88e7-d468272693a8
-    m_ActionName: UI/Cancel[/Keyboard/escape,/DualShock4GamepadHID/buttonEast]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a34151d8-1225-4953-ae5a-dd7c0d5c2bff
-    m_ActionName: UI/Point[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 1585c65c-2fed-4ab0-97de-0ac635f2d38c
-    m_ActionName: UI/Click[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 730fc594-58d0-446d-9c1f-7d4a89c0744f
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: bc49275d-7309-4998-87cb-f7c1399c4878
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 0b07b2ab-d64a-4181-80eb-1953d80d8fe6
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 76456f58-aafb-4d15-8b49-3c34746964a8
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: d133e321-3efd-4d92-aa39-c1cfa2754a89
-    m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: c0a6a012-09e2-43ed-aa42-8804482d2cc4
@@ -192,6 +141,318 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 80ebeed7-e866-415d-9e92-20a6fe64b43d
     m_ActionName: Player2UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2720444178211884007}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d2321e83-7f08-4c91-9e6e-9396ba209517
+    m_ActionName: Player1UI/Movement[/DualShock4GamepadHID/leftStick,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2720444178211884007}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 82da91db-1a81-4503-a779-ab50676fe4cc
+    m_ActionName: Player1UI/Jump[/DualShock4GamepadHID/buttonSouth,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2720444178211884007}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: DPaddUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e0c2aa59-3c03-42a5-9948-bf7b9a1a7c71
+    m_ActionName: Player1UI/LockOnHead[/DualShock4GamepadHID/dpad/up,/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2720444178211884007}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: DPaddRight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ddaa9d17-4211-4c82-8945-26a01d1c08a3
+    m_ActionName: Player1UI/LockOnRIghtArm[/DualShock4GamepadHID/dpad/right,/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2720444178211884007}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: DPaddLeft
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 08b05ae2-d111-4e6a-bb29-20d5547c38d9
+    m_ActionName: Player1UI/LockOnLeftArm[/DualShock4GamepadHID/dpad/left,/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2720444178211884007}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: DPaddUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fda06477-4be5-4386-8f33-4d8895b6b04f
+    m_ActionName: Player1UI/LockOnLegs[/DualShock4GamepadHID/dpad/down,/Keyboard/4]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2720444178211884007}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: L1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b2a1240c-31c5-469d-8c52-a07105f2a899
+    m_ActionName: Player1UI/L1[/DualShock4GamepadHID/leftShoulder,/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2720444178211884007}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnEast
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5c6bde71-4966-4aae-b915-0ec8587388c2
+    m_ActionName: Player1UI/RightArmAttack[/DualShock4GamepadHID/buttonEast,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2720444178211884007}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnWest
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c91ebee9-b54b-446d-a423-c20d65a5bcd6
+    m_ActionName: Player1UI/LeftArmAttack[/DualShock4GamepadHID/buttonWest,/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d5ebb975-a230-4f7f-a5f0-900bf5156256
+    m_ActionName: Player1UI/LeftArmAttackrelease[/DualShock4GamepadHID/buttonWest,/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2720444178211884007}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnNorth
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e1137172-b462-4d3a-97bd-955b356770eb
+    m_ActionName: Player1UI/HeadAttack[/DualShock4GamepadHID/buttonNorth,/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2720444178211884007}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: R1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 67c47e83-89b9-4a6a-841b-702dcd8a5515
+    m_ActionName: Player1UI/R1[/DualShock4GamepadHID/rightShoulder,/Keyboard/ctrl]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: acbeff34-9a8f-4f21-b8c7-551a1e8d2b98
+    m_ActionName: Player1UI/Dash/Evade[/DualShock4GamepadHID/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2720444178211884007}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnRightTriggerPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7917fa0f-0c65-4ec4-8f06-5b202a3fb28c
+    m_ActionName: Player1UI/RightTrigger[/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2720444178211884007}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: OnLeftTriggerPressed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bcd107c7-adf1-4afb-8642-fc38ae5214c1
+    m_ActionName: Player1UI/LeftTrigger[/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f641b9ba-dc34-416f-815d-e629a96d1124
+    m_ActionName: PlayerMovement/Movement[/DualShock4GamepadHID/leftStick,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: abfdfcf3-c4e2-480e-aad8-49e09fde871d
+    m_ActionName: PlayerMovement/Jump[/DualShock4GamepadHID/buttonSouth,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 60a713b3-17cd-4221-88c1-501b41924441
+    m_ActionName: PlayerMovement/LockOnHead[/DualShock4GamepadHID/dpad/up,/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7d4ba412-c7d9-4a43-a60f-1588eac3a012
+    m_ActionName: PlayerMovement/LockOnRIghtArm[/DualShock4GamepadHID/dpad/right,/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 385d9f2d-1e16-4eca-b9b6-bb813faf747b
+    m_ActionName: PlayerMovement/LockOnLeftArm[/DualShock4GamepadHID/dpad/left,/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ed02fe2b-56fb-43ba-9b7b-296ea0651744
+    m_ActionName: PlayerMovement/LockOnLegs[/DualShock4GamepadHID/dpad/down,/Keyboard/4]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fed7053e-e1e5-429b-9c8b-7b9405adcf7f
+    m_ActionName: PlayerMovement/L1[/DualShock4GamepadHID/leftShoulder,/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2f05cc2c-f3e2-4c79-99b6-9a8a0755591a
+    m_ActionName: PlayerMovement/RightArmAttack[/DualShock4GamepadHID/buttonEast,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 439c4788-3306-49bb-9fe9-a362471f90f2
+    m_ActionName: PlayerMovement/LeftArmAttack[/DualShock4GamepadHID/buttonWest,/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 17a307a7-130f-41fb-81ec-9b2b091d4f13
+    m_ActionName: PlayerMovement/LeftArmAttackrelease[/DualShock4GamepadHID/buttonWest,/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 35c0484f-8bf6-4e13-92d8-7ac3513c80bf
+    m_ActionName: PlayerMovement/HeadAttack[/DualShock4GamepadHID/buttonNorth,/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 03ff4b3e-eeb3-4a70-b2d4-3592a34443bc
+    m_ActionName: PlayerMovement/R1[/DualShock4GamepadHID/rightShoulder,/Keyboard/ctrl]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 29e030bb-05ab-4754-9e84-2b9a0cfd6ee6
+    m_ActionName: PlayerMovement/Dash/Evade[/DualShock4GamepadHID/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4ea76baa-0211-4942-9a18-c5377701180f
+    m_ActionName: PlayerMovement/RightTrigger[/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7fc4b2fe-5681-4332-b330-893a76379255
+    m_ActionName: PlayerMovement/LeftTrigger[/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/leftTrigger]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5b7ee995-4b0d-40fa-8f15-a47ace214a6f
+    m_ActionName: Player1UI/Select[/Keyboard/m]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2720444178211884007}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: MedaforceKeyboard
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 05085a64-d01b-4f23-bf09-97b41af042de
+    m_ActionName: Player1UI/MedaForceTeclado[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2720444178211884007}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
+        m_MethodName: PauseMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 63e98269-626d-48f5-b4ce-45d2c08687e7
+    m_ActionName: Player1UI/StartButton[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player1UI
@@ -232,3 +493,21 @@ MonoBehaviour:
   imgMedaInGame: {fileID: 0}
   pInput: {fileID: 0}
   pInputIndex: 0
+--- !u!114 &2720444178211884007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2554914994253204547}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d88987e0a92084ba66fe3b30e9e0ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisPlayer: {fileID: 2554914994253204547}
+  MpC: {fileID: 0}
+  ph: {fileID: 0}
+  LO: {fileID: 0}
+  indexOfPlayer: 0
+  MUTE: 0

@@ -98,16 +98,22 @@ public class VersusManager : MonoBehaviour
     }
 
     public int amountReady = 0;
+
+
+
+    NewPlayerSideMenu reffff;
+
     void AllReady()
     {   
         if (amountReady == 2) 
         {
             amountReady = 0;
-            countdownText.gameObject.SetActive(true);
-            LoadBar.gameObject.SetActive(true);
-            StartCoroutine(LoadNextSceneWithCountdown());
-            countdownText.gameObject.SetActive(false);
-            LoadBar.gameObject.SetActive(false);
+            // countdownText.gameObject.SetActive(true);
+            // LoadBar.gameObject.SetActive(true);
+            // StartCoroutine(LoadNextSceneWithCountdown());
+            // countdownText.gameObject.SetActive(false);
+            // LoadBar.gameObject.SetActive(false);
+
             ScenesManagerController.instance.LoadVersus();
         }
     }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9025812044510961628
+--- !u!114 &-8665897375330805322
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,267 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Metabee/Missile Hit
+  m_Name: event:/Main Menu/BGM Menu
   m_EditorClassIdentifier: 
-  Path: event:/Metabee/Missile Hit
+  Path: event:/Main Menu/BGM Menu
   Guid:
-    Data1: -982024467
-    Data2: 1108371052
-    Data3: 1029854871
-    Data4: -1864403185
+    Data1: -1129748385
+    Data2: 1256313470
+    Data3: -1780089183
+    Data4: 1343163905
   Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-8578275384375047967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Metabee/Missile Launch
-  m_EditorClassIdentifier: 
-  Path: event:/Metabee/Missile Launch
-  Guid:
-    Data1: -2019918693
-    Data2: 1136647106
-    Data3: -852589912
-    Data4: 1598002493
-  Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-7014054216965671481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/AI Assistant/Name-Metabee
-  m_EditorClassIdentifier: 
-  Path: event:/AI Assistant/Name-Metabee
-  Guid:
-    Data1: -1820091397
-    Data2: 1150606652
-    Data3: -1086551650
-    Data4: 1588374916
-  Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-6792363607117283413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/AI Assistant/Critical-Rokusho
-  m_EditorClassIdentifier: 
-  Path: event:/AI Assistant/Critical-Rokusho
-  Guid:
-    Data1: -721524907
-    Data2: 1162139873
-    Data3: 806558117
-    Data4: 28485337
-  Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-5651618482721002615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Metabee/Shoot 2
-  m_EditorClassIdentifier: 
-  Path: event:/Metabee/Shoot 2
-  Guid:
-    Data1: 1021640266
-    Data2: 1088508860
-    Data3: -464033643
-    Data4: -1531895926
-  Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-4612373966467907178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Mr. Referee/Winner
-  m_EditorClassIdentifier: 
-  Path: event:/Mr. Referee/Winner
-  Guid:
-    Data1: -587812533
-    Data2: 1306014053
-    Data3: -479445327
-    Data4: 668585921
-  Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-4289191307124245220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Extras/Extra Sound 2
-  m_EditorClassIdentifier: 
-  Path: event:/Extras/Extra Sound 2
-  Guid:
-    Data1: -2109849221
-    Data2: 1216740772
-    Data3: -1996460636
-    Data4: -794355088
-  Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-3913966401208016826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/BattleGeneral/PieceWithoutEnergy
-  m_EditorClassIdentifier: 
-  Path: event:/BattleGeneral/PieceWithoutEnergy
-  Guid:
-    Data1: -1442331278
-    Data2: 1333729156
-    Data3: 1115514779
-    Data4: -1458495591
-  Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-3828722052737725336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/AttackReady
-  m_EditorClassIdentifier: 
-  Path: event:/UI/AttackReady
-  Guid:
-    Data1: -182796338
-    Data2: 1127124636
-    Data3: -390204765
-    Data4: -231159512
-  Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-2655843116353049484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Main Menu/BGM Char Select
-  m_EditorClassIdentifier: 
-  Path: event:/Main Menu/BGM Char Select
-  Guid:
-    Data1: -1722709488
-    Data2: 1198670291
-    Data3: -1378110585
-    Data4: 1110913137
-  Banks:
-  - {fileID: -400167153326446528}
+  - {fileID: -5945837273492298238}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-2554072357269639948
+--- !u!114 &-8483769083921125885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,7 +46,7 @@ MonoBehaviour:
     Data3: 375227557
     Data4: -1938448004
   Banks:
-  - {fileID: -400167153326446528}
+  - {fileID: -5945837273492298238}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -297,7 +54,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-1946056883263858016
+--- !u!114 &-8359897603417788984
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -307,16 +64,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Main Menu/SFX Confirm Option
+  m_Name: event:/BattleGeneral/PieceWithoutEnergy
   m_EditorClassIdentifier: 
-  Path: event:/Main Menu/SFX Confirm Option
+  Path: event:/BattleGeneral/PieceWithoutEnergy
   Guid:
-    Data1: 572351465
-    Data2: 1259960350
-    Data3: 2040470419
-    Data4: -1664163986
+    Data1: -1442331278
+    Data2: 1333729156
+    Data3: 1115514779
+    Data4: -1458495591
   Banks:
-  - {fileID: -400167153326446528}
+  - {fileID: -5945837273492298238}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -324,81 +81,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-1595774615582188406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/AI Assistant/Name-Rokusho
-  m_EditorClassIdentifier: 
-  Path: event:/AI Assistant/Name-Rokusho
-  Guid:
-    Data1: 416979605
-    Data2: 1270962934
-    Data3: -980503370
-    Data4: 1396509263
-  Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-718834059384107217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Metabee/Revolver
-  m_EditorClassIdentifier: 
-  Path: event:/Metabee/Revolver
-  Guid:
-    Data1: 969722346
-    Data2: 1078516841
-    Data3: -319150959
-    Data4: -1020615530
-  Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-400167153326446528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FmodFolderProjectMedal/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638250354117966444
-  FileSizes:
-  - Name: Desktop
-    Value: 3003904
-  Exists: 1
---- !u!114 &-308462318287087330
+--- !u!114 &-8330868958993187289
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -417,7 +100,371 @@ MonoBehaviour:
     Data3: -17515895
     Data4: -494234708
   Banks:
-  - {fileID: -400167153326446528}
+  - {fileID: -5945837273492298238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7569679099764352175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/AttackReady
+  m_EditorClassIdentifier: 
+  Path: event:/UI/AttackReady
+  Guid:
+    Data1: -182796338
+    Data2: 1127124636
+    Data3: -390204765
+    Data4: -231159512
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6537941418649977138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BattleGeneral/RUN
+  m_EditorClassIdentifier: 
+  Path: event:/BattleGeneral/RUN
+  Guid:
+    Data1: -2079592425
+    Data2: 1321792513
+    Data3: 20824979
+    Data4: 1449159366
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6329766949538168210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BattleGeneral/Walk Steps
+  m_EditorClassIdentifier: 
+  Path: event:/BattleGeneral/Walk Steps
+  Guid:
+    Data1: -581619789
+    Data2: 1214571049
+    Data3: 1391497142
+    Data4: 1474514929
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6216340815786816950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Main Menu/BGM Char Select
+  m_EditorClassIdentifier: 
+  Path: event:/Main Menu/BGM Char Select
+  Guid:
+    Data1: -1722709488
+    Data2: 1198670291
+    Data3: -1378110585
+    Data4: 1110913137
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5945837273492298238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FmodFolderProjectMedal/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638250369352759677
+  FileSizes:
+  - Name: Desktop
+    Value: 3003904
+  Exists: 1
+--- !u!114 &-5790099369064706899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mr. Referee/Winner
+  m_EditorClassIdentifier: 
+  Path: event:/Mr. Referee/Winner
+  Guid:
+    Data1: -587812533
+    Data2: 1306014053
+    Data3: -479445327
+    Data4: 668585921
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5100413166178726099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FmodFolderProjectMedal/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638246812811737416
+  FileSizes:
+  - Name: Desktop
+    Value: 2260
+  Exists: 1
+--- !u!114 &-5069236629564064444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BattleGeneral/BGM Battle 1
+  m_EditorClassIdentifier: 
+  Path: event:/BattleGeneral/BGM Battle 1
+  Guid:
+    Data1: 80569353
+    Data2: 1087154501
+    Data3: -1492021325
+    Data4: 1438827518
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4962929967623087036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AI Assistant/Critical-Rokusho
+  m_EditorClassIdentifier: 
+  Path: event:/AI Assistant/Critical-Rokusho
+  Guid:
+    Data1: -721524907
+    Data2: 1162139873
+    Data3: 806558117
+    Data4: 28485337
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4270050472450969513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Main Menu/SFX Change Option
+  m_EditorClassIdentifier: 
+  Path: event:/Main Menu/SFX Change Option
+  Guid:
+    Data1: -2079300331
+    Data2: 1169472846
+    Data3: 1814790566
+    Data4: 147110218
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3515452092332483672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AI Assistant/Right Arm Damaged
+  m_EditorClassIdentifier: 
+  Path: event:/AI Assistant/Right Arm Damaged
+  Guid:
+    Data1: 130235932
+    Data2: 1079182229
+    Data3: -268471378
+    Data4: -973595536
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3381248891049801802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Metabee/Revolver
+  m_EditorClassIdentifier: 
+  Path: event:/Metabee/Revolver
+  Guid:
+    Data1: 969722346
+    Data2: 1078516841
+    Data3: -319150959
+    Data4: -1020615530
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2445702526780577120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Metabee/Missile Launch
+  m_EditorClassIdentifier: 
+  Path: event:/Metabee/Missile Launch
+  Guid:
+    Data1: -2019918693
+    Data2: 1136647106
+    Data3: -852589912
+    Data4: 1598002493
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1697203955933359399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Bullets/BulletMetalImpact
+  m_EditorClassIdentifier: 
+  Path: event:/Bullets/BulletMetalImpact
+  Guid:
+    Data1: 978148544
+    Data2: 1230241712
+    Data3: 561020814
+    Data4: -994669146
+  Banks:
+  - {fileID: -5945837273492298238}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -438,47 +485,47 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 6864873817982603600}
-  - {fileID: -400167153326446528}
+  - {fileID: -5100413166178726099}
+  - {fileID: -5945837273492298238}
   EditorEvents:
-  - {fileID: -2655843116353049484}
-  - {fileID: 2168909266211624326}
-  - {fileID: -308462318287087330}
-  - {fileID: -4612373966467907178}
-  - {fileID: -2554072357269639948}
-  - {fileID: 5575613774771883441}
-  - {fileID: -1946056883263858016}
-  - {fileID: 7155941139465505622}
-  - {fileID: 5860338375961791267}
-  - {fileID: -6792363607117283413}
-  - {fileID: 9190455564390201426}
-  - {fileID: -1595774615582188406}
-  - {fileID: 6931961613168792287}
-  - {fileID: -7014054216965671481}
-  - {fileID: -3828722052737725336}
-  - {fileID: 5141509257925195875}
-  - {fileID: 3532781385581108003}
-  - {fileID: 3431432503788619234}
-  - {fileID: 3564147306399014755}
-  - {fileID: 8137550744515104793}
-  - {fileID: -5651618482721002615}
-  - {fileID: -3913966401208016826}
-  - {fileID: -4289191307124245220}
-  - {fileID: 7299158243618987712}
-  - {fileID: -8578275384375047967}
-  - {fileID: 8061786589422794016}
-  - {fileID: -718834059384107217}
-  - {fileID: -9025812044510961628}
-  - {fileID: 379640465967745710}
-  - {fileID: 8642374894643737527}
+  - {fileID: -5069236629564064444}
+  - {fileID: -6216340815786816950}
+  - {fileID: -4270050472450969513}
+  - {fileID: -6537941418649977138}
+  - {fileID: -3515452092332483672}
+  - {fileID: 6871260222432845622}
+  - {fileID: 6764496645432898188}
+  - {fileID: -8330868958993187289}
+  - {fileID: 6943398754440418738}
+  - {fileID: 1889569619613334153}
+  - {fileID: -5790099369064706899}
+  - {fileID: -8483769083921125885}
+  - {fileID: -4962929967623087036}
+  - {fileID: -8665897375330805322}
+  - {fileID: 8842862311975532129}
+  - {fileID: -8359897603417788984}
+  - {fileID: 1205566682992055551}
+  - {fileID: 1401763541613212574}
+  - {fileID: 3143796377699970839}
+  - {fileID: 3497427702496315719}
+  - {fileID: -2445702526780577120}
+  - {fileID: 5588126427066346026}
+  - {fileID: -6329766949538168210}
+  - {fileID: -1697203955933359399}
+  - {fileID: -7569679099764352175}
+  - {fileID: 2812764912304495922}
+  - {fileID: 7683573241639403895}
+  - {fileID: -3381248891049801802}
+  - {fileID: 2623818399352842092}
+  - {fileID: 4698393294566501096}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -400167153326446528}
+  - {fileID: -5945837273492298238}
   StringsBanks:
-  - {fileID: 6864873817982603600}
-  cacheTime: 638250354117976437
+  - {fileID: -5100413166178726099}
+  cacheTime: 638250369352759677
   cacheVersion: 131601
---- !u!114 &379640465967745710
+--- !u!114 &1205566682992055551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -488,43 +535,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Main Menu/BGM Menu
+  m_Name: event:/Extras/Extra Sound 2
   m_EditorClassIdentifier: 
-  Path: event:/Main Menu/BGM Menu
+  Path: event:/Extras/Extra Sound 2
   Guid:
-    Data1: -1129748385
-    Data2: 1256313470
-    Data3: -1780089183
-    Data4: 1343163905
+    Data1: -2109849221
+    Data2: 1216740772
+    Data3: -1996460636
+    Data4: -794355088
   Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &2168909266211624326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Main Menu/SFX Change Option
-  m_EditorClassIdentifier: 
-  Path: event:/Main Menu/SFX Change Option
-  Guid:
-    Data1: -2079300331
-    Data2: 1169472846
-    Data3: 1814790566
-    Data4: 147110218
-  Banks:
-  - {fileID: -400167153326446528}
+  - {fileID: -5945837273492298238}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -532,243 +552,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &3431432503788619234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/BattleGeneral/RUN
-  m_EditorClassIdentifier: 
-  Path: event:/BattleGeneral/RUN
-  Guid:
-    Data1: -2079592425
-    Data2: 1321792513
-    Data3: 20824979
-    Data4: 1449159366
-  Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &3532781385581108003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/BattleGeneral/BGM Battle 1
-  m_EditorClassIdentifier: 
-  Path: event:/BattleGeneral/BGM Battle 1
-  Guid:
-    Data1: 80569353
-    Data2: 1087154501
-    Data3: -1492021325
-    Data4: 1438827518
-  Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &3564147306399014755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Extras/Extra Sound 1
-  m_EditorClassIdentifier: 
-  Path: event:/Extras/Extra Sound 1
-  Guid:
-    Data1: 270449704
-    Data2: 1331680823
-    Data3: -1996166737
-    Data4: 1410785220
-  Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &5141509257925195875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Bullets/BulletMetalImpact
-  m_EditorClassIdentifier: 
-  Path: event:/Bullets/BulletMetalImpact
-  Guid:
-    Data1: 978148544
-    Data2: 1230241712
-    Data3: 561020814
-    Data4: -994669146
-  Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &5575613774771883441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Mr. Referee/Battle End
-  m_EditorClassIdentifier: 
-  Path: event:/Mr. Referee/Battle End
-  Guid:
-    Data1: -1618411094
-    Data2: 1268586030
-    Data3: -544848747
-    Data4: 524793259
-  Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &5860338375961791267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/AI Assistant/Legs Damaged
-  m_EditorClassIdentifier: 
-  Path: event:/AI Assistant/Legs Damaged
-  Guid:
-    Data1: 687799326
-    Data2: 1207156155
-    Data3: -865774955
-    Data4: 121999933
-  Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &6864873817982603600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: FmodFolderProjectMedal/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638250354117976437
-  FileSizes:
-  - Name: Desktop
-    Value: 2260
-  Exists: 1
---- !u!114 &6931961613168792287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/AI Assistant/Critical-Metabee
-  m_EditorClassIdentifier: 
-  Path: event:/AI Assistant/Critical-Metabee
-  Guid:
-    Data1: -319084078
-    Data2: 1245224314
-    Data3: 1148151739
-    Data4: -1484032135
-  Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &7155941139465505622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/AI Assistant/Right Arm Damaged
-  m_EditorClassIdentifier: 
-  Path: event:/AI Assistant/Right Arm Damaged
-  Guid:
-    Data1: 130235932
-    Data2: 1079182229
-    Data3: -268471378
-    Data4: -973595536
-  Banks:
-  - {fileID: -400167153326446528}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &7299158243618987712
+--- !u!114 &1401763541613212574
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -787,7 +571,7 @@ MonoBehaviour:
     Data3: 507009944
     Data4: 1765372524
   Banks:
-  - {fileID: -400167153326446528}
+  - {fileID: -5945837273492298238}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -795,7 +579,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &8061786589422794016
+--- !u!114 &1889569619613334153
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -805,16 +589,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/BattleGeneral/Walk Steps
+  m_Name: event:/Metabee/Shoot 2
   m_EditorClassIdentifier: 
-  Path: event:/BattleGeneral/Walk Steps
+  Path: event:/Metabee/Shoot 2
   Guid:
-    Data1: -581619789
-    Data2: 1214571049
-    Data3: 1391497142
-    Data4: 1474514929
+    Data1: 1021640266
+    Data2: 1088508860
+    Data3: -464033643
+    Data4: -1531895926
   Banks:
-  - {fileID: -400167153326446528}
+  - {fileID: -5945837273492298238}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -822,7 +606,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &8137550744515104793
+--- !u!114 &2623818399352842092
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -832,16 +616,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Metabee/Shoot 1
+  m_Name: event:/Metabee/Missile Hit
   m_EditorClassIdentifier: 
-  Path: event:/Metabee/Shoot 1
+  Path: event:/Metabee/Missile Hit
   Guid:
-    Data1: 1795613250
-    Data2: 1224310860
-    Data3: -371719798
-    Data4: 1521626275
+    Data1: -982024467
+    Data2: 1108371052
+    Data3: 1029854871
+    Data4: -1864403185
   Banks:
-  - {fileID: -400167153326446528}
+  - {fileID: -5945837273492298238}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -849,7 +633,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &8642374894643737527
+--- !u!114 &2812764912304495922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AI Assistant/Critical-Metabee
+  m_EditorClassIdentifier: 
+  Path: event:/AI Assistant/Critical-Metabee
+  Guid:
+    Data1: -319084078
+    Data2: 1245224314
+    Data3: 1148151739
+    Data4: -1484032135
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3143796377699970839
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -868,7 +679,7 @@ MonoBehaviour:
     Data3: 736570240
     Data4: -1781870941
   Banks:
-  - {fileID: -400167153326446528}
+  - {fileID: -5945837273492298238}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -876,7 +687,196 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &9190455564390201426
+--- !u!114 &3497427702496315719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AI Assistant/Name-Rokusho
+  m_EditorClassIdentifier: 
+  Path: event:/AI Assistant/Name-Rokusho
+  Guid:
+    Data1: 416979605
+    Data2: 1270962934
+    Data3: -980503370
+    Data4: 1396509263
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4698393294566501096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AI Assistant/Name-Metabee
+  m_EditorClassIdentifier: 
+  Path: event:/AI Assistant/Name-Metabee
+  Guid:
+    Data1: -1820091397
+    Data2: 1150606652
+    Data3: -1086551650
+    Data4: 1588374916
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5588126427066346026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Mr. Referee/Battle End
+  m_EditorClassIdentifier: 
+  Path: event:/Mr. Referee/Battle End
+  Guid:
+    Data1: -1618411094
+    Data2: 1268586030
+    Data3: -544848747
+    Data4: 524793259
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6764496645432898188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Extras/Extra Sound 1
+  m_EditorClassIdentifier: 
+  Path: event:/Extras/Extra Sound 1
+  Guid:
+    Data1: 270449704
+    Data2: 1331680823
+    Data3: -1996166737
+    Data4: 1410785220
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6871260222432845622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AI Assistant/Legs Damaged
+  m_EditorClassIdentifier: 
+  Path: event:/AI Assistant/Legs Damaged
+  Guid:
+    Data1: 687799326
+    Data2: 1207156155
+    Data3: -865774955
+    Data4: 121999933
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6943398754440418738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Metabee/Shoot 1
+  m_EditorClassIdentifier: 
+  Path: event:/Metabee/Shoot 1
+  Guid:
+    Data1: 1795613250
+    Data2: 1224310860
+    Data3: -371719798
+    Data4: 1521626275
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7683573241639403895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Main Menu/SFX Confirm Option
+  m_EditorClassIdentifier: 
+  Path: event:/Main Menu/SFX Confirm Option
+  Guid:
+    Data1: 572351465
+    Data2: 1259960350
+    Data3: 2040470419
+    Data4: -1664163986
+  Banks:
+  - {fileID: -5945837273492298238}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8842862311975532129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -895,7 +895,7 @@ MonoBehaviour:
     Data3: -476148066
     Data4: 205921263
   Banks:
-  - {fileID: -400167153326446528}
+  - {fileID: -5945837273492298238}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1

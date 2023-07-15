@@ -32,8 +32,8 @@ public class RocketLaucher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rocketSmoke.Stop();
-        rocketSmoke2.Stop();
+           rocketSmoke.Stop();
+         rocketSmoke2.Stop();
         RocketLaunchSoundInstance = FMODUnity.RuntimeManager.CreateInstance(RocketLaunchSound);
         TimerForRecharge = rechargeTime;
         rechargeSmoke = TimerForSmoke;
@@ -79,11 +79,11 @@ public class RocketLaucher : MonoBehaviour
         if (TimerForSmoke > 0)
         {
             TimerForSmoke = Mathf.Clamp(TimerForSmoke - Time.deltaTime, 0, rechargeSmoke);
-            rocketSmoke.Stop();
-            rocketSmoke2.Stop();
+             rocketSmoke.Stop();
+             rocketSmoke2.Stop();
         }
-            
-        
+
+
     }
 
     private IEnumerator Fire()

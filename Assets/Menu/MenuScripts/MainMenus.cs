@@ -159,79 +159,10 @@ public class MainMenus : MonoBehaviour
 
 
 
-    #region Others StartMenuAreas:
-    //Mostrar nomes em efeito ciruclar up->Down "Em giro"
-    Animation animCreditsText;
 
 
 
 
-    //Extras:
-    //Colocar Tutorial View:
-    //Credits-> Text + Anim a rodar p/ baixo
-
-    //Settings:
-    //Video-Quality Unity Settings
-    //Som
-
-    #endregion
-
-
-
-
-
-    //Main Menu Sound Callbacks:
-    #region Call Menu Sounds
-    [Space(5)]
-    [Header("Menu Sounds:")]
-    //public List<AudioSource> listMenuSounds = new List<AudioSource>(); //Colocar os sons nesta list e chamar com metodo abaixo via codigo: MenuSoundsIndex(int musicIndex)
-    public AudioSource menuMusicSound;
-    //
-    public AudioMixer audioMixer;
-    public AudioSource menuSubmitSound;
-    public AudioSource menuCancelSound;
-    public AudioSource menuNavigateSound;
-    //
-    //Versus
-    public AudioSource menuVersusMusicSound;
-    //
-    public AudioSource menuReadySound;
-    public AudioSource menuAllReadySound;
-    //
-    public void Play_MenuMusicSound()
-    {
-        // menuMusicSound.Play();
-    }
-    public void Play_MenuSubmitSound()
-    {
-        //  menuSubmitSound.Play();
-    }
-    public void Play_MenuCancelSound()
-    {
-        // menuCancelSound.Play();
-    }
-    public void Play_MenuNavigateSound()
-    {
-        // menuNavigateSound.Play();
-    }
-    //
-    //Versus
-    public void Play_MenuVersusMusicSound()
-    {
-        //menuVersusMusicSound.Play();
-    }
-
-    public void Play_MenuReadySound()
-    {
-        //   menuReadySound.Play();
-    }
-    public void Play_MenuAllReadySound()
-    {
-        //   menuAllReadySound.Play();
-    }
-
-
-    #endregion
 
 
 

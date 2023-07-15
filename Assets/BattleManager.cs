@@ -51,7 +51,8 @@ public class BattleManager : MonoBehaviour
     private void Start()
     {
         pim = FindObjectOfType<PlayerInputManager>();
-        checkPlayersCoroutine = StartCoroutine(CheckPlayers());
+        // checkPlayersCoroutine = StartCoroutine(CheckPlayers());
+        StartCoroutine(BattleBegin());
         PlayerInputHandler.play = false;
     }
 

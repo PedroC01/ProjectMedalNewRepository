@@ -216,7 +216,9 @@ public class PlayerSideMenuData : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("111111");
         if (!inptEnable) { return;}
+        Debug.Log("22222222");
 
         //Aqui consoante o "state atual no menu a navegação deverá mudar "char select ou cores ou trocar entre estados de selecao(cores champ etc)
         if (playerInputUsingThis.actions["Navigate"].triggered)
