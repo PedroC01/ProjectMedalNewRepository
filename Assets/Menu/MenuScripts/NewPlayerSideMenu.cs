@@ -75,6 +75,8 @@ public class NewPlayerSideMenu : MonoBehaviour
         StartCoroutine(DelayInput());
         UpdateCharacterShow(selectOption);
         ColorChoicesInit();
+       // inptEnable = true;
+
     }
 
 
@@ -92,18 +94,24 @@ public class NewPlayerSideMenu : MonoBehaviour
     {
         Debug.Log("Update");
 
-        //nao ta a fazer nada pois começa off, mas pode vir dar a jeito
-      /*  if (isSceneIngame || SceneManager.actu)
-        {
-            Debug.Log("Desliga InputHandler");
+ 
 
-            isSceneIngame = false;
+        Scene scene = SceneManager.GetActiveScene();
+
+        //StartMenu
+        if (scene.buildIndex == 0)
+        {
+            //GetComponent<PlayerInputHandler>().enabled = false;
+        }
+        //Battle:
+        if (scene.buildIndex == 1)
+        {
             GetComponent<PlayerInputHandler>().enabled = true;
-        }*/
+        }
 
         //So para ativar script na scene correta.... nao e melhor maneira mas porenquanto testes
-      inptEnable = true;
 
+        inptEnable = true;
         if (!inptEnable) { return; }
         Debug.Log("InputON");
 

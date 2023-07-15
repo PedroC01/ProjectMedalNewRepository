@@ -35,7 +35,7 @@ public class VersusManager : MonoBehaviour
     {
         countdownText.gameObject.SetActive(false);
         LoadBar.gameObject.SetActive(false);
-        CreatePlayer();
+        //CreatePlayer();**************************************************************************************************************************
     }
 
     public void CreatePlayer()
