@@ -12,6 +12,11 @@ public class PlayerDataVersus : MonoBehaviour
     public int playerIndex;
     [SerializeField] List<GameObject> PlayerPanels = new List<GameObject>();
     public InputActionAsset saveFromManager;
+    private void Start()
+    {
+        DontDestroyOnLoad(this);
+        VersusManager.instance.CreatePlayer(this.gameObject);
+    }
     public void KnowPlayerInputAndIndex(PlayerInput _pInput, int _playerIndex)
     {
         pInput = _pInput;

@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 
 public class VersusManager : MonoBehaviour
@@ -13,7 +14,8 @@ public class VersusManager : MonoBehaviour
     public static VersusManager instance;
 
     public GameObject MiddleMenu;
-
+    [SerializeField]
+    public UnityEvent trysome;
     //Singleton:
     void Awake()
     {
@@ -38,15 +40,14 @@ public class VersusManager : MonoBehaviour
         //CreatePlayer();**************************************************************************************************************************
     }
 
-    public void CreatePlayer()
+    public void CreatePlayer(GameObject PlayerPrefab)
     {
-        // Instantiate the player prefab
-        GameObject newPlayer = Instantiate(PlayerMenuPrefab, this.transform.position, Quaternion.identity);
-        newPlayer.transform.parent = this.transform;
-        PlayerInput playerInput = newPlayer.GetComponent<PlayerInput>();
-        Debug.Log(playerInput + "  e on index: " + playerInput.playerIndex);
-        newPlayer.GetComponent<PlayerDataVersus>().KnowPlayerInputAndIndex(playerInput, playerInput.playerIndex);
-        newPlayer.GetComponent<PlayerDataVersus>().saveFromManager = newPlayer.gameObject.GetComponent<PlayerInput>().actions;
+        GetComponent<PlayerInputManager>().DisableJoining();
+         PlayerPrefab.transform.SetParent(this.transform);
+        PlayerInput playerInput = PlayerPrefab.GetComponent<PlayerInput>();
+     
+        PlayerPrefab.GetComponent<PlayerDataVersus>().KnowPlayerInputAndIndex(playerInput, playerInput.playerIndex);
+        PlayerPrefab.GetComponent<PlayerDataVersus>().saveFromManager = PlayerPrefab.gameObject.GetComponent<PlayerInput>().actions;
         listJoinedPlayers.Add(playerInput);//Add a lista de jogadores:
     }
 

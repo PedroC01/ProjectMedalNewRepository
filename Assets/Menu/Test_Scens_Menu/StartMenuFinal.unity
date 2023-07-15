@@ -142,6 +142,34 @@ PrefabInstance:
       propertyPath: countdownText
       value: 
       objectReference: {fileID: 1448050070}
+    - target: {fileID: 950097528, guid: 076b70b7965a7e0429e7506f076ec182, type: 3}
+      propertyPath: trysome.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 950097528, guid: 076b70b7965a7e0429e7506f076ec182, type: 3}
+      propertyPath: trysome.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 950097528, guid: 076b70b7965a7e0429e7506f076ec182, type: 3}
+      propertyPath: trysome.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1553940757}
+    - target: {fileID: 950097528, guid: 076b70b7965a7e0429e7506f076ec182, type: 3}
+      propertyPath: trysome.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 950097528, guid: 076b70b7965a7e0429e7506f076ec182, type: 3}
+      propertyPath: trysome.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisableJoining
+      objectReference: {fileID: 0}
+    - target: {fileID: 950097528, guid: 076b70b7965a7e0429e7506f076ec182, type: 3}
+      propertyPath: trysome.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.InputSystem.PlayerInputManager, Unity.InputSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 950097528, guid: 076b70b7965a7e0429e7506f076ec182, type: 3}
+      propertyPath: trysome.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1039591937, guid: 076b70b7965a7e0429e7506f076ec182, type: 3}
       propertyPath: GameScene
       value: InGameTest
@@ -1563,6 +1591,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1448050068}
   m_CullTransparentMesh: 1
+--- !u!114 &1553940757 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8227854966223882844, guid: 076b70b7965a7e0429e7506f076ec182,
+    type: 3}
+  m_PrefabInstance: {fileID: 15977540}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1617892506
 GameObject:
   m_ObjectHideFlags: 0
@@ -2390,6 +2430,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7896867858941590690, guid: a0a1884e9a8e94449979cb10e122cd11,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896867858941590690, guid: a0a1884e9a8e94449979cb10e122cd11,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896867858941590690, guid: a0a1884e9a8e94449979cb10e122cd11,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1039591933}
@@ -2403,6 +2453,31 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
       objectReference: {fileID: 1039591933}
+    - target: {fileID: 7896867858941590690, guid: a0a1884e9a8e94449979cb10e122cd11,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
+      value: 
+      objectReference: {fileID: 1553940757}
+    - target: {fileID: 7896867858941590690, guid: a0a1884e9a8e94449979cb10e122cd11,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896867858941590690, guid: a0a1884e9a8e94449979cb10e122cd11,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
+      value: EnableJoining
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896867858941590690, guid: a0a1884e9a8e94449979cb10e122cd11,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
+      value: UnityEngine.InputSystem.PlayerInputManager, Unity.InputSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896867858941590690, guid: a0a1884e9a8e94449979cb10e122cd11,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0a1884e9a8e94449979cb10e122cd11, type: 3}
 --- !u!1 &2023460617
