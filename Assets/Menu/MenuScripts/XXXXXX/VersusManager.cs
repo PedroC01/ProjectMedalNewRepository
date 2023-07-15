@@ -12,17 +12,20 @@ using UnityEngine.Events;
 public class VersusManager : MonoBehaviour
 {
     public static VersusManager instance;
-
-    public GameObject MiddleMenu;
-    [SerializeField]
-    public UnityEvent trysome;
     //Singleton:
     void Awake()
     {
         instance = this;//singleton!
         Debug.Log("Queremos dont destroy on load? ou queremos destruir e ao voltar menu refaz?!  confirmar depois e rever compotamentos!!!!");
-       DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this);
     }
+
+
+    public GameObject MiddleMenu;
+
+
+    public int amountReady = 0;
+
     //
     //
     [SerializeField] GameObject PlayerMenuPrefab;
@@ -38,6 +41,8 @@ public class VersusManager : MonoBehaviour
         countdownText.gameObject.SetActive(false);
         LoadBar.gameObject.SetActive(false);
         //CreatePlayer();**************************************************************************************************************************
+
+     
     }
 
     public void CreatePlayer(GameObject PlayerPrefab)
@@ -48,6 +53,15 @@ public class VersusManager : MonoBehaviour
      
         PlayerPrefab.GetComponent<PlayerDataVersus>().KnowPlayerInputAndIndex(playerInput, playerInput.playerIndex);
         PlayerPrefab.GetComponent<PlayerDataVersus>().saveFromManager = PlayerPrefab.gameObject.GetComponent<PlayerInput>().actions;
+
+        //Se 2º criar tbm menu
+        if (playerInput.playerIndex == 1)
+        {
+            Create2PlayerMenu(GetComponent<PlayerMedabotSelected>().gameObject);
+
+        }
+
+
         listJoinedPlayers.Add(playerInput);//Add a lista de jogadores:
     }
 
@@ -57,7 +71,7 @@ public class VersusManager : MonoBehaviour
         foreach (var player in listJoinedPlayers)
         {
             i++;
-            if (i == 2)
+            if (i == 2)//crio o 2?
             {
                 var objParent = GameObject.Find("Canvas");
                 GameObject middlepanel = Instantiate(MiddleMenu, objParent.transform);
@@ -65,6 +79,14 @@ public class VersusManager : MonoBehaviour
             player.GetComponent<PlayerDataVersus>().CreatesideMenuCalledButton();
         }
     }
+
+
+    void Create2PlayerMenu(GameObject obj)
+    {
+        GetComponent<PlayerDataVersus>().CreatesideMenuCalledButton();
+
+    }
+
 
     public void RemoveLastPlayer()
     {
@@ -98,73 +120,16 @@ public class VersusManager : MonoBehaviour
         AllReady();
     }
 
-    public int amountReady = 0;
+   
 
-
-
-    NewPlayerSideMenu reffff;
 
     void AllReady()
     {   
         if (amountReady == 2) 
         {
-            amountReady = 0;
-            // countdownText.gameObject.SetActive(true);
-            // LoadBar.gameObject.SetActive(true);
-            // StartCoroutine(LoadNextSceneWithCountdown());
-            // countdownText.gameObject.SetActive(false);
-            // LoadBar.gameObject.SetActive(false);
-
+            amountReady = 0;//Limpar
             ScenesManagerController.instance.LoadVersus();
         }
-    }
-
-
-
-
-
-
-
-
-
-    //Not working
-    //Not working
-    //Not working
-    //Not working
-    //Not working
-    //Not working
-    private IEnumerator LoadNextSceneWithCountdown()
-    {
-        int countdownSeconds = 3;
-        float elapsedTime = 0f;
-        bool isLoading = false;
-        AsyncOperation asyncOperation = null;
-        while (elapsedTime < countdownSeconds || isLoading)
-        {
-            countdownText.text = Mathf.CeilToInt(countdownSeconds - elapsedTime).ToString();
-
-            if (!isLoading)
-            {
-                asyncOperation =  SceneManager.LoadSceneAsync(ScenesManagerController.instance.GameScene);
-                asyncOperation.allowSceneActivation = false;
-                isLoading = true;
-            }
-            float progress = Mathf.Clamp01(asyncOperation.progress / 0.9f);
-            LoadBar.value = progress;
-
-            if (asyncOperation.isDone)
-            {
-                break;
-            }
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        if (asyncOperation != null && !asyncOperation.allowSceneActivation)
-        {
-            yield return new WaitForSeconds(countdownSeconds - elapsedTime);
-            asyncOperation.allowSceneActivation = true;
-        }     
     }
 
 }

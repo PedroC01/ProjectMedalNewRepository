@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class NewPlayerSideMenu : MonoBehaviour
 {
-    [SerializeField] bool inptEnable = false;
+    [SerializeField] bool inptEnable = true;
 
     [SerializeField] public PlayerInput playerInputUsingThis;
     public int playerIndexUsingThis;
@@ -66,16 +66,14 @@ public class NewPlayerSideMenu : MonoBehaviour
     {
         panel_ReadyUnready.SetActive(false);
         panelColorSelect.SetActive(false);
-        
+
     }
 
     private void Start()
     {
-        Debug.Log("Start");
-        StartCoroutine(DelayInput());
+
         UpdateCharacterShow(selectOption);
         ColorChoicesInit();
-       // inptEnable = true;
 
     }
 
@@ -86,46 +84,56 @@ public class NewPlayerSideMenu : MonoBehaviour
         VersusManager.instance.amountReady--;
     }
 
-
     public bool isSceneIngame = false;
-
-    //WHAT BT'S DO!!!!!!
-    void Update()
+    void OnOFfInputHandler()
     {
-        Debug.Log("Update");
-
- 
-
         Scene scene = SceneManager.GetActiveScene();
 
         //StartMenu
         if (scene.buildIndex == 0)
         {
+            Debug.Log("sera preciso depois no endround ao voltar");
             //GetComponent<PlayerInputHandler>().enabled = false;
         }
         //Battle:
-        if (scene.buildIndex == 1)
+        if (!isSceneIngame)
         {
-            GetComponent<PlayerInputHandler>().enabled = true;
+            if (scene.buildIndex == 1)
+            {
+                Debug.Log("E este chamado? nao??!?!?! testar rtemovere depois");
+                isSceneIngame = true;
+                GetComponent<PlayerInputHandler>().enabled = true;
+
+            }
         }
+    }
 
-        //So para ativar script na scene correta.... nao e melhor maneira mas porenquanto testes
 
-        inptEnable = true;
+    //WHAT BT'S DO!!!!!!
+    void Update()
+    {
+        OnOFfInputHandler();
+
+        //Input deve iniciar a true e depois sim ir se actualizando com o delay
+     
+
+       // inptEnable = true;
         if (!inptEnable) { return; }
         Debug.Log("InputON");
 
         //Aqui consoante o "state atual no menu a navegação deverá mudar "char select ou cores ou trocar entre estados de selecao(cores champ etc)
         if (playerInputUsingThis.actions["Navigate"].triggered)
         {
-           // MainMenus.instance.Play_MenuNavigateSound();***************************************************************************************************************************************
+         //   StartCoroutine(DelayInput());
+
+            // MainMenus.instance.Play_MenuNavigateSound();***************************************************************************************************************************************
 
             Vector2 inputDirection = playerInputUsingThis.actions["Navigate"].ReadValue<Vector2>();
 
             //Arrow Up e Down:
             if (inputDirection == Vector2.up)
             {
-                StartCoroutine(DelayInput());
+               // StartCoroutine(DelayInput());
 
                 // Handle up navigation
                 if (selectingChamp)
@@ -135,7 +143,7 @@ public class NewPlayerSideMenu : MonoBehaviour
             }
             else if (inputDirection == Vector2.down)
             {
-                StartCoroutine(DelayInput());
+            //    StartCoroutine(DelayInput());
 
                 // Handle down navigation
                 if (selectingChamp)
@@ -149,6 +157,7 @@ public class NewPlayerSideMenu : MonoBehaviour
             else if (inputDirection == Vector2.left)
             {
                 // Handle left navigation
+             //   StartCoroutine(DelayInput());
 
                 //Estados diferentes para input agir de acordo:
                 if (selectingChamp)
@@ -163,7 +172,7 @@ public class NewPlayerSideMenu : MonoBehaviour
                 else if (selectingColor)
                 {
                     //Trocar cores left e right
-                    StartCoroutine(DelayInput());
+                  //  StartCoroutine(DelayInput());
                     ColorChoicesUpdateLeft();
                 }
 
@@ -171,6 +180,7 @@ public class NewPlayerSideMenu : MonoBehaviour
             else if (inputDirection == Vector2.right)
             {
                 // Handle right navigation
+            //    StartCoroutine(DelayInput());
 
                 //Estados diferentes para input agir de acordo:
                 if (selectingChamp)
@@ -186,7 +196,7 @@ public class NewPlayerSideMenu : MonoBehaviour
                 {
                     //Trocar cores left e right
                     // bt_Ready.Select();//<---evitar double enter?!
-                    StartCoroutine(DelayInput());
+               //     StartCoroutine(DelayInput());
                     ColorChoicesUpdateRight();
                 }
 
@@ -198,8 +208,7 @@ public class NewPlayerSideMenu : MonoBehaviour
         if (playerInputUsingThis.actions["Submit"].triggered)
         {
            // MainMenus.instance.Play_MenuSubmitSound(); ***************************************************************************************************************************************
-           StartCoroutine(DelayInput());
-
+          
             #region Maneira Simples o que ocorre quando cada posicao de seta em X UI:
             //Metabee:
             //Agora a forçar metabee= pos[0], Random = pos[1], Rokusho = Pos[2]
@@ -212,7 +221,7 @@ public class NewPlayerSideMenu : MonoBehaviour
              
                 selectingChamp = false;
                 selectingColor = true;
-                StartCoroutine(DelayInput());
+               StartCoroutine(DelayInput());
                 UpdateCharacterShow(0);//Metabee
 
                 //  panelColorSelect.SetActive(true);
@@ -221,7 +230,7 @@ public class NewPlayerSideMenu : MonoBehaviour
             }      //Random select
             if (ArrowPositionSelect == 1 && selectingChamp)
             {
-                StartCoroutine(DelayInput());
+             //   StartCoroutine(DelayInput());
                 isRandomChamp = true;
                 //random select e ->enviar para color select
                 //SendCharSelectInfoToPlayrMedabotSelected(charSelected);
@@ -230,6 +239,7 @@ public class NewPlayerSideMenu : MonoBehaviour
                 selectingChamp = false;
                 selectingColor = true;
                 UpdateCharacterShow(rand);
+                StartCoroutine(DelayInput());
 
                 //  panelColorSelect.SetActive(true);
                 SwitchUIArrowOFF();
@@ -291,6 +301,7 @@ public class NewPlayerSideMenu : MonoBehaviour
         if (playerInputUsingThis.actions["Cancel"].triggered)
         {
             //  MainMenus.instance.Play_MenuCancelSound();***************************************************************************************************************************************
+            StartCoroutine(DelayInput());
 
 
             if (selectingChamp)
@@ -322,7 +333,7 @@ public class NewPlayerSideMenu : MonoBehaviour
 
 
 
-                StartCoroutine(DelayInput());
+               // StartCoroutine(DelayInput());
                // selectingColor = true;
                 playerIsReady = false;
                 panelColorSelect.SetActive(true);
@@ -360,32 +371,7 @@ public class NewPlayerSideMenu : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         inptEnable = true;
     }
-    //Corrigir o analogico ao mudar!!!!
-    //Corrigir o analogico ao mudar!!!!
-    //Corrigir o analogico ao mudar!!!!
-    //Corrigir o analogico ao mudar!!!!
-    //Corrigir o analogico ao mudar!!!!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
     //Sera necessáriooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo e acrescentar cores, sera chamado quando Ready!
@@ -600,64 +586,6 @@ public class NewPlayerSideMenu : MonoBehaviour
         arrowsToDisplayUI[ArrowPositionSelect].GetComponent<Image>().enabled = true;
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.38354, g: 325.1084, b: 430.30957, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2053,6 +2053,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 281
       objectReference: {fileID: 0}
+    - target: {fileID: 7896867857028797876, guid: a0a1884e9a8e94449979cb10e122cd11,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.2678223
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896867857028797876, guid: a0a1884e9a8e94449979cb10e122cd11,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.7698975
+      objectReference: {fileID: 0}
     - target: {fileID: 7896867857298730089, guid: a0a1884e9a8e94449979cb10e122cd11,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2117,6 +2127,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896867857430959279, guid: a0a1884e9a8e94449979cb10e122cd11,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 2.3200684
       objectReference: {fileID: 0}
     - target: {fileID: 7896867857638586297, guid: a0a1884e9a8e94449979cb10e122cd11,
         type: 3}
@@ -2237,6 +2252,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896867858573426544, guid: a0a1884e9a8e94449979cb10e122cd11,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.7145996
       objectReference: {fileID: 0}
     - target: {fileID: 7896867858663450596, guid: a0a1884e9a8e94449979cb10e122cd11,
         type: 3}
@@ -2431,7 +2451,7 @@ PrefabInstance:
     - target: {fileID: 7896867858941590690, guid: a0a1884e9a8e94449979cb10e122cd11,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7896867858941590690, guid: a0a1884e9a8e94449979cb10e122cd11,
         type: 3}
@@ -2452,7 +2472,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
-      objectReference: {fileID: 1039591933}
+      objectReference: {fileID: 1553940757}
     - target: {fileID: 7896867858941590690, guid: a0a1884e9a8e94449979cb10e122cd11,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Target
@@ -2465,8 +2485,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7896867858941590690, guid: a0a1884e9a8e94449979cb10e122cd11,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: BTTellPlayersToCreatesideMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896867858941590690, guid: a0a1884e9a8e94449979cb10e122cd11,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: OnOFFSingle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896867858941590690, guid: a0a1884e9a8e94449979cb10e122cd11,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: EnableJoining
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896867858941590690, guid: a0a1884e9a8e94449979cb10e122cd11,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
       value: EnableJoining
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896867858941590690, guid: a0a1884e9a8e94449979cb10e122cd11,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: UnityEngine.InputSystem.PlayerInputManager, Unity.InputSystem
       objectReference: {fileID: 0}
     - target: {fileID: 7896867858941590690, guid: a0a1884e9a8e94449979cb10e122cd11,
         type: 3}
@@ -2515,7 +2555,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.83900005}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1, y: -0.42694092}
+  m_AnchoredPosition: {x: 1, y: -0.42700195}
   m_SizeDelta: {x: 2, y: -2.3843002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2023460619

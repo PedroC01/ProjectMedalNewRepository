@@ -17,6 +17,25 @@ public class PlayerDataVersus : MonoBehaviour
         DontDestroyOnLoad(this);
         VersusManager.instance.CreatePlayer(this.gameObject);
     }
+
+    bool twoPlayer = false;
+
+    private void Update()
+    {
+       /* if (!twoPlayer) {
+            //Se ja ouver 2 jogadores
+            if (GetComponent<PlayerInputManager>().playerCount == 2)
+            {
+                twoPlayer = true;
+
+                //Criar 2 player
+
+            }
+        }*/
+       
+    }
+
+
     public void KnowPlayerInputAndIndex(PlayerInput _pInput, int _playerIndex)
     {
         pInput = _pInput;
