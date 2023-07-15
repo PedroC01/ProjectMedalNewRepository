@@ -23,7 +23,7 @@ public class ScenesManagerController : MonoBehaviour
     }
     public void LoadVersus()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
         
     }
     

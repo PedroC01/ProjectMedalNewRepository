@@ -51,4 +51,5 @@ MonoBehaviour:
   medaForceMovementSpeed: 10
   medaforceRechargeSmg: 1
   medafroceRechargeRevolver: 2
+  medaForceDuration: 10
   MedaForceDuration: 10

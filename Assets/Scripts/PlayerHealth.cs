@@ -119,7 +119,8 @@ public class PlayerHealth : MonoBehaviour
         }
         else if (Enemy.GetComponent<PlayerHealth>().Lost == true)
         {
-            pm.m_Animator1.SetBool("Won", true);
+            StartCoroutine(WinCouroutine());
+         
         }
 
         partsTotalHealth = 0; // Initialize the total health before the loop
@@ -180,6 +181,17 @@ public class PlayerHealth : MonoBehaviour
                 }
             }
         }
+    }
+
+    private IEnumerator WinCouroutine()
+    {
+        pm.ForceStop = true;
+        yield return new WaitForSecondsRealtime(0.2f);
+        pm.m_Animator1.SetBool("Won", true);
+        yield return new WaitForSecondsRealtime(0.3f);
+       // pm.m_Animator1.enabled = false;
+
+        
     }
 
 }

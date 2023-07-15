@@ -48,6 +48,7 @@ public class MetabeeStats : CharacterStatsSO
     public float medaForceMovementSpeed;
     public float medaforceRechargeSmg;
     public float medafroceRechargeRevolver;
+    public float medaForceDuration;
     [Header("MedaForce Related")]
     public float MedaForceDuration = 5f;
 }

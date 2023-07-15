@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.HighDefinition;
 using System.Collections;
+using UnityEngine.Events;
 
 public class FogController : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class FogController : MonoBehaviour
 
     private float initialWeight;
     private PlayerMedapartsController[] playerControllers;
-
+    public UnityEvent DuringMedaforce;
+    public UnityEvent NotDuringMedaforce;
     private void Start()
     {
         initialWeight = volume.weight;
@@ -37,10 +39,12 @@ public class FogController : MonoBehaviour
 
             if (anyPlayerUsingMedaForce)
             {
+                DuringMedaforce.Invoke();
                 yield return ChangeWeight(1f, transitionTime);
             }
             else
             {
+                NotDuringMedaforce.Invoke();
                 yield return ChangeWeight(0f, transitionTime+1);
             }
 

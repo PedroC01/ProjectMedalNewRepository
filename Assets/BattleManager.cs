@@ -44,6 +44,7 @@ public class BattleManager : MonoBehaviour
     public GameObject outFunction;
     public GameObject WinnerMetabee;
     public float delayOnCameraChange = 1;
+    public float delayToRestartGame = 10;
 
     private bool hasEnded = false; // Flag to track if the camera change has already occurred
 
@@ -179,6 +180,8 @@ public class BattleManager : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(delayOnCameraChange);
         WinnerMetabee.SetActive(true);
+        yield return new WaitForSecondsRealtime(delayToRestartGame);
         StopCoroutine(ChangeCameraOnEnd());
+        ScenesManagerController.instance.LoadVersus();
     }
 }

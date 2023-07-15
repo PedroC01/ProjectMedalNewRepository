@@ -67,7 +67,7 @@ public class PlayerMedapartsController : MonoBehaviour
     private bool playedLegSound;
 
     [Header("MedaForce Related")]
-    public float MedaForceDuration = 5f;
+    public float MedaForceDuration = 10f;
     public bool MedaForceActive = false;
     // Adjust the duration as needed
     private float MedaForceTimer = 0f;
@@ -141,6 +141,7 @@ public class PlayerMedapartsController : MonoBehaviour
                         break;
                 }
             }
+            this.MedaForceDuration = metabeeStats.MedaForceDuration;
             this.medaForceDamageWestAttack = metabeeStats.medaForceDamageWestAttack;
             this.medaForceDamageEastAttack = metabeeStats.medaForceDamageEastAttack;
             this.medaforceRechargeSmg = metabeeStats.medaforceRechargeSmg;
