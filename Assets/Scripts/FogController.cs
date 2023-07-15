@@ -41,7 +41,7 @@ public class FogController : MonoBehaviour
             }
             else
             {
-                yield return ChangeWeight(0f, transitionTime);
+                yield return ChangeWeight(0f, transitionTime+1);
             }
 
             yield return null;

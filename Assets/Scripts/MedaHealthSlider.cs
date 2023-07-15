@@ -48,13 +48,14 @@ public class MedaHealthSlider : MonoBehaviour
       if (percentageValue != next)
         {
             percentageValue-= Time.deltaTime+sliderAnimationSpeed;
-           
+            percentageValue = Mathf.Clamp(percentageValue, 0, maxEnergy);
             this.partEnergySlider.value = Mathf.Lerp(percentageValue, next, 1f);
             if (percentageValue == next)
             {
                 percentageValue = next;
             }
-            this.MedapartEnergyText.text = ((int)percentageValue).ToString() + "%";
+
+            this.MedapartEnergyText.text = Mathf.RoundToInt(percentageValue).ToString() + "%";
         }
         
 

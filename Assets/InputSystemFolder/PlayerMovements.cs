@@ -85,6 +85,7 @@ public class PlayerMovements : MonoBehaviour
     private Vector3 onImpact;
     public bool jumpInactive;
     public bool isAlreadyKnockingBack;
+    public bool ForceStop = false;
     private void Awake()
     {
         setupJump();
@@ -122,7 +123,7 @@ public class PlayerMovements : MonoBehaviour
         canMove = true;
         dashCoolDownReset = dashCoolDown;
         dashCoolDown = 0;
-
+        GetComponent<PlayerHealth>().Enemy = this.Enemy;
         // Store the initial rotation of the character
         initialRotation = transform.rotation;
         collidingWithInivisi = false;
@@ -223,8 +224,7 @@ public class PlayerMovements : MonoBehaviour
         // Gizmos.DrawSphere(this.transform.position,distClose);
     }
 
-
-
+    
 
 
     void HandleJump()
@@ -267,7 +267,7 @@ public class PlayerMovements : MonoBehaviour
     void Update()
     {
        
-        if (block)
+        if (block||ForceStop)
         {
             horizontalInput.x = 0;
             horizontalInput.y = 0;

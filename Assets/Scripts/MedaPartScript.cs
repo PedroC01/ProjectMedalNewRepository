@@ -88,7 +88,8 @@ public class MedaPartScript : MonoBehaviour
                 }
                 else
                 {
-                    damage = 0;
+                    damageReductionPercentage = Mathf.Clamp(defense, 0, 100f);
+                    reducedDamage = damage * (damageReductionPercentage / 100f);
                 }
 
 
@@ -96,11 +97,11 @@ public class MedaPartScript : MonoBehaviour
             else
             {
                 reducedDamage = damage;
-                this.partEnergy = Mathf.Clamp(this.partEnergy - reducedDamage, 0, partEnergyInitial);
+              
             }
+            this.partEnergy = Mathf.Clamp(this.partEnergy - reducedDamage, 0, partEnergyInitial);
 
-      
-            if(this.partEnergy <= 0f)
+            if (this.partEnergy <= 0f)
             {
                 partMalFunction = true;
                 this.thisMiniParts.GetComponent<LockOnShader>().partsDestroyed = true;

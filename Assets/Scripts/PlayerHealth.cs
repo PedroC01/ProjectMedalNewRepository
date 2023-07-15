@@ -30,10 +30,11 @@ public class PlayerHealth : MonoBehaviour
     private HashSet<int> destroyedParts = new HashSet<int>();
     public GameObject mbot;
     public PlayerMovements pm;
+    public bool Lost;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Lost = false;
         soundManager = FindObjectOfType<SoundManagerScript>();
      
         if (this.gameObject.GetComponent<Player2>()!=null)
@@ -100,7 +101,7 @@ public class PlayerHealth : MonoBehaviour
         partsTotalHealth -= 100;
         AveragetoMeda = (lifePerToMedaforce * partsTotalHealth) / ((MedaParts.Length - 1)*100);
         this.pm = GetComponent<PlayerMovements>();
-   
+        
     }
 
     // Update is called once per frame
@@ -114,6 +115,11 @@ public class PlayerHealth : MonoBehaviour
         {
             pm.canMove = false;
             pm.m_Animator1.SetBool("Lost", true);
+            Lost = true;
+        }
+        else if (Enemy.GetComponent<PlayerHealth>().Lost == true)
+        {
+            pm.m_Animator1.SetBool("Won", true);
         }
 
         partsTotalHealth = 0; // Initialize the total health before the loop

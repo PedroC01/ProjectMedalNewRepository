@@ -298,8 +298,8 @@ public class Shooter : MonoBehaviour
             }
         }
         
-            if (TimerForRechargeWest > 0)
-            {
+       if (TimerForRechargeWest > 0)
+         {
                 TimerForRechargeWest -= Time.deltaTime;
                 TimerForRechargeWest = Mathf.Clamp(TimerForRechargeWest, 0f, Mathf.Infinity);
 
@@ -308,7 +308,7 @@ public class Shooter : MonoBehaviour
                     magSizeFullAuto = MaxMagFullAuto; // Reset the magazine size after recharge
                     rechargingWest = false; // Reset the rechargingWest flag
                 }
-            }
+         }
         
        
 
@@ -383,7 +383,7 @@ public class Shooter : MonoBehaviour
             {
                 Shooted = false;
                 m_Animator.SetBool("ShootingR", false);
-                TimerForRechargeEast = rechargeTimeEast;
+                TimerForRechargeEast = this.rechargeTimeEast;
             }
             if (bulletsInMagazineRev <= 0 && bulletsShotCount > 0)
             {
@@ -488,13 +488,7 @@ public class Shooter : MonoBehaviour
             
             yield return null;
         }
-        if (magSizeFullAuto <= 0)
-        {
-            shootFullAuto = false;
-            TimerForRechargeWest = rechargeTimeWest;
-            rechargingWest = true;
-            yield return null;
-        }
+       
         UpperBodyAimConstraint.weight = upBodyAimOriginalValues;
         downBodyAimConstraint.weight = downBodyAimOriginalValues;
         leftArmDownAimConstraint.weight = 0;
@@ -502,6 +496,13 @@ public class Shooter : MonoBehaviour
         PM.playerSpeed = getPlayerSpeed;
         m_Animator.SetBool("Strafe", false);
         ResetBulletShotCount();
+         if (magSizeFullAuto <= 0)
+        {
+            shootFullAuto = false;
+            TimerForRechargeWest = this.rechargeTimeWest;
+            rechargingWest = true;
+            yield return null;
+        }
     }
 
 

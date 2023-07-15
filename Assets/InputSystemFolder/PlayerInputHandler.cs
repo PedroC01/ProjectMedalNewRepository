@@ -204,6 +204,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if (context.started)
             {
+             
                 OI?.OnWest();
             }
            
