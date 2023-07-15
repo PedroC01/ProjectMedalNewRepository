@@ -45,9 +45,24 @@ public class BattleManager : MonoBehaviour
     public GameObject WinnerMetabee;
     public float delayOnCameraChange = 1;
     public float delayToRestartGame = 10;
-
+    public GameObject[] ArenaVersions;
+    public GameObject[] FogVersions;
     private bool hasEnded = false; // Flag to track if the camera change has already occurred
 
+    private void Awake()
+    {
+        int i = Random.Range(0, ArenaVersions.Length);
+        ArenaVersions[i].SetActive(true);
+        FindObjectOfType<FogController>().volume = FogVersions[i].gameObject.GetComponent<Volume>();
+        for (int J=0;J<=ArenaVersions.Length; J++)
+        {
+            if (ArenaVersions[J] != ArenaVersions[i])
+            {
+                ArenaVersions[J].gameObject.SetActive(false);
+            }
+        }
+        
+    }
     private void Start()
     {
         pim = FindObjectOfType<PlayerInputManager>();
