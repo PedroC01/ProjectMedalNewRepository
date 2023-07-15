@@ -6,11 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Menu/Test_Scens_Menu/StartMenuFinal.unity
-    guid: 883816e3cac10454eb4c8b0f38e4528a
-  - enabled: 1
-    path: Assets/Menu/Test_Scens_Menu/InGame.unity
-    guid: 9c68377b42fef4c4689e0af92ec65f02
+    path: Assets/TEST_SCENES/tryingSplitScreen.unity
+    guid: 5125b99b718b1c8449d2e44a857b8a75
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: cb0a5cf94a0e5414294b875700793845,
       type: 2}

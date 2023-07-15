@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,6 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
+using FMODUnity;
 
 
 public class PlayerInputHandler : MonoBehaviour
@@ -28,6 +30,11 @@ public class PlayerInputHandler : MonoBehaviour
     private OverrideInput OI;
     private BattleManager bm;
     public static bool play;
+    public int indexOfPlayer;
+    private InputActionMap playerMovementActionMap;
+    private InputActionMap pauseMenuActionMap;
+    private StudioEventEmitter eventEmitter;
+    public bool MUTE;
     void Start()
     {
         playerInput=GetComponent<PlayerInput>();
@@ -41,9 +48,11 @@ public class PlayerInputHandler : MonoBehaviour
         ph = thisPlayer.GetComponent<PlayerHealth>();
         LO = thisPlayer.GetComponent<LockOn>();
         OI = thisPlayer.GetComponent<OverrideInput>();
+        OI.PIH = this;
         bm= FindObjectOfType<BattleManager>();
-     
-   
+        indexOfPlayer=pMovement.playerIndex;
+        bm.PlayerReady++;
+        eventEmitter = GameObject.Find("Main Camera Player1").GetComponent<StudioEventEmitter>(); ;
     }
   
     void Update()
@@ -52,7 +61,14 @@ public class PlayerInputHandler : MonoBehaviour
     }
 
 
-
+    public void PauseMenu(CallbackContext context)
+    {
+        if ( context.phase == InputActionPhase.Performed) {
+                ScenesManagerController.instance.Pause(indexOfPlayer, this);
+            
+       }
+       // EnablePauseMenu();
+    }
 
     public void OnLeftTriggerPressed(CallbackContext context)
     {
@@ -60,6 +76,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if (context.phase == InputActionPhase.Started)
             {
+                
                 leftTriggerPressed = true;
             }
             else if (context.phase == InputActionPhase.Canceled)
@@ -70,7 +87,21 @@ public class PlayerInputHandler : MonoBehaviour
 
     }
 
-   
+   public void Mute(CallbackContext context)
+    {
+        if (MUTE ==true)
+        {
+            eventEmitter.enabled = true;
+            MUTE = false;
+            return;
+        }else if (MUTE==false)
+        {
+            eventEmitter.enabled = false;
+            MUTE = true;
+            return;
+        }
+
+    }
 
     public void OnRightTriggerPressed(CallbackContext context)
     {
@@ -78,6 +109,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if (context.phase == InputActionPhase.Started)
             {
+               
                 rightTriggerPressed = true;
             }
             else if (context.phase == InputActionPhase.Canceled)
@@ -86,7 +118,10 @@ public class PlayerInputHandler : MonoBehaviour
             }
         }
     }
-
+    public void MedaforceKeyboard(CallbackContext context)
+    {
+        PerformComboAction();
+    }
     
 
     private void CheckCombo()
@@ -106,6 +141,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if (ph.canGoBerserk == true)
             {
+           
                 MpC.UseMedaForce();
                 ph.canGoBerserk = false;
             }
@@ -168,6 +204,7 @@ public class PlayerInputHandler : MonoBehaviour
         {
             if (context.started)
             {
+             
                 OI?.OnWest();
             }
            

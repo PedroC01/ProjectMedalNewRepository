@@ -100,7 +100,7 @@ public class Shooter : MonoBehaviour
     {
         
         
-        MaxMagFullAuto = magSizeFullAuto;
+     
         PM = GetComponentInParent<PlayerMovements>();
         this.bulletPrefab.GetComponent<Bullet>().bulletSpeed=mineBulletSpeed;
         this.thisPlayer=PM.gameObject.GetComponent<Transform>();
@@ -143,7 +143,7 @@ public class Shooter : MonoBehaviour
         upBodyAimOriginalValues = UpperBodyAimConstraint.weight;
         
         getPlayerSpeed = PM.playerSpeed;
-
+        MaxMagFullAuto = magSizeFullAuto;
 
     }
 
@@ -188,13 +188,12 @@ public class Shooter : MonoBehaviour
     /// </summary>
     public void West()
     {
-       
-        if(magSizeFullAuto > 0)
-        {
+        if (magSizeFullAuto > 0 && !rechargingWest) // Add !rechargingWest condition
+    {
             this.shootFullAuto = true;
             if (PM.closeRange == false)
             {
-                if (shootFullAuto == true && TimerForRechargeEast <= 0)
+                if (shootFullAuto == true && TimerForRechargeWest <= 0)
                 {
                     rightArmDownAimConstraint.weight = 0;
                     StartCoroutine(FireFullAuto());
@@ -202,6 +201,7 @@ public class Shooter : MonoBehaviour
                 }
             }
         }
+
         if (PM.closeRange == true)
         {
             MeleeWest = true;
@@ -209,15 +209,14 @@ public class Shooter : MonoBehaviour
             return;
         }
 
-
-
+        this.shootFullAuto = false; // Add this line to handle cases where the recharge time is not reached
     }
 
     public void WestRelease()
     {
         StopCoroutine(FireFullAuto());
         this.shootFullAuto = false;
-        
+     //   rechargingWest = false; // Add this line
         m_Animator.SetBool("ShootingLeft", false);
         StopCoroutine(FireFullAuto());
 
@@ -298,18 +297,20 @@ public class Shooter : MonoBehaviour
                 bulletsInMagazineRev = maxMagazineSizeRevolver; // Reset the magazine size after recharge
             }
         }
+        
+       if (TimerForRechargeWest > 0)
+         {
+                TimerForRechargeWest -= Time.deltaTime;
+                TimerForRechargeWest = Mathf.Clamp(TimerForRechargeWest, 0f, Mathf.Infinity);
 
-        if (TimerForRechargeWest > 0)
-        {
-            TimerForRechargeWest -= Time.deltaTime;
-            TimerForRechargeWest = Mathf.Clamp(TimerForRechargeWest, 0f, Mathf.Infinity);
-
-            if (TimerForRechargeWest <= 0)
-            {
-                rechargingWest = false;
-                magSizeFullAuto = MaxMagFullAuto; // Reset the magazine size after recharge
-            }
-        }
+                if (TimerForRechargeWest <= 0 && rechargingWest) // Add the rechargingWest condition
+                {
+                    magSizeFullAuto = MaxMagFullAuto; // Reset the magazine size after recharge
+                    rechargingWest = false; // Reset the rechargingWest flag
+                }
+         }
+        
+       
 
     }
 
@@ -326,7 +327,7 @@ public class Shooter : MonoBehaviour
         if (MeleeEast == true||MeleeWest)
         {
             PM.rb.velocity = Vector3.zero;
-            this.thisPlayer.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, this.thisPlayer.position.y, LO.lockOnTarget.transform.position.z));
+            this.thisPlayer.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, this.Enemy.transform.position.y, LO.lockOnTarget.transform.position.z));
 
             if(PM.dist <= PM.distClose){
                 LO.lockOnTarget.GetComponent<MedaPartScript>().partEnergy-=melleeDamage;
@@ -354,7 +355,12 @@ public class Shooter : MonoBehaviour
             PM.canMove = false;
             PM.horizontalInput.x = 0;
             PM.horizontalInput.y = 0;
-            this.thisPlayer.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
+            Vector3 targetPosition = LO.lockOnTarget.transform.position;
+            Vector3 characterPosition = thisPlayer.transform.position;
+            Vector3 lookAtDirection = targetPosition - characterPosition;
+            lookAtDirection.y = 0; // Set the y-component to 0 to prevent vertical rotation
+            Quaternion lookRotation = Quaternion.LookRotation(lookAtDirection);
+            thisPlayer.transform.rotation = lookRotation;
             this.firePoint.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, LO.lockOnTarget.transform.position.y, LO.lockOnTarget.transform.position.z));
             lookat = LO.lockOnTarget.transform;
             aimTarget.transform.position = LO.lockOnTarget.transform.position;
@@ -377,7 +383,7 @@ public class Shooter : MonoBehaviour
             {
                 Shooted = false;
                 m_Animator.SetBool("ShootingR", false);
-                TimerForRechargeEast = rechargeTimeEast;
+                TimerForRechargeEast = this.rechargeTimeEast;
             }
             if (bulletsInMagazineRev <= 0 && bulletsShotCount > 0)
             {
@@ -410,7 +416,12 @@ public class Shooter : MonoBehaviour
             }
             if (PM.IsMoving == false)
             {
-                this.thisPlayer.transform.LookAt(new Vector3(LO.lockOnTarget.transform.position.x, this.transform.position.y, LO.lockOnTarget.transform.position.z));
+                Vector3 targetPosition = LO.lockOnTarget.transform.position;
+                Vector3 characterPosition = thisPlayer.transform.position;
+                Vector3 lookAtDirection = targetPosition - characterPosition;
+                lookAtDirection.y = 0; // Set the y-component to 0 to prevent vertical rotation
+                Quaternion lookRotation = Quaternion.LookRotation(lookAtDirection);
+                thisPlayer.transform.rotation = lookRotation;
                 new WaitForSeconds(delayFullAuto);
             }
             m_Animator.SetBool("ShootingLeft", true);
@@ -477,6 +488,7 @@ public class Shooter : MonoBehaviour
             
             yield return null;
         }
+       
         UpperBodyAimConstraint.weight = upBodyAimOriginalValues;
         downBodyAimConstraint.weight = downBodyAimOriginalValues;
         leftArmDownAimConstraint.weight = 0;
@@ -484,6 +496,13 @@ public class Shooter : MonoBehaviour
         PM.playerSpeed = getPlayerSpeed;
         m_Animator.SetBool("Strafe", false);
         ResetBulletShotCount();
+         if (magSizeFullAuto <= 0)
+        {
+            shootFullAuto = false;
+            TimerForRechargeWest = this.rechargeTimeWest;
+            rechargingWest = true;
+            yield return null;
+        }
     }
 
 

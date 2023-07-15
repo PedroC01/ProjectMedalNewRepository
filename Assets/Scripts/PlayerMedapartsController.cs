@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ public class PlayerMedapartsController : MonoBehaviour
     private PlayerMovements PM;
     public CharacterStatsSO characterStatsSO;
     public OverrideInput OI;
- 
+    public bool useOnce;
     [Header("perBullet")]
     public float lastBulletCritMultiplyer;
    
@@ -56,7 +57,7 @@ public class PlayerMedapartsController : MonoBehaviour
     public int medaForceMagSizeRev;
     public float medaForceMovementSpeed;
     public float medaforceRechargeSmg;
-    public float medafroceRechargeRevolver;
+    public float medaforceRechargeRevolver;
 
     [Header("Sounds")]
     public string turningOffSound;
@@ -66,20 +67,21 @@ public class PlayerMedapartsController : MonoBehaviour
     private bool playedLegSound;
 
     [Header("MedaForce Related")]
-    public float MedaForceDuration = 5f;
+    public float MedaForceDuration = 10f;
     public bool MedaForceActive = false;
     // Adjust the duration as needed
     private float MedaForceTimer = 0f;
     private float originalNorthAttack;
     private float originalDamageWestAttack;
     private float originalDamageEastAttack;
-    private float originalRechargeSmg;
-    private float originalRechargeRevolver;
-    private int originalMagSizeSmg;
-    private int originalMagSizeRev;
+    public float originalRechargeSmg;
+    public float originalRechargeRevolver;
+    public int originalMagSizeSmg;
+    public int originalMagSizeRev;
     private float originalMovementSpeed;
     public GameObject medaforceEnergy;
-   
+    private bool jumpWasInactive;
+    private bool isUsingMedaForce = false;
 
     private void Awake()
     {
@@ -139,6 +141,14 @@ public class PlayerMedapartsController : MonoBehaviour
                         break;
                 }
             }
+            this.MedaForceDuration = metabeeStats.MedaForceDuration;
+            this.medaForceDamageWestAttack = metabeeStats.medaForceDamageWestAttack;
+            this.medaForceDamageEastAttack = metabeeStats.medaForceDamageEastAttack;
+            this.medaforceRechargeSmg = metabeeStats.medaforceRechargeSmg;
+            this.medaforceRechargeRevolver = metabeeStats.medafroceRechargeRevolver;
+            this.medaForceMagSizeRev = metabeeStats.medaForceMagSizeRev;
+            this.medaForceMagSizeSmg=metabeeStats.medaForceMagSizeSmg;
+            this.medaForceMovementSpeed = metabeeStats.medaForceMovementSpeed;
             this.PM.dashCoolDown = metabeeStats.baseRechargeDash; 
             this.lowEnergyDamageWestAttack=metabeeStats.lowEnergyDamageWestAttack;
             this.lowEnergyMagSizeSmg = metabeeStats.lowEnergyMagSizeSmg;
@@ -148,8 +158,9 @@ public class PlayerMedapartsController : MonoBehaviour
             this.lowRechargeSmg = metabeeStats.lowRechargeSmg;
             this.lowRechargeRevolver = metabeeStats.lowRechargeRevolver;
             this.lowRechargeDash = metabeeStats.lowRechargeDash;
-
-    SetMedapartStatsShooter(metabeeStats.baseDamageWestAttack, metabeeStats.baseDamageEastAttack, metabeeStats.baseMagSizeSmg, metabeeStats.baseMagSizeRev, metabeeStats.baseMovementSpeed, metabeeStats.BaseDamageNorthAttack, metabeeStats.baseRechargeSmg, metabeeStats.baseRechargeRevolver);
+            this.baseRechargeSmg = metabeeStats.baseRechargeSmg;
+            this.baseRechargeRevolver = metabeeStats.baseRechargeRevolver;
+             SetMedapartStatsShooter(metabeeStats.baseDamageWestAttack, metabeeStats.baseDamageEastAttack, metabeeStats.baseMagSizeSmg, metabeeStats.baseMagSizeRev, metabeeStats.baseMovementSpeed, metabeeStats.BaseDamageNorthAttack, metabeeStats.baseRechargeSmg, metabeeStats.baseRechargeRevolver);
             this.shooter.bulletPrefab.GetComponent<Bullet>().critValue = metabeeStats.lastBulletCritMultiplyer;
         }
 
@@ -169,7 +180,12 @@ public class PlayerMedapartsController : MonoBehaviour
             {
                 // Combo time is over, restore the original medapart stats
                 MedaForceActive = false;
-
+                if (jumpWasInactive)
+                {
+                    PM.jumpInactive = true;
+                }
+             
+                
                 SetMedapartStatsShooter(originalDamageWestAttack, originalDamageEastAttack, originalMagSizeSmg, originalMagSizeRev, originalMovementSpeed,originalNorthAttack,originalRechargeSmg,originalRechargeRevolver);
             }
         }
@@ -220,7 +236,7 @@ public class PlayerMedapartsController : MonoBehaviour
                 {
                     case 2: // Arm Medapart
 
-                        this.shooter.magSizeFullAuto = this.lowEnergyMagSizeSmg;
+                        this.shooter.maxMagazineSizeRevolver = this.lowEnergyMagSizeRev;
                         if (!playedLArmSound)
                             {
                                 turningOffSoundInstance.start();
@@ -230,8 +246,9 @@ public class PlayerMedapartsController : MonoBehaviour
                         break;
 
                     case 3:
-
-                        this.shooter.maxMagazineSizeRevolver = this.lowEnergyMagSizeRev;
+                        this.shooter.MaxMagFullAuto = this.lowEnergyMagSizeSmg;
+                        this.shooter.rechargeTimeWest = this.lowRechargeSmg;
+                   
                         if (!playedRArmSound)
                             {
                                 turningOffSoundInstance.start();
@@ -243,7 +260,8 @@ public class PlayerMedapartsController : MonoBehaviour
                     case 4: // Leg Medapart
 
                         PM.playerSpeed = lowEnergyMovementSpeed;
-
+                        PM.jumpInactive = true;
+                        jumpWasInactive = true;
                         if (!playedLegSound)
                             {
                                 turningOffSoundInstance.start();
@@ -267,32 +285,67 @@ public class PlayerMedapartsController : MonoBehaviour
         RL.damagePerRocket = damage_NorthAttack;
         shooter.smgDamage = damage_WestAttack;
         shooter.revolverDamage = damage_EastAttack;
-        shooter.rechargeTimeEast= Recharge_Revolver;
-        shooter.rechargeTimeWest= Recharge_Smg;
-        shooter.magSizeFullAuto = mag_SizeSmg;
+
+        shooter.rechargeTimeEast = Recharge_Revolver;
+        shooter.rechargeTimeWest = Recharge_Smg;
+
+        shooter.MaxMagFullAuto = mag_SizeSmg;
         shooter.maxMagazineSizeRevolver = mag_SizeRev;
+        shooter.rechargeTimeEast = Recharge_Revolver; 
+        shooter.rechargeTimeWest = Recharge_Smg;
         PM.playerSpeed = movement_Speed;
     }
 
     public void UseMedaForce()
     {
-        MedaForceActive = true;
-        Vector3 energyPos = new Vector3(this.transform.position.x,0f, this.transform.position.z);
-        Instantiate(this.medaforceEnergy, energyPos, this.transform.rotation);
-        MedaForceTimer = MedaForceDuration;
-
-        // Save the original medapart stats to restore them later
-        originalNorthAttack = RL.damagePerRocket;
-        originalDamageWestAttack = shooter.smgDamage;
-        originalDamageEastAttack = shooter.revolverDamage;
-        originalMagSizeSmg = shooter.magSizeFullAuto;
-        originalMagSizeRev = shooter.maxMagazineSizeRevolver;
-        originalRechargeRevolver=shooter.rechargeTimeEast;
-        originalRechargeSmg=shooter.rechargeTimeWest;
-
-        originalMovementSpeed = PM.playerSpeed;
-        SetMedapartStatsShooter(medaForceDamageWestAttack, medaForceDamageEastAttack, medaForceMagSizeSmg, medaForceMagSizeRev, medaForceMovementSpeed,MedaForceNorthAttack,medaforceRechargeSmg,medafroceRechargeRevolver);
+        if (!isUsingMedaForce)
+        {
+            isUsingMedaForce = true;
+            StartCoroutine(ActivateMedaForce());
+        }
     }
+
+
+    private IEnumerator ActivateMedaForce()
+    {
+        if (useOnce == false)
+        {
+                useOnce = true;
+                PM.isInvencible = true;
+                PM.ForceStop = true;
+                PM.canMove = false;
+                Vector3 energyPos = new Vector3(this.transform.position.x, 0f, this.transform.position.z);
+                Instantiate(this.medaforceEnergy, energyPos, this.transform.rotation);
+            
+
+                MedaForceTimer = MedaForceDuration;
+
+                // Save the original medapart stats to restore them later
+                originalNorthAttack = RL.damagePerRocket;
+                originalDamageWestAttack = shooter.smgDamage;
+                originalDamageEastAttack = shooter.revolverDamage;
+                originalMagSizeSmg = shooter.MaxMagFullAuto;
+                originalMagSizeRev = shooter.maxMagazineSizeRevolver;
+                originalRechargeRevolver = shooter.rechargeTimeEast;
+
+                originalRechargeSmg = shooter.rechargeTimeWest;
+
+                PM.jumpInactive = false;
+                originalMovementSpeed = PM.playerSpeed;
+                SetMedapartStatsShooter(medaForceDamageWestAttack, medaForceDamageEastAttack, medaForceMagSizeSmg, medaForceMagSizeRev, medaForceMovementSpeed, MedaForceNorthAttack, medaforceRechargeSmg, medaforceRechargeRevolver);
+
+                yield return new WaitForSecondsRealtime(0.8f);
+                MedaForceActive = true;
+                PM.canMove = true;
+                PM.ForceStop = false;
+                PM.isInvencible = false;
+                 
+
+
+        }
+    }
+
+
 
     public void SetBlocking(bool isBlocking)
     {

@@ -3,44 +3,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro;
+using UnityEngine.Rendering;
+using Unity.VisualScripting;
 
 public class BattleManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     public GameObject _player1;
     public GameObject _player2;
-    [SerializeField]
+    public float timeAfterBattle;
     public UnityEvent CloseDistance;
-    [SerializeField]
     public UnityEvent FarDistance;
-    [SerializeField]
     public UnityEvent OnGameEnd;
-    [SerializeField]
     public UnityEvent OnBattleStart;
-    [SerializeField]
     public UnityEvent OnDisable;
     private float dist;
     public float closeDistanceThreshold;
-    [SerializeField]
-    public static bool playing=true;
+    public static bool playing = true;
     private float _Player1Health;
     private float _Player2Health;
-    public CinemachineVirtualCamera player2EndCamera;
-    public CinemachineVirtualCamera player1EndCamera;
+    public CinemachineVirtualCamera player2EndCameraWinner;
+    public CinemachineVirtualCamera player1EndCameraWinner;
+    public CinemachineVirtualCamera player2EndCameraLoser;
+    public CinemachineVirtualCamera player1EndCameraLoser;
     public float timeToDeadBody;
     public float timeBeforeStartVideo;
     public float timerAfterVideoEnds;
     public bool BattleStarted;
-    void Start()
+    public int PlayerReady;
+    public GameObject fakeMainMenu;
+    public bool CheckingPlayers = true;
+    private Coroutine checkPlayersCoroutine;
+    public PlayerInputManager pim;
+    public TMP_Text Player1ReadyText;
+    public TMP_Text Player1ReadyText2;
+    public TMP_Text Player2ReadyText;
+    public TMP_Text Player2ReadyText2;
+    public GameObject outFunction;
+    public GameObject WinnerMetabee;
+    public float delayOnCameraChange = 1;
+    public float delayToRestartGame = 10;
+
+    private bool hasEnded = false; // Flag to track if the camera change has already occurred
+
+    private void Start()
     {
-        // playing = false;
-        StartCoroutine(BattleBegin());
-    
+        pim = FindObjectOfType<PlayerInputManager>();
+        checkPlayersCoroutine = StartCoroutine(CheckPlayers());
         PlayerInputHandler.play = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (BattleStarted)
         {
@@ -51,67 +66,122 @@ public class BattleManager : MonoBehaviour
                 playing = false;
                 PlayerInputHandler.play = playing;
                 StartCoroutine(ChangeCameraOnEnd());
-
             }
             dist = Vector3.Distance(_player1.transform.position, _player2.transform.position);
             if (dist <= closeDistanceThreshold)
             {
-
                 CloseDistance.Invoke();
             }
             else
             {
-
                 FarDistance.Invoke();
             }
             if (!playing)
             {
-
-
-
+                // ...
             }
         }
     }
 
-    private IEnumerator BattleBegin() { 
-    
-        
-        
-            yield return new WaitForSecondsRealtime(timeBeforeStartVideo);
-        
-             OnBattleStart.Invoke();
-
-            yield return new WaitForSecondsRealtime(timerAfterVideoEnds);
-            OnDisable.Invoke();
-            PlayerInputHandler.play = true;
-            playing = true;
-             BattleStarted = true;
+    public void IsPlaying()
+    {
+        PlayerInputHandler.play = true;
+        playing = true;
     }
 
+    public void IsNotPlaying()
+    {
+        PlayerInputHandler.play = false;
+        playing = false;
+    }
+
+    private IEnumerator BattleBegin()
+    {
+        yield return new WaitForSecondsRealtime(timeBeforeStartVideo);
+
+        OnBattleStart.Invoke();
+
+        yield return new WaitForSecondsRealtime(timerAfterVideoEnds);
+        OnDisable.Invoke();
+        PlayerInputHandler.play = true;
+        playing = true;
+        BattleStarted = true;
+        Time.timeScale = 1.0f;
+    }
+
+    private IEnumerator CheckPlayers()
+    {
+        while (CheckingPlayers)
+        {
+            if (PlayerReady == 1)
+            {
+                Player1ReadyText.gameObject.SetActive(false);
+                Player1ReadyText2.gameObject.SetActive(true);
+                Player2ReadyText.gameObject.SetActive(true);
+            }
+            if (PlayerReady >= 2)
+            {
+                Player2ReadyText.gameObject.SetActive(false);
+                Player2ReadyText2.gameObject.SetActive(true);
+                fakeMainMenu.SetActive(false);
+                StopCoroutine(CheckPlayers());
+                StopCoroutine(checkPlayersCoroutine);
+                StartCoroutine(BattleBegin());
+                yield break;
+            }
+            yield return null;
+        }
+    }
 
     private IEnumerator ChangeCameraOnEnd()
     {
+        // Check if the coroutine has already been called
+        if (hasEnded)
+            yield break;
 
-   
+        // Set the flag to true to indicate that the coroutine has been called
+        hasEnded = true;
+
         OnGameEnd.Invoke();
+
         if (_Player1Health <= 0)
         {
-            player1EndCamera.Priority = 2;
-            player2EndCamera.Priority = 0;
-            yield return new WaitForSecondsRealtime(timeToDeadBody);
-            player1EndCamera.Priority = 0;
-            player2EndCamera.Priority = 2;
+            player1EndCameraWinner.Priority = -10;
+            player2EndCameraLoser.Priority = -10;
+            player1EndCameraLoser.Priority = 2;
         }
-         if (_Player2Health <= 0)
+        else if (_Player2Health <= 0)
         {
-            player2EndCamera.Priority = 2;
-            player1EndCamera.Priority = 0;
-            yield return new WaitForSecondsRealtime(timeToDeadBody);
-            player2EndCamera.Priority = 0;
-            player1EndCamera.Priority = 2;
+            player1EndCameraWinner.Priority = -10;
+            player1EndCameraLoser.Priority = -10;
+            player2EndCameraLoser.Priority = 2;
         }
-        
-       
-      
+
+        outFunction.SetActive(true);
+        yield return new WaitForSecondsRealtime(timeToDeadBody);
+        outFunction.SetActive(false);
+
+        if (_Player1Health <= 0)
+        {
+            player2EndCameraWinner.Priority = 3;
+            player1EndCameraLoser.Priority = -10;
+            player1EndCameraWinner.gameObject.SetActive(false);
+            player1EndCameraLoser.gameObject.SetActive(false);
+            player2EndCameraLoser.gameObject.SetActive(false);
+        }
+        else if (_Player2Health <= 0)
+        {
+            player1EndCameraWinner.Priority = 3;
+            player2EndCameraLoser.Priority = -10;
+            player1EndCameraLoser.gameObject.SetActive(false);
+            player2EndCameraWinner.gameObject.SetActive(false);
+            player2EndCameraLoser.gameObject.SetActive(false);
+        }
+
+        yield return new WaitForSecondsRealtime(delayOnCameraChange);
+        WinnerMetabee.SetActive(true);
+        yield return new WaitForSecondsRealtime(delayToRestartGame);
+        StopCoroutine(ChangeCameraOnEnd());
+        ScenesManagerController.instance.LoadVersus();
     }
 }

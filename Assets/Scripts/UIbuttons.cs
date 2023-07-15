@@ -11,6 +11,7 @@ public class UIbuttons : MonoBehaviour
     public GameObject coverObjectWest;
     public GameObject coverObjectRocket;
     public GameObject coverObjectDash;
+    public GameObject MedaforceUsable;
     public int timerEast; // Timer for recharge East
     public int timerWest; // Timer for recharge West
     public int timerRocket;
@@ -50,20 +51,28 @@ public class UIbuttons : MonoBehaviour
     private bool isAttackReadyB = false;
     private bool isAttackReadyC = false;
     private bool isDashReady = false;
-
+    private PlayerHealth ph;
     // Start is called before the first frame update
     void Start()
     {
         if (this.UINumber == 1)
         {
-            sh = FindObjectOfType<Player1>().GetComponentInChildren<Shooter>();
-            RL = FindObjectOfType<Player1>().GetComponentInChildren<RocketLaucher>();
+            if (FindObjectOfType<Player1>().GetComponentInChildren<MetabeeCheck>() != null)
+            {
+                sh = FindObjectOfType<Player1>().GetComponentInChildren<Shooter>();
+                RL = FindObjectOfType<Player1>().GetComponentInChildren<RocketLaucher>();
+            }
+             ph= FindObjectOfType<Player1>().GetComponent<PlayerHealth>();
             pm = FindObjectOfType<Player1>().GetComponent<PlayerMovements>();
         }
         if (this.UINumber == 2)
         {
-            sh = FindObjectOfType<Player2>().GetComponentInChildren<Shooter>();
-            RL = FindObjectOfType<Player2>().GetComponentInChildren<RocketLaucher>();
+            if (FindObjectOfType<Player2>().GetComponentInChildren<MetabeeCheck>() != null)
+            {
+                sh = FindObjectOfType<Player2>().GetComponentInChildren<Shooter>();
+                RL = FindObjectOfType<Player2>().GetComponentInChildren<RocketLaucher>();
+            }
+            ph = FindObjectOfType<Player2>().GetComponent<PlayerHealth>();
             pm = FindObjectOfType<Player2>().GetComponent<PlayerMovements>();
         }
         attackReadySoundInstanceEast = FMODUnity.RuntimeManager.CreateInstance(attackReady);
@@ -81,7 +90,7 @@ public class UIbuttons : MonoBehaviour
         // Handle Recharge East
     
         eastSlider.value = Mathf.Clamp(sh.TimerForRechargeEast, 0f, rechargeTimeEast);
-        timerEast = Mathf.CeilToInt(sh.TimerForRechargeEast);
+        timerEast = (int)sh.TimerForRechargeEast;
         eastTimeText.text = timerEast.ToString();
         eastTimeText.gameObject.SetActive(sh.TimerForRechargeEast > 0);
         SmgBulletsText.text = sh.magSizeFullAuto.ToString() + "/" + sh.MaxMagFullAuto.ToString();
@@ -101,7 +110,7 @@ public class UIbuttons : MonoBehaviour
         // Handle Recharge West
     
         westSlider.value = Mathf.Clamp( sh.TimerForRechargeWest, 0f, rechargeTimeWest);
-        timerWest = Mathf.CeilToInt(sh.TimerForRechargeWest);
+        timerWest = (int)sh.TimerForRechargeWest;
         westTimeText.text = timerWest.ToString();
         westTimeText.gameObject.SetActive(sh.TimerForRechargeWest > 0);
 
@@ -118,8 +127,8 @@ public class UIbuttons : MonoBehaviour
 
         // Handle Recharge Rocket
    
-        rocketSlider.value = Mathf.Clamp(RL.TimerForRecharge, 0f, rechargeTimeRocket);
-        timerRocket = Mathf.CeilToInt(RL.TimerForRecharge);
+        rocketSlider.value = Mathf.Clamp(RL.TimerForRecharge, 0, rechargeTimeRocket);
+        timerRocket = (int)RL.TimerForRecharge;
         rocketTimeText.text = timerRocket.ToString();
         rocketTimeText.gameObject.SetActive(RL.TimerForRecharge > 0);
 
@@ -136,8 +145,8 @@ public class UIbuttons : MonoBehaviour
 
         // Handle Recharge Dash
    
-        dashSlider.value = Mathf.Clamp(pm.dashCoolDown, 0f, rechargeTimeDash);
-        timerDash = Mathf.CeilToInt(pm.dashCoolDown);
+        dashSlider.value = Mathf.Clamp(pm.dashCoolDown, 0, rechargeTimeDash);
+        timerDash = (int)pm.dashCoolDown;
         dashTimeText.text = timerDash.ToString();
         dashTimeText.gameObject.SetActive(pm.dashCoolDown > 0);
 
@@ -151,5 +160,17 @@ public class UIbuttons : MonoBehaviour
             coverObjectDash.SetActive(true);
             dashSlider.gameObject.SetActive(true);
         }
+
+
+
+        if (ph.canGoBerserk == true)
+        {
+            MedaforceUsable.SetActive(true);
+        }
+        else
+        {
+            MedaforceUsable.SetActive(false);
+        }
+
     }
 }

@@ -103,11 +103,11 @@ public class LockOnShader : MonoBehaviour
 
                 if (ppiece.PieceNum == thisLockOnNum)
                 {
-                    ppiece.destroyed = partsDestroyed;
+                    ppiece.destroyed = true;
                 }
                 if (ppiece.PieceNum != thisLockOnNum)
                 {
-                    return;
+                    //return;
                 }
 
             }
