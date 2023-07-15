@@ -453,7 +453,7 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 63e98269-626d-48f5-b4ce-45d2c08687e7
     m_ActionName: Player1UI/StartButton[/Keyboard/escape]
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player1UI
   m_SplitScreenIndex: -1

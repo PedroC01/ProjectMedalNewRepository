@@ -151,6 +151,92 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8227854966223882844, guid: 076b70b7965a7e0429e7506f076ec182,
+        type: 3}
+      propertyPath: m_JoinBehavior
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227854966223882844, guid: 076b70b7965a7e0429e7506f076ec182,
+        type: 3}
+      propertyPath: m_PlayerPrefab
+      value: 
+      objectReference: {fileID: 2554914994253204547, guid: 852d04ceaf770f64e98ad5b3f728ecd6,
+        type: 3}
+    - target: {fileID: 8227854966223882844, guid: 076b70b7965a7e0429e7506f076ec182,
+        type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227854966223882844, guid: 076b70b7965a7e0429e7506f076ec182,
+        type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 76c85ba3-7c38-4cfa-8896-e441ac21b33d
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227854966223882844, guid: 076b70b7965a7e0429e7506f076ec182,
+        type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[1].m_Id
+      value: 97fcac3c-4d74-4599-894b-89bea8c7130f
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227854966223882844, guid: 076b70b7965a7e0429e7506f076ec182,
+        type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[2].m_Id
+      value: 98f255cc-a883-410c-9f21-3d3e3e25dd68
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227854966223882844, guid: 076b70b7965a7e0429e7506f076ec182,
+        type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[0].m_Name
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227854966223882844, guid: 076b70b7965a7e0429e7506f076ec182,
+        type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Gamepad>/start
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227854966223882844, guid: 076b70b7965a7e0429e7506f076ec182,
+        type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[1].m_Name
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227854966223882844, guid: 076b70b7965a7e0429e7506f076ec182,
+        type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[1].m_Path
+      value: <Keyboard>/enter
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227854966223882844, guid: 076b70b7965a7e0429e7506f076ec182,
+        type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[2].m_Name
+      value: positive
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227854966223882844, guid: 076b70b7965a7e0429e7506f076ec182,
+        type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[0].m_Flags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227854966223882844, guid: 076b70b7965a7e0429e7506f076ec182,
+        type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[1].m_Flags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227854966223882844, guid: 076b70b7965a7e0429e7506f076ec182,
+        type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[2].m_Flags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227854966223882844, guid: 076b70b7965a7e0429e7506f076ec182,
+        type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Join
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227854966223882844, guid: 076b70b7965a7e0429e7506f076ec182,
+        type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[1].m_Action
+      value: Join
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227854966223882844, guid: 076b70b7965a7e0429e7506f076ec182,
+        type: 3}
+      propertyPath: m_JoinAction.m_Action.m_SingletonActionBindings.Array.data[2].m_Action
+      value: Join
+      objectReference: {fileID: 0}
     - target: {fileID: 8227854966223882847, guid: 076b70b7965a7e0429e7506f076ec182,
         type: 3}
       propertyPath: m_RootOrder
