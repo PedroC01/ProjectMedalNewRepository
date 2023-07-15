@@ -27,19 +27,12 @@ public class VersusManager : MonoBehaviour
     public int amountReady = 0;
 
     //
-    //
     [SerializeField] GameObject PlayerMenuPrefab;
-    [Space(2)]
-    [Header("CountDown And LoadBar:")]
-    public TMP_Text countdownText;
-    public Slider LoadBar;
     [Space(2)]
     public List<PlayerInput> listJoinedPlayers = new List<PlayerInput>();
    
     void Start()
     {
-        countdownText.gameObject.SetActive(false);
-        LoadBar.gameObject.SetActive(false);
         //CreatePlayer();**************************************************************************************************************************
 
      
@@ -61,7 +54,6 @@ public class VersusManager : MonoBehaviour
 
         }
 
-
         listJoinedPlayers.Add(playerInput);//Add a lista de jogadores:
     }
 
@@ -71,7 +63,7 @@ public class VersusManager : MonoBehaviour
         foreach (var player in listJoinedPlayers)
         {
             i++;
-            if (i == 2)//crio o 2?
+            if (i == 2)
             {
                 var objParent = GameObject.Find("Canvas");
                 GameObject middlepanel = Instantiate(MiddleMenu, objParent.transform);
@@ -97,6 +89,22 @@ public class VersusManager : MonoBehaviour
         }
     }
 
+
+
+
+
+
+
+
+
+
+
+    //----------------------------------------------------------------------
+
+
+
+
+
     public void OnOFFSingle()
     {
         if (GameObject.Find("SinglePlayerEventSystem") == null)
@@ -119,10 +127,6 @@ public class VersusManager : MonoBehaviour
     {
         AllReady();
     }
-
-   
-
-
     void AllReady()
     {   
         if (amountReady == 2) 

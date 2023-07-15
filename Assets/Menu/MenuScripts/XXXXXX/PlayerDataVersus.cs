@@ -35,14 +35,6 @@ public class PlayerDataVersus : MonoBehaviour
        
     }
 
-
-    public void KnowPlayerInputAndIndex(PlayerInput _pInput, int _playerIndex)
-    {
-        pInput = _pInput;
-        playerIndex = _playerIndex;
-        this.GetComponent<PlayerMedabotSelected>().pInput = _pInput;
-        this.GetComponent<PlayerMedabotSelected>().pInputIndex = _playerIndex;
-    }
     public void CreatesideMenuCalledButton()
     {
         CreateSideMenuForThisPlayer(pInput);
@@ -51,16 +43,20 @@ public class PlayerDataVersus : MonoBehaviour
     {
         CreateSideMenu(pInput);
     }
+
+
+
     public void CreateSideMenu(PlayerInput input)
     {
         var objParent = GameObject.Find("Canvas");
         GameObject playerPanel = null;
         if (input.playerIndex == 0)
         {
-             playerPanel = Instantiate(prefP1, objParent.transform);
+            playerPanel = Instantiate(prefP1, objParent.transform);
         }
-        else { 
-             playerPanel = Instantiate(prefP2, objParent.transform);
+        else
+        {
+            playerPanel = Instantiate(prefP2, objParent.transform);
         }
         PlayerPanels.Add(playerPanel);
         //  playerPanel.GetComponent<PlayerSideMenuData>().playerInputUsingThis = input;
@@ -70,6 +66,13 @@ public class PlayerDataVersus : MonoBehaviour
 
         playerPanel.GetComponent<InputSystemUIInputModule>().actionsAsset = this.gameObject.GetComponent<PlayerInput>().actions;
         //Agora a enviar o que se obtem do inicio:
-       playerPanel.GetComponent<InputSystemUIInputModule>().actionsAsset = saveFromManager;
+        playerPanel.GetComponent<InputSystemUIInputModule>().actionsAsset = saveFromManager;
+    }
+    public void KnowPlayerInputAndIndex(PlayerInput _pInput, int _playerIndex)
+    {
+        pInput = _pInput;
+        playerIndex = _playerIndex;
+        this.GetComponent<PlayerMedabotSelected>().pInput = _pInput;
+        this.GetComponent<PlayerMedabotSelected>().pInputIndex = _playerIndex;
     }
 }
