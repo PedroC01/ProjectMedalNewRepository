@@ -54,7 +54,7 @@ public class BattleManager : MonoBehaviour
         int i = Random.Range(0, ArenaVersions.Length);
         ArenaVersions[i].SetActive(true);
         FindObjectOfType<FogController>().volume = FogVersions[i].gameObject.GetComponent<Volume>();
-        for (int J=0;J<=ArenaVersions.Length; J++)
+        for (int J=0;J<ArenaVersions.Length; J++)
         {
             if (ArenaVersions[J] != ArenaVersions[i])
             {
@@ -66,7 +66,7 @@ public class BattleManager : MonoBehaviour
     private void Start()
     {
         pim = FindObjectOfType<PlayerInputManager>();
-        // checkPlayersCoroutine = StartCoroutine(CheckPlayers());
+       // checkPlayersCoroutine = StartCoroutine(CheckPlayers());
         StartCoroutine(BattleBegin());
         PlayerInputHandler.play = false;
     }
